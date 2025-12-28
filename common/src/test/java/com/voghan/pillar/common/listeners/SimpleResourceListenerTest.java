@@ -15,9 +15,18 @@
  */
 package com.voghan.pillar.common.listeners;
 
+import com.voghan.pillar.common.testcontext.AppAemContext;
+import io.wcm.testing.mock.aem.junit5.AemContext;
+import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 import org.apache.sling.api.resource.observation.ResourceChange;
 import org.apache.sling.api.resource.observation.ResourceChange.ChangeType;
+import org.apache.sling.event.jobs.JobManager;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import uk.org.lidalia.slf4jext.Level;
 import uk.org.lidalia.slf4jtest.LoggingEvent;
 import uk.org.lidalia.slf4jtest.TestLogger;
@@ -29,11 +38,22 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@ExtendWith({AemContextExtension.class, MockitoExtension.class})
 class SimpleResourceListenerTest {
+    private static final TestLogger logger = TestLoggerFactory.getTestLogger(SimpleResourceListener.class);
+    private static final AemContext context = AppAemContext.newAemContext();
 
-    private SimpleResourceListener fixture = new SimpleResourceListener();
+    @Mock
+    private JobManager jobManager;
 
-    private TestLogger logger = TestLoggerFactory.getTestLogger(fixture.getClass());
+    private SimpleResourceListener fixture;
+
+    @BeforeEach
+    void setupAll() {
+        context.registerService(JobManager.class, jobManager);
+
+        fixture = context.registerInjectActivateService(new SimpleResourceListener());
+    }
 
     @Test
     void handleEvent() {

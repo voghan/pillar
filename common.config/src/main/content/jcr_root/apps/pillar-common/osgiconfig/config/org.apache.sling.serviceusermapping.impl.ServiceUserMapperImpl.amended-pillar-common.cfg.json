@@ -1,0 +1,6 @@
+{
+    "service.ranking":"100",
+    "user.mapping":[
+        "pillar.common:pillar-simple-job-consumer=[pillar-service]"
+    ]
+}
