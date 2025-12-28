@@ -1,7 +1,7 @@
 {
-    "scripts": [
-        "create path (sling:OrderedFolder) /content/dam/pillar",
-        "create path (nt:unstructured) /content/dam/pillar/jcr:content",
-        "set properties on /content/dam/pillar/jcr:content\n  set cq:conf{String} to /conf/pillar\n  set jcr:title{String} to \"Pillar\"\nend"
-    ]
+  "scripts": [
+    "create path (sling:OrderedFolder) /content/dam/pillar",
+    "create path (nt:unstructured) /content/dam/pillar/jcr:content",
+    "set properties on /content/dam/pillar/jcr:content\n  set cq:conf{String} to /conf/pillar\n  set jcr:title{String} to \"Pillar\"\nend"
+  ]
 }

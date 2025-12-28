@@ -15,17 +15,15 @@
  */
 package com.voghan.pillar.core.servlets;
 
-import java.io.IOException;
-
-import javax.servlet.ServletException;
-
+import io.wcm.testing.mock.aem.junit5.AemContext;
+import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 import org.apache.sling.testing.mock.sling.servlet.MockSlingHttpServletRequest;
 import org.apache.sling.testing.mock.sling.servlet.MockSlingHttpServletResponse;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-import io.wcm.testing.mock.aem.junit5.AemContext;
-import io.wcm.testing.mock.aem.junit5.AemContextExtension;
+import javax.servlet.ServletException;
+import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -36,7 +34,10 @@ class SimpleServletTest {
 
     @Test
     void doGet(AemContext context) throws ServletException, IOException {
+        String expected = "Title = resource title\n" +
+            "Description = resource description";
         context.build().resource("/content/test", "jcr:title", "resource title").commit();
+        context.build().resource("/content/test", "jcr:description", "resource description").commit();
         context.currentResource("/content/test");
 
         MockSlingHttpServletRequest request = context.request();
@@ -44,6 +45,6 @@ class SimpleServletTest {
 
         fixture.doGet(request, response);
 
-        assertEquals("Title = resource title", response.getOutputAsString());
+        assertEquals(expected, response.getOutputAsString());
     }
 }

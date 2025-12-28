@@ -1,81 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-    jcr:primaryType="cq:Page">
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="cq:Page">
     <jcr:content
-        pageTitle="Pillar"
-        jcr:primaryType="cq:PageContent"
-        jcr:title="en"
-        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
-        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
-        cq:template="/conf/pillar/settings/wcm/templates/page-content"
-        sling:resourceType="pillar/components/page"
+            pageTitle="Pillar"
+            jcr:primaryType="cq:PageContent"
+            jcr:title="en"
+            cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+            cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+            cq:template="/conf/pillar/settings/wcm/templates/page-content"
+            sling:resourceType="pillar/components/page/v1/page"
     >
         <root
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="pillar/components/container"
-            layout="responsiveGrid">
-            <container
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="pillar/components/container">
+                sling:resourceType="pillar/components/container/v1/container"
+                layout="responsiveGrid">
+            <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="pillar/components/container/v1/container">
                 <title
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="pillar/components/title"/>
-                <container
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="pillar/components/container"
-                    layout="responsiveGrid">
-                    <teaser
-                        jcr:description="&lt;p>Don't stop half way, go for the top!&lt;/p>&#xd;&#xa;"
                         jcr:primaryType="nt:unstructured"
-                        jcr:title="Epic Journey"
-                        sling:resourceType="pillar/components/teaser"
-                        actionsEnabled="false"
-                        descriptionFromPage="false"
-                        textIsRich="true"
-                        titleFromPage="false">
+                        sling:resourceType="pillar/components/title/v1/title"/>
+                <container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="pillar/components/container/v1/container"
+                        layout="responsiveGrid">
+                    <teaser
+                            jcr:description="&lt;p>Don't stop half way, go for the top!&lt;/p>&#xd;&#xa;"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Epic Journey"
+                            sling:resourceType="pillar/components/teaser/v1/teaser"
+                            actionsEnabled="false"
+                            descriptionFromPage="false"
+                            textIsRich="true"
+                            titleFromPage="false">
                         <cq:responsive jcr:primaryType="nt:unstructured">
                             <default
-                                jcr:primaryType="nt:unstructured"
-                                offset="0"
-                                width="4"/>
+                                    jcr:primaryType="nt:unstructured"
+                                    offset="0"
+                                    width="4"/>
                         </cq:responsive>
                     </teaser>
                     <teaser_copy
-                        jcr:description="&lt;p>Don't stop half way, go for the top!&lt;/p>&#xd;&#xa;"
-                        jcr:primaryType="nt:unstructured"
-                        jcr:title="Epic Journey"
-                        sling:resourceType="pillar/components/teaser"
-                        actionsEnabled="false"
-                        descriptionFromPage="false"
-                        textIsRich="true"
-                        titleFromPage="false">
+                            jcr:description="&lt;p>Don't stop half way, go for the top!&lt;/p>&#xd;&#xa;"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Epic Journey"
+                            sling:resourceType="pillar/components/teaser/v1/teaser"
+                            actionsEnabled="false"
+                            descriptionFromPage="false"
+                            textIsRich="true"
+                            titleFromPage="false">
                         <cq:responsive jcr:primaryType="nt:unstructured">
                             <default
-                                jcr:primaryType="nt:unstructured"
-                                offset="0"
-                                width="4"/>
+                                    jcr:primaryType="nt:unstructured"
+                                    offset="0"
+                                    width="4"/>
                         </cq:responsive>
                     </teaser_copy>
                     <teaser_copy_1579324932
-                        jcr:description="&lt;p>Don't stop half way, go for the top!&lt;/p>&#xd;&#xa;"
-                        jcr:primaryType="nt:unstructured"
-                        jcr:title="Epic Journey"
-                        sling:resourceType="pillar/components/teaser"
-                        actionsEnabled="false"
-                        descriptionFromPage="false"
-                        textIsRich="true"
-                        titleFromPage="false">
+                            jcr:description="&lt;p>Don't stop half way, go for the top!&lt;/p>&#xd;&#xa;"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Epic Journey"
+                            sling:resourceType="pillar/components/teaser/v1/teaser"
+                            actionsEnabled="false"
+                            descriptionFromPage="false"
+                            textIsRich="true"
+                            titleFromPage="false">
                         <cq:responsive jcr:primaryType="nt:unstructured">
                             <default
-                                jcr:primaryType="nt:unstructured"
-                                offset="0"
-                                width="4"/>
+                                    jcr:primaryType="nt:unstructured"
+                                    offset="0"
+                                    width="4"/>
                         </cq:responsive>
                     </teaser_copy_1579324932>
                     <helloworld
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="pillar/components/helloworld"
-                        text="lalala :)"/>
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="pillar/components/helloworld/v1/helloworld"
+                            text="lalala :)"/>
                 </container>
             </container>
         </root>

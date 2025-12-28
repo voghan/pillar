@@ -67,6 +67,11 @@
                         </embedded>
                         <embedded>
                             <groupId>com.voghan.pillar</groupId>
+                            <artifactId>pillar.common</artifactId>
+                            <target>/apps/pillar-packages/application/install</target>
+                        </embedded>
+                        <embedded>
+                            <groupId>com.voghan.pillar</groupId>
                             <artifactId>pillar.ui.content</artifactId>
                             <type>zip</type>
                             <target>/apps/pillar-packages/content/install</target>
@@ -93,6 +98,11 @@
                             <artifactId>core.wcm.components.config</artifactId>
                             <type>zip</type>
                             <target>/apps/pillar-vendor-packages/application/install</target>
+                        </embedded>
+                        <embedded>
+                            <groupId>be.orbinson.aem</groupId>
+                            <artifactId>aem-groovy-console-all</artifactId>
+                            <target>/apps/pillar-vendor-packages/content/install</target>
                         </embedded>
                     </embeddeds>
                 </configuration>
@@ -168,7 +178,8 @@
                                     <goal>install</goal>
                                 </goals>
                                 <configuration>
-                                    <targetURL>http://${aem.publish.host}:${aem.publish.port}/crx/packmgr/service.jsp</targetURL>
+                                    <targetURL>http://${aem.publish.host}:${aem.publish.port}/crx/packmgr/service.jsp
+                                    </targetURL>
                                     <failOnError>true</failOnError>
                                 </configuration>
                             </execution>
@@ -176,13 +187,18 @@
                     </plugin>
                 </plugins>
             </build>
-    </profile>
+        </profile>
     </profiles>
 
     <!-- ====================================================================== -->
     <!-- D E P E N D E N C I E S                                                -->
     <!-- ====================================================================== -->
     <dependencies>
+        <dependency>
+            <groupId>com.voghan.pillar</groupId>
+            <artifactId>pillar.core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.voghan.pillar</groupId>
             <artifactId>pillar.ui.apps</artifactId>
@@ -201,6 +217,12 @@
             <version>${project.version}</version>
             <type>zip</type>
         </dependency>
+        <dependency>
+            <groupId>com.voghan.pillar</groupId>
+            <artifactId>pillar.common.config</artifactId>
+            <version>${project.version}</version>
+            <type>zip</type>
+        </dependency>
 
         <dependency>
             <groupId>com.adobe.cq</groupId>
@@ -210,6 +232,12 @@
         <dependency>
             <groupId>com.adobe.cq</groupId>
             <artifactId>core.wcm.components.config</artifactId>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>be.orbinson.aem</groupId>
+            <artifactId>aem-groovy-console-all</artifactId>
+            <version>19.0.8</version>
             <type>zip</type>
         </dependency>
     </dependencies>

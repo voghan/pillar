@@ -1,5 +1,3 @@
-
-
 export JAVA_HOME=$(/usr/libexec/java_home -v 21)
 export PATH=$JAVA_HOME/bin:$PATH
 export MAVEN_HOME=/Users/brianvaughn/apache/apache-maven-3.9.12

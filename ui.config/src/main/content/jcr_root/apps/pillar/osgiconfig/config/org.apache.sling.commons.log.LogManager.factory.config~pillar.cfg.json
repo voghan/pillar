@@ -1,8 +1,8 @@
 {
   "org.apache.sling.commons.log.names": [
-    "com.voghan.pillar"
+    "com.voghan.pillar.core"
   ],
-  "org.apache.sling.commons.log.level": "INFO",
-  "org.apache.sling.commons.log.file": "logs/error.log",
+  "org.apache.sling.commons.log.level": "debug",
+  "org.apache.sling.commons.log.file": "logs/core-error.log",
   "org.apache.sling.commons.log.additiv": "false"
 }

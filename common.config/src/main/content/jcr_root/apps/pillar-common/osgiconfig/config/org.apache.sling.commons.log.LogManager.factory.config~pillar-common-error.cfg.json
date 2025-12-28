@@ -1,0 +1,8 @@
+{
+  "org.apache.sling.commons.log.names": [
+    "com.voghan.pillar.common"
+  ],
+  "org.apache.sling.commons.log.level": "debug",
+  "org.apache.sling.commons.log.file": "logs/common-error.log",
+  "org.apache.sling.commons.log.additiv": "false"
+}

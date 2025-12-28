@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/pillar-common/clientlibs"/>
+    <filter root="/apps/pillar-common/components"/>
+    <filter root="/apps/pillar-common/i18n"/>
+</workspaceFilter>

@@ -1,5 +1,6 @@
 {
   "resource.resolver.mapping": [
-    "/content/pillar/</", "/:/"
+    "/content/pillar/</",
+    "/:/"
   ]
 }
