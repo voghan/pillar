@@ -1,20 +1,21 @@
-# Sample AEM project template
+# Pillar AEM project template
 
-This is a project template for AEM-based applications. It is intended as a best-practice set of examples as well as a
-potential starting point to develop your own functionality.
+This is a project build using the Maven AEM Archetype and updated to include a set of common modules.
 
 ## Modules
 
 The main parts of the template are:
-
-* [core:](core/README.md) Java bundle containing all core functionality like OSGi services, listeners or schedulers, as
+* [common:](common/README.md) Java bundle containing common core functionality like OSGi services, listeners or schedulers, as
   well as component-related Java code such as servlets or request filters.
+* [common.apps:](common.apps/README.md) contains the common /apps (and /etc) parts of the project
+* [common.config:](common.config/README.md) contains common runmode specific OSGi configs
+* [core:](core/README.md) Java bundle containing all core functionality for the site
 * [it.tests:](it.tests/README.md) Java based integration tests
 * [ui.apps:](ui.apps/README.md) contains the /apps (and /etc) parts of the project, ie JS&CSS clientlibs, components,
   and templates
 * [ui.content:](ui.content/README.md) contains sample content using the components from the ui.apps
-* ui.config: contains runmode specific OSGi configs for the project
-* [ui.frontend:](ui.frontend.general/README.md) an optional dedicated front-end build mechanism (Angular, React or
+* [ui.config:](ui.config/README.md) contains runmode specific OSGi configs for the project
+* [ui.frontend:](ui.frontend/README.md) an optional dedicated front-end build mechanism (Angular, React or
   general Webpack project)
 * [ui.tests:](ui.tests/README.md) Cypress based UI tests (for other frameworks
   check [aem-test-samples](https://github.com/adobe/aem-test-samples) repository
