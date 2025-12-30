@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/pillar-common/.content.xml"/>
+    <filter root="/conf/pillar-common/sling:configs" mode="merge"/>
+    <filter root="/conf/pillar-common/notifications"/>
+    <filter root="/conf/pillar-common/scripts"/>
+    <filter root="/conf/pillar-common/settings" mode="merge"/>
+</workspaceFilter>

@@ -38,9 +38,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 
 @ExtendWith(AemContextExtension.class)
-class LoggingFilterTest {
+class SimpleLoggingFilterTest {
 
-    private LoggingFilter fixture = new LoggingFilter();
+    private SimpleLoggingFilter fixture = new SimpleLoggingFilter();
 
     private TestLogger logger = TestLoggerFactory.getTestLogger(fixture.getClass());
 

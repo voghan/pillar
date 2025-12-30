@@ -27,14 +27,12 @@ public class SimpleWorkflowEventHandler implements EventHandler {
                 LOGGER.info("Workflow has started with workflow instance ID : {}", instanceId);
             } else if (eventType.equals(WorkflowEvent.WORKFLOW_COMPLETED_EVENT)) {
                 LOGGER.info("Workflow has completed");
-            } else if (eventType.equals(WorkflowEvent.WORKFLOW_RESUMED_EVENT)) {
-                LOGGER.info("Workflow is resumed");
             } else if (eventType.equals(WorkflowEvent.WORKFLOW_ABORTED_EVENT)) {
                 LOGGER.info("Workflow is aborted");
             } else if (eventType.equals(WorkflowEvent.WORKFLOW_SUSPENDED_EVENT)) {
                 LOGGER.info("Workflow is suspended");
-            } else if (eventType.equals(WorkflowEvent.WORKITEM_DELEGATION_EVENT)) {
-                LOGGER.info("Workflow is delegated");
+            }  else if (eventType.equals(WorkflowEvent.JOB_FAILED_EVENT)) {
+                LOGGER.info("Workflow is in a failed state");
             } else {
                 LOGGER.warn("Something is wrong with a workflow {}", eventType);
             }

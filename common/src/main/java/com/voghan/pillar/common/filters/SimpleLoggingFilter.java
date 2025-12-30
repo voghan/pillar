@@ -42,7 +42,7 @@ import java.util.Map;
     })
 @ServiceDescription("Pillar filter for incoming requests")
 @ServiceRanking(-700)
-public class LoggingFilter implements Filter {
+public class SimpleLoggingFilter implements Filter {
 
     private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 

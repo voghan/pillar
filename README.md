@@ -8,6 +8,7 @@ The main parts of the template are:
 * [common:](common/README.md) Java bundle containing common core functionality like OSGi services, listeners or schedulers, as
   well as component-related Java code such as servlets or request filters.
 * [common.apps:](common.apps/README.md) contains the common /apps (and /etc) parts of the project
+* [common.content:](common.content/README.md) contains common elements needed inside /conf
 * [common.config:](common.config/README.md) contains common runmode specific OSGi configs
 * [core:](core/README.md) Java bundle containing all core functionality for the site
 * [it.tests:](it.tests/README.md) Java based integration tests

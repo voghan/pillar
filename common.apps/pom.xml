@@ -33,7 +33,7 @@
     <!-- ====================================================================== -->
     <artifactId>pillar.common.apps</artifactId>
     <packaging>content-package</packaging>
-    <name>Pillar - common apps</name>
+    <name>Pillar Common - UI apps</name>
     <description>Common UI apps package for Pillar</description>
 
     <!-- ====================================================================== -->

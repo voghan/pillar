@@ -24,7 +24,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>pillar.common</artifactId>
-    <name>Pillar - Common</name>
+    <name>Pillar Common</name>
     <description>Common bundle for Pillar</description>
     <build>
         <plugins>

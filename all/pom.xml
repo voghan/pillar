@@ -67,11 +67,6 @@
                         </embedded>
                         <embedded>
                             <groupId>com.voghan.pillar</groupId>
-                            <artifactId>pillar.common</artifactId>
-                            <target>/apps/pillar-packages/application/install</target>
-                        </embedded>
-                        <embedded>
-                            <groupId>com.voghan.pillar</groupId>
                             <artifactId>pillar.ui.content</artifactId>
                             <type>zip</type>
                             <target>/apps/pillar-packages/content/install</target>
@@ -79,6 +74,23 @@
                         <embedded>
                             <groupId>com.voghan.pillar</groupId>
                             <artifactId>pillar.ui.config</artifactId>
+                            <type>zip</type>
+                            <target>/apps/pillar-packages/application/install</target>
+                        </embedded>
+                        <embedded>
+                            <groupId>com.voghan.pillar</groupId>
+                            <artifactId>pillar.common</artifactId>
+                            <target>/apps/pillar-packages/application/install</target>
+                        </embedded>
+                        <embedded>
+                            <groupId>com.voghan.pillar</groupId>
+                            <artifactId>pillar.common.content</artifactId>
+                            <type>zip</type>
+                            <target>/apps/pillar-packages/content/install</target>
+                        </embedded>
+                        <embedded>
+                            <groupId>com.voghan.pillar</groupId>
+                            <artifactId>pillar.common.config</artifactId>
                             <type>zip</type>
                             <target>/apps/pillar-packages/application/install</target>
                         </embedded>
@@ -103,6 +115,12 @@
                             <groupId>be.orbinson.aem</groupId>
                             <artifactId>aem-groovy-console-all</artifactId>
                             <target>/apps/pillar-vendor-packages/content/install</target>
+                        </embedded>
+                        <embedded>
+                            <artifactId>acs-aem-commons-all</artifactId>
+                            <target>/apps/pillar-vendor-packages/container/install</target>
+                            <filter>true</filter>
+                            <isAllVersionsFilter>true</isAllVersionsFilter>
                         </embedded>
                     </embeddeds>
                 </configuration>
@@ -223,6 +241,12 @@
             <version>${project.version}</version>
             <type>zip</type>
         </dependency>
+        <dependency>
+            <groupId>com.voghan.pillar</groupId>
+            <artifactId>pillar.common.content</artifactId>
+            <version>${project.version}</version>
+            <type>zip</type>
+        </dependency>
 
         <dependency>
             <groupId>com.adobe.cq</groupId>
@@ -238,6 +262,12 @@
             <groupId>be.orbinson.aem</groupId>
             <artifactId>aem-groovy-console-all</artifactId>
             <version>19.0.8</version>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>com.adobe.acs</groupId>
+            <artifactId>acs-aem-commons-all</artifactId>
+            <version>6.15.0</version>
             <type>zip</type>
         </dependency>
     </dependencies>

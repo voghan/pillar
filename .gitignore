@@ -5,3 +5,4 @@ target/
 node/
 node_modules/
 
+/common.config/src/main/content/jcr_root/apps/pillar-common/osgiconfig/config.local/

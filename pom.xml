@@ -28,6 +28,7 @@
         <module>common.apps</module>
         <module>common.apps.structure</module>
         <module>common.config</module>
+        <module>common.content</module>
         <module>core</module>
         <module>ui.frontend</module>
         <module>ui.apps</module>

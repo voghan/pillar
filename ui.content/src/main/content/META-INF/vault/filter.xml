@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
-    <filter root="/conf/pillar" mode="merge"/>
+    <filter root="/conf/pillar/.content.xml"/>
+    <filter root="/conf/pillar/sling:configs" mode="merge"/>
+    <filter root="/conf/pillar/notifications"/>
+    <filter root="/conf/pillar/scripts"/>
+    <filter root="/conf/pillar/settings/.content.xml"/>
+    <filter root="/conf/pillar/settings/cloudconfigs" mode="merge"/>
+    <filter root="/conf/pillar/settings/dam"/>
+    <filter root="/conf/pillar/settings/wcm"/>
     <filter root="/content/pillar" mode="merge"/>
     <filter root="/content/dam/pillar" mode="merge">
         <exclude pattern="/content/dam/pillar(/.*)?"/>
