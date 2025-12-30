@@ -37,6 +37,7 @@ public class SimpleJobConsumerTest {
 
     @BeforeEach
     void setupAll() {
+        TestLoggerFactory.clear();
         context.registerService(ResourceResolverFactory.class, resourceResolverFactory);
         fixture = context.registerInjectActivateService(new SimpleJobConsumer());
     }

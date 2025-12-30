@@ -19,6 +19,7 @@ import org.slf4j.LoggerFactory;
 import javax.jcr.Session;
 import javax.mail.MessagingException;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,7 +33,7 @@ import java.util.Map;
 )
 public class SimpleEmailServiceImpl implements SimpleEmailService {
     private final Logger LOGGER = LoggerFactory.getLogger(getClass());
-    private static final String SERVICE_NAME = "SimpleEmailService";
+    protected static final String SERVICE_NAME = "SimpleEmailService";
 
     @Reference
     private MessageGatewayService messageGatewayService;
@@ -43,8 +44,8 @@ public class SimpleEmailServiceImpl implements SimpleEmailService {
     @Override
     public void sendEmail(String mailTo, String templatePath, Map<String, String> parameters) {
 
-        final Map<String, Object> authInfo = new HashMap<>();
-        authInfo.put(ResourceResolverFactory.SUBSERVICE, SERVICE_NAME);
+        Map<String, Object> authInfo = Collections.singletonMap(
+            ResourceResolverFactory.SUBSERVICE, (Object) SimpleEmailServiceImpl.SERVICE_NAME);
         try(ResourceResolver resourceResolver = resourceResolverFactory.getServiceResourceResolver(authInfo)) {
             MessageGateway<HtmlEmail> messageGateway = messageGatewayService.getGateway(HtmlEmail.class);
 
