@@ -1,0 +1,73 @@
+{
+  "jcr:primaryType": "cq:Page",
+  "jcr:createdBy": "admin",
+  "jcr:created": "Tue Dec 30 2025 07:47:11 GMT-0600",
+  "jcr:content": {
+    "jcr:primaryType": "cq:PageContent",
+    "jcr:createdBy": "admin",
+    "jcr:title": "Simple Card",
+    "cq:template": "/conf/pillar/settings/wcm/templates/page-content",
+    "jcr:created": "Tue Dec 30 2025 07:47:11 GMT-0600",
+    "cq:lastModified": "Tue Dec 30 2025 22:01:03 GMT-0600",
+    "sling:resourceType": "pillar/components/page/v1/page",
+    "cq:lastModifiedBy": "admin",
+    "root": {
+      "jcr:primaryType": "nt:unstructured",
+      "layout": "responsiveGrid",
+      "sling:resourceType": "pillar/components/container/v1/container",
+      "container": {
+        "jcr:primaryType": "nt:unstructured",
+        "layout": "responsiveGrid",
+        "sling:resourceType": "pillar/components/container/v1/container",
+        "container": {
+          "jcr:primaryType": "nt:unstructured",
+          "layout": "responsiveGrid",
+          "sling:resourceType": "pillar/components/container/v1/container",
+          "card": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "admin",
+            "paragraphScope": "all",
+            "jcr:lastModifiedBy": "admin",
+            "jcr:created": "Tue Dec 30 2025 07:57:59 GMT-0600",
+            "text": "My Card",
+            "variationName": "master",
+            "jcr:lastModified": "Tue Dec 30 2025 21:59:09 GMT-0600",
+            "sling:resourceType": "pillar/components/card/v1/card",
+            "displayMode": "multi",
+            "fragmentPath": "/content/dam/simple-cards/option1"
+          },
+          "card_es": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "admin",
+            "jcr:lastModifiedBy": "admin",
+            "jcr:created": "Tue Dec 30 2025 09:21:05 GMT-0600",
+            "variationName": "es",
+            "jcr:lastModified": "Tue Dec 30 2025 21:59:39 GMT-0600",
+            "sling:resourceType": "pillar/components/card/v1/card",
+            "fragmentPath": "/content/dam/simple-cards/option1"
+          },
+          "card_option2": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "admin",
+            "jcr:lastModifiedBy": "admin",
+            "jcr:created": "Tue Dec 30 2025 21:59:50 GMT-0600",
+            "variationName": "master",
+            "jcr:lastModified": "Tue Dec 30 2025 22:00:27 GMT-0600",
+            "sling:resourceType": "pillar/components/card/v1/card",
+            "fragmentPath": "/content/dam/simple-cards/option2"
+          },
+          "card_option3": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "admin",
+            "jcr:lastModifiedBy": "admin",
+            "jcr:created": "Tue Dec 30 2025 22:00:36 GMT-0600",
+            "variationName": "master",
+            "jcr:lastModified": "Tue Dec 30 2025 22:01:03 GMT-0600",
+            "sling:resourceType": "pillar/components/card/v1/card",
+            "fragmentPath": "/content/dam/simple-cards/option3"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "jcr:primaryType": "sling:OrderedFolder",
+  "jcr:createdBy": "admin",
+  "jcr:created": "Tue Dec 30 2025 19:13:35 GMT-0600",
+  "jcr:content": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:title": "hero",
+    "jcr:lastModifiedBy": "admin",
+    "jcr:lastModified": "Tue Dec 30 2025 19:23:19 GMT-0600",
+    "sourcing": "false",
+    "policies": {
+      "jcr:primaryType": "nt:unstructured",
+      "cfm": {
+        "jcr:primaryType": "nt:unstructured",
+        "policy-cfm-allowedModelsByPaths": [
+          "/conf/pillar/settings/dam/cfm/models/hero"
+        ]
+      }
+    }
+  },
+  "demo-hero": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:mixinTypes": [
+      "mix:referenceable",
+      "mix:versionable"
+    ],
+    "jcr:createdBy": "admin",
+    "jcr:versionHistory": "623a57bc-498f-4481-92cd-b25b26ef09b8",
+    "jcr:predecessors": [
+      "79c2c734-2d62-443f-a180-458bea3a74db"
+    ],
+    "jcr:created": "Tue Dec 30 2025 19:24:07 GMT-0600",
+    "jcr:baseVersion": "79c2c734-2d62-443f-a180-458bea3a74db",
+    "jcr:isCheckedOut": true,
+    "jcr:uuid": "0e8cdeb5-d45a-4a78-a37d-5d83bb7dc61d",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "jcr:title": "Demo Hero",
+      "jcr:lastModifiedBy": "admin",
+      "contentFragment": true,
+      "cq:name": "demo-hero",
+      "jcr:lastModified": "Wed Dec 31 2025 11:43:43 GMT-0600",
+      "lastFragmentSave": "Wed Dec 31 2025 11:43:43 GMT-0600",
+      "cq:parentPath": "/content/dam/pillar/us/en/demo/hero",
+      "renditions": {
+        "jcr:primaryType": "nt:folder",
+        "jcr:createdBy": "admin",
+        "jcr:created": "Tue Dec 30 2025 19:24:07 GMT-0600"
+      },
+      "related": {
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "indexedData": {
+        "jcr:primaryType": "nt:unstructured",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:IndexedFragmentData"
+          ],
+          "@string@model": "/conf/pillar/settings/dam/cfm/models/hero",
+          "@stringArray@variations": [
+            "es"
+          ],
+          "string@shortDescription": "<p>A simple framework of HTL components that utilize content fragments for their auhtoring experience.</p>\n",
+          "string@headline": "Pillar Demo Components",
+          "jcr:uuid": "349d48f7-1566-4604-b976-e21e4846f03f"
+        },
+        "es": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:IndexedFragmentData"
+          ],
+          "@string@model": "/conf/pillar/settings/dam/cfm/models/hero",
+          "string@shortDescription": "<p>Un marco sencillo de componentes HTL que utilizan fragmentos de contenido para la experiencia de creación de contenido.</p>\n",
+          "string@headline": "Componentes de demostración de Pillar",
+          "jcr:uuid": "35c2eb39-8f7d-4672-bf56-0757b09a174c"
+        }
+      },
+      "metadata": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ],
+        "dam:cfVariations": {
+          "jcr:primaryType": "nt:unstructured",
+          "es": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:mixinTypes": [
+              "cq:Taggable"
+            ]
+          }
+        }
+      },
+      "model": {
+        "jcr:primaryType": "nt:unstructured",
+        "variations": {
+          "jcr:primaryType": "nt:unstructured",
+          "es": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:mixinTypes": [
+              "cq:Taggable"
+            ],
+            "jcr:title": "es",
+            "name": "es",
+            "jcr:description": "",
+            "properties": {
+              "jcr:primaryType": "nt:unstructured",
+              "synchronizeWithVersion": [
+                "headline:79c2c734-2d62-443f-a180-458bea3a74db",
+                "shortDescription:79c2c734-2d62-443f-a180-458bea3a74db",
+                "breadcrumbs:79c2c734-2d62-443f-a180-458bea3a74db",
+                "callToActions:79c2c734-2d62-443f-a180-458bea3a74db",
+                "backgroundImage:79c2c734-2d62-443f-a180-458bea3a74db"
+              ]
+            }
+          }
+        }
+      },
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "_strucVersion": 1,
+        "cq:model": "/conf/pillar/settings/dam/cfm/models/hero",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "backgroundImage@LastModified": "Tue Dec 30 2025 20:43:03 GMT-0600",
+          "callToActions@LastModified": "Tue Dec 30 2025 19:27:41 GMT-0600",
+          "shortDescription@ContentType": "text/html",
+          "headline@LastModified": "Tue Dec 30 2025 19:27:41 GMT-0600",
+          "headline": "Pillar Demo Components",
+          "breadcrumbs@LastModified": "Tue Dec 30 2025 19:27:41 GMT-0600",
+          "callToActions": [
+            "/content/dam/links/link1",
+            "/content/dam/links/link2"
+          ],
+          "breadcrumbs": [
+            "/content/dam/links/homepagelink",
+            "/content/dam/links/demo-link"
+          ],
+          "shortDescription@LastModified": "Tue Dec 30 2025 19:27:41 GMT-0600",
+          "backgroundImage": "/content/dam/images/asset.jpg",
+          "shortDescription": "<p>A simple framework of HTL components that utilize content fragments for their auhtoring experience.</p>\n"
+        },
+        "es": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "backgroundImage@LastModified": "Wed Dec 31 2025 11:42:17 GMT-0600",
+          "callToActions@LastModified": "Wed Dec 31 2025 11:42:17 GMT-0600",
+          "shortDescription@ContentType": "text/html",
+          "headline@LastModified": "Wed Dec 31 2025 11:43:42 GMT-0600",
+          "headline": "Componentes de demostración de Pillar",
+          "breadcrumbs@LastModified": "Wed Dec 31 2025 11:42:17 GMT-0600",
+          "callToActions": [
+            "/content/dam/links/link1",
+            "/content/dam/links/link2"
+          ],
+          "@variationCreationDate": "Wed Dec 31 2025 11:42:17 GMT-0600",
+          "breadcrumbs": [
+            "/content/dam/links/homepagelink",
+            "/content/dam/links/demo-link"
+          ],
+          "shortDescription@LastModified": "Wed Dec 31 2025 11:43:42 GMT-0600",
+          "backgroundImage": "/content/dam/images/asset.jpg",
+          "shortDescription": "<p>Un marco sencillo de componentes HTL que utilizan fragmentos de contenido para la experiencia de creación de contenido.</p>\n"
+        }
+      }
+    }
+  }
+}

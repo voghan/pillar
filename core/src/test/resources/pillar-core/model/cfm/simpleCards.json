@@ -1,0 +1,322 @@
+{
+  "jcr:primaryType": "sling:OrderedFolder",
+  "jcr:createdBy": "admin",
+  "jcr:created": "Tue Dec 30 2025 19:13:20 GMT-0600",
+  "jcr:content": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:title": "simple-cards",
+    "jcr:lastModifiedBy": "admin",
+    "cq:lastModified": "Tue Dec 30 2025 19:13:20 GMT-0600",
+    "jcr:lastModified": "Sun Dec 28 2025 21:44:54 GMT-0600",
+    "sourcing": "false",
+    "cq:lastModifiedBy": "admin",
+    "policies": {
+      "jcr:primaryType": "nt:unstructured",
+      "cfm": {
+        "jcr:primaryType": "nt:unstructured",
+        "policy-cfm-allowedModelsByPaths": [
+          "/conf/pillar/settings/dam/cfm/models/simplecard"
+        ]
+      }
+    }
+  },
+  "option1": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:mixinTypes": [
+      "mix:referenceable",
+      "mix:versionable"
+    ],
+    "jcr:createdBy": "admin",
+    "jcr:versionHistory": "8192ef0d-295a-4830-83bc-331c21917b28",
+    "jcr:predecessors": [
+      "32421dc3-94f5-45b4-bdf0-a7cb779b88da"
+    ],
+    "jcr:created": "Tue Dec 30 2025 19:13:20 GMT-0600",
+    "jcr:baseVersion": "32421dc3-94f5-45b4-bdf0-a7cb779b88da",
+    "jcr:isCheckedOut": true,
+    "jcr:uuid": "96a85f76-da59-4c7d-9051-3759df48d6a7",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "jcr:title": "Option1",
+      "jcr:lastModifiedBy": "admin",
+      "cq:lastModified": "Tue Dec 30 2025 19:13:20 GMT-0600",
+      "contentFragment": true,
+      "cq:name": "option1",
+      "jcr:lastModified": "Wed Dec 31 2025 10:54:54 GMT-0600",
+      "lastFragmentSave": "Wed Dec 31 2025 10:54:54 GMT-0600",
+      "cq:parentPath": "/content/dam/pillar/us/en/demo/simple-cards",
+      "cq:lastModifiedBy": "admin",
+      "renditions": {
+        "jcr:primaryType": "nt:folder",
+        "jcr:createdBy": "admin",
+        "jcr:created": "Tue Dec 30 2025 19:13:20 GMT-0600"
+      },
+      "related": {
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "indexedData": {
+        "jcr:primaryType": "nt:unstructured",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:IndexedFragmentData"
+          ],
+          "@string@model": "/conf/pillar/settings/dam/cfm/models/simplecard",
+          "@stringArray@variations": [
+            "es"
+          ],
+          "string@shortDescription": "<p>Don't stop half way, go for the top!</p>\n",
+          "string@headline": "Epic Journey",
+          "jcr:uuid": "99ef2254-ab6e-4ac1-85f5-01fbc4518512"
+        },
+        "es": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:IndexedFragmentData"
+          ],
+          "@string@model": "/conf/pillar/settings/dam/cfm/models/simplecard",
+          "string@shortDescription": "<p>Don't stop half way, go for the top!</p>\n",
+          "string@headline": "Viaje épico",
+          "jcr:uuid": "5b79009c-0e1a-4800-8fc9-6c6f0da88053"
+        }
+      },
+      "metadata": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ],
+        "dam:cfVariations": {
+          "jcr:primaryType": "nt:unstructured",
+          "es": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:mixinTypes": [
+              "cq:Taggable"
+            ]
+          }
+        }
+      },
+      "model": {
+        "jcr:primaryType": "nt:unstructured",
+        "variations": {
+          "jcr:primaryType": "nt:unstructured",
+          "es": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:mixinTypes": [
+              "cq:Taggable"
+            ],
+            "jcr:title": "es",
+            "name": "es",
+            "jcr:description": "",
+            "properties": {
+              "jcr:primaryType": "nt:unstructured",
+              "synchronizeWithVersion": [
+                "headline:481c4715-c70e-4998-9398-1ef9f26f3f4d",
+                "shortDescription:481c4715-c70e-4998-9398-1ef9f26f3f4d",
+                "callToAction:481c4715-c70e-4998-9398-1ef9f26f3f4d",
+                "image:481c4715-c70e-4998-9398-1ef9f26f3f4d"
+              ]
+            }
+          }
+        }
+      },
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "_strucVersion": 1,
+        "cq:model": "/conf/pillar/settings/dam/cfm/models/simplecard",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "callToActions@LastModified": "Tue Dec 30 2025 20:56:32 GMT-0600",
+          "shortDescription@ContentType": "text/html",
+          "headline@LastModified": "Sun Dec 28 2025 21:48:18 GMT-0600",
+          "headline": "Epic Journey",
+          "image@LastModified": "Wed Dec 31 2025 10:54:54 GMT-0600",
+          "callToActions": [
+            "/content/dam/links/link1"
+          ],
+          "image": "/content/dam/images/BrianLogo2019-medium.png",
+          "shortDescription@LastModified": "Sun Dec 28 2025 21:48:18 GMT-0600",
+          "shortDescription": "<p>Don't stop half way, go for the top!</p>\n"
+        },
+        "es": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "callToActions@LastModified": "Tue Dec 30 2025 20:56:50 GMT-0600",
+          "shortDescription@ContentType": "text/html",
+          "headline@LastModified": "Tue Dec 30 2025 12:40:46 GMT-0600",
+          "headline": "Viaje épico",
+          "image@LastModified": "Tue Dec 30 2025 12:40:46 GMT-0600",
+          "callToActions": [
+            "/content/dam/links/link1"
+          ],
+          "@variationCreationDate": "Tue Dec 30 2025 12:40:46 GMT-0600",
+          "shortDescription@LastModified": "Tue Dec 30 2025 12:40:46 GMT-0600",
+          "shortDescription": "<p>Don't stop half way, go for the top!</p>\n"
+        }
+      }
+    }
+  },
+  "option2": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:mixinTypes": [
+      "mix:referenceable",
+      "mix:versionable"
+    ],
+    "jcr:createdBy": "admin",
+    "jcr:versionHistory": "7ce1f74f-867d-4bdf-bcba-281eb8571bdf",
+    "jcr:predecessors": [
+      "5b852267-c1aa-4e24-9979-0784a88bdf73"
+    ],
+    "jcr:created": "Tue Dec 30 2025 19:13:20 GMT-0600",
+    "jcr:baseVersion": "5b852267-c1aa-4e24-9979-0784a88bdf73",
+    "jcr:isCheckedOut": true,
+    "jcr:uuid": "6e2d9357-3ba0-40a0-b788-48ae524fcf3d",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "jcr:title": "Option2",
+      "jcr:lastModifiedBy": "admin",
+      "cq:lastModified": "Tue Dec 30 2025 19:13:20 GMT-0600",
+      "contentFragment": true,
+      "cq:name": "option2",
+      "jcr:lastModified": "Tue Dec 30 2025 20:57:28 GMT-0600",
+      "lastFragmentSave": "Tue Dec 30 2025 20:57:28 GMT-0600",
+      "cq:parentPath": "/content/dam/pillar/us/en/demo/simple-cards",
+      "cq:lastModifiedBy": "admin",
+      "renditions": {
+        "jcr:primaryType": "nt:folder",
+        "jcr:createdBy": "admin",
+        "jcr:created": "Tue Dec 30 2025 19:13:20 GMT-0600"
+      },
+      "related": {
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "indexedData": {
+        "jcr:primaryType": "nt:unstructured",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:IndexedFragmentData"
+          ],
+          "@string@model": "/conf/pillar/settings/dam/cfm/models/simplecard",
+          "@stringArray@variations": [],
+          "string@shortDescription": "<p>Don't stop half way, go for the top!</p>\n",
+          "string@headline": "Epic Journey Too",
+          "jcr:uuid": "959f0fdb-277f-4a6d-95b9-6fcd23c1f885"
+        }
+      },
+      "metadata": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ]
+      },
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "_strucVersion": 1,
+        "cq:model": "/conf/pillar/settings/dam/cfm/models/simplecard",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "callToActions@LastModified": "Tue Dec 30 2025 20:57:28 GMT-0600",
+          "shortDescription@ContentType": "text/html",
+          "headline@LastModified": "Sun Dec 28 2025 21:49:59 GMT-0600",
+          "headline": "Epic Journey Too",
+          "callToActions": [
+            "/content/dam/links/link1",
+            "/content/dam/links/link2"
+          ],
+          "shortDescription@LastModified": "Sun Dec 28 2025 21:49:59 GMT-0600",
+          "shortDescription": "<p>Don't stop half way, go for the top!</p>\n"
+        }
+      }
+    }
+  },
+  "option3": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:mixinTypes": [
+      "mix:referenceable",
+      "mix:versionable"
+    ],
+    "jcr:createdBy": "admin",
+    "jcr:versionHistory": "9e030fb0-e3e9-4bdc-88ee-e6b68e863b3a",
+    "jcr:predecessors": [
+      "2b3b458a-cc38-4a60-8a86-2e3ea3eaf428"
+    ],
+    "jcr:created": "Tue Dec 30 2025 19:13:20 GMT-0600",
+    "jcr:baseVersion": "2b3b458a-cc38-4a60-8a86-2e3ea3eaf428",
+    "jcr:isCheckedOut": true,
+    "jcr:uuid": "60fc7c4f-4a6f-4a6a-b779-ae7e52d9c2e9",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "jcr:title": "Option3",
+      "jcr:lastModifiedBy": "admin",
+      "cq:lastModified": "Tue Dec 30 2025 19:13:20 GMT-0600",
+      "contentFragment": true,
+      "cq:name": "option3",
+      "jcr:lastModified": "Tue Dec 30 2025 20:58:20 GMT-0600",
+      "lastFragmentSave": "Tue Dec 30 2025 20:58:20 GMT-0600",
+      "cq:parentPath": "/content/dam/pillar/us/en/demo/simple-cards",
+      "cq:lastModifiedBy": "admin",
+      "renditions": {
+        "jcr:primaryType": "nt:folder",
+        "jcr:createdBy": "admin",
+        "jcr:created": "Tue Dec 30 2025 19:13:20 GMT-0600"
+      },
+      "related": {
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "indexedData": {
+        "jcr:primaryType": "nt:unstructured",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:IndexedFragmentData"
+          ],
+          "@string@model": "/conf/pillar/settings/dam/cfm/models/simplecard",
+          "@stringArray@variations": [],
+          "string@shortDescription": "<p>Don't stop half way, go for the top!</p>\n",
+          "string@headline": "Epic Journey Three",
+          "jcr:uuid": "5fd074fc-a900-48bf-ab66-981931926416"
+        }
+      },
+      "metadata": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ]
+      },
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "_strucVersion": 1,
+        "cq:model": "/conf/pillar/settings/dam/cfm/models/simplecard",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "callToActions@LastModified": "Tue Dec 30 2025 20:58:20 GMT-0600",
+          "shortDescription@ContentType": "text/html",
+          "headline@LastModified": "Sun Dec 28 2025 21:51:36 GMT-0600",
+          "headline": "Epic Journey Three",
+          "callToActions": [
+            "/content/dam/links/link1",
+            "/content/dam/links/link2",
+            "/content/dam/links/link3"
+          ],
+          "shortDescription@LastModified": "Sun Dec 28 2025 21:51:36 GMT-0600",
+          "shortDescription": "<p>Don't stop half way, go for the top!</p>\n"
+        }
+      }
+    }
+  }
+}

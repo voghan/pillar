@@ -215,6 +215,14 @@ Import-Package: javax.annotation;version=0.0.0,*
             <version>1.4.14</version>
             <scope>test</scope>
         </dependency>
+        <!-- Needed to read json in tests-->
+        <dependency>
+            <groupId>xerces</groupId>
+            <artifactId>xercesImpl</artifactId>
+            <version>2.12.2</version>
+            <scope>test</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>

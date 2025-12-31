@@ -1,0 +1,428 @@
+{
+  "jcr:primaryType": "sling:Folder",
+  "jcr:createdBy": "admin",
+  "jcr:created": "Tue Dec 30 2025 19:13:04 GMT-0600",
+  "demo-link": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:mixinTypes": [
+      "mix:referenceable",
+      "mix:versionable"
+    ],
+    "jcr:createdBy": "admin",
+    "jcr:versionHistory": "970a57b4-5da4-418d-85d4-ed007ab39dda",
+    "jcr:predecessors": [
+      "19508a7b-b5b6-4c2a-83d2-504837967764"
+    ],
+    "jcr:created": "Tue Dec 30 2025 19:20:06 GMT-0600",
+    "jcr:baseVersion": "19508a7b-b5b6-4c2a-83d2-504837967764",
+    "jcr:isCheckedOut": true,
+    "jcr:uuid": "1a8f9abe-9625-4fdc-9bdd-665f9db5d35a",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "jcr:title": "Demo Link",
+      "jcr:lastModifiedBy": "admin",
+      "contentFragment": true,
+      "cq:name": "demo-link",
+      "jcr:lastModified": "Tue Dec 30 2025 19:20:33 GMT-0600",
+      "lastFragmentSave": "Tue Dec 30 2025 19:20:33 GMT-0600",
+      "cq:parentPath": "/content/dam/pillar/us/en/demo/links",
+      "renditions": {
+        "jcr:primaryType": "nt:folder",
+        "jcr:createdBy": "admin",
+        "jcr:created": "Tue Dec 30 2025 19:20:06 GMT-0600"
+      },
+      "related": {
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "indexedData": {
+        "jcr:primaryType": "nt:unstructured",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:IndexedFragmentData"
+          ],
+          "@string@model": "/conf/pillar/settings/dam/cfm/models/link",
+          "@stringArray@variations": [],
+          "string@linkText": "Demo",
+          "jcr:uuid": "9a02332d-917d-454a-98d7-0c8165613c1b"
+        }
+      },
+      "metadata": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ]
+      },
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "_strucVersion": 1,
+        "cq:model": "/conf/pillar/settings/dam/cfm/models/link",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "linkText@LastModified": "Tue Dec 30 2025 19:20:33 GMT-0600",
+          "linkPath@LastModified": "Tue Dec 30 2025 19:20:33 GMT-0600",
+          "linkPath": "/content/pillar/us/en/demo",
+          "linkText": "Demo"
+        }
+      }
+    }
+  },
+  "link3": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:mixinTypes": [
+      "mix:referenceable",
+      "mix:versionable"
+    ],
+    "jcr:createdBy": "admin",
+    "jcr:versionHistory": "01db6da2-ddad-4b29-889e-a3bce42c1434",
+    "jcr:predecessors": [
+      "15ae93db-6ede-43da-ada6-e76a11932266"
+    ],
+    "jcr:created": "Tue Dec 30 2025 19:13:04 GMT-0600",
+    "jcr:baseVersion": "15ae93db-6ede-43da-ada6-e76a11932266",
+    "jcr:isCheckedOut": true,
+    "jcr:uuid": "7fb45228-6f73-4e68-891f-f83386218a34",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "jcr:title": "Link3",
+      "jcr:lastModifiedBy": "admin",
+      "cq:lastModified": "Tue Dec 30 2025 19:13:04 GMT-0600",
+      "contentFragment": true,
+      "cq:name": "link3",
+      "jcr:lastModified": "Sun Dec 28 2025 22:15:17 GMT-0600",
+      "lastFragmentSave": "Sun Dec 28 2025 22:15:17 GMT-0600",
+      "cq:parentPath": "/content/dam/pillar/us/en/demo/links",
+      "cq:lastModifiedBy": "admin",
+      "renditions": {
+        "jcr:primaryType": "nt:folder",
+        "jcr:createdBy": "admin",
+        "jcr:created": "Tue Dec 30 2025 19:13:04 GMT-0600"
+      },
+      "related": {
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "indexedData": {
+        "jcr:primaryType": "nt:unstructured",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:IndexedFragmentData"
+          ],
+          "@string@model": "/conf/pillar/settings/dam/cfm/models/link",
+          "@stringArray@variations": [],
+          "string@linkText": "Learn more",
+          "jcr:uuid": "88de4e83-39ea-44af-8de4-8ead8048cef1"
+        }
+      },
+      "metadata": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ]
+      },
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "_strucVersion": 1,
+        "cq:model": "/conf/pillar/settings/dam/cfm/models/link",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "linkText@LastModified": "Sun Dec 28 2025 22:15:17 GMT-0600",
+          "linkPath@LastModified": "Sun Dec 28 2025 22:15:17 GMT-0600",
+          "linkPath": "Https://www.adobe.com",
+          "linkText": "Learn more"
+        }
+      }
+    }
+  },
+  "link1": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:mixinTypes": [
+      "mix:referenceable",
+      "mix:versionable"
+    ],
+    "jcr:createdBy": "admin",
+    "jcr:versionHistory": "a995fd34-49b9-4e49-ab18-43d2a9fa521f",
+    "jcr:predecessors": [
+      "c07d0877-28d2-4de3-8d05-d41020950372"
+    ],
+    "jcr:created": "Tue Dec 30 2025 19:13:04 GMT-0600",
+    "jcr:baseVersion": "c07d0877-28d2-4de3-8d05-d41020950372",
+    "jcr:isCheckedOut": true,
+    "jcr:uuid": "7aa6b3ea-ad0e-4b8d-bf7b-4090e5de0e14",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "jcr:title": "Link1",
+      "jcr:lastModifiedBy": "admin",
+      "cq:lastModified": "Tue Dec 30 2025 19:13:04 GMT-0600",
+      "contentFragment": true,
+      "cq:name": "link1",
+      "jcr:lastModified": "Tue Dec 30 2025 16:18:54 GMT-0600",
+      "lastFragmentSave": "Tue Dec 30 2025 16:18:54 GMT-0600",
+      "cq:parentPath": "/content/dam/pillar/us/en/demo/links",
+      "cq:lastModifiedBy": "admin",
+      "renditions": {
+        "jcr:primaryType": "nt:folder",
+        "jcr:createdBy": "admin",
+        "jcr:created": "Tue Dec 30 2025 19:13:04 GMT-0600"
+      },
+      "related": {
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "indexedData": {
+        "jcr:primaryType": "nt:unstructured",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:IndexedFragmentData"
+          ],
+          "@string@model": "/conf/pillar/settings/dam/cfm/models/link",
+          "@stringArray@variations": [
+            "es"
+          ],
+          "string@linkText": "Get started",
+          "jcr:uuid": "f61691aa-adcf-4354-a3ec-b9eece0e2af4"
+        },
+        "es": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:IndexedFragmentData"
+          ],
+          "@string@model": "/conf/pillar/settings/dam/cfm/models/link",
+          "string@linkText": "Learn more es",
+          "jcr:uuid": "a21ec6e3-c39c-486b-82b9-b56f8dd65742"
+        }
+      },
+      "metadata": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ],
+        "dam:cfVariations": {
+          "jcr:primaryType": "nt:unstructured",
+          "es": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:mixinTypes": [
+              "cq:Taggable"
+            ]
+          }
+        }
+      },
+      "model": {
+        "jcr:primaryType": "nt:unstructured",
+        "variations": {
+          "jcr:primaryType": "nt:unstructured",
+          "es": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:mixinTypes": [
+              "cq:Taggable"
+            ],
+            "jcr:title": "es",
+            "name": "es",
+            "jcr:description": "",
+            "properties": {
+              "jcr:primaryType": "nt:unstructured",
+              "synchronizeWithVersion": [
+                "linkText:b055c7ef-2687-4e84-8618-a17877741bf1",
+                "linkPath:b055c7ef-2687-4e84-8618-a17877741bf1"
+              ]
+            }
+          }
+        }
+      },
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "_strucVersion": 1,
+        "cq:model": "/conf/pillar/settings/dam/cfm/models/link",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "linkText@LastModified": "Tue Dec 30 2025 16:18:54 GMT-0600",
+          "linkPath@LastModified": "Sun Dec 28 2025 22:09:38 GMT-0600",
+          "linkPath": "/content/pillar/us/en",
+          "linkText": "Get started"
+        },
+        "es": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "@variationCreationDate": "Tue Dec 30 2025 10:51:31 GMT-0600",
+          "linkText@LastModified": "Tue Dec 30 2025 10:51:48 GMT-0600",
+          "linkPath@LastModified": "Tue Dec 30 2025 10:58:00 GMT-0600",
+          "linkPath": "/content/pillar/us/es",
+          "linkText": "Learn more es"
+        }
+      }
+    }
+  },
+  "homepagelink": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:mixinTypes": [
+      "mix:referenceable",
+      "mix:versionable"
+    ],
+    "jcr:createdBy": "admin",
+    "jcr:versionHistory": "1f4f43e8-893a-4348-beac-65d5d371b966",
+    "jcr:predecessors": [
+      "5f6dbdfc-b40c-4f52-a08f-4a668b1bd5c3"
+    ],
+    "jcr:created": "Tue Dec 30 2025 19:17:23 GMT-0600",
+    "jcr:baseVersion": "5f6dbdfc-b40c-4f52-a08f-4a668b1bd5c3",
+    "jcr:isCheckedOut": true,
+    "jcr:uuid": "c863861d-2811-497e-bc87-4ce60c33f2a9",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "jcr:title": "homepageLink",
+      "jcr:lastModifiedBy": "admin",
+      "contentFragment": true,
+      "cq:name": "homepagelink",
+      "jcr:lastModified": "Tue Dec 30 2025 19:19:29 GMT-0600",
+      "lastFragmentSave": "Tue Dec 30 2025 19:19:29 GMT-0600",
+      "cq:parentPath": "/content/dam/pillar/us/en/demo/links",
+      "renditions": {
+        "jcr:primaryType": "nt:folder",
+        "jcr:createdBy": "admin",
+        "jcr:created": "Tue Dec 30 2025 19:17:23 GMT-0600"
+      },
+      "related": {
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "indexedData": {
+        "jcr:primaryType": "nt:unstructured",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:IndexedFragmentData"
+          ],
+          "@string@model": "/conf/pillar/settings/dam/cfm/models/link",
+          "@stringArray@variations": [],
+          "string@linkText": "Pillar Site",
+          "jcr:uuid": "ba989f04-9cd1-408a-b50e-76f49988fe58"
+        }
+      },
+      "metadata": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ]
+      },
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "_strucVersion": 1,
+        "cq:model": "/conf/pillar/settings/dam/cfm/models/link",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "linkText@LastModified": "Tue Dec 30 2025 19:19:29 GMT-0600",
+          "linkPath@LastModified": "Tue Dec 30 2025 19:19:29 GMT-0600",
+          "linkPath": "/content/pillar/us/en",
+          "linkText": "Pillar Site"
+        }
+      }
+    }
+  },
+  "jcr:content": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:title": "Links",
+    "jcr:lastModifiedBy": "admin",
+    "cq:lastModified": "Tue Dec 30 2025 19:13:04 GMT-0600",
+    "jcr:lastModified": "Sun Dec 28 2025 22:10:32 GMT-0600",
+    "sourcing": "false",
+    "cq:lastModifiedBy": "admin",
+    "policies": {
+      "jcr:primaryType": "nt:unstructured",
+      "cfm": {
+        "jcr:primaryType": "nt:unstructured",
+        "policy-cfm-allowedModelsByPaths": [
+          "/conf/pillar/settings/dam/cfm/models/link"
+        ]
+      }
+    }
+  },
+  "link2": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:mixinTypes": [
+      "mix:referenceable",
+      "mix:versionable"
+    ],
+    "jcr:createdBy": "admin",
+    "jcr:versionHistory": "8453ee07-755c-4014-bf18-8f28e7bbc24b",
+    "jcr:predecessors": [
+      "f7da2726-5094-4c1e-bd0e-6d832bb6ebf6"
+    ],
+    "jcr:created": "Tue Dec 30 2025 19:13:04 GMT-0600",
+    "jcr:baseVersion": "f7da2726-5094-4c1e-bd0e-6d832bb6ebf6",
+    "jcr:isCheckedOut": true,
+    "jcr:uuid": "f80e09aa-0ff4-4642-aacc-e1568841ae6b",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "jcr:title": "Link2",
+      "jcr:lastModifiedBy": "admin",
+      "cq:lastModified": "Tue Dec 30 2025 19:13:04 GMT-0600",
+      "contentFragment": true,
+      "cq:name": "link2",
+      "jcr:lastModified": "Tue Dec 30 2025 16:20:29 GMT-0600",
+      "lastFragmentSave": "Tue Dec 30 2025 16:20:29 GMT-0600",
+      "cq:parentPath": "/content/dam/pillar/us/en/demo/links",
+      "cq:lastModifiedBy": "admin",
+      "renditions": {
+        "jcr:primaryType": "nt:folder",
+        "jcr:createdBy": "admin",
+        "jcr:created": "Tue Dec 30 2025 19:13:04 GMT-0600"
+      },
+      "related": {
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "indexedData": {
+        "jcr:primaryType": "nt:unstructured",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:IndexedFragmentData"
+          ],
+          "@string@model": "/conf/pillar/settings/dam/cfm/models/link",
+          "@stringArray@variations": [],
+          "string@linkText": "Explore your options",
+          "jcr:uuid": "5ad88392-0ec3-4143-85b2-39867e45aad9"
+        }
+      },
+      "metadata": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ]
+      },
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "_strucVersion": 1,
+        "cq:model": "/conf/pillar/settings/dam/cfm/models/link",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "linkText@LastModified": "Tue Dec 30 2025 16:20:29 GMT-0600",
+          "linkPath@LastModified": "Tue Dec 30 2025 16:20:29 GMT-0600",
+          "linkPath": "/content/pillar/us/en/demo",
+          "linkText": "Explore your options"
+        }
+      }
+    }
+  }
+}

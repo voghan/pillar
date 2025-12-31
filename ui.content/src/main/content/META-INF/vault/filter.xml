@@ -12,6 +12,13 @@
     <filter root="/content/dam/pillar" mode="merge">
         <exclude pattern="/content/dam/pillar(/.*)?"/>
         <include pattern="/content/dam/pillar/jcr:content(/.*)?"/>
+        <include pattern="/content/dam/pillar/us"/>
+        <include pattern="/content/dam/pillar/us/jcr:content(/.*)?"/>
+        <include pattern="/content/dam/pillar/us/en/jcr:content(/.*)?"/>
+        <include pattern="/content/dam/pillar/us/en/simple-cards(/.*)?"/>
+        <include pattern="/content/dam/pillar/us/en/links(/.*)?"/>
+        <include pattern="/content/dam/pillar/us/en/hero(/.*)?"/>
+        <include pattern="/content/dam/pillar/us/en/demo(/.*)?"/>
     </filter>
     <filter root="/content/dam/pillar/asset.jpg" mode="merge"/>
     <filter root="/content/experience-fragments/pillar" mode="merge"/>
