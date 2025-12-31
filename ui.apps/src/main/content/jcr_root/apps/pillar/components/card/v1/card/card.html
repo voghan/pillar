@@ -1,0 +1,24 @@
+<sly  data-sly-use.card="com.voghan.pillar.core.models.cmp.SimpleCardCmp"
+    />
+<div class="cmp-teaser--card">
+    <div id="teaser-" class="cmp-teaser" >
+        <div class="cmp-teaser__content">
+            <h2 class="cmp-teaser__title"> ${card.headline} </h2>
+            <div class="cmp-teaser__description">
+                ${card.shortDescription @ context='html'}
+            </div>
+            <div data-sly-test="${card.isCallToActionEnabled}" data-sly-list.link="${card.callToActions}" class="cmp-teaser__action-container" >
+                <a class="cmp-teaser__action-link"  href="${link.linkPath}">${link.linkText}</a>
+            </div>
+        </div>
+        <div class="cmp-teaser__image">
+            <div class="cmp-image">
+                <img src=""  loading="lazy" class="cmp-image__image"  alt="" title="">
+                <meta itemprop="caption" content="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+     data-sly-call="${template.placeholder @ isEmpty=!properties.fragmentPath}"></sly>
