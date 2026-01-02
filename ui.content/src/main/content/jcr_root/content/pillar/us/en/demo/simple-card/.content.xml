@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2026-01-01T19:32:39.808-06:00"
+        cq:lastModifiedBy="reference-adjustment-service"
+        cq:template="/conf/pillar/settings/wcm/templates/page-content"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Simple Card"
+        sling:resourceType="pillar/components/page/v1/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="pillar/components/container/v1/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pillar/components/container/v1/container"
+                layout="responsiveGrid">
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="pillar/components/container/v1/container"
+                    layout="responsiveGrid">
+                    <card
+                        jcr:created="{Date}2025-12-30T07:57:59.140-06:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2025-12-30T21:59:09.624-06:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="pillar/components/card/v1/card"
+                        displayMode="multi"
+                        fragmentPath="/content/dam/pillar/cfm/simple-cards/demo/option1"
+                        paragraphScope="all"
+                        text="My Card"
+                        variationName="master"/>
+                    <card_592739711
+                        jcr:created="{Date}2025-12-30T09:21:05.221-06:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2025-12-30T21:59:39.218-06:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="pillar/components/card/v1/card"
+                        fragmentPath="/content/dam/pillar/cfm/simple-cards/demo/option1"
+                        variationName="es"/>
+                    <card_94031746
+                        jcr:created="{Date}2025-12-30T21:59:50.240-06:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2025-12-30T22:00:27.749-06:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="pillar/components/card/v1/card"
+                        fragmentPath="/content/dam/pillar/cfm/simple-cards/demo/option2"
+                        variationName="master"/>
+                    <card_664654707
+                        jcr:created="{Date}2025-12-30T22:00:36.502-06:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2025-12-30T22:01:03.609-06:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="pillar/components/card/v1/card"
+                        fragmentPath="/content/dam/pillar/cfm/simple-cards/demo/option3"
+                        variationName="master"/>
+                </container>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

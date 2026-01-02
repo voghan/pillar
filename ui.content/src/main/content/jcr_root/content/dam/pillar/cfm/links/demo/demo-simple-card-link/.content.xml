@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="07f33717-c399-4b1c-8d9d-c6dfef42e5e6">
+    <jcr:content
+        cq:name="demo-simple-card-link"
+        cq:parentPath="/content/dam/pillar/cfm/links/demo/links"
+        jcr:lastModified="{Date}2026-01-01T11:59:35.153-06:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Demo Simple Card Link"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2026-01-01T11:59:35.153-06:00">
+        <data
+            cq:model="/conf/pillar/settings/dam/cfm/models/link"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                linkPath="/content/pillar/us/en/demo/simple-card"
+                linkPath_x0040_LastModified="{Date}2026-01-01T11:59:35.107-06:00"
+                linkText="See examples"
+                linkText_x0040_LastModified="{Date}2026-01-01T11:59:35.107-06:00"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="f115e9c8-6910-4b27-bef7-ebb460e5055e"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/link"
+                _x0040_stringArray_x0040_variations="[]"
+                string_x0040_linkText="See examples"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

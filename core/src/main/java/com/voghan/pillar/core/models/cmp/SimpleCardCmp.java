@@ -24,7 +24,7 @@ import java.util.List;
     },
     resourceType = SimpleCardCmp.RESOURCE_TYPE,
     defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class SimpleCardCmp extends AbstractContentFragmentModel implements SimpleCard {
+public class SimpleCardCmp extends BaseModelCmp implements SimpleCard {
     static final String RESOURCE_TYPE = "pillar/components/card/v1/card";
 
     private final Logger logger = LoggerFactory.getLogger(getClass());

@@ -16,10 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class CardCfm implements Card {
+public class CardCfm extends BaseModelCfm implements Card {
     private final Logger logger = LoggerFactory.getLogger(getClass());
-
-    private static final String master = "master";
 
     @Self
     private Resource resource;
@@ -69,13 +67,6 @@ public class CardCfm implements Card {
 
     @Override
     public List<Link> getCallToActions() {
-        return callToActionLinks;
-    }
-
-    protected String getVersion() {
-        if (resource != null) {
-            return resource.getName();
-        }
-        return master;
+        return new ArrayList<>(callToActionLinks);
     }
 }

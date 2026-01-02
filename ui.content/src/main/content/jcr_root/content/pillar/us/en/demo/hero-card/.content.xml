@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2026-01-01T19:33:37.067-06:00"
+        cq:lastModifiedBy="reference-adjustment-service"
+        cq:template="/conf/pillar/settings/wcm/templates/page-content"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Hero Card"
+        sling:resourceType="pillar/components/page/v1/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="pillar/components/container/v1/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pillar/components/container/v1/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="pillar/components/title/v1/title"/>
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="pillar/components/container/v1/container"
+                    layout="responsiveGrid">
+                    <hero
+                        jcr:created="{Date}2025-12-30T21:18:47.704-06:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2025-12-30T21:19:09.011-06:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="pillar/components/hero/v1/hero"
+                        fragmentPath="/content/dam/pillar/cfm/hero-cards/demo/demo-hero"/>
+                    <hero_373875047
+                        jcr:created="{Date}2025-12-31T12:29:19.308-06:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2025-12-31T12:29:51.823-06:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="pillar/components/hero/v1/hero"
+                        fragmentPath="/content/dam/pillar/cfm/hero-cards/demo/demo-hero"
+                        variationName="es"/>
+                </container>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>

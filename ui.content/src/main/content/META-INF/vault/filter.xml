@@ -12,14 +12,12 @@
     <filter root="/content/dam/pillar" mode="merge">
         <exclude pattern="/content/dam/pillar(/.*)?"/>
         <include pattern="/content/dam/pillar/jcr:content(/.*)?"/>
-        <include pattern="/content/dam/pillar/us"/>
-        <include pattern="/content/dam/pillar/us/jcr:content(/.*)?"/>
-        <include pattern="/content/dam/pillar/us/en/jcr:content(/.*)?"/>
-        <include pattern="/content/dam/pillar/us/en/simple-cards(/.*)?"/>
-        <include pattern="/content/dam/pillar/us/en/links(/.*)?"/>
-        <include pattern="/content/dam/pillar/us/en/hero(/.*)?"/>
-        <include pattern="/content/dam/pillar/us/en/demo(/.*)?"/>
+        <include pattern="/content/dam/pillar/cfm"/>
+        <include pattern="/content/dam/pillar/cfm/jcr:content(/.*)?"/>
+        <include pattern="/content/dam/pillar/cfm/basic-cards(/.*)?"/>
+        <include pattern="/content/dam/pillar/cfm/hero-cards(/.*)?"/>
+        <include pattern="/content/dam/pillar/cfm/links(/.*)?"/>
+        <include pattern="/content/dam/pillar/cfm/simple-cards(/.*)?"/>
     </filter>
-    <filter root="/content/dam/pillar/asset.jpg" mode="merge"/>
     <filter root="/content/experience-fragments/pillar" mode="merge"/>
 </workspaceFilter>

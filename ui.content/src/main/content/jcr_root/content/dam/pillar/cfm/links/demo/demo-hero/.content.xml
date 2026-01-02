@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:mixinTypes="[mix:referenceable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="5c0e8e36-25d7-4474-89a2-47e51a98ef87">
+    <jcr:content
+        jcr:lastModified="{Date}2026-01-01T11:55:41.964-06:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Demo-Hero"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2026-01-01T11:55:41.964-06:00">
+        <data
+            cq:model="/conf/pillar/settings/dam/cfm/models/link"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                linkPath="/content/pillar/us/en/demo/hero-card"
+                linkPath_x0040_LastModified="{Date}2026-01-01T11:55:41.945-06:00"
+                linkText="Hero Card"
+                linkText_x0040_LastModified="{Date}2026-01-01T11:55:41.944-06:00"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="db0b13ca-ec22-4b0e-b584-e27f06597127"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/link"
+                _x0040_stringArray_x0040_variations="[]"
+                string_x0040_linkText="Hero Card"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

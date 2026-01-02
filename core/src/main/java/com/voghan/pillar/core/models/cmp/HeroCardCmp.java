@@ -25,7 +25,7 @@ import java.util.List;
     },
     resourceType = HeroCardCmp.RESOURCE_TYPE,
     defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class HeroCardCmp extends AbstractContentFragmentModel implements HeroCard {
+public class HeroCardCmp extends BaseModelCmp implements HeroCard {
     static final String RESOURCE_TYPE = "pillar/components/hero/v1/hero";
 
     private final Logger logger = LoggerFactory.getLogger(getClass());

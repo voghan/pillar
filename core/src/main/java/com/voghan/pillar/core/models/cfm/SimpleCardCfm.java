@@ -12,8 +12,6 @@ import javax.annotation.PostConstruct;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class SimpleCardCfm extends CardCfm implements SimpleCard {
 
-    private static final String master = "master";
-
     @Self
     private Resource resource;
 

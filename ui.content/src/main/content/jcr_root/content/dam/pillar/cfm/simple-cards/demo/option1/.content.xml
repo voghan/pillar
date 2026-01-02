@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="96a85f76-da59-4c7d-9051-3759df48d6a7">
+    <jcr:content
+        cq:lastModified="{Date}2025-12-30T19:13:20.081-06:00"
+        cq:lastModifiedBy="admin"
+        cq:name="option1"
+        cq:parentPath="/content/dam/pillar/site/en/demo/simple-cards"
+        jcr:lastModified="{Date}2025-12-31T10:54:54.379-06:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Option1"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2025-12-31T10:54:54.379-06:00">
+        <data
+            cq:model="/conf/pillar/settings/dam/cfm/models/simplecard"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                callToActions="[/content/dam/pillar/cfm/links/demo/link1]"
+                callToActions_x0040_LastModified="{Date}2025-12-30T20:56:32.646-06:00"
+                headline="Epic Journey"
+                headline_x0040_LastModified="{Date}2025-12-28T21:48:18.751-06:00"
+                image="/content/dam/pillar/images/en/demo/BrianLogo2019-medium.png"
+                image_x0040_LastModified="{Date}2025-12-31T10:54:54.337-06:00"
+                shortDescription="&lt;p>Don't stop half way, go for the top!&lt;/p>&#xa;"
+                shortDescription_x0040_ContentType="text/html"
+                shortDescription_x0040_LastModified="{Date}2025-12-28T21:48:18.754-06:00"/>
+            <es
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                _x0040_variationCreationDate="{Date}2025-12-30T12:40:46.076-06:00"
+                callToActions="[/content/dam/pillar/cfm/links/demo/link1]"
+                callToActions_x0040_LastModified="{Date}2025-12-30T20:56:50.307-06:00"
+                headline="Epic Journey"
+                headline_x0040_LastModified="{Date}2025-12-30T12:40:46.088-06:00"
+                image_x0040_LastModified="{Date}2025-12-30T12:40:46.094-06:00"
+                shortDescription="&lt;p>Don't stop half way, go for the top!&lt;/p>&#xa;"
+                shortDescription_x0040_ContentType="text/html"
+                shortDescription_x0040_LastModified="{Date}2025-12-30T12:40:46.093-06:00"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="99ef2254-ab6e-4ac1-85f5-01fbc4518512"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/simplecard"
+                _x0040_stringArray_x0040_variations="[es]"
+                string_x0040_headline="Epic Journey"
+                string_x0040_shortDescription="&lt;p>Don't stop half way, go for the top!&lt;/p>&#xa;"/>
+            <es
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="5b79009c-0e1a-4800-8fc9-6c6f0da88053"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/simplecard"
+                string_x0040_headline="Epic Journey"
+                string_x0040_shortDescription="&lt;p>Don't stop half way, go for the top!&lt;/p>&#xa;"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured">
+            <dam:cfVariations jcr:primaryType="nt:unstructured">
+                <es
+                    jcr:mixinTypes="[cq:Taggable]"
+                    jcr:primaryType="nt:unstructured"/>
+            </dam:cfVariations>
+        </metadata>
+        <model jcr:primaryType="nt:unstructured">
+            <variations jcr:primaryType="nt:unstructured">
+                <es
+                    jcr:description="\0"
+                    jcr:mixinTypes="[cq:Taggable]"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="es"
+                    name="es">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        synchronizeWithVersion="[headline:481c4715-c70e-4998-9398-1ef9f26f3f4d,shortDescription:481c4715-c70e-4998-9398-1ef9f26f3f4d,callToAction:481c4715-c70e-4998-9398-1ef9f26f3f4d,image:481c4715-c70e-4998-9398-1ef9f26f3f4d]"/>
+                </es>
+            </variations>
+        </model>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

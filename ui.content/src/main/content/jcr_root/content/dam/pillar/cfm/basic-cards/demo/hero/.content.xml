@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="0e57ec46-d94e-4cb7-b95c-6585c2a8c761">
+    <jcr:content
+        cq:name="hero"
+        cq:parentPath="/content/dam/pillar/site/en/demo/cards"
+        jcr:lastModified="{Date}2026-01-01T11:56:24.000-06:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Hero"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2026-01-01T11:56:24.000-06:00">
+        <data
+            cq:model="/conf/pillar/settings/dam/cfm/models/card"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                callToActions="/content/dam/pillar/site/en/demo/links/demo-hero"
+                callToActions_x0040_LastModified="{Date}2026-01-01T11:56:23.953-06:00"
+                headline="Hero Card"
+                headline_x0040_LastModified="{Date}2026-01-01T11:56:23.952-06:00"
+                shortDescription="&lt;p>The Hero component is a a full width component that is ment to be at the top of a page.&amp;nbsp; The Hero has options for a title, description, background image, breadcrumbs at the top and lcall to actions on the bottom.&lt;/p>&#xa;"
+                shortDescription_x0040_ContentType="text/html"
+                shortDescription_x0040_LastModified="{Date}2026-01-01T11:49:58.313-06:00"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="e302dab4-7419-442a-9fee-2b744e66a8cf"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/card"
+                _x0040_stringArray_x0040_variations="[]"
+                string_x0040_headline="Hero Card"
+                string_x0040_shortDescription="&lt;p>The Hero component is a a full width component that is ment to be at the top of a page.&amp;nbsp; The Hero has options for a title, description, background image, breadcrumbs at the top and lcall to actions on the bottom.&lt;/p>&#xa;"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

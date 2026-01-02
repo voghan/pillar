@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="22dcca48-aac7-4801-9d57-2d10f2997060">
+    <jcr:content
+        cq:name="simple-card"
+        cq:parentPath="/content/dam/pillar/site/en/demo/cards"
+        jcr:lastModified="{Date}2026-01-01T12:02:41.570-06:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Simple Card"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2026-01-01T12:02:41.570-06:00">
+        <data
+            cq:model="/conf/pillar/settings/dam/cfm/models/card"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                callToActions="/content/dam/pillar/site/en/demo/links/demo-simple-card-link"
+                callToActions_x0040_LastModified="{Date}2026-01-01T12:02:41.525-06:00"
+                headline="Simple Card"
+                headline_x0040_LastModified="{Date}2026-01-01T12:02:41.524-06:00"
+                shortDescription="&lt;p>The Simple Card component is a flexible component that can be used anywhere on the site.&amp;nbsp; The Simple Card has options for title, description, image, image position and links.&lt;/p>&#xa;"
+                shortDescription_x0040_ContentType="text/html"
+                shortDescription_x0040_LastModified="{Date}2026-01-01T12:02:41.525-06:00"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="67bcebf8-e6f4-4eb6-8b1d-1280cec4a7f9"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/card"
+                _x0040_stringArray_x0040_variations="[]"
+                string_x0040_headline="Simple Card"
+                string_x0040_shortDescription="&lt;p>The Simple Card component is a flexible component that can be used anywhere on the site.&amp;nbsp; The Simple Card has options for title, description, image, image position and links.&lt;/p>&#xa;"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

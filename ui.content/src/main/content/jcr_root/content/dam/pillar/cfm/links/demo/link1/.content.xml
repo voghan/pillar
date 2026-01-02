@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="7aa6b3ea-ad0e-4b8d-bf7b-4090e5de0e14">
+    <jcr:content
+        cq:lastModified="{Date}2025-12-30T19:13:04.139-06:00"
+        cq:lastModifiedBy="admin"
+        cq:name="link1"
+        cq:parentPath="/content/dam/pillar/cfm/links/demo/links"
+        jcr:lastModified="{Date}2025-12-30T16:18:54.775-06:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Link1"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2025-12-30T16:18:54.775-06:00">
+        <data
+            cq:model="/conf/pillar/settings/dam/cfm/models/link"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                linkPath="/content/pillar/us/en"
+                linkPath_x0040_LastModified="{Date}2025-12-28T22:09:38.153-06:00"
+                linkText="Get started"
+                linkText_x0040_LastModified="{Date}2025-12-30T16:18:54.602-06:00"/>
+            <es
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                _x0040_variationCreationDate="{Date}2025-12-30T10:51:31.296-06:00"
+                linkPath="/content/pillar/us/es"
+                linkPath_x0040_LastModified="{Date}2025-12-30T10:58:00.796-06:00"
+                linkText="Learn more es"
+                linkText_x0040_LastModified="{Date}2025-12-30T10:51:48.874-06:00"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="f61691aa-adcf-4354-a3ec-b9eece0e2af4"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/link"
+                _x0040_stringArray_x0040_variations="[es]"
+                string_x0040_linkText="Get started"/>
+            <es
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="a21ec6e3-c39c-486b-82b9-b56f8dd65742"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/link"
+                string_x0040_linkText="Learn more es"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured">
+            <dam:cfVariations jcr:primaryType="nt:unstructured">
+                <es
+                    jcr:mixinTypes="[cq:Taggable]"
+                    jcr:primaryType="nt:unstructured"/>
+            </dam:cfVariations>
+        </metadata>
+        <model jcr:primaryType="nt:unstructured">
+            <variations jcr:primaryType="nt:unstructured">
+                <es
+                    jcr:description="\0"
+                    jcr:mixinTypes="[cq:Taggable]"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="es"
+                    name="es">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        synchronizeWithVersion="[linkText:b055c7ef-2687-4e84-8618-a17877741bf1,linkPath:b055c7ef-2687-4e84-8618-a17877741bf1]"/>
+                </es>
+            </variations>
+        </model>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

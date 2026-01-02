@@ -15,7 +15,6 @@ import java.util.List;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class HeroCardCfm extends CardCfm implements HeroCard {
-    private static final String master = "master";
 
     @Self
     private Resource resource;
@@ -49,7 +48,7 @@ public class HeroCardCfm extends CardCfm implements HeroCard {
 
     @Override
     public List<Link> getBreadcrumbs() {
-        return breadcrumbLinks;
+        return new ArrayList<>(breadcrumbLinks);
     }
 
     @Override
