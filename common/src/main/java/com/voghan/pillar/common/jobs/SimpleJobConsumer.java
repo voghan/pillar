@@ -28,7 +28,7 @@ import static com.voghan.pillar.common.jobs.SimpleJobConsumer.JOB_TOPIC;
 public class SimpleJobConsumer implements JobConsumer {
     private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 
-    private static final String SERVICE_NAME = "SimpleJobConsumer";
+    protected static final String SERVICE_NAME = "SimpleJobConsumer";
     public static final String JOB_TOPIC = "simple/sling/job";
     public static final String JOB_PATH = "job_path";
     public static final String JOB_TYPE = "job_type";
@@ -40,8 +40,7 @@ public class SimpleJobConsumer implements JobConsumer {
     public JobResult process(Job job) {
         LOGGER.info("Starting new simple job");
 
-        final Map<String, Object> authInfo = new HashMap<>();
-        authInfo.put(ResourceResolverFactory.SUBSERVICE, SERVICE_NAME);
+        final Map<String, Object> authInfo = getAuthInfo();
 
         try(ResourceResolver resourceResolver = resourceResolverFactory.getServiceResourceResolver(authInfo)) {
             logJobParams(resourceResolver, job);
@@ -50,6 +49,12 @@ public class SimpleJobConsumer implements JobConsumer {
         }
 
         return JobResult.OK;
+    }
+
+    protected Map<String, Object> getAuthInfo() {
+        final Map<String, Object> authInfo = new HashMap<>();
+        authInfo.put(ResourceResolverFactory.SUBSERVICE, SERVICE_NAME);
+        return authInfo;
     }
 
     protected void logJobParams(ResourceResolver resourceResolver, Job job) {

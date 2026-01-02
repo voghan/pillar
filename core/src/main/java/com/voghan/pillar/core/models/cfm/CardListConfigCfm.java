@@ -1,6 +1,7 @@
 package com.voghan.pillar.core.models.cfm;
 
 import com.day.cq.tagging.Tag;
+import com.voghan.pillar.core.models.Card;
 import com.voghan.pillar.core.models.CardListConfig;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
@@ -10,6 +11,7 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,10 +37,23 @@ public class CardListConfigCfm implements CardListConfig {
     private Boolean enableSearch;
 
     @ValueMapValue
-    private List<Tag> cardTags;
+    private List<String> cardTags;
 
     @ValueMapValue
-    private List<Tag> filterTags;
+    private List<String> filterTags;
+
+    @PostConstruct
+    protected void init() {
+        logger.info("Building a Card List Config mode for {}", resource.getPath());
+
+        buildSearchFilters();
+    }
+
+    private void buildSearchFilters() {
+        if (enableSearch) {
+            //TODO build filter options
+        }
+    }
 
     @Override
     public String getHeadline() {
@@ -58,11 +73,11 @@ public class CardListConfigCfm implements CardListConfig {
         return enableSearch;
     }
 
-    public List<Tag> getCardTags() {
+    public List<String> getCardTags() {
         return new ArrayList<>(cardTags);
     }
 
-    public List<Tag> getFilterTags() {
+    public List<String> getFilterTags() {
         return new ArrayList<>(filterTags);
     }
 }

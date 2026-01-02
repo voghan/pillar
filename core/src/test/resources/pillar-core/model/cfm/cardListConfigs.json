@@ -1,0 +1,116 @@
+{
+  "jcr:primaryType": "sling:OrderedFolder",
+  "jcr:createdBy": "admin",
+  "jcr:created": "Fri Jan 02 2026 15:47:31 GMT-0600",
+  "jcr:content": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:title": "card-list",
+    "jcr:lastModifiedBy": "admin",
+    "jcr:lastModified": "Fri Jan 02 2026 16:11:11 GMT-0600",
+    "sourcing": "false",
+    "policies": {
+      "jcr:primaryType": "nt:unstructured",
+      "cfm": {
+        "jcr:primaryType": "nt:unstructured",
+        "policy-cfm-allowedModelsByPaths": [
+          "/conf/pillar/settings/dam/cfm/models/cardlistconfig"
+        ]
+      }
+    }
+  },
+  "simple-card-list": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:mixinTypes": [
+      "mix:referenceable",
+      "mix:versionable"
+    ],
+    "jcr:createdBy": "admin",
+    "jcr:versionHistory": "2ef4de23-3c1c-49b1-b581-db34c8d30127",
+    "jcr:predecessors": [
+      "bbf53769-4a40-490e-9a9c-03f812d9a0aa"
+    ],
+    "jcr:created": "Fri Jan 02 2026 16:15:16 GMT-0600",
+    "jcr:baseVersion": "bbf53769-4a40-490e-9a9c-03f812d9a0aa",
+    "jcr:isCheckedOut": true,
+    "jcr:uuid": "754af6d8-c378-4319-a341-3acbabb5be81",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "jcr:title": "simple-card-list",
+      "jcr:lastModifiedBy": "admin",
+      "contentFragment": true,
+      "cq:name": "simple-card-list",
+      "jcr:lastModified": "Fri Jan 02 2026 16:17:10 GMT-0600",
+      "lastFragmentSave": "Fri Jan 02 2026 16:17:10 GMT-0600",
+      "cq:parentPath": "/content/dam/pillar/cfm/card-list",
+      "renditions": {
+        "jcr:primaryType": "nt:folder",
+        "jcr:createdBy": "admin",
+        "jcr:created": "Fri Jan 02 2026 16:15:16 GMT-0600"
+      },
+      "related": {
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "indexedData": {
+        "jcr:primaryType": "nt:unstructured",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:IndexedFragmentData"
+          ],
+          "@string@model": "/conf/pillar/settings/dam/cfm/models/cardlistconfig",
+          "@stringArray@variations": [],
+          "string@shortDescription": "<p>Short description about the content returned.</p>\n",
+          "string@headline": "Title for component",
+          "jcr:uuid": "6bc02e35-2f1c-4fc7-99bb-2a49a85e0701",
+          "boolean@enableSearch": true
+        }
+      },
+      "metadata": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ]
+      },
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "_strucVersion": 1,
+        "cq:model": "/conf/pillar/settings/dam/cfm/models/cardlistconfig",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "shortDescription@ContentType": "text/html",
+          "enableSearch": true,
+          "headline@LastModified": "Fri Jan 02 2026 16:17:10 GMT-0600",
+          "enableSearch@LastModified": "Fri Jan 02 2026 16:17:10 GMT-0600",
+          "filterTags": [
+            "properties:orientation/portrait",
+            "properties:orientation/landscape",
+            "properties:orientation/square",
+            "properties:orientation"
+          ],
+          "cardTags@LastModified": "Fri Jan 02 2026 16:17:10 GMT-0600",
+          "headline": "Title for component",
+          "searchPath": "/content/dam/pillar/cfm/basic-cards/demo",
+          "placeholder@LastModified": "Fri Jan 02 2026 16:15:16 GMT-0600",
+          "searchPath@LastModified": "Fri Jan 02 2026 16:17:10 GMT-0600",
+          "cardTags": [
+            "do-not-translate"
+          ],
+          "shortDescription@LastModified": "Fri Jan 02 2026 16:17:10 GMT-0600",
+          "cq:tags": [
+            "properties:orientation/square",
+            "properties:orientation",
+            "do-not-translate",
+            "properties:orientation/portrait",
+            "properties:orientation/landscape"
+          ],
+          "filterTags@LastModified": "Fri Jan 02 2026 16:17:10 GMT-0600",
+          "shortDescription": "<p>Short description about the content returned.</p>\n"
+        }
+      }
+    }
+  }
+}

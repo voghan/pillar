@@ -1,5 +1,6 @@
 package com.voghan.pillar.common.links;
 
+import com.day.cq.wcm.api.NameConstants;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 import com.voghan.pillar.common.testcontext.AppAemContext;
@@ -28,6 +29,9 @@ import static org.mockito.Mockito.when;
 public class SimpleLinkBuilderTest {
     private static final AemContext context = AppAemContext.newAemContext();
     private static final String ROOT_CONTENT = "/content/pillar/us/en";
+
+    @Mock
+    ResourceResolver resourceResolver;
 
     @Mock
     PageManager pageManager;
@@ -109,6 +113,31 @@ public class SimpleLinkBuilderTest {
         boolean actual = linkBuilder.isAssetLink(path);
 
         assertTrue(actual);
+    }
+
+    @Test
+    void findTargetPage_() {
+        String expected = "https://www.adobe.com";
+        Page page = mock(Page.class);
+        ValueMap valueMap = mock(ValueMap.class);
+        when(page.getPath()).thenReturn(ROOT_CONTENT);
+        when(page.getProperties()).thenReturn(valueMap);
+        when(valueMap.containsKey(NameConstants.PN_REDIRECT_TARGET)).thenReturn(true);
+        when(valueMap.get(NameConstants.PN_REDIRECT_TARGET, String.class)).thenReturn(expected);
+        linkBuilder = getComponent();
+        String actual = linkBuilder.findTargetPage(page);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void formatUrl_assetLink() {
+        String path = "/content/dam/pillar/us/en";
+        String expected = path + ".html";
+        linkBuilder = getComponent();
+        String actual = linkBuilder.formatUrl(path);
+
+        assertEquals(expected, actual);
     }
 
     private SimpleLinkBuilder getComponent() {

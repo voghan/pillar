@@ -8,6 +8,7 @@ import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -45,5 +46,10 @@ public class CardListCmp extends BaseModelCmp implements CardList {
 
     public List<Card> getCards() {
         return  new ArrayList<>(cards);
+    }
+
+    @Override
+    public @NotNull String getExportedType() {
+        return RESOURCE_TYPE;
     }
 }

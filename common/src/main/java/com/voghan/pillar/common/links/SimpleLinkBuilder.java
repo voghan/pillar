@@ -44,8 +44,7 @@ public class SimpleLinkBuilder {
     protected String getPageUrl(String path) {
         String url = path;
         try {
-            resolver = resource.getResourceResolver();
-            pageManager = resolver.adaptTo(PageManager.class);
+            pageManager = getPageManager();
 
             if (pageManager != null && pageManager.getPage(path) != null) {
                 Page page = pageManager.getPage(path);
@@ -64,9 +63,12 @@ public class SimpleLinkBuilder {
         ValueMap valueMap = page.getProperties();
         if (valueMap.containsKey(NameConstants.PN_REDIRECT_TARGET)) {
             String redirectTarget = valueMap.get(NameConstants.PN_REDIRECT_TARGET, String.class);
-            Page targetPage = pageManager.getPage(redirectTarget);
-            if (targetPage != null) {
-                url = findTargetPage(targetPage);
+            if (StringUtils.isNotBlank(redirectTarget)) {
+                url = redirectTarget;
+                Page targetPage = getPageManager().getPage(redirectTarget);
+                if (targetPage != null) {
+                    url = findTargetPage(targetPage);
+                }
             }
         }
         return url;
@@ -75,9 +77,23 @@ public class SimpleLinkBuilder {
     protected String formatUrl(String url) {
         String formattedUrl = url;
         if (!isExternalLink(url)) {
-            formattedUrl = resolver.map(url) + ".html";
+            formattedUrl = getResolver().map(url) + ".html";
         }
 
         return formattedUrl;
+    }
+
+    private PageManager getPageManager() {
+        if (pageManager == null) {
+            pageManager = getResolver().adaptTo(PageManager.class);
+        }
+        return pageManager;
+    }
+
+    private ResourceResolver getResolver() {
+        if (resolver == null) {
+            resolver = resource.getResourceResolver();
+        }
+        return resolver;
     }
 }
