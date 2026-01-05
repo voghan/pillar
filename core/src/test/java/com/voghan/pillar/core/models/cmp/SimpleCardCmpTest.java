@@ -26,7 +26,7 @@ public class SimpleCardCmpTest {
     @BeforeAll
     static void setup() {
         // Load context content once
-        context.addModelsForClasses(LinkCfm.class);
+        context.addModelsForClasses(SimpleCardCmp.class);
         context.load().json(DEMO_PAGE_PATH, "/content/simple-cards");
         context.load().json(DEMO_LINKS_PATH, "/content/dam/links");
         context.load().json(DEMO_CARD_PATH, "/content/dam/simple-cards");

@@ -1,7 +1,5 @@
 package com.voghan.pillar.core.models.cfm;
 
-import com.day.cq.tagging.Tag;
-import com.voghan.pillar.core.models.Card;
 import com.voghan.pillar.core.models.CardListConfig;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;

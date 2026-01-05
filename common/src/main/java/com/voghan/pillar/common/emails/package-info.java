@@ -14,6 +14,6 @@
  *  limitations under the License.
  */
 @Version("1.0")
-package com.voghan.pillar.common.services;
+package com.voghan.pillar.common.emails;
 
 import org.osgi.annotation.versioning.Version;

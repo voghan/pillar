@@ -1,4 +1,4 @@
-package com.voghan.pillar.common.services;
+package com.voghan.pillar.common.emails;
 
 import java.util.Map;
 

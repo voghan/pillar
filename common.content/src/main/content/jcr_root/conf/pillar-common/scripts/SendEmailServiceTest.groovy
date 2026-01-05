@@ -1,4 +1,4 @@
-import com.voghan.pillar.common.services.SimpleEmailService
+import com.voghan.pillar.common.emails.SimpleEmailService
 
 SimpleEmailService emailService = getService(SimpleEmailService.class)
 

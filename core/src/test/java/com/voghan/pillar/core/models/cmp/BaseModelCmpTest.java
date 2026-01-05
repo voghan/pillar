@@ -23,7 +23,7 @@ public class BaseModelCmpTest {
     @BeforeAll
     static void setup() {
         // Load context content once
-        context.addModelsForClasses(LinkCfm.class);
+        context.addModelsForClasses(BaseModelCmp.class);
         context.load().json(DEMO_HERO_PAGE_PATH, "/content/hero");
         context.load().json(DEMO_LINKS_PATH, "/content/dam/links");
         context.load().json(DEMO_HERO_PATH, "/content/dam/hero");

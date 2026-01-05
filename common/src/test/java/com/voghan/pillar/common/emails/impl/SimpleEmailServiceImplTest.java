@@ -1,4 +1,4 @@
-package com.voghan.pillar.common.services.impl;
+package com.voghan.pillar.common.emails.impl;
 
 import com.day.cq.commons.mail.MailTemplate;
 import com.day.cq.mailer.MessageGatewayService;

@@ -1,0 +1,15 @@
+<sly  data-sly-use.cardList="com.voghan.pillar.core.models.cmp.CardListCmp"/>
+
+<div class="cmp-teaser--card-list">
+    <div id="teaser-" class="cmp-teaser" >
+        <div class="cmp-teaser__content">
+            <h2 class="cmp-teaser__title"> ${cardList.headline} </h2>
+            <div class="cmp-teaser__description">
+                ${cardList.shortDescription @ context='html'}
+            </div>
+        </div>
+    </div>
+</div>
+
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+     data-sly-call="${template.placeholder @ isEmpty=!properties.fragmentPath}"></sly>

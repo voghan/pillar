@@ -112,11 +112,11 @@ Import-Package: javax.annotation;version=0.0.0,*
                                         </limit>
                                     </limits>
                                     <excludes>
-                                        <exclude>com.voghan.pillar.common.services.impl.*</exclude>
+                                        <exclude>com.voghan.pillar.common.emails.*</exclude>
                                     </excludes>
                                 </rule>
                                 <rule>
-                                    <element>PACKAGE</element>
+                                    <element>BUNDLE</element>
                                     <limits>
                                         <limit>
                                             <counter>LINE</counter>

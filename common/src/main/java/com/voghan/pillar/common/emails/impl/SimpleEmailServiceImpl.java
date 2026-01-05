@@ -1,9 +1,9 @@
-package com.voghan.pillar.common.services.impl;
+package com.voghan.pillar.common.emails.impl;
 
 import com.day.cq.commons.mail.MailTemplate;
 import com.day.cq.mailer.MessageGateway;
 import com.day.cq.mailer.MessageGatewayService;
-import com.voghan.pillar.common.services.SimpleEmailService;
+import com.voghan.pillar.common.emails.SimpleEmailService;
 import org.apache.commons.lang.text.StrLookup;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.HtmlEmail;
@@ -20,7 +20,6 @@ import javax.jcr.Session;
 import javax.mail.MessagingException;
 import java.io.IOException;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 
 @Component(

@@ -49,7 +49,7 @@ class SimpleResourceListenerTest {
     private SimpleResourceListener fixture;
 
     @BeforeEach
-    void setupAll() {
+    void setup() {
         context.registerService(JobManager.class, jobManager);
 
         fixture = context.registerInjectActivateService(new SimpleResourceListener());
