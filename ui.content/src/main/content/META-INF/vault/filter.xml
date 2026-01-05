@@ -8,6 +8,8 @@
     <filter root="/conf/pillar/settings/cloudconfigs" mode="merge"/>
     <filter root="/conf/pillar/settings/dam"/>
     <filter root="/conf/pillar/settings/wcm"/>
+    <filter root="/conf/global/settings/workflow/models/request-publish-approval/"/>
+    <filter root="/var/workflow/models/request-publish-approval"/>
     <filter root="/content/pillar" mode="merge"/>
     <filter root="/content/dam/pillar" mode="merge">
         <exclude pattern="/content/dam/pillar(/.*)?"/>

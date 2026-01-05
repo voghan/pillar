@@ -67,7 +67,7 @@ public class SimpleEmailServiceImplTest {
     @Test
     void sendEmail() throws LoginException, RepositoryException, IOException {
         String template ="/conf/pillar-common/notifications/email/demo-email.html";
-        String mailTo = "bfvaughn@gmail.com";
+        String mailTo = "no-reply@gmail.com";
 
         Map<String, String> params = new HashMap<>();
         params.put("givenName", "Wally");

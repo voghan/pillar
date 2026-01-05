@@ -1,0 +1,6 @@
+{
+    "service.ranking":1,
+    "user.mapping":[
+        "pillar.core:NotificationProcess=pillar-service-user"
+    ]
+}
