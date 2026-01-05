@@ -11,10 +11,10 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.jetbrains.annotations.NotNull;
-import org.osgi.service.component.annotations.Reference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -39,7 +39,7 @@ public class CardListCmp extends BaseModelCmp implements CardList {
     @Self
     private SlingHttpServletRequest slingHttpServletRequest;
 
-    @Reference
+    @OSGiService
     private SimpleQueryBuilder simpleQueryBuilder;
 
     @ValueMapValue

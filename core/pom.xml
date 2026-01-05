@@ -112,7 +112,6 @@ Import-Package: javax.annotation;version=0.0.0,*
                                         </limit>
                                     </limits>
                                     <excludes>
-                                        <exclude>com.voghan.pillar.core.models.cmp.CardListCmp</exclude>
                                     </excludes>
                                 </rule>
                                 <rule>
