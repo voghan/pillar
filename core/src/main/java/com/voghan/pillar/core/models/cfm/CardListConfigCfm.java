@@ -35,10 +35,10 @@ public class CardListConfigCfm implements CardListConfig {
     private Boolean enableSearch;
 
     @ValueMapValue
-    private List<String> cardTags;
+    private List<String> cardTags = new ArrayList<>();
 
     @ValueMapValue
-    private List<String> filterTags;
+    private List<String> filterTags = new ArrayList<>();
 
     @PostConstruct
     protected void init() {

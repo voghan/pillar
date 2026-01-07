@@ -12,7 +12,6 @@ import com.voghan.pillar.common.emails.SimpleEmailService;
 import com.voghan.pillar.core.testcontext.AppAemContext;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
-import org.apache.jackrabbit.api.JackrabbitSession;
 import org.apache.jackrabbit.api.security.user.Authorizable;
 import org.apache.jackrabbit.api.security.user.UserManager;
 import org.apache.sling.api.resource.LoginException;
@@ -93,7 +92,6 @@ public class NotificationProcessTest {
         Workflow workflow = mock(Workflow.class);
         WorkflowSession workflowSession = mock(WorkflowSession.class);
         MetaDataMap metaDataMap = mock(MetaDataMap.class);
-        JackrabbitSession jackrabbitSession = mock(JackrabbitSession.class);
         Value value = mock(Value.class);
         Value[] values = new Value[] {value};
         when(workItem.getWorkflowData()).thenReturn(workflowData);
@@ -101,9 +99,8 @@ public class NotificationProcessTest {
         when(workflow.getInitiator()).thenReturn("admin");
         when(workflowData.getPayload()).thenReturn("payload");
         when(metaDataMap.get("PROCESS_ARGS", String.class)).thenReturn("args");
-        when(resourceResolver.adaptTo(Session.class)).thenReturn(jackrabbitSession);
         when(userManager.getAuthorizable("admin")).thenReturn(authorizable);
-        when(jackrabbitSession.getUserManager()).thenReturn(userManager);
+        when(resourceResolver.adaptTo(UserManager.class)).thenReturn(userManager);
         when(userManager.getAuthorizable("admin")).thenReturn(authorizable);
         when(authorizable.getProperty("./profile/email")).thenReturn(values);
         when(value.getString()).thenReturn("no-reply@gmail.com");
