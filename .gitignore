@@ -7,3 +7,5 @@ node_modules/
 
 /common.config/src/main/content/jcr_root/apps/pillar-common/osgiconfig/config.local/
 /ui.frontend/dist/
+/ui.tests/test-module/node/
+/ui.tests/test-module/node_modules/
