@@ -4,7 +4,6 @@ import com.day.cq.commons.mail.MailTemplate;
 import com.day.cq.mailer.MessageGateway;
 import com.day.cq.mailer.MessageGatewayService;
 import com.voghan.pillar.common.emails.SimpleEmailService;
-import org.apache.commons.lang.text.StrLookup;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.HtmlEmail;
 import org.apache.sling.api.resource.LoginException;
@@ -55,7 +54,7 @@ public class SimpleEmailServiceImpl implements SimpleEmailService {
 
             Session session = resourceResolver.adaptTo(Session.class);
             final MailTemplate mailTemplate = MailTemplate.create(templatePath, session);
-            HtmlEmail email = mailTemplate.getEmail(StrLookup.mapLookup(parameters), HtmlEmail.class);
+            HtmlEmail email = mailTemplate.getEmail(parameters, HtmlEmail.class);
             email.addTo(mailTo);
             messageGateway.send(email);
         } catch (EmailException | MessagingException | IOException | LoginException e) {
