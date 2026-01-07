@@ -7,7 +7,6 @@ import com.adobe.granite.workflow.exec.WorkflowProcess;
 import com.adobe.granite.workflow.metadata.MetaDataMap;
 import com.day.cq.commons.Externalizer;
 import com.voghan.pillar.common.emails.SimpleEmailService;
-import org.apache.jackrabbit.api.JackrabbitSession;
 import org.apache.jackrabbit.api.security.user.Authorizable;
 import org.apache.jackrabbit.api.security.user.UserManager;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -18,7 +17,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.jcr.RepositoryException;
-import javax.jcr.Session;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -84,8 +82,7 @@ public class NotificationProcess implements WorkflowProcess {
     protected String getInitiatorEmail(ResourceResolver resourceResolver, WorkItem workItem) throws RepositoryException {
         String email = null;
         String initiatorUserId = workItem.getWorkflow().getInitiator();
-        Session session = resourceResolver.adaptTo(Session.class);
-        UserManager userManager = ((JackrabbitSession) session).getUserManager();
+        UserManager userManager = resourceResolver.adaptTo(UserManager.class);
         Authorizable authorizable = userManager.getAuthorizable(initiatorUserId);
 
         if (authorizable != null && authorizable.getProperty("./profile/email") != null) {

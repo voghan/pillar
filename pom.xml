@@ -54,6 +54,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <componentGroupName>Pillar</componentGroupName>
+        <uber.jar.version>6.6.1</uber.jar.version>
         <java.version>21</java.version>
     </properties>
     <build>
@@ -660,7 +661,15 @@
             <dependency>
                 <groupId>com.adobe.aem</groupId>
                 <artifactId>uber-jar</artifactId>
-                <version>6.5.8</version>
+                <version>${uber.jar.version}</version>
+                <classifier>apis</classifier>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.adobe.aem</groupId>
+                <artifactId>uber-jar</artifactId>
+                <version>${uber.jar.version}</version>
+                <classifier>deprecated-apis</classifier>
                 <scope>provided</scope>
             </dependency>
             <!-- Apache Sling Dependencies -->
