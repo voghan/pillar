@@ -43,7 +43,7 @@
                         </goals>
                         <configuration>
                             <bnd><![CDATA[
-Import-Package: javax.annotation;version=0.0.0,*
+                            Import-Package: jakarta.annotation,*
                                 ]]></bnd>
                         </configuration>
                     </execution>
@@ -201,10 +201,6 @@ Import-Package: javax.annotation;version=0.0.0,*
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>javax.annotation</groupId>
-            <artifactId>javax.annotation-api</artifactId>
         </dependency>
         <dependency>
             <groupId>jakarta.annotation</groupId>
