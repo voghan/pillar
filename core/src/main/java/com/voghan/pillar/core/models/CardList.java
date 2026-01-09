@@ -8,9 +8,11 @@ public interface CardList {
 
     String getShortDescription();
 
+    boolean isCardsFound();
+
     List<Card> getCards();
 
-    Boolean isEnableSearch();
+    boolean isEnableSearch();
 
     List<String> getFilterOptions();
 }

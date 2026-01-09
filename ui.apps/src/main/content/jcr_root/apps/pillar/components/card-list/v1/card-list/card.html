@@ -1,0 +1,15 @@
+<template data-sly-template.card="${@ card}">
+    <div class="cmp-teaser--card">
+        <div id="teaser-" class="cmp-teaser" >
+            <div class="cmp-teaser__content">
+                <h3 class="cmp-teaser__title"> ${card.headline} </h3>
+                <div class="cmp-teaser__description">
+                    ${card.shortDescription @ context='html'}
+                </div>
+                <div data-sly-test="${card.isCallToActionEnabled}" data-sly-list.link="${card.callToActions}" class="cmp-teaser__action-container" >
+                    <a class="cmp-teaser__action-link"  href="${link.linkPath}">${link.linkText}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
