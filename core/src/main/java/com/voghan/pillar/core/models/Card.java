@@ -10,4 +10,6 @@ public interface Card {
 
     List<Link> getCallToActions();
 
+    boolean isCallToActionEnabled();
+
 }

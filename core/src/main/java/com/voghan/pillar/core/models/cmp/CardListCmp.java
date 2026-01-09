@@ -65,8 +65,6 @@ public class CardListCmp extends BaseModelCmp implements CardList {
         if (cardListConfig != null && simpleQueryBuilder != null) {
             searchForCards(cardListConfig);
             // TODO add filters
-        } else {
-            logger.info("Component is not ready filter:{} queryBuilder:" + simpleQueryBuilder, fragmentPath);
         }
     }
 
@@ -113,7 +111,12 @@ public class CardListCmp extends BaseModelCmp implements CardList {
         return (cardListConfig != null) ? cardListConfig.getShortDescription() : null;
     }
 
-    public Boolean isEnableSearch() {
+    @Override
+    public boolean isCardsFound() {
+        return !cards.isEmpty();
+    }
+
+    public boolean isEnableSearch() {
         return (cardListConfig != null) ? cardListConfig.getEnableSearch() : false;
     }
 

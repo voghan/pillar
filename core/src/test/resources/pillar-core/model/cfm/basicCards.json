@@ -1,0 +1,156 @@
+{
+  "jcr:primaryType": "sling:OrderedFolder",
+  "jcr:createdBy": "admin",
+  "jcr:created": "Mon Jan 05 2026 21:06:07 GMT-0600",
+  "jcr:content": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:title": "demo",
+    "sourcing": "false"
+  },
+  "basic-hero": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:mixinTypes": [
+      "mix:referenceable",
+      "mix:versionable"
+    ],
+    "jcr:createdBy": "admin",
+    "jcr:versionHistory": "5b64606e-3bfe-49a9-b7ab-ccefdbc56cb7",
+    "jcr:predecessors": [
+      "125dcc87-c647-4089-a30c-8b4e11bd847e"
+    ],
+    "jcr:created": "Mon Jan 05 2026 21:06:07 GMT-0600",
+    "jcr:baseVersion": "125dcc87-c647-4089-a30c-8b4e11bd847e",
+    "jcr:isCheckedOut": true,
+    "jcr:uuid": "0e57ec46-d94e-4cb7-b95c-6585c2a8c761",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "jcr:title": "Hero",
+      "jcr:lastModifiedBy": "admin",
+      "contentFragment": true,
+      "cq:name": "hero",
+      "jcr:lastModified": "Thu Jan 01 2026 11:56:24 GMT-0600",
+      "lastFragmentSave": "Thu Jan 01 2026 11:56:24 GMT-0600",
+      "cq:parentPath": "/content/dam/pillar/site/en/demo/cards",
+      "renditions": {
+        "jcr:primaryType": "nt:folder",
+        "jcr:createdBy": "admin",
+        "jcr:created": "Mon Jan 05 2026 21:16:31 GMT-0600"
+      },
+      "related": {
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "indexedData": {
+        "jcr:primaryType": "nt:unstructured",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:IndexedFragmentData"
+          ],
+          "@string@model": "/conf/pillar/settings/dam/cfm/models/card",
+          "@stringArray@variations": [],
+          "string@shortDescription": "<p>The Hero component is a a full width component that is ment to be at the top of a page.&nbsp; The Hero has options for a title, description, background image, breadcrumbs at the top and lcall to actions on the bottom.</p>\n",
+          "string@headline": "Hero Card",
+          "jcr:uuid": "e302dab4-7419-442a-9fee-2b744e66a8cf"
+        }
+      },
+      "metadata": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ]
+      },
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "_strucVersion": 1,
+        "cq:model": "/conf/pillar/settings/dam/cfm/models/card",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:Taggable",
+            "dam:cfVariationNode"
+          ],
+          "callToActions@LastModified": "Thu Jan 01 2026 11:56:23 GMT-0600",
+          "shortDescription@ContentType": "text/html",
+          "headline@LastModified": "Thu Jan 01 2026 11:56:23 GMT-0600",
+          "headline": "Hero Card",
+          "callToActions": "/content/dam/links/link1",
+          "shortDescription@LastModified": "Thu Jan 01 2026 11:49:58 GMT-0600",
+          "shortDescription": "<p>The Hero component is a a full width component that is ment to be at the top of a page.&nbsp; The Hero has options for a title, description, background image, breadcrumbs at the top and lcall to actions on the bottom.</p>\n"
+        }
+      }
+    }
+  },
+  "simple-card": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:mixinTypes": [
+      "mix:referenceable",
+      "mix:versionable"
+    ],
+    "jcr:createdBy": "admin",
+    "jcr:versionHistory": "aed79e2b-f9ff-4070-94c4-c58cb57c7a84",
+    "jcr:predecessors": [
+      "b570a8ed-a1cb-4ec7-bb95-935519ff059f"
+    ],
+    "jcr:created": "Mon Jan 05 2026 21:06:07 GMT-0600",
+    "jcr:baseVersion": "b570a8ed-a1cb-4ec7-bb95-935519ff059f",
+    "jcr:isCheckedOut": true,
+    "jcr:uuid": "22dcca48-aac7-4801-9d57-2d10f2997060",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "jcr:title": "Simple Card",
+      "jcr:lastModifiedBy": "admin",
+      "contentFragment": true,
+      "cq:name": "simple-card",
+      "jcr:lastModified": "Thu Jan 01 2026 12:02:41 GMT-0600",
+      "lastFragmentSave": "Thu Jan 01 2026 12:02:41 GMT-0600",
+      "cq:parentPath": "/content/dam/pillar/site/en/demo/cards",
+      "renditions": {
+        "jcr:primaryType": "nt:folder",
+        "jcr:createdBy": "admin",
+        "jcr:created": "Mon Jan 05 2026 21:16:31 GMT-0600"
+      },
+      "related": {
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "indexedData": {
+        "jcr:primaryType": "nt:unstructured",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:IndexedFragmentData"
+          ],
+          "@string@model": "/conf/pillar/settings/dam/cfm/models/card",
+          "@stringArray@variations": [],
+          "string@shortDescription": "<p>The Simple Card component is a flexible component that can be used anywhere on the site.&nbsp; The Simple Card has options for title, description, image, image position and links.</p>\n",
+          "string@headline": "Simple Card",
+          "jcr:uuid": "67bcebf8-e6f4-4eb6-8b1d-1280cec4a7f9"
+        }
+      },
+      "metadata": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ]
+      },
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "_strucVersion": 1,
+        "cq:model": "/conf/pillar/settings/dam/cfm/models/card",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "cq:Taggable",
+            "dam:cfVariationNode"
+          ],
+          "callToActions@LastModified": "Thu Jan 01 2026 12:02:41 GMT-0600",
+          "shortDescription@ContentType": "text/html",
+          "headline@LastModified": "Thu Jan 01 2026 12:02:41 GMT-0600",
+          "headline": "Simple Card",
+          "callToActions": "/content/dam/links/link1",
+          "shortDescription@LastModified": "Thu Jan 01 2026 12:02:41 GMT-0600",
+          "shortDescription": "<p>The Simple Card component is a flexible component that can be used anywhere on the site.&nbsp; The Simple Card has options for title, description, image, image position and links.</p>\n"
+        }
+      }
+    }
+  }
+}

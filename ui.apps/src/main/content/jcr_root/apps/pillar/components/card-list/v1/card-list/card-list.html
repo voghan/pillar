@@ -1,11 +1,15 @@
-<sly  data-sly-use.cardList="com.voghan.pillar.core.models.cmp.CardListCmp"/>
+<sly  data-sly-use.cardList="com.voghan.pillar.core.models.cmp.CardListCmp"
+      data-sly-use.cardTpl="card.html"/>
 
-<div class="cmp-teaser--card-list">
+<div class="cmp-card-list--list">
     <div id="teaser-" class="cmp-teaser" >
-        <div class="cmp-teaser__content">
-            <h2 class="cmp-teaser__title"> ${cardList.headline} </h2>
-            <div class="cmp-teaser__description">
+        <div class="card-list__content">
+            <h2 class="card-list__title"> ${cardList.headline} </h2>
+            <div class="card-list__description">
                 ${cardList.shortDescription @ context='html'}
+            </div>
+            <div data-sly-test="${cardList.isCardsFound}" data-sly-list.cardItem="${cardList.cards}" class="card-list__card-container" >
+                <p class="cmp-list__item" data-sly-call="${cardTpl.card @ card = cardItem}"></p>
             </div>
         </div>
     </div>

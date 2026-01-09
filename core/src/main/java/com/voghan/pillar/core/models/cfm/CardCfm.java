@@ -69,4 +69,9 @@ public class CardCfm extends BaseModelCfm implements Card {
     public List<Link> getCallToActions() {
         return new ArrayList<>(callToActionLinks);
     }
+
+    @Override
+    public boolean isCallToActionEnabled() {
+        return !callToActionLinks.isEmpty();
+    }
 }
