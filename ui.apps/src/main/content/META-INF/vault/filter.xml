@@ -3,4 +3,5 @@
     <filter root="/apps/pillar/clientlibs"/>
     <filter root="/apps/pillar/components"/>
     <filter root="/apps/pillar/i18n"/>
+    <filter root="/apps/pillar/config"/>
 </workspaceFilter>
