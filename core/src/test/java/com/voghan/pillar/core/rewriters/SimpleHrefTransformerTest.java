@@ -23,51 +23,52 @@ import static org.mockito.Mockito.verify;
 @ExtendWith({AemContextExtension.class, MockitoExtension.class})
 class SimpleHrefTransformerTest {
 
-    private SimpleHrefTransformer simpleHrefTransformer;
+  private SimpleHrefTransformer simpleHrefTransformer;
 
-    @Mock
-    private ContentHandler contentHandler;
+  @Mock
+  private ContentHandler contentHandler;
 
-    @BeforeEach
-    void setup() {
-        simpleHrefTransformer = new SimpleHrefTransformer();
-        simpleHrefTransformer.setContentHandler(contentHandler);
-    }
+  @BeforeEach
+  void setup() {
+    simpleHrefTransformer = new SimpleHrefTransformer();
+    simpleHrefTransformer.setContentHandler(contentHandler);
+  }
 
-    @Test
-    void createTransformer() {
-        Transformer expected = simpleHrefTransformer.createTransformer();
+  @Test
+  void createTransformer() {
+    Transformer expected = simpleHrefTransformer.createTransformer();
 
-        assertNotNull(expected);
-    }
+    assertNotNull(expected);
+  }
 
-    @Test
-    void startElement() throws SAXException {
-        String uri = "uri";
-        String localName = "localname";
-        String qName = "qName";
-        Attributes atts = mock(Attributes.class);
-        ArgumentCaptor<Attributes> attsCapture = ArgumentCaptor.forClass(Attributes.class);
-        simpleHrefTransformer.startElement(uri, localName, qName, atts);
+  @Test
+  void startElement() throws SAXException {
+    String uri = "uri";
+    String localName = "localname";
+    String qName = "qName";
+    Attributes atts = mock(Attributes.class);
+    ArgumentCaptor<Attributes> attsCapture = ArgumentCaptor.forClass(Attributes.class);
+    simpleHrefTransformer.startElement(uri, localName, qName, atts);
 
-        verify(atts, times(1)).getIndex("href");
-        verify(atts, times(0)).getValue(any());
-    }
+    verify(atts, times(1)).getIndex("href");
+    verify(atts, times(0)).getValue(any());
+  }
 
-    @Test
-    void startElement_hrefUri() throws SAXException {
-        String uri = "uri";
-        String localName = "localname";
-        String qName = "a";
-        String srcValue = "srcValue";
-        AttributesImpl attributes = new AttributesImpl();
-        attributes.addAttribute(uri, localName, "href", "href", srcValue);
-        ArgumentCaptor<Attributes> atts = ArgumentCaptor.forClass(Attributes.class);
-        simpleHrefTransformer.startElement(uri, localName, qName, attributes);
+  @Test
+  void startElement_hrefUri() throws SAXException {
+    String uri = "uri";
+    String localName = "localname";
+    String qName = "a";
+    String srcValue = "srcValue";
+    AttributesImpl attributes = new AttributesImpl();
+    attributes.addAttribute(uri, localName, "href", "href", srcValue);
+    ArgumentCaptor<Attributes> atts = ArgumentCaptor.forClass(Attributes.class);
+    simpleHrefTransformer.startElement(uri, localName, qName, attributes);
 
-        verify(contentHandler, times(1)).startElement(eq(uri), eq(localName), eq(qName), atts.capture());
+    verify(contentHandler, times(1)).startElement(eq(uri), eq(localName), eq(qName),
+        atts.capture());
 
-        String actual = atts.getValue().getValue("href");
-        assertEquals(srcValue, actual);
-    }
+    String actual = atts.getValue().getValue("href");
+    assertEquals(srcValue, actual);
+  }
 }

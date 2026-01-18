@@ -15,61 +15,62 @@ import static junit.framework.Assert.assertNotNull;
 
 @ExtendWith(AemContextExtension.class)
 public class SimpleCardCfmTest {
-    private static final AemContext context = AppAemContext.newAemContext();
 
-    private static final String DEMO_LINKS_PATH = "/pillar-core/model/cfm/links.json";
-    private static final String DEMO_CARD_PATH = "/pillar-core/model/cfm/simpleCards.json";
+  private static final AemContext context = AppAemContext.newAemContext();
 
-    SimpleCardCfm cardCfm;
+  private static final String DEMO_LINKS_PATH = "/pillar-core/model/cfm/links.json";
+  private static final String DEMO_CARD_PATH = "/pillar-core/model/cfm/simpleCards.json";
 
-    @BeforeAll
-    static void setup() {
-        // Load context content once
-        context.addModelsForClasses(LinkCfm.class);
-        context.load().json(DEMO_LINKS_PATH, "/content/dam/links");
-        context.load().json(DEMO_CARD_PATH, "/content/dam/simple-cards");
-    }
+  SimpleCardCfm cardCfm;
 
-    @Test
-    void getHeadline_default() {
-        cardCfm = getComponent("/content/dam/simple-cards/option1", "master");
+  @BeforeAll
+  static void setup() {
+    // Load context content once
+    context.addModelsForClasses(LinkCfm.class);
+    context.load().json(DEMO_LINKS_PATH, "/content/dam/links");
+    context.load().json(DEMO_CARD_PATH, "/content/dam/simple-cards");
+  }
 
-        assertNotNull(cardCfm);
-        assertEquals("Epic Journey", cardCfm.getHeadline());
-    }
+  @Test
+  void getHeadline_default() {
+    cardCfm = getComponent("/content/dam/simple-cards/option1", "master");
 
-    @Test
-    void getShortDescription_default() {
-        cardCfm = getComponent("/content/dam/simple-cards/option1", "master");
-        String expected = "<p>Don't stop half way, go for the top!</p>\n";
+    assertNotNull(cardCfm);
+    assertEquals("Epic Journey", cardCfm.getHeadline());
+  }
 
-        assertNotNull(cardCfm);
-        assertEquals(expected, cardCfm.getShortDescription());
-    }
+  @Test
+  void getShortDescription_default() {
+    cardCfm = getComponent("/content/dam/simple-cards/option1", "master");
+    String expected = "<p>Don't stop half way, go for the top!</p>\n";
 
-    @Test
-    void getCallToActions_default() {
-        cardCfm = getComponent("/content/dam/simple-cards/option1", "master");
+    assertNotNull(cardCfm);
+    assertEquals(expected, cardCfm.getShortDescription());
+  }
 
-        assertNotNull(cardCfm);
-        assertFalse(cardCfm.getCallToActions().isEmpty());
-        assertEquals(1, cardCfm.getCallToActions().size());
-        Link link = cardCfm.getCallToActions().get(0);
-        assertNotNull(link);
-        assertEquals("Get started", link.getLinkText());
-        assertEquals("/content/pillar/us/en", link.getLinkPath());
-    }
+  @Test
+  void getCallToActions_default() {
+    cardCfm = getComponent("/content/dam/simple-cards/option1", "master");
 
-    @Test
-    void getImage_default() {
-        cardCfm = getComponent("/content/dam/simple-cards/option1", "master");
+    assertNotNull(cardCfm);
+    assertFalse(cardCfm.getCallToActions().isEmpty());
+    assertEquals(1, cardCfm.getCallToActions().size());
+    Link link = cardCfm.getCallToActions().get(0);
+    assertNotNull(link);
+    assertEquals("Get started", link.getLinkText());
+    assertEquals("/content/pillar/us/en", link.getLinkPath());
+  }
 
-        assertNotNull(cardCfm);
-        assertEquals("/content/dam/images/BrianLogo2019-medium.png", cardCfm.getImage());
-    }
+  @Test
+  void getImage_default() {
+    cardCfm = getComponent("/content/dam/simple-cards/option1", "master");
 
-    SimpleCardCfm getComponent(String path, String version) {
-        Resource resource = context.currentResource(path + "/jcr:content/data/" + version);
-        return resource != null ? resource.adaptTo(SimpleCardCfm.class) : null;
-    }
+    assertNotNull(cardCfm);
+    assertEquals("/content/dam/images/BrianLogo2019-medium.png", cardCfm.getImage());
+  }
+
+  SimpleCardCfm getComponent(String path, String version) {
+    Resource resource = context.currentResource(path + "/jcr:content/data/" + version);
+    return resource != null ? resource.adaptTo(SimpleCardCfm.class) : null;
+  }
 }

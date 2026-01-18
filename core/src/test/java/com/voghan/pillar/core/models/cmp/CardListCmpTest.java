@@ -27,99 +27,104 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith({AemContextExtension.class, MockitoExtension.class})
 public class CardListCmpTest {
-    private static final AemContext context = AppAemContext.newAemContext();
 
-    private static final String DEMO_CARD_LIST_PAGE_PATH = "/pillar-core/model/cmp/cardListCmps.json";
-    private static final String DEMO_CARD_LIST_PATH = "/pillar-core/model/cfm/cardListConfigs.json";
-    private static final String DEMO_BASIC_CARD_PATH = "/pillar-core/model/cfm/basicCards.json";
-    private static final String DEMO_LINKS_PATH = "/pillar-core/model/cfm/links.json";
+  private static final AemContext context = AppAemContext.newAemContext();
 
-    @Mock
-    SimpleQueryBuilder simpleQueryBuilder;
+  private static final String DEMO_CARD_LIST_PAGE_PATH = "/pillar-core/model/cmp/cardListCmps.json";
+  private static final String DEMO_CARD_LIST_PATH = "/pillar-core/model/cfm/cardListConfigs.json";
+  private static final String DEMO_BASIC_CARD_PATH = "/pillar-core/model/cfm/basicCards.json";
+  private static final String DEMO_LINKS_PATH = "/pillar-core/model/cfm/links.json";
 
-    @InjectMocks
-    CardListCmp cardListCmp;
+  @Mock
+  SimpleQueryBuilder simpleQueryBuilder;
 
-    final List<Resource> cards = new ArrayList<>();
+  @InjectMocks
+  CardListCmp cardListCmp;
 
-    @BeforeAll
-    static void setupAll() {
-        // Load context content once
-        context.addModelsForClasses(CardListCmp.class);
-        context.load().json(DEMO_CARD_LIST_PAGE_PATH, "/content/card-list");
-        context.load().json(DEMO_CARD_LIST_PATH, "/content/dam/card-list");
-        context.load().json(DEMO_BASIC_CARD_PATH, "/content/dam/basic-cards");
-        context.load().json(DEMO_LINKS_PATH, "/content/dam/links");
-    }
+  final List<Resource> cards = new ArrayList<>();
 
-    @BeforeEach
-    void setup() {
-        context.registerService(SimpleQueryBuilder.class, simpleQueryBuilder);
+  @BeforeAll
+  static void setupAll() {
+    // Load context content once
+    context.addModelsForClasses(CardListCmp.class);
+    context.load().json(DEMO_CARD_LIST_PAGE_PATH, "/content/card-list");
+    context.load().json(DEMO_CARD_LIST_PATH, "/content/dam/card-list");
+    context.load().json(DEMO_BASIC_CARD_PATH, "/content/dam/basic-cards");
+    context.load().json(DEMO_LINKS_PATH, "/content/dam/links");
+  }
 
-        cards.clear();
-        cards.add(context.request().getResourceResolver().getResource("/content/dam/basic-cards/basic-hero").getChild("jcr:content"));
-        cards.add(context.request().getResourceResolver().getResource("/content/dam/basic-cards/simple-card").getChild("jcr:content"));
-    }
+  @BeforeEach
+  void setup() {
+    context.registerService(SimpleQueryBuilder.class, simpleQueryBuilder);
 
-    @Disabled
-    @Test
-    void getCards_default() {
-        when(simpleQueryBuilder.search(any(), anyMap())).thenReturn(cards);
+    cards.clear();
+    cards.add(
+        context.request().getResourceResolver().getResource("/content/dam/basic-cards/basic-hero")
+            .getChild("jcr:content"));
+    cards.add(
+        context.request().getResourceResolver().getResource("/content/dam/basic-cards/simple-card")
+            .getChild("jcr:content"));
+  }
 
-        cardListCmp = getComponent("/content/card-list", "card_list");
+  @Disabled
+  @Test
+  void getCards_default() {
+    when(simpleQueryBuilder.search(any(), anyMap())).thenReturn(cards);
 
-        assertNotNull(cardListCmp);
-        assertFalse(cardListCmp.getCards().isEmpty());
-        assertTrue(cardListCmp.getCards().getFirst().isCallToActionEnabled());
-    }
+    cardListCmp = getComponent("/content/card-list", "card_list");
 
-    @Test
-    void getHeadline_default() {
-        String expected = "Title for component";
-        cardListCmp = getComponent("/content/card-list", "card_list");
+    assertNotNull(cardListCmp);
+    assertFalse(cardListCmp.getCards().isEmpty());
+    assertTrue(cardListCmp.getCards().getFirst().isCallToActionEnabled());
+  }
 
-        assertNotNull(cardListCmp);
-        assertEquals(expected, cardListCmp.getHeadline());
-    }
+  @Test
+  void getHeadline_default() {
+    String expected = "Title for component";
+    cardListCmp = getComponent("/content/card-list", "card_list");
 
-    @Test
-    void getShortDescription_default() {
-        String expected = "<p>Short description about the content returned.</p>\n";
-        cardListCmp = getComponent("/content/card-list", "card_list");
+    assertNotNull(cardListCmp);
+    assertEquals(expected, cardListCmp.getHeadline());
+  }
 
-        assertNotNull(cardListCmp);
-        assertEquals(expected, cardListCmp.getShortDescription());
-    }
+  @Test
+  void getShortDescription_default() {
+    String expected = "<p>Short description about the content returned.</p>\n";
+    cardListCmp = getComponent("/content/card-list", "card_list");
 
-    @Test
-    void isEnableSearch_default() {
-        cardListCmp = getComponent("/content/card-list", "card_list");
+    assertNotNull(cardListCmp);
+    assertEquals(expected, cardListCmp.getShortDescription());
+  }
 
-        assertNotNull(cardListCmp);
-        assertTrue(cardListCmp.isEnableSearch());
-    }
+  @Test
+  void isEnableSearch_default() {
+    cardListCmp = getComponent("/content/card-list", "card_list");
 
-    @Disabled
-    @Test
-    void isCardsFound_default() {
-       when(simpleQueryBuilder.search(any(), anyMap())).thenReturn(cards);
+    assertNotNull(cardListCmp);
+    assertTrue(cardListCmp.isEnableSearch());
+  }
 
-        cardListCmp = getComponent("/content/card-list", "card_list");
+  @Disabled
+  @Test
+  void isCardsFound_default() {
+    when(simpleQueryBuilder.search(any(), anyMap())).thenReturn(cards);
 
-        assertNotNull(cardListCmp);
-        assertTrue(cardListCmp.isCardsFound());
-    }
+    cardListCmp = getComponent("/content/card-list", "card_list");
 
-    @Test
-    void getExportedType_expected() {
-        cardListCmp = getComponent("/content/card-list", "card_list");
+    assertNotNull(cardListCmp);
+    assertTrue(cardListCmp.isCardsFound());
+  }
 
-        assertNotNull(cardListCmp);
-        assertEquals(CardListCmp.RESOURCE_TYPE, cardListCmp.getExportedType());
-    }
+  @Test
+  void getExportedType_expected() {
+    cardListCmp = getComponent("/content/card-list", "card_list");
 
-    CardListCmp getComponent(String path, String component) {
-        context.currentResource(path + "/jcr:content/root/container/container/" + component);
-        return context.request().adaptTo(CardListCmp.class);
-    }
+    assertNotNull(cardListCmp);
+    assertEquals(CardListCmp.RESOURCE_TYPE, cardListCmp.getExportedType());
+  }
+
+  CardListCmp getComponent(String path, String component) {
+    context.currentResource(path + "/jcr:content/root/container/container/" + component);
+    return context.request().adaptTo(CardListCmp.class);
+  }
 }

@@ -25,60 +25,63 @@ import java.util.List;
     resourceType = SimpleCardCmp.RESOURCE_TYPE,
     defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class SimpleCardCmp extends BaseModelCmp implements SimpleCard {
-    static final String RESOURCE_TYPE = "pillar/components/card/v1/card";
 
-    private final Logger logger = LoggerFactory.getLogger(getClass());
+  static final String RESOURCE_TYPE = "pillar/components/card/v1/card";
 
-    @Self
-    private SlingHttpServletRequest servletRequest;
+  private final Logger logger = LoggerFactory.getLogger(getClass());
 
-    @ValueMapValue
-    private String fragmentPath;
+  @Self
+  private SlingHttpServletRequest servletRequest;
 
-    @ValueMapValue
-    private String variationName;
+  @ValueMapValue
+  private String fragmentPath;
 
-    private SimpleCard simpleCard;
+  @ValueMapValue
+  private String variationName;
 
-    @PostConstruct
-    protected void init() {
-        logger.info("Post Construct for {} version {}", fragmentPath, variationName);
-        simpleCard = new SimpleCardCfm();
-        if (servletRequest != null) {
-            Resource cfm = servletRequest.getResourceResolver().getResource(fragmentPath + "/jcr:content/data/" + variationName);
-            if (cfm != null) {
-                logger.info("Found resource at {} ", cfm.getPath());
-                simpleCard = cfm.adaptTo(SimpleCardCfm.class);
-            }
-        }
+  private SimpleCard simpleCard;
+
+  @PostConstruct
+  protected void init() {
+    logger.info("Post Construct for {} version {}", fragmentPath, variationName);
+    simpleCard = new SimpleCardCfm();
+    if (servletRequest != null) {
+      Resource cfm = servletRequest.getResourceResolver()
+          .getResource(fragmentPath + "/jcr:content/data/" + variationName);
+      if (cfm != null) {
+        logger.info("Found resource at {} ", cfm.getPath());
+        simpleCard = cfm.adaptTo(SimpleCardCfm.class);
+      }
     }
+  }
 
-    @Override
-    public String getHeadline() {
-        return simpleCard.getHeadline();
-    }
+  @Override
+  public String getHeadline() {
+    return simpleCard.getHeadline();
+  }
 
-    @Override
-    public String getShortDescription() {
-        return simpleCard.getShortDescription();
-    }
+  @Override
+  public String getShortDescription() {
+    return simpleCard.getShortDescription();
+  }
 
-    @Override
-    public List<Link> getCallToActions() {
-        return simpleCard.getCallToActions();
-    }
+  @Override
+  public List<Link> getCallToActions() {
+    return simpleCard.getCallToActions();
+  }
 
-    @Override
-    public String getImage() {
-        return simpleCard.getImage();
-    }
+  @Override
+  public String getImage() {
+    return simpleCard.getImage();
+  }
 
-    @Override
-    public @NotNull String getExportedType() {
-        return RESOURCE_TYPE;
-    }
+  @Override
+  public @NotNull
+  String getExportedType() {
+    return RESOURCE_TYPE;
+  }
 
-    public boolean isCallToActionEnabled() {
-        return simpleCard.getCallToActions().size() > 0;
-    }
+  public boolean isCallToActionEnabled() {
+    return simpleCard.getCallToActions().size() > 0;
+  }
 }

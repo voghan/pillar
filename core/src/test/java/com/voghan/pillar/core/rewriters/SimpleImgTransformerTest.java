@@ -24,50 +24,51 @@ import static org.mockito.Mockito.when;
 @ExtendWith({AemContextExtension.class, MockitoExtension.class})
 class SimpleImgTransformerTest {
 
-    private SimpleImgTransformer simpleImgTransformer;
+  private SimpleImgTransformer simpleImgTransformer;
 
-    @Mock
-    private ContentHandler contentHandler;
+  @Mock
+  private ContentHandler contentHandler;
 
-    @BeforeEach
-    void setup() {
-        simpleImgTransformer = new SimpleImgTransformer();
-        simpleImgTransformer.setContentHandler(contentHandler);
-    }
+  @BeforeEach
+  void setup() {
+    simpleImgTransformer = new SimpleImgTransformer();
+    simpleImgTransformer.setContentHandler(contentHandler);
+  }
 
-    @Test
-    void createTransformer() {
-        Transformer expected = simpleImgTransformer.createTransformer();
+  @Test
+  void createTransformer() {
+    Transformer expected = simpleImgTransformer.createTransformer();
 
-        assertNotNull(expected);
-    }
+    assertNotNull(expected);
+  }
 
-    @Test
-    void startElement() throws SAXException {
-        String uri = "uri";
-        String localName = "localname";
-        String qName = "qName";
-        Attributes atts = mock(Attributes.class);
-        simpleImgTransformer.startElement(uri, localName, qName, atts);
+  @Test
+  void startElement() throws SAXException {
+    String uri = "uri";
+    String localName = "localname";
+    String qName = "qName";
+    Attributes atts = mock(Attributes.class);
+    simpleImgTransformer.startElement(uri, localName, qName, atts);
 
-        verify(atts, times(1)).getIndex("src");
-        verify(atts, times(0)).getValue(any());
-    }
+    verify(atts, times(1)).getIndex("src");
+    verify(atts, times(0)).getValue(any());
+  }
 
-    @Test
-    void startElement_imgUri() throws SAXException {
-        String uri = "uri";
-        String localName = "localname";
-        String qName = "img";
-        String srcValue = "srcValue";
-        AttributesImpl attributes = new AttributesImpl();
-        attributes.addAttribute(uri, localName, "src", "src", srcValue);
-        ArgumentCaptor<Attributes> atts = ArgumentCaptor.forClass(Attributes.class);
-        simpleImgTransformer.startElement(uri, localName, qName, attributes);
+  @Test
+  void startElement_imgUri() throws SAXException {
+    String uri = "uri";
+    String localName = "localname";
+    String qName = "img";
+    String srcValue = "srcValue";
+    AttributesImpl attributes = new AttributesImpl();
+    attributes.addAttribute(uri, localName, "src", "src", srcValue);
+    ArgumentCaptor<Attributes> atts = ArgumentCaptor.forClass(Attributes.class);
+    simpleImgTransformer.startElement(uri, localName, qName, attributes);
 
-        verify(contentHandler, times(1)).startElement(eq(uri), eq(localName), eq(qName), atts.capture());
-        String actual = atts.getValue().getValue("src");
-        assertEquals(srcValue, actual);
-    }
+    verify(contentHandler, times(1)).startElement(eq(uri), eq(localName), eq(qName),
+        atts.capture());
+    String actual = atts.getValue().getValue("src");
+    assertEquals(srcValue, actual);
+  }
 
 }

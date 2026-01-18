@@ -17,61 +17,62 @@ import java.util.List;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class CardCfm extends BaseModelCfm implements Card {
-    private final Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Self
-    private Resource resource;
+  private final Logger logger = LoggerFactory.getLogger(getClass());
 
-    @ValueMapValue
-    private String headline;
+  @Self
+  private Resource resource;
 
-    @ValueMapValue
-    private String shortDescription;
+  @ValueMapValue
+  private String headline;
 
-    @ValueMapValue
-    private List<String> callToActions;
+  @ValueMapValue
+  private String shortDescription;
 
-    private final List<Link> callToActionLinks = new ArrayList<>();
+  @ValueMapValue
+  private List<String> callToActions;
 
-    @PostConstruct
-    protected void init() {
+  private final List<Link> callToActionLinks = new ArrayList<>();
 
-        buildCallToActions();
-    }
+  @PostConstruct
+  protected void init() {
 
-    protected void buildCallToActions() {
-        logger.info("building callToActions for {}", resource.getPath());
-        String version = getVersion();
+    buildCallToActions();
+  }
 
-        if (callToActions != null && resource != null) {
-            ResourceResolver resourceResolver = resource.getResourceResolver();
-            for (String path: callToActions) {
-                Resource cta  = resourceResolver.getResource(path + "/jcr:content/data/" + version);
-                if (cta != null) {
-                    Link link = cta.adaptTo(LinkCfm.class);
-                    callToActionLinks.add(link);
-                }
-            }
+  protected void buildCallToActions() {
+    logger.info("building callToActions for {}", resource.getPath());
+    String version = getVersion();
+
+    if (callToActions != null && resource != null) {
+      ResourceResolver resourceResolver = resource.getResourceResolver();
+      for (String path : callToActions) {
+        Resource cta = resourceResolver.getResource(path + "/jcr:content/data/" + version);
+        if (cta != null) {
+          Link link = cta.adaptTo(LinkCfm.class);
+          callToActionLinks.add(link);
         }
+      }
     }
+  }
 
-    @Override
-    public String getHeadline() {
-        return headline;
-    }
+  @Override
+  public String getHeadline() {
+    return headline;
+  }
 
-    @Override
-    public String getShortDescription() {
-        return shortDescription;
-    }
+  @Override
+  public String getShortDescription() {
+    return shortDescription;
+  }
 
-    @Override
-    public List<Link> getCallToActions() {
-        return new ArrayList<>(callToActionLinks);
-    }
+  @Override
+  public List<Link> getCallToActions() {
+    return new ArrayList<>(callToActionLinks);
+  }
 
-    @Override
-    public boolean isCallToActionEnabled() {
-        return !callToActionLinks.isEmpty();
-    }
+  @Override
+  public boolean isCallToActionEnabled() {
+    return !callToActionLinks.isEmpty();
+  }
 }

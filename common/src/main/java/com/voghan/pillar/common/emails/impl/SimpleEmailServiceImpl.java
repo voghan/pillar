@@ -4,6 +4,11 @@ import com.day.cq.commons.mail.MailTemplate;
 import com.day.cq.mailer.MessageGateway;
 import com.day.cq.mailer.MessageGatewayService;
 import com.voghan.pillar.common.emails.SimpleEmailService;
+import java.io.IOException;
+import java.util.Collections;
+import java.util.Map;
+import javax.jcr.Session;
+import javax.mail.MessagingException;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.HtmlEmail;
 import org.apache.sling.api.resource.LoginException;
@@ -15,12 +20,6 @@ import org.osgi.service.component.annotations.Reference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.jcr.Session;
-import javax.mail.MessagingException;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.Map;
-
 @Component(
     immediate = true,
     service = SimpleEmailService.class,
@@ -30,35 +29,37 @@ import java.util.Map;
     }
 )
 public class SimpleEmailServiceImpl implements SimpleEmailService {
-    private final Logger LOGGER = LoggerFactory.getLogger(getClass());
-    protected static final String SERVICE_NAME = "SimpleEmailService";
 
-    @Reference
-    private MessageGatewayService messageGatewayService;
+  private final Logger LOGGER = LoggerFactory.getLogger(getClass());
+  protected static final String SERVICE_NAME = "SimpleEmailService";
 
-    @Reference
-    private ResourceResolverFactory resourceResolverFactory;
+  @Reference
+  private MessageGatewayService messageGatewayService;
 
-    @Override
-    public void sendEmail(String mailTo, String templatePath, Map<String, String> parameters) {
+  @Reference
+  private ResourceResolverFactory resourceResolverFactory;
 
-        Map<String, Object> authInfo = Collections.singletonMap(
-            ResourceResolverFactory.SUBSERVICE, (Object) SimpleEmailServiceImpl.SERVICE_NAME);
-        try (ResourceResolver resourceResolver = resourceResolverFactory.getServiceResourceResolver(authInfo)) {
-            MessageGateway<HtmlEmail> messageGateway = messageGatewayService.getGateway(HtmlEmail.class);
+  @Override
+  public void sendEmail(String mailTo, String templatePath, Map<String, String> parameters) {
 
-            if (resourceResolver.getResource(templatePath) == null) {
-                LOGGER.warn("Email template does not exist <{}>, aborting email", templatePath);
-                return;
-            }
+    Map<String, Object> authInfo = Collections.singletonMap(
+        ResourceResolverFactory.SUBSERVICE, SimpleEmailServiceImpl.SERVICE_NAME);
+    try (ResourceResolver resourceResolver = resourceResolverFactory.getServiceResourceResolver(
+        authInfo)) {
+      MessageGateway<HtmlEmail> messageGateway = messageGatewayService.getGateway(HtmlEmail.class);
 
-            Session session = resourceResolver.adaptTo(Session.class);
-            final MailTemplate mailTemplate = MailTemplate.create(templatePath, session);
-            HtmlEmail email = mailTemplate.getEmail(parameters, HtmlEmail.class);
-            email.addTo(mailTo);
-            messageGateway.send(email);
-        } catch (EmailException | MessagingException | IOException | LoginException e) {
-            LOGGER.warn("Failed to send email to {}", mailTo, e);
-        }
+      if (resourceResolver.getResource(templatePath) == null) {
+        LOGGER.warn("Email template does not exist <{}>, aborting email", templatePath);
+        return;
+      }
+
+      Session session = resourceResolver.adaptTo(Session.class);
+      final MailTemplate mailTemplate = MailTemplate.create(templatePath, session);
+      HtmlEmail email = mailTemplate.getEmail(parameters, HtmlEmail.class);
+      email.addTo(mailTo);
+      messageGateway.send(email);
+    } catch (EmailException | MessagingException | IOException | LoginException e) {
+      LOGGER.warn("Failed to send email to {}", mailTo, e);
     }
+  }
 }

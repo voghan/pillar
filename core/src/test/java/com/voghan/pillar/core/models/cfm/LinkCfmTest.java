@@ -13,53 +13,54 @@ import static junitx.framework.Assert.assertEquals;
 
 @ExtendWith(AemContextExtension.class)
 public class LinkCfmTest {
-    private static final AemContext context = AppAemContext.newAemContext();
 
-    private static final String DEMO_LINKS_PATH = "/pillar-core/model/cfm/links.json";
+  private static final AemContext context = AppAemContext.newAemContext();
 
-    private LinkCfm linkCfm;
+  private static final String DEMO_LINKS_PATH = "/pillar-core/model/cfm/links.json";
 
-    @BeforeAll
-    static void setup() {
-        // Load context content once
-        context.addModelsForClasses(LinkCfm.class);
-        context.load().json(DEMO_LINKS_PATH, "/content/dam/links");
-    }
+  private LinkCfm linkCfm;
 
-    @Test
-    void getLinkText_default() {
-        linkCfm = getComponent("/content/dam/links/link1", "master");
+  @BeforeAll
+  static void setup() {
+    // Load context content once
+    context.addModelsForClasses(LinkCfm.class);
+    context.load().json(DEMO_LINKS_PATH, "/content/dam/links");
+  }
 
-        assertNotNull(linkCfm);
-        assertEquals("Get started", linkCfm.getLinkText());
-    }
+  @Test
+  void getLinkText_default() {
+    linkCfm = getComponent("/content/dam/links/link1", "master");
 
-    @Test
-    void getLinkPath_default() {
-        linkCfm = getComponent("/content/dam/links/link1", "master");
+    assertNotNull(linkCfm);
+    assertEquals("Get started", linkCfm.getLinkText());
+  }
 
-        assertNotNull(linkCfm);
-        assertEquals("/content/pillar/us/en", linkCfm.getLinkPath());
-    }
+  @Test
+  void getLinkPath_default() {
+    linkCfm = getComponent("/content/dam/links/link1", "master");
 
-    @Test
-    void getLinkText_variationEs() {
-        linkCfm = getComponent("/content/dam/links/link1", "es");
+    assertNotNull(linkCfm);
+    assertEquals("/content/pillar/us/en", linkCfm.getLinkPath());
+  }
 
-        assertNotNull(linkCfm);
-        assertEquals("Learn more es", linkCfm.getLinkText());
-    }
+  @Test
+  void getLinkText_variationEs() {
+    linkCfm = getComponent("/content/dam/links/link1", "es");
 
-    @Test
-    void getLinkPath_variationEs() {
-        linkCfm = getComponent("/content/dam/links/link1", "es");
+    assertNotNull(linkCfm);
+    assertEquals("Learn more es", linkCfm.getLinkText());
+  }
 
-        assertNotNull(linkCfm);
-        assertEquals("/content/pillar/us/es", linkCfm.getLinkPath());
-    }
+  @Test
+  void getLinkPath_variationEs() {
+    linkCfm = getComponent("/content/dam/links/link1", "es");
 
-    LinkCfm getComponent(String path, String version) {
-        Resource resource = context.currentResource(path + "/jcr:content/data/" + version);
-        return resource != null ? resource.adaptTo(LinkCfm.class) : null;
-    }
+    assertNotNull(linkCfm);
+    assertEquals("/content/pillar/us/es", linkCfm.getLinkPath());
+  }
+
+  LinkCfm getComponent(String path, String version) {
+    Resource resource = context.currentResource(path + "/jcr:content/data/" + version);
+    return resource != null ? resource.adaptTo(LinkCfm.class) : null;
+  }
 }

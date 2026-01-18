@@ -4,12 +4,12 @@ import java.util.List;
 
 public interface Card {
 
-    String getHeadline();
+  String getHeadline();
 
-    String getShortDescription();
+  String getShortDescription();
 
-    List<Link> getCallToActions();
+  List<Link> getCallToActions();
 
-    boolean isCallToActionEnabled();
+  boolean isCallToActionEnabled();
 
 }

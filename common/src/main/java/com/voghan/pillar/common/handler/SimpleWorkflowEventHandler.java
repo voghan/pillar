@@ -13,29 +13,30 @@ import org.slf4j.LoggerFactory;
     Constants.SERVICE_DESCRIPTION + "= Workflow event handler",
     EventConstants.EVENT_TOPIC + "=" + WorkflowEvent.EVENT_TOPIC})
 public class SimpleWorkflowEventHandler implements EventHandler {
-    private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 
-    @Override
-    public void handleEvent(Event event) {
-        String topic = event.getTopic();
-        String instanceId = (String) event.getProperty(WorkflowEvent.WORKFLOW_INSTANCE_ID);
+  private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 
-        if (topic.equals(WorkflowEvent.EVENT_TOPIC)) {
-            Object eventType = event.getProperty(WorkflowEvent.EVENT_TYPE);
+  @Override
+  public void handleEvent(Event event) {
+    String topic = event.getTopic();
+    String instanceId = (String) event.getProperty(WorkflowEvent.WORKFLOW_INSTANCE_ID);
 
-            if (eventType.equals(WorkflowEvent.WORKFLOW_STARTED_EVENT)) {
-                LOGGER.info("Workflow has started with workflow instance ID : {}", instanceId);
-            } else if (eventType.equals(WorkflowEvent.WORKFLOW_COMPLETED_EVENT)) {
-                LOGGER.info("Workflow has completed");
-            } else if (eventType.equals(WorkflowEvent.WORKFLOW_ABORTED_EVENT)) {
-                LOGGER.info("Workflow is aborted");
-            } else if (eventType.equals(WorkflowEvent.WORKFLOW_SUSPENDED_EVENT)) {
-                LOGGER.info("Workflow is suspended");
-            }  else if (eventType.equals(WorkflowEvent.JOB_FAILED_EVENT)) {
-                LOGGER.info("Workflow is in a failed state");
-            } else {
-                LOGGER.warn("Something is wrong with a workflow {}", eventType);
-            }
-        }
+    if (topic.equals(WorkflowEvent.EVENT_TOPIC)) {
+      Object eventType = event.getProperty(WorkflowEvent.EVENT_TYPE);
+
+      if (eventType.equals(WorkflowEvent.WORKFLOW_STARTED_EVENT)) {
+        LOGGER.info("Workflow has started with workflow instance ID : {}", instanceId);
+      } else if (eventType.equals(WorkflowEvent.WORKFLOW_COMPLETED_EVENT)) {
+        LOGGER.info("Workflow has completed");
+      } else if (eventType.equals(WorkflowEvent.WORKFLOW_ABORTED_EVENT)) {
+        LOGGER.info("Workflow is aborted");
+      } else if (eventType.equals(WorkflowEvent.WORKFLOW_SUSPENDED_EVENT)) {
+        LOGGER.info("Workflow is suspended");
+      } else if (eventType.equals(WorkflowEvent.JOB_FAILED_EVENT)) {
+        LOGGER.info("Workflow is in a failed state");
+      } else {
+        LOGGER.warn("Something is wrong with a workflow {}", eventType);
+      }
     }
+  }
 }

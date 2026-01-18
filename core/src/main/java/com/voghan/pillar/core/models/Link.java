@@ -2,8 +2,8 @@ package com.voghan.pillar.core.models;
 
 public interface Link {
 
-    String getLinkText();
+  String getLinkText();
 
-    String getLinkPath();
+  String getLinkPath();
 
 }

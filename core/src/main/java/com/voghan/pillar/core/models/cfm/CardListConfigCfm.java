@@ -15,67 +15,68 @@ import java.util.List;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class CardListConfigCfm implements CardListConfig {
-    private final Logger logger = LoggerFactory.getLogger(getClass());
 
-    private static final String master = "master";
+  private final Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Self
-    private Resource resource;
+  private static final String master = "master";
 
-    @ValueMapValue
-    private String headline;
+  @Self
+  private Resource resource;
 
-    @ValueMapValue
-    private String shortDescription;
+  @ValueMapValue
+  private String headline;
 
-    @ValueMapValue
-    private String searchPath;
+  @ValueMapValue
+  private String shortDescription;
 
-    @ValueMapValue
-    private Boolean enableSearch;
+  @ValueMapValue
+  private String searchPath;
 
-    @ValueMapValue
-    private List<String> cardTags = new ArrayList<>();
+  @ValueMapValue
+  private Boolean enableSearch;
 
-    @ValueMapValue
-    private List<String> filterTags = new ArrayList<>();
+  @ValueMapValue
+  private List<String> cardTags = new ArrayList<>();
 
-    @PostConstruct
-    protected void init() {
-        logger.info("Building a Card List Config mode for {}", resource.getPath());
+  @ValueMapValue
+  private List<String> filterTags = new ArrayList<>();
 
-        buildSearchFilters();
+  @PostConstruct
+  protected void init() {
+    logger.info("Building a Card List Config mode for {}", resource.getPath());
+
+    buildSearchFilters();
+  }
+
+  private void buildSearchFilters() {
+    if (enableSearch) {
+      //TODO build filter options
     }
+  }
 
-    private void buildSearchFilters() {
-        if (enableSearch) {
-            //TODO build filter options
-        }
-    }
+  @Override
+  public String getHeadline() {
+    return headline;
+  }
 
-    @Override
-    public String getHeadline() {
-        return headline;
-    }
+  @Override
+  public String getShortDescription() {
+    return shortDescription;
+  }
 
-    @Override
-    public String getShortDescription() {
-        return shortDescription;
-    }
+  public String getSearchPath() {
+    return searchPath;
+  }
 
-    public String getSearchPath() {
-        return searchPath;
-    }
+  public Boolean getEnableSearch() {
+    return enableSearch;
+  }
 
-    public Boolean getEnableSearch() {
-        return enableSearch;
-    }
+  public List<String> getCardTags() {
+    return new ArrayList<>(cardTags);
+  }
 
-    public List<String> getCardTags() {
-        return new ArrayList<>(cardTags);
-    }
-
-    public List<String> getFilterTags() {
-        return new ArrayList<>(filterTags);
-    }
+  public List<String> getFilterTags() {
+    return new ArrayList<>(filterTags);
+  }
 }

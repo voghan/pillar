@@ -26,72 +26,75 @@ import java.util.List;
     resourceType = HeroCardCmp.RESOURCE_TYPE,
     defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class HeroCardCmp extends BaseModelCmp implements HeroCard {
-    static final String RESOURCE_TYPE = "pillar/components/hero/v1/hero";
 
-    private final Logger logger = LoggerFactory.getLogger(getClass());
+  static final String RESOURCE_TYPE = "pillar/components/hero/v1/hero";
 
-    @Self
-    private SlingHttpServletRequest servletRequest;
+  private final Logger logger = LoggerFactory.getLogger(getClass());
 
-    @ValueMapValue
-    private String fragmentPath;
+  @Self
+  private SlingHttpServletRequest servletRequest;
 
-    @ValueMapValue
-    private String variationName;
+  @ValueMapValue
+  private String fragmentPath;
 
-    private HeroCard heroCard;
+  @ValueMapValue
+  private String variationName;
 
-    @PostConstruct
-    protected void init() {
-        logger.info("Post Construct for {} version {}", fragmentPath, variationName);
-        heroCard = new HeroCardCfm();
-        if (StringUtils.isEmpty(variationName)) {
-            variationName = "master";
-        }
-        if (servletRequest != null) {
-            Resource cfm = servletRequest.getResourceResolver().getResource(fragmentPath + "/jcr:content/data/" + variationName);
-            if (cfm != null) {
-                logger.info("Found resource at {} ", cfm.getPath());
-                heroCard = cfm.adaptTo(HeroCardCfm.class);
-            }
-        }
+  private HeroCard heroCard;
+
+  @PostConstruct
+  protected void init() {
+    logger.info("Post Construct for {} version {}", fragmentPath, variationName);
+    heroCard = new HeroCardCfm();
+    if (StringUtils.isEmpty(variationName)) {
+      variationName = "master";
     }
-
-    @Override
-    public String getHeadline() {
-        return heroCard.getHeadline();
+    if (servletRequest != null) {
+      Resource cfm = servletRequest.getResourceResolver()
+          .getResource(fragmentPath + "/jcr:content/data/" + variationName);
+      if (cfm != null) {
+        logger.info("Found resource at {} ", cfm.getPath());
+        heroCard = cfm.adaptTo(HeroCardCfm.class);
+      }
     }
+  }
 
-    @Override
-    public String getShortDescription() {
-        return heroCard.getShortDescription();
-    }
+  @Override
+  public String getHeadline() {
+    return heroCard.getHeadline();
+  }
 
-    @Override
-    public List<Link> getCallToActions() {
-        return heroCard.getCallToActions();
-    }
+  @Override
+  public String getShortDescription() {
+    return heroCard.getShortDescription();
+  }
 
-    @Override
-    public List<Link> getBreadcrumbs() {
-        return heroCard.getBreadcrumbs();
-    }
+  @Override
+  public List<Link> getCallToActions() {
+    return heroCard.getCallToActions();
+  }
 
-    @Override
-    public String getBackgroundImage() {
-        return heroCard.getBackgroundImage();
-    }
+  @Override
+  public List<Link> getBreadcrumbs() {
+    return heroCard.getBreadcrumbs();
+  }
 
-    public boolean isCallToActionEnabled() {
-        return heroCard.getCallToActions().size() > 0;
-    }
+  @Override
+  public String getBackgroundImage() {
+    return heroCard.getBackgroundImage();
+  }
 
-    public boolean isBreadcrumbsEnabled() {
-        return heroCard.getBreadcrumbs().size() > 0;
-    }
+  public boolean isCallToActionEnabled() {
+    return heroCard.getCallToActions().size() > 0;
+  }
 
-    @Override
-    public @NotNull String getExportedType() {
-        return RESOURCE_TYPE;
-    }
+  public boolean isBreadcrumbsEnabled() {
+    return heroCard.getBreadcrumbs().size() > 0;
+  }
+
+  @Override
+  public @NotNull
+  String getExportedType() {
+    return RESOURCE_TYPE;
+  }
 }

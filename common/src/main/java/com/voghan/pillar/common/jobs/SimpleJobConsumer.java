@@ -1,7 +1,11 @@
 package com.voghan.pillar.common.jobs;
 
+import static com.voghan.pillar.common.jobs.SimpleJobConsumer.JOB_TOPIC;
+
 import com.day.cq.commons.jcr.JcrConstants;
 import com.day.cq.wcm.api.NameConstants;
+import java.util.HashMap;
+import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.LoginException;
 import org.apache.sling.api.resource.Resource;
@@ -16,61 +20,58 @@ import org.osgi.service.component.annotations.Reference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import static com.voghan.pillar.common.jobs.SimpleJobConsumer.JOB_TOPIC;
-
 @Component(service = JobConsumer.class, immediate = true, property = {
     Constants.SERVICE_DESCRIPTION + "= Simple Sling Job",
     JobConsumer.PROPERTY_TOPICS + "=" + JOB_TOPIC
 })
 public class SimpleJobConsumer implements JobConsumer {
-    private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 
-    protected static final String SERVICE_NAME = "SimpleJobConsumer";
-    public static final String JOB_TOPIC = "simple/sling/job";
-    public static final String JOB_PATH = "job_path";
-    public static final String JOB_TYPE = "job_type";
+  private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 
-    @Reference
-    private ResourceResolverFactory resourceResolverFactory;
+  protected static final String SERVICE_NAME = "SimpleJobConsumer";
+  public static final String JOB_TOPIC = "simple/sling/job";
+  public static final String JOB_PATH = "job_path";
+  public static final String JOB_TYPE = "job_type";
 
-    @Override
-    public JobResult process(Job job) {
-        LOGGER.info("Starting new simple job");
+  @Reference
+  private ResourceResolverFactory resourceResolverFactory;
 
-        final Map<String, Object> authInfo = getAuthInfo();
+  @Override
+  public JobResult process(Job job) {
+    LOGGER.info("Starting new simple job");
 
-        try(ResourceResolver resourceResolver = resourceResolverFactory.getServiceResourceResolver(authInfo)) {
-            logJobParams(resourceResolver, job);
-        } catch (LoginException e) {
-            LOGGER.warn(e.getMessage(), e);
-        }
+    final Map<String, Object> authInfo = getAuthInfo();
 
-        return JobResult.OK;
+    try (ResourceResolver resourceResolver = resourceResolverFactory.getServiceResourceResolver(
+        authInfo)) {
+      logJobParams(resourceResolver, job);
+    } catch (LoginException e) {
+      LOGGER.warn(e.getMessage(), e);
     }
 
-    protected Map<String, Object> getAuthInfo() {
-        final Map<String, Object> authInfo = new HashMap<>();
-        authInfo.put(ResourceResolverFactory.SUBSERVICE, SERVICE_NAME);
-        return authInfo;
-    }
+    return JobResult.OK;
+  }
 
-    protected void logJobParams(ResourceResolver resourceResolver, Job job) {
-        String path = job.getProperty(JOB_PATH, String.class);
-        String type = job.getProperty(JOB_TYPE, String.class);
-        Resource resource = resourceResolver.getResource(path);
-        if (resource != null) {
-             ValueMap valueMap = resource.getValueMap();
-             String modifiedBy = valueMap.get(JcrConstants.JCR_LAST_MODIFIED_BY, String.class);
-             if (StringUtils.isEmpty(modifiedBy)) {
-                 modifiedBy = valueMap.get(NameConstants.PN_LAST_MOD_BY, String.class);
-             }
-            LOGGER.info("Resource {} modified {} by {}", path, type, modifiedBy);
-        } else {
-            LOGGER.info("Resource is not found {}", path);
-        }
+  protected Map<String, Object> getAuthInfo() {
+    final Map<String, Object> authInfo = new HashMap<>();
+    authInfo.put(ResourceResolverFactory.SUBSERVICE, SERVICE_NAME);
+    return authInfo;
+  }
+
+  protected void logJobParams(ResourceResolver resourceResolver, Job job) {
+    String path = job.getProperty(JOB_PATH, String.class);
+    String type = job.getProperty(JOB_TYPE, String.class);
+    Resource resource = resourceResolver.getResource(path);
+    if (resource != null) {
+      ValueMap valueMap = resource.getValueMap();
+      String modifiedBy = valueMap.get(JcrConstants.JCR_LAST_MODIFIED_BY, String.class);
+      if (StringUtils.isEmpty(modifiedBy)) {
+        modifiedBy = valueMap.get(NameConstants.PN_LAST_MOD_BY, String.class);
+      }
+      LOGGER.info("Resource {} modified {} by {}", path, type, modifiedBy);
+    } else {
+      LOGGER.info("Resource is not found {}", path);
     }
+  }
 
 }

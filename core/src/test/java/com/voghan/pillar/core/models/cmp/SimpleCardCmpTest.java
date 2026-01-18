@@ -15,71 +15,72 @@ import static junit.framework.Assert.assertNotNull;
 
 @ExtendWith(AemContextExtension.class)
 public class SimpleCardCmpTest {
-    private static final AemContext context = AppAemContext.newAemContext();
 
-    SimpleCardCmp simpleCardCmp;
+  private static final AemContext context = AppAemContext.newAemContext();
 
-    private static final String DEMO_PAGE_PATH = "/pillar-core/model/cmp/simpleCardCmps.json";
-    private static final String DEMO_LINKS_PATH = "/pillar-core/model/cfm/links.json";
-    private static final String DEMO_CARD_PATH = "/pillar-core/model/cfm/simpleCards.json";
+  SimpleCardCmp simpleCardCmp;
 
-    @BeforeAll
-    static void setup() {
-        // Load context content once
-        context.addModelsForClasses(SimpleCardCmp.class);
-        context.load().json(DEMO_PAGE_PATH, "/content/simple-cards");
-        context.load().json(DEMO_LINKS_PATH, "/content/dam/links");
-        context.load().json(DEMO_CARD_PATH, "/content/dam/simple-cards");
-    }
+  private static final String DEMO_PAGE_PATH = "/pillar-core/model/cmp/simpleCardCmps.json";
+  private static final String DEMO_LINKS_PATH = "/pillar-core/model/cfm/links.json";
+  private static final String DEMO_CARD_PATH = "/pillar-core/model/cfm/simpleCards.json";
 
-    @Test
-    void getHeadline_default() {
-        simpleCardCmp = getComponent("/content/simple-cards", "card");
+  @BeforeAll
+  static void setup() {
+    // Load context content once
+    context.addModelsForClasses(SimpleCardCmp.class);
+    context.load().json(DEMO_PAGE_PATH, "/content/simple-cards");
+    context.load().json(DEMO_LINKS_PATH, "/content/dam/links");
+    context.load().json(DEMO_CARD_PATH, "/content/dam/simple-cards");
+  }
 
-        assertNotNull(simpleCardCmp);
-        assertEquals("Epic Journey", simpleCardCmp.getHeadline());
-    }
+  @Test
+  void getHeadline_default() {
+    simpleCardCmp = getComponent("/content/simple-cards", "card");
 
-    @Test
-    void getShortDescription_default() {
-        simpleCardCmp = getComponent("/content/simple-cards", "card");
-        String expected = "<p>Don't stop half way, go for the top!</p>\n";
+    assertNotNull(simpleCardCmp);
+    assertEquals("Epic Journey", simpleCardCmp.getHeadline());
+  }
 
-        assertNotNull(simpleCardCmp);
-        assertEquals(expected, simpleCardCmp.getShortDescription());
-    }
+  @Test
+  void getShortDescription_default() {
+    simpleCardCmp = getComponent("/content/simple-cards", "card");
+    String expected = "<p>Don't stop half way, go for the top!</p>\n";
 
-    @Test
-    void getCallToActions_default() {
-        simpleCardCmp = getComponent("/content/simple-cards", "card");
+    assertNotNull(simpleCardCmp);
+    assertEquals(expected, simpleCardCmp.getShortDescription());
+  }
 
-        assertNotNull(simpleCardCmp);
-        assertFalse(simpleCardCmp.getCallToActions().isEmpty());
-        assertEquals(1, simpleCardCmp.getCallToActions().size());
-        Link link = simpleCardCmp.getCallToActions().get(0);
-        assertNotNull(link);
-        assertEquals("Get started", link.getLinkText());
-        assertEquals("/content/pillar/us/en", link.getLinkPath());
-    }
+  @Test
+  void getCallToActions_default() {
+    simpleCardCmp = getComponent("/content/simple-cards", "card");
 
-    @Test
-    void getImage_default() {
-        simpleCardCmp = getComponent("/content/simple-cards", "card");
+    assertNotNull(simpleCardCmp);
+    assertFalse(simpleCardCmp.getCallToActions().isEmpty());
+    assertEquals(1, simpleCardCmp.getCallToActions().size());
+    Link link = simpleCardCmp.getCallToActions().get(0);
+    assertNotNull(link);
+    assertEquals("Get started", link.getLinkText());
+    assertEquals("/content/pillar/us/en", link.getLinkPath());
+  }
 
-        assertNotNull(simpleCardCmp);
-        assertEquals("/content/dam/images/BrianLogo2019-medium.png", simpleCardCmp.getImage());
-    }
+  @Test
+  void getImage_default() {
+    simpleCardCmp = getComponent("/content/simple-cards", "card");
 
-    @Test
-    void getExportedType_expected() {
-        simpleCardCmp = getComponent("/content/simple-cards", "card");
+    assertNotNull(simpleCardCmp);
+    assertEquals("/content/dam/images/BrianLogo2019-medium.png", simpleCardCmp.getImage());
+  }
 
-        assertNotNull(simpleCardCmp);
-        assertEquals(SimpleCardCmp.RESOURCE_TYPE, simpleCardCmp.getExportedType());
-    }
+  @Test
+  void getExportedType_expected() {
+    simpleCardCmp = getComponent("/content/simple-cards", "card");
 
-    SimpleCardCmp getComponent(String path, String component) {
-        context.currentResource(path + "/jcr:content/root/container/container/" + component);
-        return context.request().adaptTo(SimpleCardCmp.class);
-    }
+    assertNotNull(simpleCardCmp);
+    assertEquals(SimpleCardCmp.RESOURCE_TYPE, simpleCardCmp.getExportedType());
+  }
+
+  SimpleCardCmp getComponent(String path, String component) {
+    context.currentResource(path + "/jcr:content/root/container/container/" + component);
+    return context.request().adaptTo(SimpleCardCmp.class);
+  }
 }

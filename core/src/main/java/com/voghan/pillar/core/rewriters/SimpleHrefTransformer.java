@@ -19,30 +19,32 @@ import org.xml.sax.helpers.AttributesImpl;
     }
 )
 public class SimpleHrefTransformer extends CommonPillarTransformer {
-    private static final Logger logger = LoggerFactory.getLogger(SimpleHrefTransformer.class);
 
-    @Override
-    public Transformer createTransformer() {
-        return new SimpleHrefTransformer();
+  private static final Logger logger = LoggerFactory.getLogger(SimpleHrefTransformer.class);
+
+  @Override
+  public Transformer createTransformer() {
+    return new SimpleHrefTransformer();
+  }
+
+  @Override
+  public void startElement(String uri, String localName, String qName, Attributes atts)
+      throws SAXException {
+    // Do the actual work
+    ContentHandler contentHandler = getContentHandler();
+    if (contentHandler != null) {
+      if (atts.getIndex("href") > -1 && qName.equalsIgnoreCase("a")) {
+        AttributesImpl modifiedAttributes = new AttributesImpl(atts);
+
+        String updatedHref = atts.getValue("href");
+        logger.info("Transforming href {}", updatedHref);
+
+        modifiedAttributes.setValue(atts.getIndex("href"), updatedHref);
+        contentHandler.startElement(uri, localName, qName, modifiedAttributes);
+      } else {
+        contentHandler.startElement(uri, localName, qName, atts);
+      }
     }
-
-    @Override
-    public void startElement(String uri, String localName, String qName, Attributes atts) throws SAXException {
-        // Do the actual work
-        ContentHandler contentHandler = getContentHandler();
-        if (contentHandler != null) {
-            if (atts.getIndex("href") > -1 && qName.equalsIgnoreCase("a")) {
-                AttributesImpl modifiedAttributes = new AttributesImpl(atts);
-
-                String updatedHref = atts.getValue("href");
-                logger.info("Transforming href {}", updatedHref);
-
-                modifiedAttributes.setValue(atts.getIndex("href"), updatedHref);
-                contentHandler.startElement(uri, localName, qName, modifiedAttributes);
-            } else {
-                contentHandler.startElement(uri, localName, qName, atts);
-            }
-        }
-    }
+  }
 
 }

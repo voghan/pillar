@@ -56,6 +56,12 @@
         <componentGroupName>Pillar</componentGroupName>
         <uber.jar.version>6.6.1</uber.jar.version>
         <java.version>21</java.version>
+        <!-- plugin versions: update to latest stable as needed -->
+        <spotbugs.version>4.0.0</spotbugs.version>
+        <pmd.version>3.22.0</pmd.version>
+        <checkstyle.version>3.6.0</checkstyle.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
     </properties>
     <build>
         <plugins>
