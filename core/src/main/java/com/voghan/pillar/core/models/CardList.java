@@ -4,15 +4,15 @@ import java.util.List;
 
 public interface CardList {
 
-    String getHeadline();
+  String getHeadline();
 
-    String getShortDescription();
+  String getShortDescription();
 
-    boolean isCardsFound();
+  boolean isCardsFound();
 
-    List<Card> getCards();
+  List<Card> getCards();
 
-    boolean isEnableSearch();
+  boolean isEnableSearch();
 
-    List<String> getFilterOptions();
+  List<String> getFilterOptions();
 }

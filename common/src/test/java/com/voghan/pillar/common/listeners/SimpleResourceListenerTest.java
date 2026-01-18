@@ -15,13 +15,17 @@
  */
 package com.voghan.pillar.common.listeners;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import com.voghan.pillar.common.testcontext.AppAemContext;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
+import java.util.Arrays;
+import java.util.List;
 import org.apache.sling.api.resource.observation.ResourceChange;
 import org.apache.sling.api.resource.observation.ResourceChange.ChangeType;
 import org.apache.sling.event.jobs.JobManager;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -32,46 +36,42 @@ import uk.org.lidalia.slf4jtest.LoggingEvent;
 import uk.org.lidalia.slf4jtest.TestLogger;
 import uk.org.lidalia.slf4jtest.TestLoggerFactory;
 
-import java.util.Arrays;
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 @ExtendWith({AemContextExtension.class, MockitoExtension.class})
 class SimpleResourceListenerTest {
-    private static final TestLogger logger = TestLoggerFactory.getTestLogger(SimpleResourceListener.class);
-    private static final AemContext context = AppAemContext.newAemContext();
 
-    @Mock
-    private JobManager jobManager;
+  private static final TestLogger logger = TestLoggerFactory.getTestLogger(
+      SimpleResourceListener.class);
+  private static final AemContext context = AppAemContext.newAemContext();
 
-    private SimpleResourceListener fixture;
+  @Mock
+  private JobManager jobManager;
 
-    @BeforeEach
-    void setup() {
-        context.registerService(JobManager.class, jobManager);
+  private SimpleResourceListener fixture;
 
-        fixture = context.registerInjectActivateService(new SimpleResourceListener());
-    }
+  @BeforeEach
+  void setup() {
+    context.registerService(JobManager.class, jobManager);
 
-    @Test
-    void handleEvent() {
+    fixture = context.registerInjectActivateService(new SimpleResourceListener());
+  }
 
-        ResourceChange change = new ResourceChange(ChangeType.ADDED, "/content/test", false);
+  @Test
+  void handleEvent() {
 
-        fixture.onChange(Arrays.asList(change));
+    ResourceChange change = new ResourceChange(ChangeType.ADDED, "/content/test", false);
 
-        List<LoggingEvent> events = logger.getLoggingEvents();
-        assertEquals(1, events.size());
-        LoggingEvent event = events.get(0);
+    fixture.onChange(Arrays.asList(change));
 
-        assertAll(
-            () -> assertEquals(Level.DEBUG, event.getLevel()),
-            () -> assertEquals(3, event.getArguments().size()),
-            () -> assertEquals(ChangeType.ADDED, event.getArguments().get(0)),
-            () -> assertEquals("/content/test", event.getArguments().get(1)),
-            () -> assertEquals(Boolean.FALSE, event.getArguments().get(2))
-        );
-    }
+    List<LoggingEvent> events = logger.getLoggingEvents();
+    assertEquals(1, events.size());
+    LoggingEvent event = events.get(0);
+
+    assertAll(
+        () -> assertEquals(Level.DEBUG, event.getLevel()),
+        () -> assertEquals(3, event.getArguments().size()),
+        () -> assertEquals(ChangeType.ADDED, event.getArguments().get(0)),
+        () -> assertEquals("/content/test", event.getArguments().get(1)),
+        () -> assertEquals(Boolean.FALSE, event.getArguments().get(2))
+    );
+  }
 }

@@ -12,35 +12,36 @@ import static junit.framework.Assert.assertEquals;
 
 @ExtendWith(AemContextExtension.class)
 public class BaseModelCmpTest {
-    private static final AemContext context = AppAemContext.newAemContext();
 
-    BaseModelCmp baseModelCmp;
+  private static final AemContext context = AppAemContext.newAemContext();
 
-    private static final String DEMO_HERO_PAGE_PATH = "/pillar-core/model/cmp/heroCardCmps.json";
-    private static final String DEMO_LINKS_PATH = "/pillar-core/model/cfm/links.json";
-    private static final String DEMO_HERO_PATH = "/pillar-core/model/cfm/heroCards.json";
+  BaseModelCmp baseModelCmp;
 
-    @BeforeAll
-    static void setup() {
-        // Load context content once
-        context.addModelsForClasses(BaseModelCmp.class);
-        context.load().json(DEMO_HERO_PAGE_PATH, "/content/hero");
-        context.load().json(DEMO_LINKS_PATH, "/content/dam/links");
-        context.load().json(DEMO_HERO_PATH, "/content/dam/hero");
-    }
+  private static final String DEMO_HERO_PAGE_PATH = "/pillar-core/model/cmp/heroCardCmps.json";
+  private static final String DEMO_LINKS_PATH = "/pillar-core/model/cfm/links.json";
+  private static final String DEMO_HERO_PATH = "/pillar-core/model/cfm/heroCards.json";
 
-    @Test
-    void overrides_default() {
-        baseModelCmp = getComponent("/content/hero", "hero");
+  @BeforeAll
+  static void setup() {
+    // Load context content once
+    context.addModelsForClasses(BaseModelCmp.class);
+    context.load().json(DEMO_HERO_PAGE_PATH, "/content/hero");
+    context.load().json(DEMO_LINKS_PATH, "/content/dam/links");
+    context.load().json(DEMO_HERO_PATH, "/content/dam/hero");
+  }
 
-        assertEquals(null, baseModelCmp.getId());
-        assertEquals(null, baseModelCmp.getAppliedCssClasses());
-        assertEquals(null, baseModelCmp.getData());
-        assertEquals(null, baseModelCmp.getCurrentPage());
-    }
+  @Test
+  void overrides_default() {
+    baseModelCmp = getComponent("/content/hero", "hero");
 
-    HeroCardCmp getComponent(String path, String component) {
-        context.currentResource(path + "/jcr:content/root/container/container/" + component);
-        return context.request().adaptTo(HeroCardCmp.class);
-    }
+    assertEquals(null, baseModelCmp.getId());
+    assertEquals(null, baseModelCmp.getAppliedCssClasses());
+    assertEquals(null, baseModelCmp.getData());
+    assertEquals(null, baseModelCmp.getCurrentPage());
+  }
+
+  HeroCardCmp getComponent(String path, String component) {
+    context.currentResource(path + "/jcr:content/root/container/container/" + component);
+    return context.request().adaptTo(HeroCardCmp.class);
+  }
 }

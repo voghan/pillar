@@ -13,29 +13,32 @@ import org.jetbrains.annotations.Nullable;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class BaseModelCmp implements Component {
 
-    @ScriptVariable
-    private Page currentPage;
+  @ScriptVariable
+  private Page currentPage;
 
-    @ValueMapValue
-    private String id;
+  @ValueMapValue
+  private String id;
 
-    @Override
-    public @Nullable String getId() {
-        return id;
-    }
+  @Override
+  public @Nullable
+  String getId() {
+    return id;
+  }
 
-    @Override
-    public @Nullable ComponentData getData() {
-        return Component.super.getData();
-    }
+  @Override
+  public @Nullable
+  ComponentData getData() {
+    return Component.super.getData();
+  }
 
-    @Override
-    public @Nullable String getAppliedCssClasses() {
-        return Component.super.getAppliedCssClasses();
-    }
+  @Override
+  public @Nullable
+  String getAppliedCssClasses() {
+    return Component.super.getAppliedCssClasses();
+  }
 
-    protected Page getCurrentPage() {
-        return currentPage;
-    }
+  protected Page getCurrentPage() {
+    return currentPage;
+  }
 
 }

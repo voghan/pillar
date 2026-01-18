@@ -12,20 +12,20 @@ import javax.annotation.PostConstruct;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class SimpleCardCfm extends CardCfm implements SimpleCard {
 
-    @Self
-    private Resource resource;
+  @Self
+  private Resource resource;
 
-    @ValueMapValue
-    private String image;
+  @ValueMapValue
+  private String image;
 
-    @PostConstruct
-    protected void init() {
-        buildCallToActions();
-    }
+  @PostConstruct
+  protected void init() {
+    buildCallToActions();
+  }
 
-    @Override
-    public String getImage() {
-        return image;
-    }
+  @Override
+  public String getImage() {
+    return image;
+  }
 
 }

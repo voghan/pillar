@@ -16,6 +16,9 @@
 package com.voghan.pillar.common.listeners;
 
 import com.voghan.pillar.common.jobs.SimpleJobConsumer;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import org.apache.sling.api.resource.observation.ResourceChange;
 import org.apache.sling.api.resource.observation.ResourceChangeListener;
 import org.apache.sling.event.jobs.JobManager;
@@ -25,15 +28,9 @@ import org.osgi.service.component.propertytypes.ServiceDescription;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 /**
- * A service to demonstrate how changes in the resource tree
- * can be listened for.
- * Please note, that apart from EventHandler services,
- * the immediate flag should not be set on a service.
+ * A service to demonstrate how changes in the resource tree can be listened for. Please note, that
+ * apart from EventHandler services, the immediate flag should not be set on a service.
  */
 @Component(service = ResourceChangeListener.class, property = {
     ResourceChangeListener.PATHS + "=" + "/content",
@@ -43,27 +40,29 @@ import java.util.Map;
 })
 @ServiceDescription("Demo to listen on changes in the resource tree")
 public class SimpleResourceListener implements ResourceChangeListener {
-    private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 
-    @Reference
-    private JobManager jobManager;
+  private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 
-    @Override
-    public void onChange(List<ResourceChange> changes) {
+  @Reference
+  private JobManager jobManager;
 
-        changes.forEach(change -> {
-            LOGGER.debug("Resource event: {} at: {} isExternal {}", change.getType(), change.getPath(), change.isExternal());
-            addJob(change);
-        });
+  @Override
+  public void onChange(List<ResourceChange> changes) {
 
-    }
+    changes.forEach(change -> {
+      LOGGER.debug("Resource event: {} at: {} isExternal {}", change.getType(), change.getPath(),
+          change.isExternal());
+      addJob(change);
+    });
 
-    private void addJob(ResourceChange change) {
+  }
 
-        Map<String, Object> params = new HashMap<>();
-        params.put(SimpleJobConsumer.JOB_PATH, change.getPath());
-        params.put(SimpleJobConsumer.JOB_TYPE, change.getType());
-        jobManager.addJob(SimpleJobConsumer.JOB_TOPIC, params);
-    }
+  private void addJob(ResourceChange change) {
+
+    Map<String, Object> params = new HashMap<>();
+    params.put(SimpleJobConsumer.JOB_PATH, change.getPath());
+    params.put(SimpleJobConsumer.JOB_TYPE, change.getType());
+    jobManager.addJob(SimpleJobConsumer.JOB_TOPIC, params);
+  }
 }
 

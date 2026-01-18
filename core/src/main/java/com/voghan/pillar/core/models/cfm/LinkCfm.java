@@ -11,24 +11,25 @@ import org.slf4j.LoggerFactory;
 
 @Model(adaptables = Resource.class)
 public class LinkCfm extends BaseModelCfm implements Link {
-    private final Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Self
-    private SimpleLinkBuilder linkBuilder;
+  private final Logger logger = LoggerFactory.getLogger(getClass());
 
-    @ValueMapValue
-    private String linkText;
+  @Self
+  private SimpleLinkBuilder linkBuilder;
 
-    @ValueMapValue
-    private String linkPath;
+  @ValueMapValue
+  private String linkText;
 
-    @Override
-    public String getLinkText() {
-        return linkText;
-    }
+  @ValueMapValue
+  private String linkPath;
 
-    @Override
-    public String getLinkPath() {
-        return linkBuilder.getLinkUrl(linkPath);
-    }
+  @Override
+  public String getLinkText() {
+    return linkText;
+  }
+
+  @Override
+  public String getLinkPath() {
+    return linkBuilder.getLinkUrl(linkPath);
+  }
 }

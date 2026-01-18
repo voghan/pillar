@@ -15,6 +15,15 @@
  */
 package com.voghan.pillar.common.filters;
 
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Map;
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.engine.EngineConstants;
 import org.osgi.service.component.annotations.Component;
@@ -22,16 +31,6 @@ import org.osgi.service.component.propertytypes.ServiceDescription;
 import org.osgi.service.component.propertytypes.ServiceRanking;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.Map;
 
 /**
  * Simple servlet filter component that logs incoming requests.
@@ -44,36 +43,36 @@ import java.util.Map;
 @ServiceRanking(-700)
 public class SimpleLoggingFilter implements Filter {
 
-    private final Logger LOGGER = LoggerFactory.getLogger(getClass());
+  private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 
-    @Override
-    public void doFilter(final ServletRequest request, final ServletResponse response,
-                         final FilterChain filterChain) throws IOException, ServletException {
+  @Override
+  public void doFilter(final ServletRequest request, final ServletResponse response,
+      final FilterChain filterChain) throws IOException, ServletException {
 
-        final SlingHttpServletRequest slingRequest = (SlingHttpServletRequest) request;
-        LOGGER.info("request for {}, with selector {}, with parameters {}",
-            slingRequest.getRequestPathInfo().getResourcePath(),
-            slingRequest.getRequestPathInfo().getSelectorString(),
-            getParametersAsString(slingRequest.getParameterMap()));
+    final SlingHttpServletRequest slingRequest = (SlingHttpServletRequest) request;
+    LOGGER.info("request for {}, with selector {}, with parameters {}",
+        slingRequest.getRequestPathInfo().getResourcePath(),
+        slingRequest.getRequestPathInfo().getSelectorString(),
+        getParametersAsString(slingRequest.getParameterMap()));
 
-        filterChain.doFilter(request, response);
+    filterChain.doFilter(request, response);
+  }
+
+  @Override
+  public void init(FilterConfig filterConfig) {
+  }
+
+  @Override
+  public void destroy() {
+  }
+
+  protected String getParametersAsString(Map<String, String[]> params) {
+    StringBuilder result = new StringBuilder();
+
+    for (String key : params.keySet()) {
+      result.append(String.format("{ param %s values %s }", key, Arrays.toString(params.get(key))));
     }
 
-    @Override
-    public void init(FilterConfig filterConfig) {
-    }
-
-    @Override
-    public void destroy() {
-    }
-
-    protected String getParametersAsString(Map<String, String[]> params) {
-        StringBuilder result = new StringBuilder();
-
-        for (String key : params.keySet()) {
-            result.append(String.format("{ param %s values %s }", key, Arrays.toString(params.get(key))));
-        }
-
-        return result.toString();
-    }
+    return result.toString();
+  }
 }

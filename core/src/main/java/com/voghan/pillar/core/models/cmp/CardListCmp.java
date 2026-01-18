@@ -32,96 +32,99 @@ import java.util.Map;
     resourceType = CardListCmp.RESOURCE_TYPE,
     defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class CardListCmp extends BaseModelCmp implements CardList {
-    static final String RESOURCE_TYPE = "pillar/components/card-list/v1/card-list";
 
-    private final Logger logger = LoggerFactory.getLogger(getClass());
+  static final String RESOURCE_TYPE = "pillar/components/card-list/v1/card-list";
 
-    @Self
-    private SlingHttpServletRequest slingHttpServletRequest;
+  private final Logger logger = LoggerFactory.getLogger(getClass());
 
-    @OSGiService
-    private SimpleQueryBuilder simpleQueryBuilder;
+  @Self
+  private SlingHttpServletRequest slingHttpServletRequest;
 
-    @ValueMapValue
-    private String fragmentPath;
+  @OSGiService
+  private SimpleQueryBuilder simpleQueryBuilder;
 
-    private CardListConfig cardListConfig;
+  @ValueMapValue
+  private String fragmentPath;
 
-    private List<Card> cards = new ArrayList<>();
+  private CardListConfig cardListConfig;
 
-    private List<String> filterOptions = new ArrayList<>();
+  private List<Card> cards = new ArrayList<>();
 
-    @PostConstruct
-    protected void init() {
-        logger.info("Post Construct for {} filters ... ", fragmentPath);
+  private List<String> filterOptions = new ArrayList<>();
 
-        if (fragmentPath != null) {
-            Resource resource = slingHttpServletRequest.getResourceResolver().getResource(fragmentPath);
-            if (resource != null && resource.getChild("jcr:content/data/master") != null){
-                cardListConfig = resource.getChild("jcr:content/data/master").adaptTo(CardListConfigCfm.class);
-            }
-        }
+  @PostConstruct
+  protected void init() {
+    logger.info("Post Construct for {} filters ... ", fragmentPath);
 
-        if (cardListConfig != null && simpleQueryBuilder != null) {
-            searchForCards(cardListConfig);
-            // TODO add filters
-        }
+    if (fragmentPath != null) {
+      Resource resource = slingHttpServletRequest.getResourceResolver().getResource(fragmentPath);
+      if (resource != null && resource.getChild("jcr:content/data/master") != null) {
+        cardListConfig = resource.getChild("jcr:content/data/master")
+            .adaptTo(CardListConfigCfm.class);
+      }
     }
 
-    protected void searchForCards(CardListConfig cardListConfig) {
-        Map<String, String> map = buildQuery(cardListConfig);
-        List<Resource> resources = simpleQueryBuilder.search(slingHttpServletRequest, map);
-
-        //hydrate
-        for (Resource resource : resources) {
-            Card card = resource.getChild("data/master").adaptTo(CardCfm.class);
-            if (card != null) {
-                cards.add(card);
-            }
-        }
+    if (cardListConfig != null && simpleQueryBuilder != null) {
+      searchForCards(cardListConfig);
+      // TODO add filters
     }
+  }
 
-    @NotNull
-    private Map<String, String> buildQuery(CardListConfig cardListConfig) {
-        Map<String, String> map = new HashMap<String, String>();
-        map.put("path", cardListConfig.getSearchPath());
-        map.put("type", "dam:AssetContent");
-        int i = 0;
-        for(String tagId : cardListConfig.getCardTags()) {
-            map.put(i +"_tagid", tagId);
-            map.put(i +"_tagid.property", "metadata/cq:tags");
-        }
-        map.put("p.limit","25");
-        return map;
-    }
+  protected void searchForCards(CardListConfig cardListConfig) {
+    Map<String, String> map = buildQuery(cardListConfig);
+    List<Resource> resources = simpleQueryBuilder.search(slingHttpServletRequest, map);
 
-    public List<Card> getCards() {
-        return  new ArrayList<>(cards);
+    //hydrate
+    for (Resource resource : resources) {
+      Card card = resource.getChild("data/master").adaptTo(CardCfm.class);
+      if (card != null) {
+        cards.add(card);
+      }
     }
+  }
 
-    public String getHeadline() {
-        return (cardListConfig != null) ? cardListConfig.getHeadline() : null;
+  @NotNull
+  private Map<String, String> buildQuery(CardListConfig cardListConfig) {
+    Map<String, String> map = new HashMap<String, String>();
+    map.put("path", cardListConfig.getSearchPath());
+    map.put("type", "dam:AssetContent");
+    int i = 0;
+    for (String tagId : cardListConfig.getCardTags()) {
+      map.put(i + "_tagid", tagId);
+      map.put(i + "_tagid.property", "metadata/cq:tags");
     }
+    map.put("p.limit", "25");
+    return map;
+  }
 
-    public List<String> getFilterOptions() {
-        return filterOptions;
-    }
+  public List<Card> getCards() {
+    return new ArrayList<>(cards);
+  }
 
-    public String getShortDescription() {
-        return (cardListConfig != null) ? cardListConfig.getShortDescription() : null;
-    }
+  public String getHeadline() {
+    return (cardListConfig != null) ? cardListConfig.getHeadline() : null;
+  }
 
-    @Override
-    public boolean isCardsFound() {
-        return !cards.isEmpty();
-    }
+  public List<String> getFilterOptions() {
+    return filterOptions;
+  }
 
-    public boolean isEnableSearch() {
-        return (cardListConfig != null) ? cardListConfig.getEnableSearch() : false;
-    }
+  public String getShortDescription() {
+    return (cardListConfig != null) ? cardListConfig.getShortDescription() : null;
+  }
 
-    @Override
-    public @NotNull String getExportedType() {
-        return RESOURCE_TYPE;
-    }
+  @Override
+  public boolean isCardsFound() {
+    return !cards.isEmpty();
+  }
+
+  public boolean isEnableSearch() {
+    return (cardListConfig != null) ? cardListConfig.getEnableSearch() : false;
+  }
+
+  @Override
+  public @NotNull
+  String getExportedType() {
+    return RESOURCE_TYPE;
+  }
 }

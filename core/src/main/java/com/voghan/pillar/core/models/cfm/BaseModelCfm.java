@@ -7,15 +7,16 @@ import org.apache.sling.models.annotations.injectorspecific.Self;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class BaseModelCfm {
-    private static final String master = "master";
 
-    @Self
-    private Resource resource;
+  private static final String master = "master";
 
-    protected String getVersion() {
-        if (resource != null) {
-            return resource.getName();
-        }
-        return master;
+  @Self
+  private Resource resource;
+
+  protected String getVersion() {
+    if (resource != null) {
+      return resource.getName();
     }
+    return master;
+  }
 }

@@ -15,79 +15,80 @@ import static junit.framework.Assert.assertTrue;
 
 @ExtendWith(AemContextExtension.class)
 public class CardListConfigCfmTest {
-    private static final AemContext context = AppAemContext.newAemContext();
 
-    private static final String DEMO_CARD_PATH = "/pillar-core/model/cfm/cardListConfigs.json";
+  private static final AemContext context = AppAemContext.newAemContext();
 
-    CardListConfigCfm cardListConfigCfm;
+  private static final String DEMO_CARD_PATH = "/pillar-core/model/cfm/cardListConfigs.json";
 
-    @BeforeAll
-    static void setup() {
-        // Load context content once
-        context.addModelsForClasses(LinkCfm.class);
-        context.load().json(DEMO_CARD_PATH, "/content/dam/card-list-config");
-    }
+  CardListConfigCfm cardListConfigCfm;
 
-    @Test
-    void getHeadline_default() {
-        String expected = "Title for component";
-        cardListConfigCfm = getComponent("/content/dam/card-list-config/simple-card-list", "master");
+  @BeforeAll
+  static void setup() {
+    // Load context content once
+    context.addModelsForClasses(LinkCfm.class);
+    context.load().json(DEMO_CARD_PATH, "/content/dam/card-list-config");
+  }
 
-        String actual = cardListConfigCfm.getHeadline();
+  @Test
+  void getHeadline_default() {
+    String expected = "Title for component";
+    cardListConfigCfm = getComponent("/content/dam/card-list-config/simple-card-list", "master");
 
-        assertEquals(expected, actual);
-    }
+    String actual = cardListConfigCfm.getHeadline();
 
-    @Test
-    void getShortDescription_default() {
-        String expected = "<p>Short description about the content returned.</p>\n";
-        cardListConfigCfm = getComponent("/content/dam/card-list-config/simple-card-list", "master");
+    assertEquals(expected, actual);
+  }
 
-        String actual = cardListConfigCfm.getShortDescription();
+  @Test
+  void getShortDescription_default() {
+    String expected = "<p>Short description about the content returned.</p>\n";
+    cardListConfigCfm = getComponent("/content/dam/card-list-config/simple-card-list", "master");
 
-        assertEquals(expected, actual);
-    }
+    String actual = cardListConfigCfm.getShortDescription();
 
-    @Test
-    void getSearchPath_default() {
-        String expected = "/content/dam/pillar/cfm/basic-cards/demo";
-        cardListConfigCfm = getComponent("/content/dam/card-list-config/simple-card-list", "master");
+    assertEquals(expected, actual);
+  }
 
-        String actual = cardListConfigCfm.getSearchPath();
+  @Test
+  void getSearchPath_default() {
+    String expected = "/content/dam/pillar/cfm/basic-cards/demo";
+    cardListConfigCfm = getComponent("/content/dam/card-list-config/simple-card-list", "master");
 
-        assertEquals(expected, actual);
-    }
+    String actual = cardListConfigCfm.getSearchPath();
 
-    @Test
-    void getEnableSearch_default() {
-        Boolean expected = Boolean.TRUE;
-        cardListConfigCfm = getComponent("/content/dam/card-list-config/simple-card-list", "master");
+    assertEquals(expected, actual);
+  }
 
-        Boolean actual = cardListConfigCfm.getEnableSearch();
+  @Test
+  void getEnableSearch_default() {
+    Boolean expected = Boolean.TRUE;
+    cardListConfigCfm = getComponent("/content/dam/card-list-config/simple-card-list", "master");
 
-        assertTrue(actual);
-    }
+    Boolean actual = cardListConfigCfm.getEnableSearch();
 
-    @Test
-    void getCardTags_default() {
-        cardListConfigCfm = getComponent("/content/dam/card-list-config/simple-card-list", "master");
+    assertTrue(actual);
+  }
 
-        List<String> actual = cardListConfigCfm.getCardTags();
+  @Test
+  void getCardTags_default() {
+    cardListConfigCfm = getComponent("/content/dam/card-list-config/simple-card-list", "master");
 
-        assertEquals(1, actual.size());
-    }
+    List<String> actual = cardListConfigCfm.getCardTags();
 
-    @Test
-    void getFilterTags_default() {
-        cardListConfigCfm = getComponent("/content/dam/card-list-config/simple-card-list", "master");
+    assertEquals(1, actual.size());
+  }
 
-        List<String> actual = cardListConfigCfm.getFilterTags();
+  @Test
+  void getFilterTags_default() {
+    cardListConfigCfm = getComponent("/content/dam/card-list-config/simple-card-list", "master");
 
-        assertEquals(4, actual.size());
-    }
+    List<String> actual = cardListConfigCfm.getFilterTags();
 
-    CardListConfigCfm getComponent(String path, String version) {
-        Resource resource = context.currentResource(path + "/jcr:content/data/" + version);
-        return resource != null ? resource.adaptTo(CardListConfigCfm.class) : null;
-    }
+    assertEquals(4, actual.size());
+  }
+
+  CardListConfigCfm getComponent(String path, String version) {
+    Resource resource = context.currentResource(path + "/jcr:content/data/" + version);
+    return resource != null ? resource.adaptTo(CardListConfigCfm.class) : null;
+  }
 }

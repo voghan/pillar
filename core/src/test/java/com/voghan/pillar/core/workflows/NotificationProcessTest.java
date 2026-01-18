@@ -45,89 +45,91 @@ import static org.mockito.Mockito.when;
 @ExtendWith({AemContextExtension.class, MockitoExtension.class})
 public class NotificationProcessTest {
 
-    private static final AemContext context = AppAemContext.newAemContext();
+  private static final AemContext context = AppAemContext.newAemContext();
 
-    private TestLogger logger = TestLoggerFactory.getTestLogger(NotificationProcess.class);
+  private TestLogger logger = TestLoggerFactory.getTestLogger(NotificationProcess.class);
 
-    @Mock
-    ResourceResolverFactory resourceResolverFactory;
+  @Mock
+  ResourceResolverFactory resourceResolverFactory;
 
-    @Mock
-    Externalizer externalizer;
+  @Mock
+  Externalizer externalizer;
 
-    @Mock
-    SimpleEmailService emailService;
+  @Mock
+  SimpleEmailService emailService;
 
-    @Mock
-    ResourceResolver resourceResolver;
+  @Mock
+  ResourceResolver resourceResolver;
 
-    @Mock
-    Session session;
+  @Mock
+  Session session;
 
-    @Mock
-    UserManager userManager;
+  @Mock
+  UserManager userManager;
 
-    @Mock
-    Authorizable authorizable;
+  @Mock
+  Authorizable authorizable;
 
-    @InjectMocks
-    NotificationProcess notificationProcess;
+  @InjectMocks
+  NotificationProcess notificationProcess;
 
-    @BeforeEach
-    void setup() throws LoginException {
-        TestLoggerFactory.clear();
+  @BeforeEach
+  void setup() throws LoginException {
+    TestLoggerFactory.clear();
 
-        Map<String, Object> expectedParams = Collections.singletonMap(
-            ResourceResolverFactory.SUBSERVICE, (Object) NotificationProcess.SERVICE_NAME);
-        when(resourceResolverFactory.getServiceResourceResolver(expectedParams)).thenReturn(resourceResolver);
+    Map<String, Object> expectedParams = Collections.singletonMap(
+        ResourceResolverFactory.SUBSERVICE, (Object) NotificationProcess.SERVICE_NAME);
+    when(resourceResolverFactory.getServiceResourceResolver(expectedParams)).thenReturn(
+        resourceResolver);
 
-    }
+  }
 
-    @Test
-    void execute_default() throws WorkflowException, RepositoryException {
+  @Test
+  void execute_default() throws WorkflowException, RepositoryException {
 
-        WorkItem workItem = mock(WorkItem.class);
-        WorkflowData workflowData = mock(WorkflowData.class);
-        WorkflowModel workflowModel = mock(WorkflowModel.class);
-        Workflow workflow = mock(Workflow.class);
-        WorkflowSession workflowSession = mock(WorkflowSession.class);
-        MetaDataMap metaDataMap = mock(MetaDataMap.class);
-        Value value = mock(Value.class);
-        Value[] values = new Value[] {value};
-        when(workItem.getWorkflowData()).thenReturn(workflowData);
-        when(workItem.getWorkflow()).thenReturn(workflow);
-        when(workflow.getInitiator()).thenReturn("admin");
-        when(workflowData.getPayload()).thenReturn("payload");
-        when(metaDataMap.get("PROCESS_ARGS", String.class)).thenReturn("args");
-        when(userManager.getAuthorizable("admin")).thenReturn(authorizable);
-        when(resourceResolver.adaptTo(UserManager.class)).thenReturn(userManager);
-        when(userManager.getAuthorizable("admin")).thenReturn(authorizable);
-        when(authorizable.getProperty("./profile/email")).thenReturn(values);
-        when(value.getString()).thenReturn("no-reply@gmail.com");
-        when(workflowData.getMetaDataMap()).thenReturn(metaDataMap);
-        when(workflow.getWorkflowModel()).thenReturn(workflowModel);
-        when(workflowModel.getTitle()).thenReturn("My Workflow");
-        ArgumentCaptor<String> mailTo = ArgumentCaptor.forClass(String.class);
-        ArgumentCaptor<String> tempalte = ArgumentCaptor.forClass(String.class);
-        ArgumentCaptor<Map<String, String>> params = ArgumentCaptor.forClass(Map.class);
-        notificationProcess.execute(workItem, workflowSession, metaDataMap);
+    WorkItem workItem = mock(WorkItem.class);
+    WorkflowData workflowData = mock(WorkflowData.class);
+    WorkflowModel workflowModel = mock(WorkflowModel.class);
+    Workflow workflow = mock(Workflow.class);
+    WorkflowSession workflowSession = mock(WorkflowSession.class);
+    MetaDataMap metaDataMap = mock(MetaDataMap.class);
+    Value value = mock(Value.class);
+    Value[] values = new Value[]{value};
+    when(workItem.getWorkflowData()).thenReturn(workflowData);
+    when(workItem.getWorkflow()).thenReturn(workflow);
+    when(workflow.getInitiator()).thenReturn("admin");
+    when(workflowData.getPayload()).thenReturn("payload");
+    when(metaDataMap.get("PROCESS_ARGS", String.class)).thenReturn("args");
+    when(userManager.getAuthorizable("admin")).thenReturn(authorizable);
+    when(resourceResolver.adaptTo(UserManager.class)).thenReturn(userManager);
+    when(userManager.getAuthorizable("admin")).thenReturn(authorizable);
+    when(authorizable.getProperty("./profile/email")).thenReturn(values);
+    when(value.getString()).thenReturn("no-reply@gmail.com");
+    when(workflowData.getMetaDataMap()).thenReturn(metaDataMap);
+    when(workflow.getWorkflowModel()).thenReturn(workflowModel);
+    when(workflowModel.getTitle()).thenReturn("My Workflow");
+    ArgumentCaptor<String> mailTo = ArgumentCaptor.forClass(String.class);
+    ArgumentCaptor<String> tempalte = ArgumentCaptor.forClass(String.class);
+    ArgumentCaptor<Map<String, String>> params = ArgumentCaptor.forClass(Map.class);
+    notificationProcess.execute(workItem, workflowSession, metaDataMap);
 
-        verify(emailService).sendEmail(mailTo.capture(), tempalte.capture(), params.capture());
-        assertEquals("no-reply@gmail.com", mailTo.getValue());
-        assertEquals("/conf/pillar/notifications/email/workflow-notification.html", tempalte.getValue());
-        assertEquals(4, params.getValue().size());
-        assertEquals("Wally", params.getValue().get("givenName"));
-        assertEquals("payload", params.getValue().get("payload"));
-        assertEquals("My Workflow", params.getValue().get("workflowModel"));
+    verify(emailService).sendEmail(mailTo.capture(), tempalte.capture(), params.capture());
+    assertEquals("no-reply@gmail.com", mailTo.getValue());
+    assertEquals("/conf/pillar/notifications/email/workflow-notification.html",
+        tempalte.getValue());
+    assertEquals(4, params.getValue().size());
+    assertEquals("Wally", params.getValue().get("givenName"));
+    assertEquals("payload", params.getValue().get("payload"));
+    assertEquals("My Workflow", params.getValue().get("workflowModel"));
 //        assertEquals(null, params.getValue().get("authorLink"));
 
-        List<LoggingEvent> loggingEvents = logger.getLoggingEvents();
-        assertEquals(1, loggingEvents.size());
-        LoggingEvent loggingEvent = loggingEvents.get(0);
+    List<LoggingEvent> loggingEvents = logger.getLoggingEvents();
+    assertEquals(1, loggingEvents.size());
+    LoggingEvent loggingEvent = loggingEvents.get(0);
 
-        assertAll(
-            () -> assertEquals(Level.INFO, loggingEvent.getLevel()),
-            () -> assertEquals(2, loggingEvent.getArguments().size())
-        );
-    }
+    assertAll(
+        () -> assertEquals(Level.INFO, loggingEvent.getLevel()),
+        () -> assertEquals(2, loggingEvent.getArguments().size())
+    );
+  }
 }

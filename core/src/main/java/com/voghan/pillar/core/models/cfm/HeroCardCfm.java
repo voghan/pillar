@@ -16,44 +16,44 @@ import java.util.List;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class HeroCardCfm extends CardCfm implements HeroCard {
 
-    @Self
-    private Resource resource;
+  @Self
+  private Resource resource;
 
-    @ValueMapValue
-    private List<String> breadcrumbs;
+  @ValueMapValue
+  private List<String> breadcrumbs;
 
-    private final List<Link> breadcrumbLinks = new ArrayList<>();
+  private final List<Link> breadcrumbLinks = new ArrayList<>();
 
-    @ValueMapValue
-    private String backgroundImage;
+  @ValueMapValue
+  private String backgroundImage;
 
-    @PostConstruct
-    protected void init() {
+  @PostConstruct
+  protected void init() {
 
-        String version = getVersion();
+    String version = getVersion();
 
-        buildCallToActions();
+    buildCallToActions();
 
-        if (breadcrumbs != null && resource != null) {
-            ResourceResolver resourceResolver = resource.getResourceResolver();
-            for (String path: breadcrumbs) {
-                Resource cta  = resourceResolver.getResource(path + "/jcr:content/data/" + version);
-                if (cta != null) {
-                    Link link = cta.adaptTo(LinkCfm.class);
-                    breadcrumbLinks.add(link);
-                }
-            }
+    if (breadcrumbs != null && resource != null) {
+      ResourceResolver resourceResolver = resource.getResourceResolver();
+      for (String path : breadcrumbs) {
+        Resource cta = resourceResolver.getResource(path + "/jcr:content/data/" + version);
+        if (cta != null) {
+          Link link = cta.adaptTo(LinkCfm.class);
+          breadcrumbLinks.add(link);
         }
+      }
     }
+  }
 
-    @Override
-    public List<Link> getBreadcrumbs() {
-        return new ArrayList<>(breadcrumbLinks);
-    }
+  @Override
+  public List<Link> getBreadcrumbs() {
+    return new ArrayList<>(breadcrumbLinks);
+  }
 
-    @Override
-    public String getBackgroundImage() {
-        return backgroundImage;
-    }
+  @Override
+  public String getBackgroundImage() {
+    return backgroundImage;
+  }
 
 }

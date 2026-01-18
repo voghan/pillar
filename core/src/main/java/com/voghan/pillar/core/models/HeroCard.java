@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface HeroCard extends Card {
 
-    List<Link> getBreadcrumbs();
+  List<Link> getBreadcrumbs();
 
-    String getBackgroundImage();
+  String getBackgroundImage();
 }

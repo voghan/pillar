@@ -30,21 +30,21 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @ExtendWith(AemContextExtension.class)
 class SimpleServletTest {
 
-    private SimpleServlet fixture = new SimpleServlet();
+  private SimpleServlet fixture = new SimpleServlet();
 
-    @Test
-    void doGet(AemContext context) throws ServletException, IOException {
-        String expected = "Title = resource title\n" +
-            "Description = resource description";
-        context.build().resource("/content/test", "jcr:title", "resource title").commit();
-        context.build().resource("/content/test", "jcr:description", "resource description").commit();
-        context.currentResource("/content/test");
+  @Test
+  void doGet(AemContext context) throws ServletException, IOException {
+    String expected = "Title = resource title\n" +
+        "Description = resource description";
+    context.build().resource("/content/test", "jcr:title", "resource title").commit();
+    context.build().resource("/content/test", "jcr:description", "resource description").commit();
+    context.currentResource("/content/test");
 
-        MockSlingHttpServletRequest request = context.request();
-        MockSlingHttpServletResponse response = context.response();
+    MockSlingHttpServletRequest request = context.request();
+    MockSlingHttpServletResponse response = context.response();
 
-        fixture.doGet(request, response);
+    fixture.doGet(request, response);
 
-        assertEquals(expected, response.getOutputAsString());
-    }
+    assertEquals(expected, response.getOutputAsString());
+  }
 }

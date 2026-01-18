@@ -16,116 +16,118 @@ import static junit.framework.Assert.assertTrue;
 
 @ExtendWith(AemContextExtension.class)
 public class HeroCardCmpTest {
-    private static final AemContext context = AppAemContext.newAemContext();
 
-    private static final String DEMO_HERO_PAGE_PATH = "/pillar-core/model/cmp/heroCardCmps.json";
-    private static final String DEMO_LINKS_PATH = "/pillar-core/model/cfm/links.json";
-    private static final String DEMO_HERO_PATH = "/pillar-core/model/cfm/heroCards.json";
+  private static final AemContext context = AppAemContext.newAemContext();
 
-    HeroCardCmp heroCardCmp;
+  private static final String DEMO_HERO_PAGE_PATH = "/pillar-core/model/cmp/heroCardCmps.json";
+  private static final String DEMO_LINKS_PATH = "/pillar-core/model/cfm/links.json";
+  private static final String DEMO_HERO_PATH = "/pillar-core/model/cfm/heroCards.json";
 
-    @BeforeAll
-    static void setup() {
-        // Load context content once
-        context.addModelsForClasses(HeroCardCmp.class);
-        context.load().json(DEMO_HERO_PAGE_PATH, "/content/hero");
-        context.load().json(DEMO_LINKS_PATH, "/content/dam/links");
-        context.load().json(DEMO_HERO_PATH, "/content/dam/hero");
-    }
+  HeroCardCmp heroCardCmp;
 
-    @Test
-    void getHeadline_default() {
-        heroCardCmp = getComponent("/content/hero", "hero");
+  @BeforeAll
+  static void setup() {
+    // Load context content once
+    context.addModelsForClasses(HeroCardCmp.class);
+    context.load().json(DEMO_HERO_PAGE_PATH, "/content/hero");
+    context.load().json(DEMO_LINKS_PATH, "/content/dam/links");
+    context.load().json(DEMO_HERO_PATH, "/content/dam/hero");
+  }
 
-        assertNotNull(heroCardCmp);
-        assertEquals("Pillar Demo Components", heroCardCmp.getHeadline());
-    }
+  @Test
+  void getHeadline_default() {
+    heroCardCmp = getComponent("/content/hero", "hero");
 
-    @Test
-    void getHeadline_variation() {
-        heroCardCmp = getComponent("/content/hero", "hero_es");
+    assertNotNull(heroCardCmp);
+    assertEquals("Pillar Demo Components", heroCardCmp.getHeadline());
+  }
 
-        assertNotNull(heroCardCmp);
-        assertEquals("Componentes de demostración de Pillar", heroCardCmp.getHeadline());
-    }
-    @Test
-    void getShortDescription_default() {
-        heroCardCmp = getComponent("/content/hero", "hero");
-        String expected = "<p>A simple framework of HTL components that utilize content fragments for their auhtoring experience.</p>\n";
+  @Test
+  void getHeadline_variation() {
+    heroCardCmp = getComponent("/content/hero", "hero_es");
 
-        assertNotNull(heroCardCmp);
-        assertEquals(expected, heroCardCmp.getShortDescription());
-    }
+    assertNotNull(heroCardCmp);
+    assertEquals("Componentes de demostración de Pillar", heroCardCmp.getHeadline());
+  }
 
-    @Test
-    void getShortDescription_variation() {
-        heroCardCmp = getComponent("/content/hero", "hero_es");
-        String expected = "<p>Un marco sencillo de componentes HTL que utilizan fragmentos de contenido para la experiencia de creación de contenido.</p>\n";
+  @Test
+  void getShortDescription_default() {
+    heroCardCmp = getComponent("/content/hero", "hero");
+    String expected = "<p>A simple framework of HTL components that utilize content fragments for their auhtoring experience.</p>\n";
 
-        assertNotNull(heroCardCmp);
-        assertEquals(expected, heroCardCmp.getShortDescription());
-    }
+    assertNotNull(heroCardCmp);
+    assertEquals(expected, heroCardCmp.getShortDescription());
+  }
 
-    @Test
-    void getCallToActions_default() {
-        heroCardCmp = getComponent("/content/hero", "hero");
+  @Test
+  void getShortDescription_variation() {
+    heroCardCmp = getComponent("/content/hero", "hero_es");
+    String expected = "<p>Un marco sencillo de componentes HTL que utilizan fragmentos de contenido para la experiencia de creación de contenido.</p>\n";
 
-        assertNotNull(heroCardCmp);
-        assertFalse(heroCardCmp.getCallToActions().isEmpty());
-        assertEquals(2, heroCardCmp.getCallToActions().size());
-        Link link = heroCardCmp.getCallToActions().get(0);
-        assertNotNull(link);
-        assertEquals("Get started", link.getLinkText());
-        assertEquals("/content/pillar/us/en", link.getLinkPath());
-    }
+    assertNotNull(heroCardCmp);
+    assertEquals(expected, heroCardCmp.getShortDescription());
+  }
 
-    @Test
-    void getBreadcrumbs_default() {
-        heroCardCmp = getComponent("/content/hero", "hero");
+  @Test
+  void getCallToActions_default() {
+    heroCardCmp = getComponent("/content/hero", "hero");
 
-        assertNotNull(heroCardCmp);
-        assertFalse(heroCardCmp.getBreadcrumbs().isEmpty());
-        assertEquals(2, heroCardCmp.getBreadcrumbs().size());
-        Link link = heroCardCmp.getBreadcrumbs().get(0);
-        assertNotNull(link);
-        assertEquals("Pillar Site", link.getLinkText());
-        assertEquals("/content/pillar/us/en", link.getLinkPath());
-    }
+    assertNotNull(heroCardCmp);
+    assertFalse(heroCardCmp.getCallToActions().isEmpty());
+    assertEquals(2, heroCardCmp.getCallToActions().size());
+    Link link = heroCardCmp.getCallToActions().get(0);
+    assertNotNull(link);
+    assertEquals("Get started", link.getLinkText());
+    assertEquals("/content/pillar/us/en", link.getLinkPath());
+  }
 
-    @Test
-    void getBackgroundImage_default() {
-        heroCardCmp = getComponent("/content/hero", "hero");
+  @Test
+  void getBreadcrumbs_default() {
+    heroCardCmp = getComponent("/content/hero", "hero");
 
-        assertNotNull(heroCardCmp);
-        assertEquals("/content/dam/images/asset.jpg", heroCardCmp.getBackgroundImage());
-    }
+    assertNotNull(heroCardCmp);
+    assertFalse(heroCardCmp.getBreadcrumbs().isEmpty());
+    assertEquals(2, heroCardCmp.getBreadcrumbs().size());
+    Link link = heroCardCmp.getBreadcrumbs().get(0);
+    assertNotNull(link);
+    assertEquals("Pillar Site", link.getLinkText());
+    assertEquals("/content/pillar/us/en", link.getLinkPath());
+  }
 
-    @Test
-    void isCallToActionEnabled_default() {
-        heroCardCmp = getComponent("/content/hero", "hero");
+  @Test
+  void getBackgroundImage_default() {
+    heroCardCmp = getComponent("/content/hero", "hero");
 
-        assertNotNull(heroCardCmp);
-        assertTrue(heroCardCmp.isCallToActionEnabled());
-    }
+    assertNotNull(heroCardCmp);
+    assertEquals("/content/dam/images/asset.jpg", heroCardCmp.getBackgroundImage());
+  }
 
-    @Test
-    void isBreadcrumbsEnabled_default() {
-        heroCardCmp = getComponent("/content/hero", "hero");
+  @Test
+  void isCallToActionEnabled_default() {
+    heroCardCmp = getComponent("/content/hero", "hero");
 
-        assertNotNull(heroCardCmp);
-        assertTrue(heroCardCmp.isBreadcrumbsEnabled());
-    }
+    assertNotNull(heroCardCmp);
+    assertTrue(heroCardCmp.isCallToActionEnabled());
+  }
 
-    @Test
-    void getExportedType_expected() {
-        heroCardCmp = getComponent("/content/hero", "hero");
+  @Test
+  void isBreadcrumbsEnabled_default() {
+    heroCardCmp = getComponent("/content/hero", "hero");
 
-        assertNotNull(heroCardCmp);
-        assertEquals(HeroCardCmp.RESOURCE_TYPE, heroCardCmp.getExportedType());
-    }
+    assertNotNull(heroCardCmp);
+    assertTrue(heroCardCmp.isBreadcrumbsEnabled());
+  }
 
-    HeroCardCmp getComponent(String path, String component) {
-        context.currentResource(path + "/jcr:content/root/container/container/" + component);
-        return context.request().adaptTo(HeroCardCmp.class);
-    }
+  @Test
+  void getExportedType_expected() {
+    heroCardCmp = getComponent("/content/hero", "hero");
+
+    assertNotNull(heroCardCmp);
+    assertEquals(HeroCardCmp.RESOURCE_TYPE, heroCardCmp.getExportedType());
+  }
+
+  HeroCardCmp getComponent(String path, String component) {
+    context.currentResource(path + "/jcr:content/root/container/container/" + component);
+    return context.request().adaptTo(HeroCardCmp.class);
+  }
 }
