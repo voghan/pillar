@@ -14,6 +14,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.AttributesImpl;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
@@ -46,10 +47,11 @@ class SimpleHrefTransformerTest {
         String localName = "localname";
         String qName = "qName";
         Attributes atts = mock(Attributes.class);
+        ArgumentCaptor<Attributes> attsCapture = ArgumentCaptor.forClass(Attributes.class);
         simpleHrefTransformer.startElement(uri, localName, qName, atts);
 
-        verify(contentHandler, times(0)).startElement(uri, localName, qName, atts);
-
+        verify(atts, times(1)).getIndex("href");
+        verify(atts, times(0)).getValue(any());
     }
 
     @Test

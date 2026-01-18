@@ -18,7 +18,9 @@ public abstract class CommonPillarTransformer implements Transformer, Transforme
 
     @Override
     public void init(ProcessingContext processingContext, ProcessingComponentConfiguration processingComponentConfiguration) throws IOException {
-        this.servletRequest = processingContext.getRequest();
+        if (processingContext != null) {
+            this.servletRequest = processingContext.getRequest();
+        }
     }
 
     public ContentHandler getContentHandler() {
@@ -41,51 +43,71 @@ public abstract class CommonPillarTransformer implements Transformer, Transforme
 
     @Override
     public void setDocumentLocator(Locator locator) {
-        contentHandler.setDocumentLocator(locator);
+        if (contentHandler != null) {
+            contentHandler.setDocumentLocator(locator);
+        }
     }
 
     @Override
     public void startDocument() throws SAXException {
-        contentHandler.startDocument();
+        if (contentHandler != null) {
+            contentHandler.startDocument();
+        }
     }
 
     @Override
     public void endDocument() throws SAXException {
-        contentHandler.endDocument();
+        if (contentHandler != null) {
+            contentHandler.endDocument();
+        }
     }
 
     @Override
     public void startPrefixMapping(String prefix, String uri) throws SAXException {
-        contentHandler.startPrefixMapping(prefix, uri);
+        if (contentHandler != null) {
+            contentHandler.startPrefixMapping(prefix, uri);
+        }
     }
 
     @Override
     public void endPrefixMapping(String prefix) throws SAXException {
-        contentHandler.endPrefixMapping(prefix);
+        if (contentHandler != null) {
+            contentHandler.endPrefixMapping(prefix);
+        }
     }
 
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
-        contentHandler.endElement(uri, localName, qName);
+        if (contentHandler != null) {
+            contentHandler.endElement(uri, localName, qName);
+        }
     }
 
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException {
-        contentHandler.characters(ch, start, length);
+        if (contentHandler != null) {
+            contentHandler.characters(ch, start, length);
+        }
     }
 
     @Override
     public void ignorableWhitespace(char[] ch, int start, int length) throws SAXException {
-        contentHandler.ignorableWhitespace(ch, start, length);
+        if (contentHandler != null) {
+            contentHandler.ignorableWhitespace(ch, start, length);
+        }
     }
 
     @Override
     public void processingInstruction(String target, String data) throws SAXException {
-        contentHandler.processingInstruction(target, data);
+        if (contentHandler != null) {
+            contentHandler.processingInstruction(target, data);
+        }
     }
 
     @Override
     public void skippedEntity(String name) throws SAXException {
-        contentHandler.skippedEntity(name);
+        if (contentHandler != null) {
+            contentHandler.skippedEntity(name);
+        }
     }
 }

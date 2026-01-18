@@ -7,6 +7,7 @@ import org.osgi.service.component.annotations.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.Attributes;
+import org.xml.sax.ContentHandler;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.AttributesImpl;
 
@@ -28,14 +29,19 @@ public class SimpleHrefTransformer extends CommonPillarTransformer {
     @Override
     public void startElement(String uri, String localName, String qName, Attributes atts) throws SAXException {
         // Do the actual work
-        if (atts.getIndex("href") > -1 && qName.equalsIgnoreCase("a")) {
-            AttributesImpl modifiedAttributes = new AttributesImpl(atts);
+        ContentHandler contentHandler = getContentHandler();
+        if (contentHandler != null) {
+            if (atts.getIndex("href") > -1 && qName.equalsIgnoreCase("a")) {
+                AttributesImpl modifiedAttributes = new AttributesImpl(atts);
 
-            String updatedHref = atts.getValue("href");
-            logger.info("Transforming href {}", updatedHref);
+                String updatedHref = atts.getValue("href");
+                logger.info("Transforming href {}", updatedHref);
 
-            modifiedAttributes.setValue(atts.getIndex("href"), updatedHref);
-            getContentHandler().startElement(uri, localName, qName, modifiedAttributes);
+                modifiedAttributes.setValue(atts.getIndex("href"), updatedHref);
+                contentHandler.startElement(uri, localName, qName, modifiedAttributes);
+            } else {
+                contentHandler.startElement(uri, localName, qName, atts);
+            }
         }
     }
 

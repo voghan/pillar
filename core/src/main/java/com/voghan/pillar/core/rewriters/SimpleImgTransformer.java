@@ -7,6 +7,7 @@ import org.osgi.service.component.annotations.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.Attributes;
+import org.xml.sax.ContentHandler;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.AttributesImpl;
 
@@ -28,14 +29,19 @@ public class SimpleImgTransformer extends CommonPillarTransformer {
     @Override
     public void startElement(String uri, String localName, String qName, Attributes atts) throws SAXException {
         // Do the actual work
-        if (atts.getIndex("src") > -1 && qName.equalsIgnoreCase("img")) {
-            AttributesImpl modifiedAttributes = new AttributesImpl(atts);
+        ContentHandler contentHandler = getContentHandler();
+        if (contentHandler != null) {
+            if (atts.getIndex("src") > -1 && qName.equalsIgnoreCase("img")) {
+                AttributesImpl modifiedAttributes = new AttributesImpl(atts);
 
-            String updatedSrc = atts.getValue("src");
-            logger.info("Transforming href {}", updatedSrc);
+                String updatedSrc = atts.getValue("src");
+                logger.info("Transforming href {}", updatedSrc);
 
-            modifiedAttributes.setValue(atts.getIndex("src"), updatedSrc);
-            getContentHandler().startElement(uri, localName, qName, modifiedAttributes);
+                modifiedAttributes.setValue(atts.getIndex("src"), updatedSrc);
+                contentHandler.startElement(uri, localName, qName, modifiedAttributes);
+            } else {
+                contentHandler.startElement(uri, localName, qName, atts);
+            }
         }
     }
 
