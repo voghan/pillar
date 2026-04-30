@@ -18,6 +18,7 @@ import javax.jcr.Value;
 import javax.jcr.ValueFactory;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.jackrabbit.api.JackrabbitSession;
 import org.apache.jackrabbit.api.security.user.Group;
 import org.apache.jackrabbit.api.security.user.User;
 import org.apache.jackrabbit.api.security.user.UserManager;
@@ -51,7 +52,7 @@ class SimpleAuthInfoPostProcessorTest {
     private ResourceResolver serviceResolver;
 
     @Mock
-    private Session jackrabbitSession;
+    private JackrabbitSession jackrabbitSession;
 
     @Mock
     private UserManager userManager;
@@ -86,7 +87,7 @@ class SimpleAuthInfoPostProcessorTest {
     void postProcess_writesLastLoginProperty() throws Exception {
         when(resolverFactory.getServiceResourceResolver(anyMap())).thenReturn(serviceResolver);
         when(serviceResolver.adaptTo(Session.class)).thenReturn(jackrabbitSession);
-        when(serviceResolver.adaptTo(UserManager.class)).thenReturn(userManager);
+        when(jackrabbitSession.getUserManager()).thenReturn(userManager);
         when(userManager.getAuthorizable(TEST_USER_ID)).thenReturn(user);
         when(user.isGroup()).thenReturn(false);
         when(jackrabbitSession.getValueFactory()).thenReturn(valueFactory);
@@ -108,7 +109,7 @@ class SimpleAuthInfoPostProcessorTest {
 
         assertAll(
             () -> assertEquals(1, logger.getLoggingEvents().size()),
-            () -> assertEquals(Level.DEBUG, logger.getLoggingEvents().get(0).getLevel())
+            () -> assertEquals(Level.TRACE, logger.getLoggingEvents().get(0).getLevel())
         );
     }
 
@@ -124,7 +125,7 @@ class SimpleAuthInfoPostProcessorTest {
     void postProcess_skipsWhenAuthorizableIsNull() throws Exception {
         when(resolverFactory.getServiceResourceResolver(anyMap())).thenReturn(serviceResolver);
         when(serviceResolver.adaptTo(Session.class)).thenReturn(jackrabbitSession);
-        when(serviceResolver.adaptTo(UserManager.class)).thenReturn(userManager);
+        when(jackrabbitSession.getUserManager()).thenReturn(userManager);
         when(userManager.getAuthorizable(TEST_USER_ID)).thenReturn(null);
 
         fixture.postProcess(authInfo(TEST_USER_ID), request, response);
@@ -141,7 +142,7 @@ class SimpleAuthInfoPostProcessorTest {
     void postProcess_skipsWhenAuthorizableIsGroup() throws Exception {
         when(resolverFactory.getServiceResourceResolver(anyMap())).thenReturn(serviceResolver);
         when(serviceResolver.adaptTo(Session.class)).thenReturn(jackrabbitSession);
-        when(serviceResolver.adaptTo(UserManager.class)).thenReturn(userManager);
+        when(jackrabbitSession.getUserManager()).thenReturn(userManager);
         when(userManager.getAuthorizable(TEST_USER_ID)).thenReturn(group);
         when(group.isGroup()).thenReturn(true);
 
@@ -153,6 +154,7 @@ class SimpleAuthInfoPostProcessorTest {
     @Test
     void postProcess_skipsWhenSessionIsNull() throws Exception {
         when(resolverFactory.getServiceResourceResolver(anyMap())).thenReturn(serviceResolver);
+        when(serviceResolver.adaptTo(Session.class)).thenReturn(jackrabbitSession);
         when(serviceResolver.adaptTo(Session.class)).thenReturn(null);
 
         fixture.postProcess(authInfo(TEST_USER_ID), request, response);
@@ -183,7 +185,7 @@ class SimpleAuthInfoPostProcessorTest {
     void postProcess_logsErrorOnRepositoryException() throws Exception {
         when(resolverFactory.getServiceResourceResolver(anyMap())).thenReturn(serviceResolver);
         when(serviceResolver.adaptTo(Session.class)).thenReturn(jackrabbitSession);
-        when(serviceResolver.adaptTo(UserManager.class)).thenReturn(userManager);
+        when(jackrabbitSession.getUserManager()).thenReturn(userManager);
         when(userManager.getAuthorizable(TEST_USER_ID)).thenThrow(new javax.jcr.RepositoryException("repo error"));
 
         fixture.postProcess(authInfo(TEST_USER_ID), request, response);

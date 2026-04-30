@@ -1,13 +1,13 @@
 package com.voghan.pillar.common.handler;
 
+import com.voghan.pillar.common.AuthUtil;
 import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import javax.jcr.ValueFactory;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.jackrabbit.api.JackrabbitSession;
 import org.apache.jackrabbit.api.security.user.Authorizable;
 import org.apache.jackrabbit.api.security.user.UserManager;
 import org.apache.sling.api.resource.LoginException;
@@ -18,12 +18,14 @@ import org.apache.sling.auth.core.spi.AuthenticationInfoPostProcessor;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.propertytypes.ServiceDescription;
+import org.osgi.service.component.propertytypes.ServiceRanking;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
 @Component(service = AuthenticationInfoPostProcessor.class, immediate = true)
 @ServiceDescription("Records the last login timestamp on the user profile node")
+@ServiceRanking(100)
 public class SimpleAuthInfoPostProcessor implements AuthenticationInfoPostProcessor {
 
   private final Logger LOGGER = LoggerFactory.getLogger(SimpleAuthInfoPostProcessor.class);
@@ -40,7 +42,7 @@ public class SimpleAuthInfoPostProcessor implements AuthenticationInfoPostProces
 
     final String userId = authInfo.getUser();
     if (userId == null || userId.isEmpty()) {
-      LOGGER.debug("UserLastLoginPostProcessor: no user in AuthenticationInfo, skipping");
+      LOGGER.trace("UserLastLoginPostProcessor: no user in AuthenticationInfo, skipping");
       return;
     }
 
@@ -49,14 +51,14 @@ public class SimpleAuthInfoPostProcessor implements AuthenticationInfoPostProces
   }
 
   protected void writeLastLogin(final String userId) {
-    try (ResourceResolver resourceResolver = resolverFactory.getServiceResourceResolver(getAuthInfo())) {
+    try (ResourceResolver resourceResolver = resolverFactory.getServiceResourceResolver(AuthUtil.getAuthInfo(SERVICE_NAME))) {
       final Session session = resourceResolver.adaptTo(Session.class);
       if (session == null) {
         LOGGER.error("UserLastLoginPostProcessor: could not adapt ResourceResolver to Session");
         return;
       }
 
-      final UserManager userManager =  resourceResolver.adaptTo(UserManager.class);
+      final UserManager userManager = ((JackrabbitSession)session).getUserManager();
       if (userManager == null) {
         LOGGER.error("UserLastLoginPostProcessor: could not adapt ResourceResolver to UserManager");
         return;
@@ -78,10 +80,6 @@ public class SimpleAuthInfoPostProcessor implements AuthenticationInfoPostProces
     }
   }
 
-  protected Map<String, Object> getAuthInfo() {
-    final Map<String, Object> authInfo = new HashMap<>();
-    authInfo.put(ResourceResolverFactory.SUBSERVICE, SERVICE_NAME);
-    return authInfo;
-  }
+
 
 }
