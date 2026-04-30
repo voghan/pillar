@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   build:
-    name: Build (Maven + Frontend)
+    name: Build (Maven + Frontend) JDK21
     runs-on: ubuntu-latest
     strategy:
       matrix:
