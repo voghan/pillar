@@ -6,6 +6,7 @@ import com.adobe.granite.workflow.exec.WorkItem;
 import com.adobe.granite.workflow.exec.WorkflowProcess;
 import com.adobe.granite.workflow.metadata.MetaDataMap;
 import com.day.cq.commons.Externalizer;
+import com.voghan.pillar.common.AuthUtil;
 import com.voghan.pillar.common.emails.SimpleEmailService;
 import org.apache.jackrabbit.api.security.user.Authorizable;
 import org.apache.jackrabbit.api.security.user.UserManager;
@@ -46,8 +47,7 @@ public class NotificationProcess implements WorkflowProcess {
 
     logger.info("Starting workflow for {} with args {}", payload, processArgs);
 
-    final Map<String, Object> authInfo = getAuthInfo();
-
+    final Map<String, Object> authInfo = AuthUtil.getAuthInfo(SERVICE_NAME);
     try (ResourceResolver resourceResolver = resourceResolverFactory.getServiceResourceResolver(
         authInfo)) {
       String mailTo = getInitiatorEmail(resourceResolver, workItem);
@@ -107,9 +107,4 @@ public class NotificationProcess implements WorkflowProcess {
     return authorLink;
   }
 
-  protected Map<String, Object> getAuthInfo() {
-    final Map<String, Object> authInfo = new HashMap<>();
-    authInfo.put(ResourceResolverFactory.SUBSERVICE, SERVICE_NAME);
-    return authInfo;
-  }
 }

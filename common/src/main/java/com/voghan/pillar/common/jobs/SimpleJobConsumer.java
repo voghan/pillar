@@ -4,7 +4,7 @@ import static com.voghan.pillar.common.jobs.SimpleJobConsumer.JOB_TOPIC;
 
 import com.day.cq.commons.jcr.JcrConstants;
 import com.day.cq.wcm.api.NameConstants;
-import java.util.HashMap;
+import com.voghan.pillar.common.AuthUtil;
 import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.LoginException;
@@ -40,8 +40,7 @@ public class SimpleJobConsumer implements JobConsumer {
   public JobResult process(Job job) {
     LOGGER.info("Starting new simple job");
 
-    final Map<String, Object> authInfo = getAuthInfo();
-
+    final Map<String, Object> authInfo = AuthUtil.getAuthInfo(SERVICE_NAME);
     try (ResourceResolver resourceResolver = resourceResolverFactory.getServiceResourceResolver(authInfo)) {
       logJobParams(resourceResolver, job);
     } catch (LoginException e) {
@@ -49,12 +48,6 @@ public class SimpleJobConsumer implements JobConsumer {
     }
 
     return JobResult.OK;
-  }
-
-  protected Map<String, Object> getAuthInfo() {
-    final Map<String, Object> authInfo = new HashMap<>();
-    authInfo.put(ResourceResolverFactory.SUBSERVICE, SERVICE_NAME);
-    return authInfo;
   }
 
   protected void logJobParams(ResourceResolver resourceResolver, Job job) {

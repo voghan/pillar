@@ -2,6 +2,7 @@ package com.voghan.pillar.common.jobs;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.anyMap;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -55,8 +56,7 @@ public class SimpleJobConsumerTest {
     Resource resource = mock(Resource.class);
     ValueMap valueMap = mock(ValueMap.class);
     when(job.getProperty(SimpleJobConsumer.JOB_PATH, String.class)).thenReturn(path);
-    when(resourceResolverFactory.getServiceResourceResolver(fixture.getAuthInfo())).thenReturn(
-        resourceResolver);
+    when(resourceResolverFactory.getServiceResourceResolver(anyMap())).thenReturn(resourceResolver);
     when(resourceResolver.getResource(path)).thenReturn(resource);
     when(resource.getValueMap()).thenReturn(valueMap);
     when(valueMap.get(JcrConstants.JCR_LAST_MODIFIED_BY, String.class)).thenReturn("admin");
