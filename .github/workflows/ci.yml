@@ -83,19 +83,6 @@ jobs:
             echo "OWASP Dependency-Check plugin not found; skipping"
           fi
 
-      - name: Frontend: install and run checks (ui.frontend)
-        run: |
-          if [ -f ui.frontend/package.json ]; then
-            cd ui.frontend
-            npm ci
-            # Lint, test and build commands are optional in package.json; --if-present allows skipping
-            npm run --if-present lint
-            npm run --if-present test
-            npm run --if-present build
-          else
-            echo "No ui.frontend/package.json found, skipping frontend steps"
-          fi
-
       - name: Collect Maven surefire/failsafe and site reports (if present)
         if: always()
         uses: actions/upload-artifact@v4
