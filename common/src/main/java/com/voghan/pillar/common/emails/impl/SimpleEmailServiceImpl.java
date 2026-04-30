@@ -3,9 +3,9 @@ package com.voghan.pillar.common.emails.impl;
 import com.day.cq.commons.mail.MailTemplate;
 import com.day.cq.mailer.MessageGateway;
 import com.day.cq.mailer.MessageGatewayService;
+import com.voghan.pillar.common.AuthUtil;
 import com.voghan.pillar.common.emails.SimpleEmailService;
 import java.io.IOException;
-import java.util.Collections;
 import java.util.Map;
 import javax.jcr.Session;
 import javax.mail.MessagingException;
@@ -42,10 +42,7 @@ public class SimpleEmailServiceImpl implements SimpleEmailService {
   @Override
   public void sendEmail(String mailTo, String templatePath, Map<String, String> parameters) {
 
-    Map<String, Object> authInfo = Collections.singletonMap(
-        ResourceResolverFactory.SUBSERVICE, SimpleEmailServiceImpl.SERVICE_NAME);
-    try (ResourceResolver resourceResolver = resourceResolverFactory.getServiceResourceResolver(
-        authInfo)) {
+    try (ResourceResolver resourceResolver = resourceResolverFactory.getServiceResourceResolver(AuthUtil.getAuthInfo(SERVICE_NAME))) {
       MessageGateway<HtmlEmail> messageGateway = messageGatewayService.getGateway(HtmlEmail.class);
 
       if (resourceResolver.getResource(templatePath) == null) {
