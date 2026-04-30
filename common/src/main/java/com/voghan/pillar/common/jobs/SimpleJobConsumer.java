@@ -42,8 +42,7 @@ public class SimpleJobConsumer implements JobConsumer {
 
     final Map<String, Object> authInfo = getAuthInfo();
 
-    try (ResourceResolver resourceResolver = resourceResolverFactory.getServiceResourceResolver(
-        authInfo)) {
+    try (ResourceResolver resourceResolver = resourceResolverFactory.getServiceResourceResolver(authInfo)) {
       logJobParams(resourceResolver, job);
     } catch (LoginException e) {
       LOGGER.warn(e.getMessage(), e);

@@ -1,6 +1,8 @@
 /.idea/
 .DS_Store
 
+/.vscode/
+
 target/
 node/
 node_modules/
@@ -9,4 +11,3 @@ node_modules/
 /ui.frontend/dist/
 /ui.tests/test-module/node/
 /ui.tests/test-module/node_modules/
-/.vscode/

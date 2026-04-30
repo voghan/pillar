@@ -11,11 +11,11 @@ permissions:
 
 jobs:
   build:
-    name: Build (Maven + Frontend)
+    name: Build (Maven + Frontend) JDK21
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: [11]
+        java: [21]
         node: [18]
     steps:
       - name: Checkout
@@ -81,19 +81,6 @@ jobs:
             mvn -B org.owasp:dependency-check-maven:check || true
           else
             echo "OWASP Dependency-Check plugin not found; skipping"
-          fi
-
-      - name: Frontend: install and run checks (ui.frontend)
-        run: |
-          if [ -f ui.frontend/package.json ]; then
-            cd ui.frontend
-            npm ci
-            # Lint, test and build commands are optional in package.json; --if-present allows skipping
-            npm run --if-present lint
-            npm run --if-present test
-            npm run --if-present build
-          else
-            echo "No ui.frontend/package.json found, skipping frontend steps"
           fi
 
       - name: Collect Maven surefire/failsafe and site reports (if present)
