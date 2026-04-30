@@ -2,21 +2,28 @@ package com.voghan.pillar.common.emails.impl;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.lenient;
+import static org.mockito.Mockito.mockStatic;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.day.cq.commons.mail.MailTemplate;
+import com.day.cq.mailer.MailingException;
+import com.day.cq.mailer.MessageGateway;
 import com.day.cq.mailer.MessageGatewayService;
-import com.voghan.pillar.common.testcontext.AppAemContext;
-import io.wcm.testing.mock.aem.junit5.AemContext;
-import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 import java.io.IOException;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.jcr.RepositoryException;
 import javax.jcr.Session;
+import org.apache.commons.mail.EmailException;
+import org.apache.commons.mail.HtmlEmail;
 import org.apache.sling.api.resource.LoginException;
+import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.junit.jupiter.api.BeforeEach;
@@ -24,76 +31,174 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.MockedStatic;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.mockito.junit.jupiter.MockitoSettings;
+import org.mockito.quality.Strictness;
 import uk.org.lidalia.slf4jext.Level;
 import uk.org.lidalia.slf4jtest.LoggingEvent;
 import uk.org.lidalia.slf4jtest.TestLogger;
 import uk.org.lidalia.slf4jtest.TestLoggerFactory;
 
-@ExtendWith({AemContextExtension.class, MockitoExtension.class})
-@PrepareForTest(MailTemplate.class)
+@ExtendWith(MockitoExtension.class)
+@MockitoSettings(strictness = Strictness.LENIENT)
 public class SimpleEmailServiceImplTest {
 
-  private static final AemContext context = AppAemContext.newAemContext();
+    private static final String TEMPLATE_PATH = "/conf/pillar-common/notifications/email/demo-email.html";
+    private static final String MAIL_TO = "no-reply@example.com";
 
-  private final TestLogger logger = TestLoggerFactory.getTestLogger(SimpleEmailServiceImpl.class);
+    private final TestLogger logger = TestLoggerFactory.getTestLogger(SimpleEmailServiceImpl.class);
 
-  @Mock
-  MessageGatewayService messageGatewayService;
+    @Mock private MessageGatewayService messageGatewayService;
+    @Mock private ResourceResolverFactory resourceResolverFactory;
+    @Mock private ResourceResolver resourceResolver;
+    @Mock private Session session;
+    @Mock private MailTemplate mailTemplate;
+    @Mock private HtmlEmail htmlEmail;
+    @Mock private MessageGateway<HtmlEmail> messageGateway;
+    @Mock private Resource templateResource;
 
-  @Mock
-  ResourceResolverFactory resourceResolverFactory;
+    @InjectMocks
+    private SimpleEmailServiceImpl emailService;
 
-  @Mock
-  ResourceResolver resourceResolver;
+    private Map<String, String> params;
 
-  @Mock
-  Session session;
+    @BeforeEach
+    void setup() throws LoginException {
+        TestLoggerFactory.clear();
 
-  @InjectMocks
-  private SimpleEmailServiceImpl emailService;
+        // Common stubs used by most tests; lenient because some tests override them
+        lenient().when(resourceResolverFactory.getServiceResourceResolver(any()))
+                .thenReturn(resourceResolver);
+        lenient().when(resourceResolver.getResource(TEMPLATE_PATH)).thenReturn(templateResource);
+        lenient().when(resourceResolver.adaptTo(Session.class)).thenReturn(session);
+        lenient().when(messageGatewayService.getGateway(HtmlEmail.class)).thenReturn(messageGateway);
 
-  @BeforeEach
-  void setup() throws LoginException {
-    TestLoggerFactory.clear();
+        params = new HashMap<>();
+        params.put("givenName", "Wally");
+        params.put("authorLink", "http://localhost:4502/aem/start.html");
+        params.put("initiator", "Brian");
+    }
 
-    Map<String, Object> expectedParams = Collections.singletonMap(
-        ResourceResolverFactory.SUBSERVICE, SimpleEmailServiceImpl.SERVICE_NAME);
-    when(resourceResolverFactory.getServiceResourceResolver(expectedParams)).thenReturn(
-        resourceResolver);
+    // -------------------------------------------------------------------------
+    // Happy path
+    // -------------------------------------------------------------------------
 
-  }
+    @Test
+    void sendEmail_sendsEmailSuccessfully() throws Exception {
+        when(mailTemplate.getEmail(eq(params), eq(HtmlEmail.class))).thenReturn(htmlEmail);
 
-  @Test
-  void sendEmail() throws LoginException, RepositoryException, IOException {
-    String template = "/conf/pillar-common/notifications/email/demo-email.html";
-    String mailTo = "no-reply@gmail.com";
+        try (MockedStatic<MailTemplate> mockedMailTemplate = mockStatic(MailTemplate.class)) {
+            mockedMailTemplate.when(() -> MailTemplate.create(TEMPLATE_PATH, session))
+                    .thenReturn(mailTemplate);
 
-    Map<String, String> params = new HashMap<>();
-    params.put("givenName", "Wally");
-    params.put("authorLink", "http://localhost:4502/aem/start.html");
-    params.put("initiator", "Brian");
+            emailService.sendEmail(MAIL_TO, TEMPLATE_PATH, params);
 
-    //TODO Need to resolve issue with MailTemplate
-//        Node node = mock(Node.class);
-//        NodeType nodeType = mock(NodeType.class);
-//        when(resourceResolver.adaptTo(Session.class)).thenReturn(session);
-//        when(resourceResolver.getResource(template)).thenReturn(mock(Resource.class));
-//        when(session.itemExists(template)).thenReturn(true);
-//        when(session.getNode(template)).thenReturn(node);
-//        when(node.getPrimaryNodeType()).thenReturn(nodeType);
-//        when(nodeType.getName()).thenReturn("nt:file");
+            verify(htmlEmail).addTo(MAIL_TO);
+            verify(messageGateway).send(htmlEmail);
+            assertEquals(0, logger.getLoggingEvents().size());
+        }
+    }
 
-    emailService.sendEmail(mailTo, template, params);
+    // -------------------------------------------------------------------------
+    // Guard conditions
+    // -------------------------------------------------------------------------
 
-    List<LoggingEvent> loggingEvents = logger.getLoggingEvents();
-    assertEquals(1, loggingEvents.size());
-    LoggingEvent loggingEvent = loggingEvents.get(0);
+    @Test
+    void sendEmail_logsWarnAndAborts_whenTemplateResourceNotFound() {
+        // Override the default stub to simulate missing template
+        when(resourceResolver.getResource(TEMPLATE_PATH)).thenReturn(null);
 
-    assertAll(
-        () -> assertEquals(Level.WARN, loggingEvent.getLevel()),
-        () -> assertEquals(1, loggingEvent.getArguments().size())
-    );
-  }
+        emailService.sendEmail(MAIL_TO, TEMPLATE_PATH, params);
+
+        // MailTemplate.create() must never be reached
+        List<LoggingEvent> events = logger.getLoggingEvents();
+        assertAll(
+            () -> assertEquals(1, events.size()),
+            () -> assertEquals(Level.WARN, events.get(0).getLevel()),
+            () -> assertEquals(1, events.get(0).getArguments().size()),
+            () -> assertEquals(TEMPLATE_PATH, events.get(0).getArguments().get(0))
+        );
+    }
+
+    // -------------------------------------------------------------------------
+    // Error handling
+    // -------------------------------------------------------------------------
+
+    @Test
+    void sendEmail_logsWarn_whenLoginExceptionThrown() throws LoginException {
+        when(resourceResolverFactory.getServiceResourceResolver(any()))
+                .thenThrow(new LoginException("no service user"));
+
+        emailService.sendEmail(MAIL_TO, TEMPLATE_PATH, params);
+
+        List<LoggingEvent> events = logger.getLoggingEvents();
+        assertAll(
+            () -> assertEquals(1, events.size()),
+            () -> assertEquals(Level.WARN, events.get(0).getLevel()),
+            () -> assertEquals(MAIL_TO, events.get(0).getArguments().get(0))
+        );
+    }
+
+    @Test
+    void sendEmail_logsWarn_whenEmailExceptionThrown() throws Exception {
+        when(mailTemplate.getEmail(eq(params), eq(HtmlEmail.class)))
+                .thenThrow(new EmailException("bad address"));
+
+        try (MockedStatic<MailTemplate> mockedMailTemplate = mockStatic(MailTemplate.class)) {
+            mockedMailTemplate.when(() -> MailTemplate.create(TEMPLATE_PATH, session))
+                    .thenReturn(mailTemplate);
+
+            emailService.sendEmail(MAIL_TO, TEMPLATE_PATH, params);
+
+            verify(messageGateway, never()).send(any());
+
+            List<LoggingEvent> events = logger.getLoggingEvents();
+            assertAll(
+                () -> assertEquals(1, events.size()),
+                () -> assertEquals(Level.WARN, events.get(0).getLevel()),
+                () -> assertEquals(MAIL_TO, events.get(0).getArguments().get(0))
+            );
+        }
+    }
+
+    @Test
+    void sendEmail_propagatesMailingException_whenGatewayFails() throws Exception {
+        // MailingException extends RuntimeException, not MessagingException,
+        // so it is NOT caught by the production catch block and propagates to the caller.
+        when(mailTemplate.getEmail(eq(params), eq(HtmlEmail.class))).thenReturn(htmlEmail);
+        doThrow(new MailingException("smtp error")).when(messageGateway).send(htmlEmail);
+
+        try (MockedStatic<MailTemplate> mockedMailTemplate = mockStatic(MailTemplate.class)) {
+            mockedMailTemplate.when(() -> MailTemplate.create(TEMPLATE_PATH, session))
+                    .thenReturn(mailTemplate);
+
+            org.junit.jupiter.api.Assertions.assertThrows(
+                MailingException.class,
+                () -> emailService.sendEmail(MAIL_TO, TEMPLATE_PATH, params)
+            );
+        }
+    }
+
+    @Test
+    void sendEmail_logsWarn_whenIOExceptionThrown() throws Exception {
+        when(mailTemplate.getEmail(eq(params), eq(HtmlEmail.class)))
+                .thenThrow(new IOException("template read error"));
+
+        try (MockedStatic<MailTemplate> mockedMailTemplate = mockStatic(MailTemplate.class)) {
+            mockedMailTemplate.when(() -> MailTemplate.create(TEMPLATE_PATH, session))
+                    .thenReturn(mailTemplate);
+
+            emailService.sendEmail(MAIL_TO, TEMPLATE_PATH, params);
+
+            verify(messageGateway, never()).send(any());
+
+            List<LoggingEvent> events = logger.getLoggingEvents();
+            assertAll(
+                () -> assertEquals(1, events.size()),
+                () -> assertEquals(Level.WARN, events.get(0).getLevel()),
+                () -> assertEquals(MAIL_TO, events.get(0).getArguments().get(0))
+            );
+        }
+    }
 }
