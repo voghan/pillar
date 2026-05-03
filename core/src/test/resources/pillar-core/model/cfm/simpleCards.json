@@ -318,5 +318,41 @@
         }
       }
     }
+  },
+  "option4": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:mixinTypes": [
+      "mix:referenceable",
+      "mix:versionable"
+    ],
+    "jcr:createdBy": "admin",
+    "jcr:isCheckedOut": true,
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "jcr:title": "Option4",
+      "contentFragment": true,
+      "cq:name": "option4",
+      "renditions": {
+        "jcr:primaryType": "nt:folder"
+      },
+      "related": {
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "_strucVersion": 1,
+        "cq:model": "/conf/pillar/settings/dam/cfm/models/simplecard",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "headline": "No CTA Card",
+          "callToActions": [],
+          "shortDescription": "<p>No call to action here.</p>\n"
+        }
+      }
+    }
   }
 }

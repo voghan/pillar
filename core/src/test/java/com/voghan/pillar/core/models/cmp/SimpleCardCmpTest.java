@@ -12,6 +12,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertNotNull;
+import static junit.framework.Assert.assertTrue;
 
 @ExtendWith(AemContextExtension.class)
 public class SimpleCardCmpTest {
@@ -57,7 +58,7 @@ public class SimpleCardCmpTest {
     assertNotNull(simpleCardCmp);
     assertFalse(simpleCardCmp.getCallToActions().isEmpty());
     assertEquals(1, simpleCardCmp.getCallToActions().size());
-    Link link = simpleCardCmp.getCallToActions().get(0);
+    Link link = simpleCardCmp.getCallToActions().getFirst();
     assertNotNull(link);
     assertEquals("Get started", link.getLinkText());
     assertEquals("/content/pillar/us/en", link.getLinkPath());
@@ -69,6 +70,22 @@ public class SimpleCardCmpTest {
 
     assertNotNull(simpleCardCmp);
     assertEquals("/content/dam/images/BrianLogo2019-medium.png", simpleCardCmp.getImage());
+  }
+
+  @Test
+  void isCallToActionEnabled_withCallToActions_returnsTrue() {
+    simpleCardCmp = getComponent("/content/simple-cards", "card");
+
+    assertNotNull(simpleCardCmp);
+    assertTrue(simpleCardCmp.isCallToActionEnabled());
+  }
+
+  @Test
+  void isCallToActionEnabled_withoutCallToActions_returnsFalse() {
+    simpleCardCmp = getComponent("/content/simple-cards", "card_option4");
+
+    assertNotNull(simpleCardCmp);
+    assertFalse(simpleCardCmp.isCallToActionEnabled());
   }
 
   @Test

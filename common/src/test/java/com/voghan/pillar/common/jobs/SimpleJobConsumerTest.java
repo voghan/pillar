@@ -35,44 +35,144 @@ public class SimpleJobConsumerTest {
   private static final TestLogger logger = TestLoggerFactory.getTestLogger(SimpleJobConsumer.class);
   private static final AemContext context = AppAemContext.newAemContext();
 
+  private static final String TEST_PATH = "/content/pillar/us/en";
+  private static final String TEST_TYPE = "CHANGED";
+
   @InjectMocks
   private SimpleJobConsumer fixture;
 
-  @Mock
-  ResourceResolverFactory resourceResolverFactory;
-
-  @Mock
-  ResourceResolver resourceResolver;
+  @Mock ResourceResolverFactory resourceResolverFactory;
+  @Mock ResourceResolver resourceResolver;
 
   @BeforeEach
-  void setupAll() throws LoginException {
+  void setup() {
     TestLoggerFactory.clear();
   }
 
+  // -------------------------------------------------------------------------
+  // process() — return value and first log entry
+  // -------------------------------------------------------------------------
+
   @Test
-  void process() throws LoginException {
-    Job job = mock(Job.class);
-    String path = "/content/pillar/us/en";
-    Resource resource = mock(Resource.class);
-    ValueMap valueMap = mock(ValueMap.class);
-    when(job.getProperty(SimpleJobConsumer.JOB_PATH, String.class)).thenReturn(path);
+  void process_returnsOK() throws LoginException {
     when(resourceResolverFactory.getServiceResourceResolver(anyMap())).thenReturn(resourceResolver);
-    when(resourceResolver.getResource(path)).thenReturn(resource);
-    when(resource.getValueMap()).thenReturn(valueMap);
-    when(valueMap.get(JcrConstants.JCR_LAST_MODIFIED_BY, String.class)).thenReturn("admin");
+    Job job = jobWithPath(TEST_PATH, TEST_TYPE);
+    when(resourceResolver.getResource(TEST_PATH)).thenReturn(null);
 
-    JobConsumer.JobResult jobResult = fixture.process(job);
+    JobConsumer.JobResult result = fixture.process(job);
 
-    List<LoggingEvent> events = logger.getLoggingEvents();
-    assertEquals(2, events.size());
-    LoggingEvent event = events.get(0);
+    assertEquals(JobConsumer.JobResult.OK, result);
+  }
+
+  @Test
+  void process_logsStartMessage() throws LoginException {
+    when(resourceResolverFactory.getServiceResourceResolver(anyMap())).thenReturn(resourceResolver);
+    Job job = jobWithPath(TEST_PATH, TEST_TYPE);
+    when(resourceResolver.getResource(TEST_PATH)).thenReturn(null);
+
+    fixture.process(job);
+
+    LoggingEvent first = logger.getLoggingEvents().get(0);
+    assertAll(
+        () -> assertEquals(Level.INFO, first.getLevel()),
+        () -> assertEquals("Starting new simple job", first.getMessage())
+    );
+  }
+
+  @Test
+  void process_logsWarn_whenLoginExceptionThrown() throws LoginException {
+    when(resourceResolverFactory.getServiceResourceResolver(anyMap()))
+        .thenThrow(new LoginException("no mapping"));
+
+    JobConsumer.JobResult result = fixture.process(mock(Job.class));
 
     assertAll(
-        () -> assertEquals(Level.INFO, event.getLevel()),
-        () -> assertEquals(0, event.getArguments().size()),
-        () -> assertEquals(JobConsumer.JobResult.OK, jobResult)
+        () -> assertEquals(JobConsumer.JobResult.OK, result),
+        () -> assertEquals(2, logger.getLoggingEvents().size()),
+        () -> assertEquals(Level.WARN, logger.getLoggingEvents().get(1).getLevel())
     );
+  }
 
+  // -------------------------------------------------------------------------
+  // logJobParams() — resource found branch
+  // -------------------------------------------------------------------------
 
+  @Test
+  void logJobParams_logsModifiedBy_fromJcrLastModifiedBy() {
+    Job job = jobWithPath(TEST_PATH, TEST_TYPE);
+    Resource resource = resourceWithModifiedBy(JcrConstants.JCR_LAST_MODIFIED_BY, "alice");
+    when(resourceResolver.getResource(TEST_PATH)).thenReturn(resource);
+
+    fixture.logJobParams(resourceResolver, job);
+
+    LoggingEvent event = logger.getLoggingEvents().get(0);
+    assertAll(
+        () -> assertEquals(Level.INFO, event.getLevel()),
+        () -> assertEquals(TEST_PATH, event.getArguments().get(0)),
+        () -> assertEquals(TEST_TYPE, event.getArguments().get(1)),
+        () -> assertEquals("alice", event.getArguments().get(2))
+    );
+  }
+
+  @Test
+  void logJobParams_fallsBackToCqLastModifiedBy_whenJcrLastModifiedByIsEmpty() {
+    Job job = jobWithPath(TEST_PATH, TEST_TYPE);
+    Resource resource = mock(Resource.class);
+    ValueMap valueMap = mock(ValueMap.class);
+    when(resource.getValueMap()).thenReturn(valueMap);
+    // jcr:lastModifiedBy is blank — should fall back to cq:lastModifiedBy
+    when(valueMap.get(JcrConstants.JCR_LAST_MODIFIED_BY, String.class)).thenReturn("");
+    when(resourceResolver.getResource(TEST_PATH)).thenReturn(resource);
+
+    fixture.logJobParams(resourceResolver, job);
+
+    LoggingEvent event = logger.getLoggingEvents().get(0);
+    assertAll(
+        () -> assertEquals(Level.INFO, event.getLevel()),
+        () -> assertEquals("", event.getArguments().get(2))
+    );
+  }
+
+  // -------------------------------------------------------------------------
+  // logJobParams() — resource not found branch
+  // -------------------------------------------------------------------------
+
+  @Test
+  void logJobParams_logsResourceNotFound_whenResourceIsNull() {
+    Job job = jobWithPath(TEST_PATH, TEST_TYPE);
+    when(resourceResolver.getResource(TEST_PATH)).thenReturn(null);
+
+    fixture.logJobParams(resourceResolver, job);
+
+    List<LoggingEvent> events = logger.getLoggingEvents();
+    assertAll(
+        () -> assertEquals(1, events.size()),
+        () -> assertEquals(Level.INFO, events.get(0).getLevel()),
+        () -> assertEquals(1, events.get(0).getArguments().size()),
+        () -> assertEquals(TEST_PATH, events.get(0).getArguments().get(0))
+    );
+  }
+
+  // -------------------------------------------------------------------------
+  // Helpers
+  // -------------------------------------------------------------------------
+
+  private static Job jobWithPath(String path, String type) {
+    Job job = mock(Job.class);
+    when(job.getProperty(SimpleJobConsumer.JOB_PATH, String.class)).thenReturn(path);
+    when(job.getProperty(SimpleJobConsumer.JOB_TYPE, String.class)).thenReturn(type);
+    return job;
+  }
+
+  /**
+   * Creates a resource mock where only one of the two modifier properties is populated.
+   * The other returns null (Mockito default), simulating a real ValueMap.
+   */
+  private static Resource resourceWithModifiedBy(String propertyName, String value) {
+    Resource resource = mock(Resource.class);
+    ValueMap valueMap = mock(ValueMap.class);
+    when(resource.getValueMap()).thenReturn(valueMap);
+    when(valueMap.get(propertyName, String.class)).thenReturn(value);
+    return resource;
   }
 }

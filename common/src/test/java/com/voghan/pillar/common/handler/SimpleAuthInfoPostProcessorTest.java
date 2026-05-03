@@ -182,11 +182,44 @@ class SimpleAuthInfoPostProcessorTest {
     }
 
     @Test
+    void postProcess_postProcess_skipsWhenUserManagerIsNull() throws Exception {
+        when(resolverFactory.getServiceResourceResolver(anyMap())).thenReturn(serviceResolver);
+        when(serviceResolver.adaptTo(Session.class)).thenReturn(jackrabbitSession);
+        when(jackrabbitSession.getUserManager()).thenReturn(null);
+
+        fixture.postProcess(authInfo(TEST_USER_ID), request, response);
+
+        verify(jackrabbitSession, never()).save();
+
+        assertAll(
+            () -> assertEquals(1, logger.getLoggingEvents().size()),
+            () -> assertEquals(Level.ERROR, logger.getLoggingEvents().get(0).getLevel())
+        );
+    }
+
+    @Test
     void postProcess_logsErrorOnRepositoryException() throws Exception {
         when(resolverFactory.getServiceResourceResolver(anyMap())).thenReturn(serviceResolver);
         when(serviceResolver.adaptTo(Session.class)).thenReturn(jackrabbitSession);
         when(jackrabbitSession.getUserManager()).thenReturn(userManager);
         when(userManager.getAuthorizable(TEST_USER_ID)).thenThrow(new javax.jcr.RepositoryException("repo error"));
+
+        fixture.postProcess(authInfo(TEST_USER_ID), request, response);
+
+        verify(jackrabbitSession, never()).save();
+
+        assertAll(
+            () -> assertEquals(1, logger.getLoggingEvents().size()),
+            () -> assertEquals(Level.ERROR, logger.getLoggingEvents().get(0).getLevel())
+        );
+    }
+
+    @Test
+    void postProcess_logsErrorOnLoginException() throws Exception {
+        when(resolverFactory.getServiceResourceResolver(anyMap())).thenReturn(serviceResolver);
+        when(serviceResolver.adaptTo(Session.class)).thenReturn(jackrabbitSession);
+        when(jackrabbitSession.getUserManager()).thenReturn(userManager);
+        when(userManager.getAuthorizable(TEST_USER_ID)).thenThrow(new javax.jcr.LoginException("login error"));
 
         fixture.postProcess(authInfo(TEST_USER_ID), request, response);
 
