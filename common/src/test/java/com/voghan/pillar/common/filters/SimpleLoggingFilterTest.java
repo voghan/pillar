@@ -16,12 +16,15 @@
 package com.voghan.pillar.common.filters;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 import java.io.IOException;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
@@ -48,7 +51,6 @@ class SimpleLoggingFilterTest {
     TestLoggerFactory.clear();
   }
 
-
   @Test
   void doFilter(AemContext context) throws IOException, ServletException {
     MockSlingHttpServletRequest request = context.request();
@@ -66,8 +68,60 @@ class SimpleLoggingFilterTest {
     assertEquals(1, events.size());
     LoggingEvent event = events.get(0);
     assertEquals(Level.INFO, event.getLevel());
-    assertEquals(3, event.getArguments().size());
-    assertEquals("/content/test", event.getArguments().get(0));
-    assertEquals("selectors", event.getArguments().get(1));
+    assertEquals(4, event.getArguments().size());
+    assertEquals("/content/test", event.getArguments().get(1));
+    assertEquals("selectors", event.getArguments().get(2));
+  }
+
+  // -------------------------------------------------------------------------
+  // getParametersAsString
+  // -------------------------------------------------------------------------
+
+  @Test
+  void getParametersAsString_emptyMap_returnsEmptyString() {
+    String result = fixture.getParametersAsString(new LinkedHashMap<>());
+    assertEquals("", result);
+  }
+
+  @Test
+  void getParametersAsString_singleParam_singleValue() {
+    Map<String, String[]> params = new LinkedHashMap<>();
+    params.put("page", new String[]{"1"});
+
+    String result = fixture.getParametersAsString(params);
+
+    assertEquals("{ param page values [1] }", result);
+  }
+
+  @Test
+  void getParametersAsString_singleParam_multipleValues() {
+    Map<String, String[]> params = new LinkedHashMap<>();
+    params.put("tag", new String[]{"news", "sport", "tech"});
+
+    String result = fixture.getParametersAsString(params);
+
+    assertEquals("{ param tag values [news, sport, tech] }", result);
+  }
+
+  @Test
+  void getParametersAsString_multipleParams_containsBothEntries() {
+    Map<String, String[]> params = new LinkedHashMap<>();
+    params.put("q", new String[]{"aem"});
+    params.put("page", new String[]{"2"});
+
+    String result = fixture.getParametersAsString(params);
+
+    assertTrue(result.contains("{ param q values [aem] }"));
+    assertTrue(result.contains("{ param page values [2] }"));
+  }
+
+  @Test
+  void getParametersAsString_paramWithEmptyValueArray() {
+    Map<String, String[]> params = new LinkedHashMap<>();
+    params.put("flag", new String[]{});
+
+    String result = fixture.getParametersAsString(params);
+
+    assertEquals("{ param flag values [] }", result);
   }
 }

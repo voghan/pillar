@@ -57,9 +57,6 @@ public class SimpleJobConsumer implements JobConsumer {
     if (resource != null) {
       ValueMap valueMap = resource.getValueMap();
       String modifiedBy = valueMap.get(JcrConstants.JCR_LAST_MODIFIED_BY, String.class);
-      if (StringUtils.isEmpty(modifiedBy)) {
-        modifiedBy = valueMap.get(NameConstants.PN_LAST_MOD_BY, String.class);
-      }
       LOGGER.info("Resource {} modified {} by {}", path, type, modifiedBy);
     } else {
       LOGGER.info("Resource is not found {}", path);

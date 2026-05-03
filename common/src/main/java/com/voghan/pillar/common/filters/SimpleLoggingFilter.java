@@ -50,7 +50,9 @@ public class SimpleLoggingFilter implements Filter {
       final FilterChain filterChain) throws IOException, ServletException {
 
     final SlingHttpServletRequest slingRequest = (SlingHttpServletRequest) request;
-    LOGGER.info("request for {}, with selector {}, with parameters {}",
+    String userId = slingRequest.getResourceResolver().getUserID();
+    LOGGER.info("user '{}' request for '{}', with selector '{}', with parameters {}",
+        userId,
         slingRequest.getRequestPathInfo().getResourcePath(),
         slingRequest.getRequestPathInfo().getSelectorString(),
         getParametersAsString(slingRequest.getParameterMap()));

@@ -82,6 +82,6 @@ public class SimpleCardCmp extends BaseModelCmp implements SimpleCard {
   }
 
   public boolean isCallToActionEnabled() {
-    return simpleCard.getCallToActions().size() > 0;
+    return !simpleCard.getCallToActions().isEmpty();
   }
 }
