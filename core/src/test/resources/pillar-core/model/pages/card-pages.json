@@ -1,0 +1,26 @@
+{
+  "jcr:primaryType": "cq:Page",
+  "jcr:content": {
+    "jcr:primaryType": "cq:PageContent",
+    "sling:resourceType": "pillar/components/page/v1/page",
+    "jcr:title": "Test Page Title",
+    "jcrDescription": "Test page description"
+  },
+  "page_no_description": {
+    "jcr:primaryType": "cq:Page",
+    "jcr:content": {
+      "jcr:primaryType": "cq:PageContent",
+      "sling:resourceType": "pillar/components/page/v1/page",
+      "jcr:title": "Test Page Title"
+    }
+  },
+  "page_hide_in_nav": {
+    "jcr:primaryType": "cq:Page",
+    "jcr:content": {
+      "jcr:primaryType": "cq:PageContent",
+      "sling:resourceType": "pillar/components/page/v1/page",
+      "jcr:title": "Hidden Page",
+      "hideInNav": true
+    }
+  }
+}
