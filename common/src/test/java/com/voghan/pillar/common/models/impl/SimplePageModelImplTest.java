@@ -12,6 +12,7 @@ import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertNotNull;
 import static junit.framework.Assert.assertNull;
+import static junit.framework.Assert.assertTrue;
 
 @ExtendWith(AemContextExtension.class)
 class SimplePageModelImplTest {
@@ -41,6 +42,13 @@ class SimplePageModelImplTest {
   }
 
   @Test
+  void getPageDescription_default_returnsFalse() {
+    PillarPageModel model = getModel("/content/pages/jcr:content");
+    assertNotNull(model);
+    assertFalse(model.isHideInNav());
+  }
+
+  @Test
   void getPageDescription_withoutDescription_returnsNull() {
     PillarPageModel model = getModel("/content/pages/page_no_description/jcr:content");
     assertNotNull(model);
@@ -48,10 +56,10 @@ class SimplePageModelImplTest {
   }
 
   @Test
-  void isHideInNav_alwaysReturnsFalse() {
+  void isHideInNav_withHideInNav_returnsTrue() {
     PillarPageModel model = getModel("/content/pages/page_hide_in_nav/jcr:content");
     assertNotNull(model);
-    assertFalse(model.isHideInNav());
+    assertTrue(model.isHideInNav());
   }
 
   private PillarPageModel getModel(String resourcePath) {

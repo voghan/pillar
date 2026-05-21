@@ -54,7 +54,7 @@ public class SimplePageModelImpl implements PillarPageModel {
 
   @Override
   public boolean isHideInNav() {
-    return false;
+    return hideInNav;
   }
 
 }

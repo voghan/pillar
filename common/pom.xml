@@ -214,6 +214,7 @@
 
 
         <!-- Testing -->
+        <!--Added xerces for reading json test files-->
         <dependency>
             <groupId>xerces</groupId>
             <artifactId>xercesImpl</artifactId>

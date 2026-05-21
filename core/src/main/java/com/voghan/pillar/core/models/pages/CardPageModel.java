@@ -32,13 +32,17 @@ public class CardPageModel implements CardPage {
   @Via(type = ResourceSuperType.class)
   private Page currentPage;
 
+  private String[] selectors;
+
   @PostConstruct
   protected void init() {
     // Get all selectors as an array
-    String[] selectors = request.getRequestPathInfo().getSelectors();
-
+    selectors = request.getRequestPathInfo().getSelectors();
     logger.debug("Current selectors: " + Arrays.toString(selectors));
+  }
 
+  public String[] getSelectors() {
+    return selectors;
   }
 
   @Override
