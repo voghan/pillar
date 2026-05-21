@@ -22,4 +22,5 @@
         <include pattern="/content/dam/pillar/cfm/simple-cards(/.*)?"/>
     </filter>
     <filter root="/content/experience-fragments/pillar" mode="merge"/>
+    <filter root="/etc/map/http/localhost.4502"/>
 </workspaceFilter>

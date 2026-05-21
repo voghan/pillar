@@ -1,0 +1,34 @@
+{
+  "jcr:primaryType": "cq:Page",
+  "jcr:content": {
+    "jcr:primaryType": "cq:PageContent",
+    "sling:resourceType": "pillar-common/components/page",
+    "jcr:title": "Test Page Title",
+    "jcrDescription": "Test page description"
+  },
+  "page_no_title": {
+    "jcr:primaryType": "cq:Page",
+    "jcr:content": {
+      "jcr:primaryType": "cq:PageContent",
+      "sling:resourceType": "pillar-common/components/page",
+      "jcrDescription": "Page without title"
+    }
+  },
+  "page_no_description": {
+    "jcr:primaryType": "cq:Page",
+    "jcr:content": {
+      "jcr:primaryType": "cq:PageContent",
+      "sling:resourceType": "pillar-common/components/page",
+      "jcr:title": "Test Page Title"
+    }
+  },
+  "page_hide_in_nav": {
+    "jcr:primaryType": "cq:Page",
+    "jcr:content": {
+      "jcr:primaryType": "cq:PageContent",
+      "sling:resourceType": "pillar-common/components/page",
+      "jcr:title": "Hidden Page",
+      "hideInNav": true
+    }
+  }
+}

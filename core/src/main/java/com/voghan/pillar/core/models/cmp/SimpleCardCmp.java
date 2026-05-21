@@ -4,6 +4,8 @@ import com.adobe.cq.export.json.ComponentExporter;
 import com.voghan.pillar.core.models.Link;
 import com.voghan.pillar.core.models.SimpleCard;
 import com.voghan.pillar.core.models.cfm.SimpleCardCfm;
+import java.util.List;
+import javax.annotation.PostConstruct;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
@@ -13,9 +15,6 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import javax.annotation.PostConstruct;
-import java.util.List;
 
 @Model(
     adaptables = SlingHttpServletRequest.class,
