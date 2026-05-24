@@ -1,0 +1,50 @@
+{
+  "jcr:primaryType": "sling:Folder",
+  "option1": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "contentFragment": true,
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "_strucVersion": 1,
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "headline": "Featured Journey",
+          "subheadline": "The best adventure awaits",
+          "shortDescription": "<p>Don't stop half way, go for the top!</p>\n",
+          "image": "/content/dam/images/featured.png",
+          "callToActions": [
+            "/content/dam/links/link1"
+          ]
+        }
+      }
+    }
+  },
+  "option_no_cta": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "contentFragment": true,
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "_strucVersion": 1,
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "headline": "No CTA Card",
+          "subheadline": "Subheadline only",
+          "shortDescription": "<p>No call to action.</p>\n",
+          "image": "/content/dam/images/no-cta.png"
+        }
+      }
+    }
+  }
+}

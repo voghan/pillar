@@ -1,0 +1,32 @@
+{
+  "jcr:primaryType": "cq:Page",
+  "jcr:content": {
+    "jcr:primaryType": "cq:PageContent",
+    "jcr:title": "Featured Card",
+    "sling:resourceType": "pillar/components/page/v1/page",
+    "root": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "pillar/components/container/v1/container",
+      "container": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "pillar/components/container/v1/container",
+        "container": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "pillar/components/container/v1/container",
+          "card": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "pillar/components/featured/v1/featured",
+            "fragmentPath": "/content/dam/featured-cards/option1",
+            "variationName": "master"
+          },
+          "card_no_cta": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "pillar/components/featured/v1/featured",
+            "fragmentPath": "/content/dam/featured-cards/option_no_cta",
+            "variationName": "master"
+          }
+        }
+      }
+    }
+  }
+}
