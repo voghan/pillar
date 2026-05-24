@@ -24,7 +24,7 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/core/components/policies/mapping">
                 <container
-                    cq:policy="pillar/components/container/policy_1574695586800"
+                    cq:policy="pillar/components/container/v1/container/policy_1574695586800"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/core/components/policies/mapping">
                     <pillar jcr:primaryType="nt:unstructured">
@@ -45,10 +45,6 @@
                                       sling:resourceType="wcm/core/components/policies/mapping"/>
                                 </v1>
                             </separator>
-                            <image
-                                cq:policy="pillar/components/image/policy_651483963895698"
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="wcm/core/components/policies/mapping"/>
                         </components>
                     </pillar>
                 </container>
