@@ -363,6 +363,65 @@
                     </page>
                 </v1>
             </page>
+            <separator jcr:primaryType="nt:unstructured">
+                <v1 jcr:primaryType="nt:unstructured">
+                    <separator jcr:primaryType="nt:unstructured">
+                        <policy_1779588619139
+                          jcr:lastModified="{Date}2026-05-23T21:13:01.568-05:00"
+                          jcr:lastModifiedBy="admin"
+                          jcr:primaryType="nt:unstructured"
+                          jcr:title="Separator Policy"
+                          sling:resourceType="wcm/core/components/policy/policy"
+                          isDecorative="false">
+                            <jcr:content jcr:primaryType="nt:unstructured"/>
+                            <cq:styleGroups jcr:primaryType="nt:unstructured">
+                                <item0
+                                  cq:styleGroupLabel="Spacing"
+                                  jcr:primaryType="nt:unstructured">
+                                    <cq:styles jcr:primaryType="nt:unstructured">
+                                        <item0
+                                          cq:styleClasses="cmp-separator--space-small "
+                                          cq:styleId="1779588639917"
+                                          cq:styleLabel="Small"
+                                          jcr:primaryType="nt:unstructured"/>
+                                        <item1
+                                          cq:styleClasses="cmp-separator--space-medium"
+                                          cq:styleId="1779588654135"
+                                          cq:styleLabel="Medium"
+                                          jcr:primaryType="nt:unstructured"/>
+                                        <item2
+                                          cq:styleClasses="cmp-separator--space-large"
+                                          cq:styleId="1779588686492"
+                                          cq:styleLabel="Large"
+                                          jcr:primaryType="nt:unstructured"/>
+                                    </cq:styles>
+                                </item0>
+                                <item1
+                                  cq:styleGroupLabel="Color"
+                                  jcr:primaryType="nt:unstructured">
+                                    <cq:styles jcr:primaryType="nt:unstructured">
+                                        <item0
+                                          cq:styleClasses="cmp-separator--light"
+                                          cq:styleId="1779588729306"
+                                          cq:styleLabel="Light"
+                                          jcr:primaryType="nt:unstructured"/>
+                                        <item1
+                                          cq:styleClasses="cmp-separator--dark "
+                                          cq:styleId="1779588736278"
+                                          cq:styleLabel="Dark"
+                                          jcr:primaryType="nt:unstructured"/>
+                                        <item2
+                                          cq:styleClasses="cmp-separator--hidden"
+                                          cq:styleId="1779588754505"
+                                          cq:styleLabel="Hidden"
+                                          jcr:primaryType="nt:unstructured"/>
+                                    </cq:styles>
+                                </item1>
+                            </cq:styleGroups>
+                        </policy_1779588619139>
+                    </separator>
+                </v1>
+            </separator>
         </components>
     </pillar>
     <wcm jcr:primaryType="nt:unstructured">

@@ -21,6 +21,14 @@
                                 sling:resourceType="wcm/core/components/policies/mapping"/>
                         </v1>
                     </text>
+                    <separator jcr:primaryType="nt:unstructured">
+                        <v1 jcr:primaryType="nt:unstructured">
+                            <separator
+                              cq:policy="pillar/components/separator/v1/separator/policy_1779588619139"
+                              jcr:primaryType="nt:unstructured"
+                              sling:resourceType="wcm/core/components/policies/mapping"/>
+                        </v1>
+                    </separator>
                 </components>
             </pillar>
         </root>
