@@ -38,12 +38,23 @@
             // Adjust the DOM, in this case injecting an img node and settings its source to the the content fragment's picture URL
             var cfEls = cf.querySelector('.cmp-contentfragment__elements');
             var assetPath = cfEls.querySelector(pictureSelector).innerText.trim();
+            var safeAssetPath = null;
 
-            if (assetPath && assetPath.indexOf("/content/dam/") === 0) {
+            try {
+                var parsedAssetUrl = new URL(assetPath, window.location.origin);
+                if (parsedAssetUrl.origin === window.location.origin &&
+                    parsedAssetUrl.pathname.indexOf("/content/dam/") === 0) {
+                    safeAssetPath = parsedAssetUrl.pathname + parsedAssetUrl.search + parsedAssetUrl.hash;
+                }
+            } catch (e) {
+                safeAssetPath = null;
+            }
+
+            if (safeAssetPath) {
                 var pictureEl = document.createElement("img"); 
 
                 pictureEl.setAttribute("class", "cmp-contentfragment__picture"); 
-				pictureEl.setAttribute("src", assetPath);
+				pictureEl.setAttribute("src", safeAssetPath);
 
                 cfEls.insertBefore(pictureEl, cfEls.querySelector(".cmp-contentfragment__element--fullName"));
             }
