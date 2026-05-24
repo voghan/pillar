@@ -54,7 +54,7 @@
                 var pictureEl = document.createElement("img"); 
 
                 pictureEl.setAttribute("class", "cmp-contentfragment__picture"); 
-				pictureEl.setAttribute("src", safeAssetPath);
+                pictureEl.setAttribute("src", encodeURI(safeAssetPath));
 
                 cfEls.insertBefore(pictureEl, cfEls.querySelector(".cmp-contentfragment__element--fullName"));
             }
