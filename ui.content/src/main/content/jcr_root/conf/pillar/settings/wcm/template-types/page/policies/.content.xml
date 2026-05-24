@@ -3,15 +3,15 @@
           xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
           jcr:primaryType="cq:Page">
     <jcr:content
-            cq:policy="pillar/components/page/policy"
+            cq:policy="pillar/components/page/v1/page/policy"
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/core/components/policies/mappings">
         <root
-                cq:policy="pillar/components/container/policy_1574694950110"
+                cq:policy="pillar/components/container/v1/container/policy_1574694950110"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/core/components/policies/mapping">
             <container
-                    cq:policy="pillar/components/container/policy_1574695586800"
+                    cq:policy="pillar/components/container/v1/container/policy_1574695586800"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/core/components/policies/mapping"/>
         </root>
