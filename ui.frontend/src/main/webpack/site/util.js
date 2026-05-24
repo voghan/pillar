@@ -138,8 +138,13 @@ import jQuery from "jquery";
                 if (!(config.target instanceof jQuery)) {
                     if (typeof config.target === 'string')
                         config.target = $(jQuery.find(config.target));
-                    else
+                    else if (
+                        config.target &&
+                        (config.target.nodeType === 1 || config.target === window || config.target === document)
+                    )
                         config.target = $(config.target);
+                    else
+                        config.target = $this;
                 }
 
         // Panel.
