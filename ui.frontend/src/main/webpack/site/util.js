@@ -134,17 +134,22 @@ import jQuery from "jquery";
 
             }, userConfig);
 
-            // Expand "target" if it's not a jQuery object already.
-                if (!(config.target instanceof jQuery)) {
-                    if (typeof config.target === 'string')
-                        config.target = $(jQuery.find(config.target));
-                    else if (
-                        config.target &&
-                        (config.target.nodeType === 1 || config.target === window || config.target === document)
-                    )
-                        config.target = $(config.target);
-                    else
-                        config.target = $this;
+            // Expand "target" safely.
+                if (typeof config.target === 'string') {
+                    // Treat string input strictly as a selector (never as HTML).
+                    config.target = $(jQuery.find(config.target));
+                }
+                else if (config.target instanceof jQuery) {
+                    // Already normalized.
+                }
+                else if (
+                    config.target &&
+                    (config.target.nodeType === 1 || config.target === window || config.target === document)
+                ) {
+                    config.target = $(config.target);
+                }
+                else {
+                    config.target = $this;
                 }
 
         // Panel.
