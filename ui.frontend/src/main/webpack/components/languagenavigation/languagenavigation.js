@@ -42,7 +42,7 @@ jQuery(function ($) {
 
             activeCountryImg = $(CMP_SELECTOR + ' ' + ACTIVE_COUNTRY_SELECTOR)
                                .css('background-image');
-            activeCountryImg = activeCountryImg !== undefined ? activeCountryImg.replace("\"", "\'").replace("\"", "\'") : 'none';
+            activeCountryImg = activeCountryImg !== undefined ? activeCountryImg.replace(/"/g, "'") : 'none';
 
             toggleButton = '<div class="cmp-languagenavigation--langnavtoggle">' +
                                 '<a id="langNavToggleHeader" style="background-image:' + activeCountryImg + 
