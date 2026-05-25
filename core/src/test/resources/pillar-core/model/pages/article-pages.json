@@ -1,0 +1,9 @@
+{
+  "jcr:primaryType": "cq:Page",
+  "jcr:content": {
+    "jcr:primaryType": "cq:PageContent",
+    "sling:resourceType": "pillar/components/pagearticle/v1/pagearticle",
+    "jcr:title": "Article Page",
+    "jcr:description": "Article page description"
+  }
+}

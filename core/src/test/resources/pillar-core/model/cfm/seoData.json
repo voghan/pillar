@@ -1,0 +1,51 @@
+{
+  "jcr:primaryType": "sling:Folder",
+  "article-seo": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "contentFragment": true,
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "_strucVersion": 1,
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "title": "Downhill Skiing Wyoming | Pillar",
+          "description": "Jackson Hole offers a truly unique skiing experience with 2,500 acres of legendary terrain.",
+          "canonicalUrl": "/us/en/articles/downhill-skiing-wyoming",
+          "thumbnail": "/content/dam/pillar/images/en/cards/adobestock-185234795.jpeg",
+          "robots": [
+            "index",
+            "follow"
+          ]
+        }
+      }
+    }
+  },
+  "article-no-robots": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "contentFragment": true,
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "_strucVersion": 1,
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "title": "No Robots Page | Pillar",
+          "description": "A page with no robots directives.",
+          "canonicalUrl": "/us/en/articles/no-robots",
+          "thumbnailUrl": "/content/dam/pillar/images/no-robots.jpeg"
+        }
+      }
+    }
+  }
+}

@@ -363,6 +363,21 @@
                     </page>
                 </v1>
             </page>
+            <pagearticle jcr:primaryType="nt:unstructured">
+                <v1 jcr:primaryType="nt:unstructured">
+                    <pagearticle jcr:primaryType="nt:unstructured">
+                        <policy
+                          jcr:description="Includes the required client libraries."
+                          jcr:primaryType="nt:unstructured"
+                          jcr:title="Generic Page"
+                          sling:resourceType="wcm/core/components/policy/policy"
+                          clientlibs="[pillar.dependencies,pillar.site]"
+                          clientlibsJsHead="pillar.dependencies">
+                            <jcr:content jcr:primaryType="nt:unstructured"/>
+                        </policy>
+                    </pagearticle>
+                </v1>
+            </pagearticle>
             <separator jcr:primaryType="nt:unstructured">
                 <v1 jcr:primaryType="nt:unstructured">
                     <separator jcr:primaryType="nt:unstructured">
