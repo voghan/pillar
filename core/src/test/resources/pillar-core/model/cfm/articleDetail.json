@@ -1,0 +1,64 @@
+{
+  "jcr:primaryType": "sling:Folder",
+  "downhill-skiing-wyoming": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "jcr:title": "downhill-skiing-wyoming",
+      "contentFragment": true,
+      "cq:name": "downhill-skiing-wyoming",
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "_strucVersion": 1,
+        "cq:model": "/conf/pillar/settings/dam/cfm/models/articledetail",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "url@LastModified": "Sun May 24 2026 15:53:39 GMT-0500",
+          "bannerImage": "/content/dam/pillar/images/en/cards/adobestock-185234795.jpeg",
+          "description": "<p>A skiers paradise far from crowds and close to nature with terrain so vast it appears uncharted. With 2,500 acres of legendary terrain, unmatched levels of snowfall each winter, and unparalleled backcountry access, Jackson Hole offers a truly unique skiing experience.</p>\n",
+          "headline@LastModified": "Sun May 24 2026 15:53:39 GMT-0500",
+          "postDate@LastModifiedBy": "admin",
+          "description@LastModified": "Sun May 24 2026 15:53:39 GMT-0500",
+          "headline": "Downhill Skiing Wyoming",
+          "bannerImage@LastModifiedBy": "admin",
+          "subheadline@LastModifiedBy": "admin",
+          "content@LastModified": "Sun May 24 2026 15:53:40 GMT-0500",
+          "placeholder@LastModified": "Sun May 24 2026 15:49:08 GMT-0500",
+          "url": "/us/en/articles/downhill-skiing-wyoming",
+          "bannerImage@LastModified": "Sun May 24 2026 15:53:39 GMT-0500",
+          "subheadline": "Jackson Hole Resort",
+          "headline@LastModifiedBy": "admin",
+          "postDate": "Fri Dec 05 2025 00:00:00 GMT+0000",
+          "content@LastModifiedBy": "admin",
+          "subheadline@LastModified": "Sun May 24 2026 15:53:39 GMT-0500",
+          "content": "<h2>Experience wild untamed, rolling, wide-open terrain of Wyoming in the winter.<br>\n</h2>\n<p>&nbsp;</p>\n<p>The spectacular Tetons of Wyoming provide a wonderous backdrop for your Jackson Hole ski vacation.&nbsp; Jackson Hole is unlike anywhere else in the US.&nbsp; A skiers paradise far from crowds and close to nature with terrain so vast it appears uncharted.&nbsp; With 2,500 acres of legendary terrain, unmatched levels of snowfall each winter, and unparalleled backcountry access, Jackson Hole offers a truly unique skiing experience.</p>\n",
+          "postDate@LastModified": "Sun May 24 2026 15:53:40 GMT-0500",
+          "content@ContentType": "text/html",
+          "description@LastModifiedBy": "admin",
+          "url@LastModifiedBy": "admin",
+          "description@ContentType": "text/html"
+        },
+        "en": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "headline": "Downhill Skiing Wyoming",
+          "subheadline": "Jackson Hole Resort",
+          "description": "<p>A skiers paradise far from crowds and close to nature with terrain so vast it appears uncharted. With 2,500 acres of legendary terrain, unmatched levels of snowfall each winter, and unparalleled backcountry access, Jackson Hole offers a truly unique skiing experience.</p>\n",
+          "bannerImage": "/content/dam/pillar/images/en/cards/adobestock-185234795.jpeg",
+          "postDate": "Fri Dec 05 2025 00:00:00 GMT+0000",
+          "url": "/us/en/articles/downhill-skiing-wyoming",
+          "content": "<h2>Experience wild untamed, rolling, wide-open terrain of Wyoming in the winter.<br>\n</h2>\n<p>&nbsp;</p>\n<p>The spectacular Tetons of Wyoming provide a wonderous backdrop for your Jackson Hole ski vacation.&nbsp; Jackson Hole is unlike anywhere else in the US.&nbsp; A skiers paradise far from crowds and close to nature with terrain so vast it appears uncharted.&nbsp; With 2,500 acres of legendary terrain, unmatched levels of snowfall each winter, and unparalleled backcountry access, Jackson Hole offers a truly unique skiing experience.</p>\n",
+          "content@ContentType": "text/html",
+          "description@ContentType": "text/html"
+        }
+      }
+    }
+  }
+}

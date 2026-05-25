@@ -13,4 +13,8 @@
     jcr:primaryType="nt:unstructured"
     sling:match="content/pillar/us/en/cards/([^/.]+)/([^/.]+)/([^/.]+)\.html"
     sling:internalRedirect="/content/pillar/us/en/cards/detail.$1.$2.$3.html"/>
+  <articles-mapping
+    jcr:primaryType="nt:unstructured"
+    sling:match="content/pillar/us/en/articles/([^/.]+)\.html"
+    sling:internalRedirect="/content/pillar/us/en/articles/detail.$1.html"/>
 </jcr:root>
