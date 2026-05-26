@@ -1,15 +1,21 @@
-<sly  data-sly-use.article="com.voghan.pillar.core.models.cmp.ArticleDetailCmp"/>
+<sly data-sly-use.article="com.voghan.pillar.core.models.cmp.ArticleDetailCmp"
+     data-sly-use.breadcrumbTemplate="breadcrumb.html"/>
 
-
-<div class="cmp-image">
-  <img src="${article.bannerImageUrl}"  loading="lazy" class="cmp-image__image"  alt="" title="">
-  <meta itemprop="caption" content="">
-</div>
+<div class="cmp-article" data-sly-test.hasArticle="${article.hasArticle}">
+  <div class="cmp-image">
+    <img src="${article.bannerImageUrl}"  loading="lazy" class="cmp-image__image"  alt="" title="">
+    <meta itemprop="caption" content="">
+  </div>
+  <sly data-sly-call="${breadcrumbTemplate.breadcrumb @ article=article}"></sly>
   <h2 class="cmp-article__headline">${article.headline}</h2>
   <p class="cmp-article__subheadline">${article.subheadline}</p>
   <p class="cmp-article__postDate">${article.postDate}</p>
   <div class="cmp-article__content">${article.content @ context='html'}</div>
+</div>
 
+<div data-sly-test.isEditMode="${wcmmode.edit}">
+  <p>Article detail: content is driven by the URL selector.</p>
+</div>
 
 <sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
      data-sly-call="${template.placeholder @ isEmpty=!properties.fragmentPath}"></sly>
