@@ -1,0 +1,15 @@
+<sly data-sly-template.breadcrumb="${@ article}">
+  <nav aria-label="Breadcrumb" class="cmp-breadcrumb">
+    <ol class="cmp-breadcrumb__list">
+      <li class="cmp-breadcrumb__item" data-sly-test="${article.parentPagePath}">
+        <a href="${article.parentPagePath}">${article.parentPageTitle}</a>
+      </li>
+      <li class="cmp-breadcrumb__item">
+        <a class="cmp-breadcrumb__item-link" href="${article.url}">${'Current' @ i18n} </a>
+      </li>
+      <li class="cmp-breadcrumb__item cmp-breadcrumb__item--active" aria-current="page">
+        <span itemprop="name">${article.headline}</span>
+      </li>
+    </ol>
+  </nav>
+</sly>
