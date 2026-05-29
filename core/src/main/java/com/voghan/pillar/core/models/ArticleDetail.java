@@ -1,12 +1,8 @@
 package com.voghan.pillar.core.models;
 
-public interface ArticleDetail {
-
-    String getHeadline();
+public interface ArticleDetail extends Card {
 
     String getSubheadline();
-
-    String getDescription();
 
     String getBannerImageUrl();
 

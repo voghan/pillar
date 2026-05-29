@@ -2,6 +2,6 @@
     <span class="cmp-card-list__item-title">${card.headline}</span>
     <span class="cmp-card-list__item-description">${card.shortDescription @ context='html'}</span>
     <span data-sly-test="${card.isCallToActionEnabled}" data-sly-list.link="${card.callToActions}" class="cmp-card-list__action-container" >
-        <a class="cmp-card-list__action-link"  href="${link.linkPath}">${link.linkText}</a>
+        <a class="cmp-card-list__action-link"  href="${link.linkPath}">${link.linkText @ i18n}</a>
     </span>
 </template>

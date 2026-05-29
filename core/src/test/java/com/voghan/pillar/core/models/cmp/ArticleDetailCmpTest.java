@@ -1,7 +1,7 @@
 package com.voghan.pillar.core.models.cmp;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -67,7 +67,7 @@ public class ArticleDetailCmpTest {
   void getDescription_returnsNonNullDescription() {
     ArticleDetailCmp model = getComponent(COMPONENT_PATH);
     assertNotNull(model);
-    assertNotNull(model.getDescription());
+    assertNotNull(model.getShortDescription());
   }
 
   @Test
@@ -136,6 +136,21 @@ public class ArticleDetailCmpTest {
     assertEquals("/content/articles.html", model.getParentPagePath());
   }
 
+  @Test
+  void isCallToActionEnabled_whenEnabled_returnTrue() {
+    ArticleDetailCmp model = getComponent(COMPONENT_PATH);
+    assertNotNull(model);
+    assertTrue(model.isCallToActionEnabled());
+  }
+
+  @Test
+  void getCallToActions_whenEnabled_returnActions() {
+    ArticleDetailCmp model = getComponent(COMPONENT_PATH);
+    assertNotNull(model);
+    assertFalse(model.getCallToActions().isEmpty());
+    assertEquals(1, model.getCallToActions().size());
+  }
+
   // -------------------------------------------------------------------------
   // No-selector (empty article) behaviour
   // -------------------------------------------------------------------------
@@ -172,7 +187,7 @@ public class ArticleDetailCmpTest {
   void getPostDate_returnsNull_whenNoSelector() {
     ArticleDetailCmp model = getComponent();
     assertNotNull(model);
-    assertNull(model.getPostDate());
+    assertEquals("", model.getPostDate());
   }
 
   // -------------------------------------------------------------------------

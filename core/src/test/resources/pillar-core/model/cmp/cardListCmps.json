@@ -35,6 +35,21 @@
           "card_list_no_fragment": {
             "jcr:primaryType": "nt:unstructured",
             "sling:resourceType": "pillar/components/card-list/v1/card-list"
+          },
+          "article_list": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:mixinTypes": [
+              "cq:LiveRelationship"
+            ],
+            "jcr:createdBy": "admin",
+            "jcr:lastModifiedBy": "admin",
+            "cq:lastRolledout": "Fri May 29 2026 07:33:45 GMT-0500",
+            "jcr:created": "Wed May 27 2026 22:28:26 GMT-0500",
+            "variationName": "master",
+            "jcr:lastModified": "Wed May 27 2026 22:29:18 GMT-0500",
+            "sling:resourceType": "pillar/components/card-list/v1/card-list",
+            "cq:lastRolledoutBy": "admin",
+            "fragmentPath": "/content/dam/card-list/articles"
           }
         }
       }

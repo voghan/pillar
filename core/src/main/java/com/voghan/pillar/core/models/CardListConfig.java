@@ -10,9 +10,11 @@ public interface CardListConfig {
 
   String getSearchPath();
 
-  Boolean getEnableSearch();
+  boolean isEnableSearch();
 
   List<String> getCardTags();
 
   List<String> getFilterTags();
+
+  boolean isEnablePostDate();
 }

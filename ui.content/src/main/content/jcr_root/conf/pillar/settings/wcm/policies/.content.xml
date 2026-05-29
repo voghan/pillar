@@ -238,102 +238,76 @@
                 <v1 jcr:primaryType="nt:unstructured">
                     <container jcr:primaryType="nt:unstructured">
                         <policy_1574694950110
-                          jcr:description="Allows the template components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
-                          jcr:primaryType="nt:unstructured"
-                          jcr:title="Page Root"
-                          sling:resourceType="wcm/core/components/policy/policy"
-                          components="[group:Pillar - Content,group:Pillar - Structure]">
+                            jcr:description="Allows the template components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Page Root"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            components="[group:Pillar - Content,group:Pillar - Structure]">
                             <jcr:content jcr:primaryType="nt:unstructured"/>
                             <cq:authoring jcr:primaryType="nt:unstructured">
                                 <assetToComponentMapping jcr:primaryType="nt:unstructured">
                                     <mapping_1575024218483
-                                      jcr:primaryType="nt:unstructured"
-                                      assetGroup="media"
-                                      assetMimetype="image/*"
-                                      droptarget="image"
-                                      resourceType="pillar/components/image/v1/image"/>
+                                        jcr:primaryType="nt:unstructured"
+                                        assetGroup="media"
+                                        assetMimetype="image/*"
+                                        droptarget="image"
+                                        resourceType="pillar/components/image/v1/image"/>
                                     <mapping_1575030843388
-                                      jcr:primaryType="nt:unstructured"
-                                      assetGroup="content"
-                                      assetMimetype="text/html"
-                                      droptarget="experiencefragment"
-                                      resourceType="pillar/components/experiencefragment/v1/experiencefragment"/>
+                                        jcr:primaryType="nt:unstructured"
+                                        assetGroup="content"
+                                        assetMimetype="text/html"
+                                        droptarget="experiencefragment"
+                                        resourceType="pillar/components/experiencefragment/v1/experiencefragment"/>
                                     <mapping_1575030853128
-                                      jcr:primaryType="nt:unstructured"
-                                      assetGroup="media"
-                                      assetMimetype="[text/html,application/vnd.adobe.contentfragment]"
-                                      droptarget="contentfragment"
-                                      resourceType="pillar/components/contentfragment/v1/contentfragment"/>
+                                        jcr:primaryType="nt:unstructured"
+                                        assetGroup="media"
+                                        assetMimetype="[text/html,application/vnd.adobe.contentfragment]"
+                                        droptarget="contentfragment"
+                                        resourceType="pillar/components/contentfragment/v1/contentfragment"/>
                                 </assetToComponentMapping>
                             </cq:authoring>
                         </policy_1574694950110>
                         <policy_1574695586800
-                          jcr:description="Allows the page components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
-                          jcr:primaryType="nt:unstructured"
-                          jcr:title="Page Content"
-                          sling:resourceType="wcm/core/components/policy/policy"
-                          components="[group:Pillar - Content]">
+                            jcr:description="Allows the page components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
+                            jcr:lastModified="{Date}2026-05-27T19:27:01.981-05:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Page Content"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            components="[group:Pillar - Content]"
+                            layoutDisabled="false">
                             <jcr:content jcr:primaryType="nt:unstructured"/>
-                            <cq:authoring jcr:primaryType="nt:unstructured">
-                                <assetToComponentMapping jcr:primaryType="nt:unstructured">
-                                    <mapping_1575030255082
-                                      jcr:primaryType="nt:unstructured"
-                                      assetGroup="media"
-                                      assetMimetype="image/*"
-                                      droptarget="image"
-                                      resourceType="pillar/components/image/v1/image"/>
-                                    <mapping_1575030260142
-                                      jcr:primaryType="nt:unstructured"
-                                      assetGroup="content"
-                                      assetMimetype="text/html"
-                                      droptarget="experiencefragment"
-                                      resourceType="pillar/components/experiencefragment/v1/experiencefragment"/>
-                                    <mapping_1575030269139
-                                      jcr:primaryType="nt:unstructured"
-                                      assetGroup="media"
-                                      assetMimetype="[text/html,application/vnd.adobe.contentfragment]"
-                                      droptarget="contentfragment"
-                                      resourceType="pillar/components/contentfragment/v1/contentfragment"/>
-                                </assetToComponentMapping>
-                            </cq:authoring>
+                            <cq:styleGroups jcr:primaryType="nt:unstructured">
+                                <item0 jcr:primaryType="nt:unstructured">
+                                    <cq:styles jcr:primaryType="nt:unstructured">
+                                        <item0
+                                            cq:styleId="1779927949432"
+                                            cq:styleLabel="Full Width"
+                                            jcr:primaryType="nt:unstructured"/>
+                                        <item1
+                                            cq:styleClasses="cmp-layout-container--fixed"
+                                            cq:styleId="1779927959937"
+                                            cq:styleLabel="Fixed Width"
+                                            jcr:primaryType="nt:unstructured"/>
+                                    </cq:styles>
+                                </item0>
+                            </cq:styleGroups>
                         </policy_1574695586800>
                         <policy_649128221558427
-                          cq:styleDefaultElement="main"
-                          jcr:description="Sets a &lt;main> element on the page content area."
-                          jcr:primaryType="nt:unstructured"
-                          jcr:title="Page Main"
-                          sling:resourceType="wcm/core/components/policy/policy">
+                            cq:styleDefaultElement="main"
+                            jcr:description="Sets a &lt;main> element on the page content area."
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Page Main"
+                            sling:resourceType="wcm/core/components/policy/policy">
                             <jcr:content jcr:primaryType="nt:unstructured"/>
                         </policy_649128221558427>
                         <policy_1575040440977
-                          jcr:description="Allows the template components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
-                          jcr:primaryType="nt:unstructured"
-                          jcr:title="XF Root"
-                          sling:resourceType="wcm/core/components/policy/policy"
-                          components="[group:Pillar - Content]">
+                            jcr:description="Allows the template components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="XF Root"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            components="[group:Pillar - Content]">
                             <jcr:content jcr:primaryType="nt:unstructured"/>
-                            <cq:authoring jcr:primaryType="nt:unstructured">
-                                <assetToComponentMapping jcr:primaryType="nt:unstructured">
-                                    <mapping_1575024218483
-                                      jcr:primaryType="nt:unstructured"
-                                      assetGroup="media"
-                                      assetMimetype="image/*"
-                                      droptarget="image"
-                                      resourceType="pillar/components/image/v1/image"/>
-                                    <mapping_1575030843388
-                                      jcr:primaryType="nt:unstructured"
-                                      assetGroup="content"
-                                      assetMimetype="text/html"
-                                      droptarget="experiencefragment"
-                                      resourceType="pillar/components/experiencefragment/v1/experiencefragment"/>
-                                    <mapping_1575030853128
-                                      jcr:primaryType="nt:unstructured"
-                                      assetGroup="media"
-                                      assetMimetype="[text/html,application/vnd.adobe.contentfragment]"
-                                      droptarget="contentfragment"
-                                      resourceType="pillar/components/contentfragment/v1/contentfragment"/>
-                                </assetToComponentMapping>
-                            </cq:authoring>
                         </policy_1575040440977>
                         <policy_1779580999535
                             jcr:lastModified="{Date}2026-05-23T19:04:39.033-05:00"
@@ -367,12 +341,12 @@
                 <v1 jcr:primaryType="nt:unstructured">
                     <pagearticle jcr:primaryType="nt:unstructured">
                         <policy
-                          jcr:description="Includes the required client libraries."
-                          jcr:primaryType="nt:unstructured"
-                          jcr:title="Generic Page"
-                          sling:resourceType="wcm/core/components/policy/policy"
-                          clientlibs="[pillar.dependencies,pillar.site]"
-                          clientlibsJsHead="pillar.dependencies">
+                            jcr:description="Includes the required client libraries."
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Generic Page"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            clientlibs="[pillar.dependencies,pillar.site]"
+                            clientlibsJsHead="pillar.dependencies">
                             <jcr:content jcr:primaryType="nt:unstructured"/>
                         </policy>
                     </pagearticle>
@@ -382,54 +356,54 @@
                 <v1 jcr:primaryType="nt:unstructured">
                     <separator jcr:primaryType="nt:unstructured">
                         <policy_1779588619139
-                          jcr:lastModified="{Date}2026-05-23T21:13:01.568-05:00"
-                          jcr:lastModifiedBy="admin"
-                          jcr:primaryType="nt:unstructured"
-                          jcr:title="Separator Policy"
-                          sling:resourceType="wcm/core/components/policy/policy"
-                          isDecorative="false">
+                            jcr:lastModified="{Date}2026-05-23T21:13:01.568-05:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Separator Policy"
+                            sling:resourceType="wcm/core/components/policy/policy"
+                            isDecorative="false">
                             <jcr:content jcr:primaryType="nt:unstructured"/>
                             <cq:styleGroups jcr:primaryType="nt:unstructured">
                                 <item0
-                                  cq:styleGroupLabel="Spacing"
-                                  jcr:primaryType="nt:unstructured">
+                                    cq:styleGroupLabel="Spacing"
+                                    jcr:primaryType="nt:unstructured">
                                     <cq:styles jcr:primaryType="nt:unstructured">
                                         <item0
-                                          cq:styleClasses="cmp-separator--space-small "
-                                          cq:styleId="1779588639917"
-                                          cq:styleLabel="Small"
-                                          jcr:primaryType="nt:unstructured"/>
+                                            cq:styleClasses="cmp-separator--space-small "
+                                            cq:styleId="1779588639917"
+                                            cq:styleLabel="Small"
+                                            jcr:primaryType="nt:unstructured"/>
                                         <item1
-                                          cq:styleClasses="cmp-separator--space-medium"
-                                          cq:styleId="1779588654135"
-                                          cq:styleLabel="Medium"
-                                          jcr:primaryType="nt:unstructured"/>
+                                            cq:styleClasses="cmp-separator--space-medium"
+                                            cq:styleId="1779588654135"
+                                            cq:styleLabel="Medium"
+                                            jcr:primaryType="nt:unstructured"/>
                                         <item2
-                                          cq:styleClasses="cmp-separator--space-large"
-                                          cq:styleId="1779588686492"
-                                          cq:styleLabel="Large"
-                                          jcr:primaryType="nt:unstructured"/>
+                                            cq:styleClasses="cmp-separator--space-large"
+                                            cq:styleId="1779588686492"
+                                            cq:styleLabel="Large"
+                                            jcr:primaryType="nt:unstructured"/>
                                     </cq:styles>
                                 </item0>
                                 <item1
-                                  cq:styleGroupLabel="Color"
-                                  jcr:primaryType="nt:unstructured">
+                                    cq:styleGroupLabel="Color"
+                                    jcr:primaryType="nt:unstructured">
                                     <cq:styles jcr:primaryType="nt:unstructured">
                                         <item0
-                                          cq:styleClasses="cmp-separator--light"
-                                          cq:styleId="1779588729306"
-                                          cq:styleLabel="Light"
-                                          jcr:primaryType="nt:unstructured"/>
+                                            cq:styleClasses="cmp-separator--light"
+                                            cq:styleId="1779588729306"
+                                            cq:styleLabel="Light"
+                                            jcr:primaryType="nt:unstructured"/>
                                         <item1
-                                          cq:styleClasses="cmp-separator--dark "
-                                          cq:styleId="1779588736278"
-                                          cq:styleLabel="Dark"
-                                          jcr:primaryType="nt:unstructured"/>
+                                            cq:styleClasses="cmp-separator--dark "
+                                            cq:styleId="1779588736278"
+                                            cq:styleLabel="Dark"
+                                            jcr:primaryType="nt:unstructured"/>
                                         <item2
-                                          cq:styleClasses="cmp-separator--hidden"
-                                          cq:styleId="1779588754505"
-                                          cq:styleLabel="Hidden"
-                                          jcr:primaryType="nt:unstructured"/>
+                                            cq:styleClasses="cmp-separator--hidden"
+                                            cq:styleId="1779588754505"
+                                            cq:styleLabel="Hidden"
+                                            jcr:primaryType="nt:unstructured"/>
                                     </cq:styles>
                                 </item1>
                             </cq:styleGroups>
