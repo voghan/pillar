@@ -1,8 +1,8 @@
 package com.voghan.pillar.core.models.cmp;
 
 import com.adobe.cq.export.json.ComponentExporter;
+import com.voghan.pillar.common.links.model.SimpleLink;
 import com.voghan.pillar.core.models.FeaturedCard;
-import com.voghan.pillar.core.models.Link;
 import com.voghan.pillar.core.models.cfm.FeaturedCardCfm;
 import java.util.List;
 import javax.annotation.PostConstruct;
@@ -73,7 +73,7 @@ public class FeaturedCardCmp extends BaseModelCmp implements FeaturedCard {
   }
 
   @Override
-  public List<Link> getCallToActions() {
+  public List<SimpleLink> getCallToActions() {
     return featuredCard.getCallToActions();
   }
 

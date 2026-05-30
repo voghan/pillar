@@ -4,6 +4,9 @@ import com.day.cq.wcm.api.NameConstants;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 import com.drew.lang.annotations.NotNull;
+import com.voghan.pillar.common.links.impl.SimpleLinkImpl;
+import com.voghan.pillar.common.links.model.SimpleLink;
+import javax.annotation.PostConstruct;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -14,7 +17,9 @@ import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
+@Model(
+    adaptables = Resource.class,
+    defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class SimpleLinkBuilder {
 
   private final Logger logger = LoggerFactory.getLogger(getClass());
@@ -22,16 +27,69 @@ public class SimpleLinkBuilder {
   @Self
   private Resource resource;
 
+  private String url;
+  private String text;
+  private Resource providedResource;
+  private String providedPath;
+  private String providedText;
+  private Page page;
+  private boolean dynamicUrl;
+
   private PageManager pageManager;
   private ResourceResolver resolver;
 
-  public String getLinkUrl(String path) {
-    String url = path;
 
-    if (!(isExternalLink(path) || isAssetLink(path))) {
-      url = getPageUrl(path);
+  @PostConstruct
+  protected void init() {
+    logger.debug("Initializing SimpleLinkBuilder");
+  }
+
+  public SimpleLinkBuilder withPage(Page page) {
+    this.page = page;
+    return this;
+  }
+
+  public SimpleLinkBuilder withResource(Resource resource) {
+    this.providedResource = resource;
+    return this;
+  }
+
+  public SimpleLinkBuilder withText(String text) {
+    this.providedText = text;
+    return this;
+  }
+
+  public SimpleLinkBuilder withPath(String path) {
+    this.providedPath = path;
+    return this;
+  }
+
+  public SimpleLinkBuilder withDynamicUrl(String url) {
+    this.dynamicUrl = true;
+    this.providedPath = url;
+    return this;
+  }
+
+  public SimpleLink build() {
+
+    if (page != null) {
+      this.url = formatUrl(getPageUrl(page.getPath()));
+      this.text = StringUtils.isNotBlank(page.getNavigationTitle()) ? page.getNavigationTitle() : page.getTitle();
+    } else if (providedResource != null) {
+      this.url = formatUrl(getPageUrl(resource.getPath()));
+      this.text = providedResource.getValueMap().get("jcr:Tile", String.class);
     }
-    return url;
+
+    // Override url if path provided
+    if (providedPath != null) {
+      this.url = getPageUrl(providedPath);
+    }
+
+    if (providedText != null) {
+      this.text = providedText;
+    }
+
+    return new SimpleLinkImpl(text, url);
   }
 
   protected boolean isExternalLink(String url) {
@@ -44,12 +102,21 @@ public class SimpleLinkBuilder {
 
   protected String getPageUrl(String path) {
     String url = path;
-    try {
-      pageManager = getPageManager();
 
-      if (pageManager != null && pageManager.getPage(path) != null) {
-        Page page = pageManager.getPage(path);
-        url = formatUrl(findTargetPage(page));
+    try {
+      if (isExternalLink(url)) return url;
+      if (isAssetLink(url)) return url;
+
+      String absPath = getAbsolutePath(path);
+
+      if (dynamicUrl) {
+        url = formatUrl(absPath);
+      } else {
+        pageManager = getPageManager();
+        if (pageManager != null && pageManager.getPage(absPath) != null) {
+          Page page = pageManager.getPage(absPath);
+          url = formatUrl(findTargetPage(page));
+        }
       }
 
     } catch (Exception e) {
@@ -82,6 +149,16 @@ public class SimpleLinkBuilder {
     }
 
     return formattedUrl;
+  }
+
+  protected String getAbsolutePath(String path) {
+    String absolutePath = path;
+
+    if (!isExternalLink(path) && !path.startsWith("/content/")) {
+      absolutePath = "/content/pillar" + path;
+    }
+
+    return absolutePath;
   }
 
   private PageManager getPageManager() {

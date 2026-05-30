@@ -1,7 +1,7 @@
 package com.voghan.pillar.core.models.cmp;
 
 import com.adobe.cq.export.json.ComponentExporter;
-import com.voghan.pillar.core.models.Link;
+import com.voghan.pillar.common.links.model.SimpleLink;
 import com.voghan.pillar.core.models.SimpleCard;
 import com.voghan.pillar.core.models.cfm.SimpleCardCfm;
 import java.util.List;
@@ -65,7 +65,7 @@ public class SimpleCardCmp extends BaseModelCmp implements SimpleCard {
   }
 
   @Override
-  public List<Link> getCallToActions() {
+  public List<SimpleLink> getCallToActions() {
     return simpleCard.getCallToActions();
   }
 

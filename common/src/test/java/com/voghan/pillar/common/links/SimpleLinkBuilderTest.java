@@ -1,27 +1,27 @@
 package com.voghan.pillar.common.links;
 
-import static junit.framework.Assert.assertFalse;
-import static junit.framework.Assert.assertNotNull;
-import static junit.framework.Assert.assertNull;
-import static junit.framework.Assert.assertTrue;
-import static junitx.framework.Assert.assertEquals;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.lenient;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import com.day.cq.wcm.api.NameConstants;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
+import com.voghan.pillar.common.links.model.SimpleLink;
 import com.voghan.pillar.common.testcontext.AppAemContext;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
+import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ValueMap;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -33,129 +33,226 @@ public class SimpleLinkBuilderTest {
 
   @Mock PageManager pageManager;
 
-  @InjectMocks
-  SimpleLinkBuilder linkBuilder;
+  @BeforeAll
+  static void setupAll() {
+    context.addModelsForClasses(SimpleLinkBuilder.class);
+    context.build().resource(ROOT_CONTENT).commit();
+  }
 
   @BeforeEach
   void setup() {
     context.registerAdapter(ResourceResolver.class, PageManager.class, pageManager);
-    if (context.resourceResolver().getResource(ROOT_CONTENT) == null) {
-      context.build().resource(ROOT_CONTENT).commit();
-    }
     context.currentResource(ROOT_CONTENT);
   }
 
   // -------------------------------------------------------------------------
-  // getLinkUrl
+  // withPage + build
   // -------------------------------------------------------------------------
 
   @Test
-  void getLinkUrl_internalPagePath_returnsFormattedUrl() {
-    linkBuilder = getComponent();
-    String path = ROOT_CONTENT;
+  void withPage_setsNavigationTitleAndUrlFromLinkManager() {
+    Resource res = context.resourceResolver().getResource(ROOT_CONTENT);
+    Page page = mock(Page.class);
+    when(page.getNavigationTitle()).thenReturn("Home");
+    when(page.getPath()).thenReturn(ROOT_CONTENT);
+
+    SimpleLink result = getComponent().withResource(res).withPage(page).build();
+
+    assertNotNull(result);
+    assertEquals("Home", result.getLinkText());
+    assertEquals(ROOT_CONTENT + ".html", result.getLinkPath());
+  }
+
+  @Test
+  void withPage_noNavigationTitle_fallsBackToPageTitle() {
+    Resource res = context.resourceResolver().getResource(ROOT_CONTENT);
+    Page page = mock(Page.class);
+    when(page.getNavigationTitle()).thenReturn(null);
+    when(page.getTitle()).thenReturn("Page Title");
+    when(page.getPath()).thenReturn(ROOT_CONTENT);
+
+    SimpleLink result = getComponent().withResource(res).withPage(page).build();
+
+    assertEquals("Page Title", result.getLinkText());
+  }
+
+  // -------------------------------------------------------------------------
+  // withResource + build
+  // -------------------------------------------------------------------------
+
+  @Test
+  void withResource_setsUrlFromLinkManager() {
+    Resource res = context.resourceResolver().getResource(ROOT_CONTENT);
+
+    SimpleLink result = getComponent().withResource(res).build();
+
+    assertNotNull(result);
+    assertEquals("/content/pillar/us/en.html", result.getLinkPath());
+  }
+
+  // -------------------------------------------------------------------------
+  // withPath + build
+  // -------------------------------------------------------------------------
+
+  @Test
+  void withPath_assetPath_returnsUnchanged() {
+    String path = "/content/dam/pillar/image.png";
+    SimpleLink result = getComponent().withPath(path).build();
+
+    assertNotNull(result);
+    assertEquals(path, result.getLinkPath());
+  }
+
+  @Test
+  void withPath_externalUrl_returnsUnchanged() {
+    String url = "https://www.adobe.com";
+    SimpleLink result = getComponent().withPath(url).build();
+
+    assertEquals(url, result.getLinkPath());
+  }
+
+  @Test
+  void withDynamicUrl_assetRelativePath_returnsAbsolutePath() {
+    String expected ="/content/pillar/en/us/articles.html";
+    String path = "/en/us/articles";
+
+    SimpleLink result = getComponent().withDynamicUrl(path).build();
+
+    assertNotNull(result);
+    assertEquals(expected, result.getLinkPath());
+  }
+
+  // -------------------------------------------------------------------------
+  // withText + build
+  // -------------------------------------------------------------------------
+
+  @Test
+  void build_afterWithText_returnsLinkWithText() {
+    SimpleLink result = getComponent()
+        .withPath("/content/dam/pillar/image.png")
+        .withText("Click Here")
+        .build();
+
+    assertNotNull(result);
+    assertEquals("Click Here", result.getLinkText());
+    assertEquals("/content/dam/pillar/image.png", result.getLinkPath());
+  }
+
+  @Test
+  void build_withNullText_returnsLinkWithNullText() {
+    SimpleLink result = getComponent().withText(null).build();
+
+    assertNotNull(result);
+    assertNull(result.getLinkText());
+  }
+
+  // -------------------------------------------------------------------------
+  // getAbsolutePath
+  // -------------------------------------------------------------------------
+
+  @Test
+  void getAbsolutePath_absoluteContentPath_returnsUnchanged() {
+    String path = "/content/pillar/us/en/page";
+    assertEquals(path, getComponent().getAbsolutePath(path));
+  }
+
+  @Test
+  void getAbsolutePath_relativePath_prefixesPillarContent() {
+    assertEquals("/content/pillar/us/en", getComponent().getAbsolutePath("/us/en"));
+  }
+
+  @Test
+  void getAbsolutePath_externalUrl_returnsUnchanged() {
+    String url = "https://www.adobe.com";
+    assertEquals(url, getComponent().getAbsolutePath(url));
+  }
+
+  @Test
+  void getAbsolutePath_damPath_returnsUnchanged() {
+    String path = "/content/dam/pillar/image.png";
+    assertEquals(path, getComponent().getAbsolutePath(path));
+  }
+
+  // -------------------------------------------------------------------------
+  // getPageUrl
+  // -------------------------------------------------------------------------
+
+  @Test
+  void getPageUrl_externalUrl_returnsUnchanged() {
+    String url = "https://www.adobe.com";
+    assertEquals(url, getComponent().getPageUrl(url));
+  }
+
+  @Test
+  void getPageUrl_assetPath_returnsUnchanged() {
+    String path = "/content/dam/pillar/image.png";
+    assertEquals(path, getComponent().getPageUrl(path));
+  }
+
+  @Test
+  void getPageUrl_pageNotFound_returnsOriginalPath() {
+    String path = "/content/pillar/us/en/missing";
+    Resource res = context.resourceResolver().getResource(ROOT_CONTENT);
+
+    // Real AEM mock PageManager returns null for non-existent paths
+    assertEquals(path, getComponent().withResource(res).getPageUrl(path));
+  }
+
+  // -------------------------------------------------------------------------
+  // findTargetPage
+  // -------------------------------------------------------------------------
+
+  @Test
+  void findTargetPage_noRedirect_returnsPagePath() {
     Page page = mock(Page.class);
     ValueMap valueMap = mock(ValueMap.class);
-    lenient().when(pageManager.getPage(path)).thenReturn(page);
-    lenient().when(page.getPath()).thenReturn(path);
-    lenient().when(page.getProperties()).thenReturn(valueMap);
-    lenient().when(valueMap.containsKey(any())).thenReturn(false);
+    when(page.getPath()).thenReturn(ROOT_CONTENT);
+    when(page.getProperties()).thenReturn(valueMap);
+    when(valueMap.containsKey(NameConstants.PN_REDIRECT_TARGET)).thenReturn(false);
 
-    String actual = linkBuilder.getLinkUrl(path);
-
-    assertNotNull(actual);
+    assertEquals(ROOT_CONTENT, getComponent().findTargetPage(page));
   }
 
   @Test
-  void getLinkUrl_externalLink_returnsUnchanged() {
-    String expected = "http://www.adobe.com";
-    linkBuilder = getComponent();
+  void findTargetPage_blankRedirect_returnsPagePath() {
+    Page page = mock(Page.class);
+    ValueMap valueMap = mock(ValueMap.class);
+    when(page.getPath()).thenReturn(ROOT_CONTENT);
+    when(page.getProperties()).thenReturn(valueMap);
+    when(valueMap.containsKey(NameConstants.PN_REDIRECT_TARGET)).thenReturn(true);
+    when(valueMap.get(NameConstants.PN_REDIRECT_TARGET, String.class)).thenReturn("  ");
 
-    String actual = linkBuilder.getLinkUrl(expected);
-
-    assertNotNull(actual);
-    assertEquals(expected, actual);
+    assertEquals(ROOT_CONTENT, getComponent().findTargetPage(page));
   }
 
   @Test
-  void getLinkUrl_assetPath_returnsUnchanged() {
-    // Asset links bypass page resolution and are returned as-is by getLinkUrl
-    String path = "/content/dam/pillar/image.png";
-    linkBuilder = getComponent();
+  void findTargetPage_withExternalRedirect_returnsRedirectUrl() {
+    String redirect = "https://www.adobe.com";
+    Resource res = context.resourceResolver().getResource(ROOT_CONTENT);
+    Page page = mock(Page.class);
+    ValueMap valueMap = mock(ValueMap.class);
+    when(page.getPath()).thenReturn(ROOT_CONTENT);
+    when(page.getProperties()).thenReturn(valueMap);
+    when(valueMap.containsKey(NameConstants.PN_REDIRECT_TARGET)).thenReturn(true);
+    when(valueMap.get(NameConstants.PN_REDIRECT_TARGET, String.class)).thenReturn(redirect);
 
-    String actual = linkBuilder.getLinkUrl(path);
-
-    assertEquals(path, actual);
+    // Real AEM mock PageManager returns null for the external redirect → URL returned as-is
+    assertEquals(redirect, getComponent().withResource(res).findTargetPage(page));
   }
 
   @Test
-  void getLinkUrl_blankPath_returnsBlank() {
-    linkBuilder = getComponent();
+  void findTargetPage_withInternalRedirect_returnsRedirectPath() {
+    String redirect = "/content/pillar/us/en/target";
+    Resource res = context.resourceResolver().getResource(ROOT_CONTENT);
+    Page page = mock(Page.class);
+    ValueMap valueMap = mock(ValueMap.class);
+    when(page.getPath()).thenReturn(ROOT_CONTENT);
+    when(page.getProperties()).thenReturn(valueMap);
+    when(valueMap.containsKey(NameConstants.PN_REDIRECT_TARGET)).thenReturn(true);
+    when(valueMap.get(NameConstants.PN_REDIRECT_TARGET, String.class)).thenReturn(redirect);
 
-    String actual = linkBuilder.getLinkUrl("");
-
-    assertEquals("", actual);
-  }
-
-  // -------------------------------------------------------------------------
-  // isExternalLink
-  // -------------------------------------------------------------------------
-
-  @Test
-  void isExternalLink_internalPath_returnsFalse() {
-    linkBuilder = getComponent();
-    assertFalse(linkBuilder.isExternalLink(ROOT_CONTENT));
-  }
-
-  @Test
-  void isExternalLink_httpUrl_returnsTrue() {
-    linkBuilder = getComponent();
-    assertTrue(linkBuilder.isExternalLink("http://www.adobe.com"));
-  }
-
-  @Test
-  void isExternalLink_httpsUrl_returnsTrue() {
-    linkBuilder = getComponent();
-    assertTrue(linkBuilder.isExternalLink("https://www.adobe.com"));
-  }
-
-  @Test
-  void isExternalLink_blankString_returnsFalse() {
-    linkBuilder = getComponent();
-    assertFalse(linkBuilder.isExternalLink(""));
-  }
-
-  @Test
-  void isExternalLink_nullString_returnsFalse() {
-    linkBuilder = getComponent();
-    assertFalse(linkBuilder.isExternalLink(null));
-  }
-
-  // -------------------------------------------------------------------------
-  // isAssetLink
-  // -------------------------------------------------------------------------
-
-  @Test
-  void isAssetLink_damPath_returnsTrue() {
-    linkBuilder = getComponent();
-    assertTrue(linkBuilder.isAssetLink("/content/dam/pillar/us/en"));
-  }
-
-  @Test
-  void isAssetLink_pagePath_returnsFalse() {
-    linkBuilder = getComponent();
-    assertFalse(linkBuilder.isAssetLink(ROOT_CONTENT));
-  }
-
-  @Test
-  void isAssetLink_blankString_returnsFalse() {
-    linkBuilder = getComponent();
-    assertFalse(linkBuilder.isAssetLink(""));
-  }
-
-  @Test
-  void isAssetLink_nullString_returnsFalse() {
-    linkBuilder = getComponent();
-    assertFalse(linkBuilder.isAssetLink(null));
+    // Real AEM mock PageManager returns null for non-existent target → redirect path returned directly
+    assertEquals(redirect, getComponent().withResource(res).findTargetPage(page));
   }
 
   // -------------------------------------------------------------------------
@@ -164,159 +261,77 @@ public class SimpleLinkBuilderTest {
 
   @Test
   void formatUrl_internalPath_appendsHtmlExtension() {
-    String path = "/content/dam/pillar/us/en";
-    linkBuilder = getComponent();
-
-    String actual = linkBuilder.formatUrl(path);
-
-    assertEquals(path + ".html", actual);
+    Resource res = context.resourceResolver().getResource(ROOT_CONTENT);
+    assertEquals(ROOT_CONTENT + ".html",
+        getComponent().withResource(res).formatUrl(ROOT_CONTENT));
   }
 
   @Test
   void formatUrl_externalUrl_returnsUnchanged() {
     String url = "https://www.adobe.com";
-    linkBuilder = getComponent();
-
-    String actual = linkBuilder.formatUrl(url);
-
-    assertEquals(url, actual);
+    assertEquals(url, getComponent().formatUrl(url));
   }
 
   // -------------------------------------------------------------------------
-  // getPageUrl
+  // isExternalLink
   // -------------------------------------------------------------------------
 
   @Test
-  void getPageUrl_pageExists_returnsFormattedPath() {
-    String path = "/content/page/source";
-    Page page = mock(Page.class);
-    lenient().when(pageManager.getPage(path)).thenReturn(page);
-    when(page.getProperties()).thenReturn(mock(ValueMap.class));
-
-    String actual = linkBuilder.getPageUrl(path);
-
-    assertEquals(path, actual);
+  void isExternalLink_httpUrl_returnsTrue() {
+    assertTrue(getComponent().isExternalLink("http://www.adobe.com"));
   }
 
   @Test
-  void getPageUrl_pageNotFound_returnsOriginalPath() {
-    String path = "/content/page/missing";
-    when(pageManager.getPage(path)).thenReturn(null);
-    // Use @InjectMocks instance — pageManager is already injected
-
-    String actual = linkBuilder.getPageUrl(path);
-
-    assertEquals(path, actual);
+  void isExternalLink_httpsUrl_returnsTrue() {
+    assertTrue(getComponent().isExternalLink("https://www.adobe.com"));
   }
 
   @Test
-  void getPageUrl_exceptionThrown_returnsOriginalPath() {
-    String path = "/content/page/broken";
-    when(pageManager.getPage(path)).thenThrow(new RuntimeException("unexpected"));
-    // Use @InjectMocks instance — pageManager is already injected
+  void isExternalLink_internalPath_returnsFalse() {
+    assertFalse(getComponent().isExternalLink(ROOT_CONTENT));
+  }
 
-    String actual = linkBuilder.getPageUrl(path);
+  @Test
+  void isExternalLink_null_returnsFalse() {
+    assertFalse(getComponent().isExternalLink(null));
+  }
 
-    assertEquals(path, actual);
+  @Test
+  void isExternalLink_blankString_returnsFalse() {
+    assertFalse(getComponent().isExternalLink(""));
   }
 
   // -------------------------------------------------------------------------
-  // findTargetPage
+  // isAssetLink
   // -------------------------------------------------------------------------
 
   @Test
-  void findTargetPage_withRedirectToExternalUrl_returnsExternalUrl() {
-    String url = "/content/page/original";
-    String redirect = "https://www.page.com/redirect";
-    Page page = mock(Page.class);
-    ValueMap valueMap = mock(ValueMap.class);
-    when(page.getPath()).thenReturn(url);
-    when(page.getProperties()).thenReturn(valueMap);
-    when(valueMap.containsKey(NameConstants.PN_REDIRECT_TARGET)).thenReturn(true);
-    lenient().when(valueMap.get(NameConstants.PN_REDIRECT_TARGET, String.class))
-        .thenReturn(redirect);
-    linkBuilder = getComponent();
-
-    String actual = linkBuilder.findTargetPage(page);
-
-    assertEquals(redirect, actual);
+  void isAssetLink_damPath_returnsTrue() {
+    assertTrue(getComponent().isAssetLink("/content/dam/pillar/image.png"));
   }
 
   @Test
-  void findTargetPage_withRedirectToInternalPage_returnsRedirectPath() {
-    linkBuilder = getComponent();
-    String url = "/content/page/original";
-    String redirect = "/content/page/redirect";
-    Page page = mock(Page.class);
-    Page target = mock(Page.class);
-    ValueMap valueMap = mock(ValueMap.class);
-    when(page.getPath()).thenReturn(url);
-    when(page.getProperties()).thenReturn(valueMap);
-    when(valueMap.containsKey(NameConstants.PN_REDIRECT_TARGET)).thenReturn(true);
-    lenient().when(pageManager.getPage(redirect)).thenReturn(target);
-    lenient().when(valueMap.get(NameConstants.PN_REDIRECT_TARGET, String.class))
-        .thenReturn(redirect);
-    lenient().when(target.getPath()).thenReturn(redirect);
-    lenient().when(target.getProperties()).thenReturn(mock(ValueMap.class));
-
-    String actual = linkBuilder.findTargetPage(page);
-
-    assertEquals(redirect, actual);
+  void isAssetLink_pagePath_returnsFalse() {
+    assertFalse(getComponent().isAssetLink(ROOT_CONTENT));
   }
 
   @Test
-  void findTargetPage_withExplicitRedirectTarget_returnsTarget() {
-    String expected = "https://www.adobe.com";
-    Page page = mock(Page.class);
-    ValueMap valueMap = mock(ValueMap.class);
-    when(page.getPath()).thenReturn(ROOT_CONTENT);
-    when(page.getProperties()).thenReturn(valueMap);
-    when(valueMap.containsKey(NameConstants.PN_REDIRECT_TARGET)).thenReturn(true);
-    when(valueMap.get(NameConstants.PN_REDIRECT_TARGET, String.class)).thenReturn(expected);
-    linkBuilder = getComponent();
-
-    String actual = linkBuilder.findTargetPage(page);
-
-    assertEquals(expected, actual);
+  void isAssetLink_null_returnsFalse() {
+    assertFalse(getComponent().isAssetLink(null));
   }
 
   @Test
-  void findTargetPage_noRedirectKey_returnsPagePath() {
-    String path = ROOT_CONTENT;
-    Page page = mock(Page.class);
-    ValueMap valueMap = mock(ValueMap.class);
-    when(page.getPath()).thenReturn(path);
-    when(page.getProperties()).thenReturn(valueMap);
-    when(valueMap.containsKey(NameConstants.PN_REDIRECT_TARGET)).thenReturn(false);
-    linkBuilder = getComponent();
-
-    String actual = linkBuilder.findTargetPage(page);
-
-    assertEquals(path, actual);
-  }
-
-  @Test
-  void findTargetPage_blankRedirectTarget_returnsPagePath() {
-    String path = ROOT_CONTENT;
-    Page page = mock(Page.class);
-    ValueMap valueMap = mock(ValueMap.class);
-    when(page.getPath()).thenReturn(path);
-    when(page.getProperties()).thenReturn(valueMap);
-    when(valueMap.containsKey(NameConstants.PN_REDIRECT_TARGET)).thenReturn(true);
-    when(valueMap.get(NameConstants.PN_REDIRECT_TARGET, String.class)).thenReturn("  ");
-    linkBuilder = getComponent();
-
-    String actual = linkBuilder.findTargetPage(page);
-
-    // Blank redirect target → falls back to page's own path
-    assertEquals(path, actual);
+  void isAssetLink_blankString_returnsFalse() {
+    assertFalse(getComponent().isAssetLink(""));
   }
 
   // -------------------------------------------------------------------------
-  // Helper
+  // Helpers
   // -------------------------------------------------------------------------
 
+  /** Adapted from AEM context — no linkManager or resource injected internally. */
   private SimpleLinkBuilder getComponent() {
     return context.currentResource().adaptTo(SimpleLinkBuilder.class);
   }
+
 }

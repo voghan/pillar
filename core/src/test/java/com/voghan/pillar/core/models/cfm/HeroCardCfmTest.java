@@ -1,6 +1,10 @@
 package com.voghan.pillar.core.models.cfm;
 
-import com.voghan.pillar.core.models.Link;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import com.voghan.pillar.common.links.model.SimpleLink;
 import com.voghan.pillar.core.testcontext.AppAemContext;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
@@ -8,10 +12,6 @@ import org.apache.sling.api.resource.Resource;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertFalse;
-import static junit.framework.Assert.assertNotNull;
 
 @ExtendWith(AemContextExtension.class)
 public class HeroCardCfmTest {
@@ -72,7 +72,7 @@ public class HeroCardCfmTest {
     assertNotNull(heroCardCfm);
     assertFalse(heroCardCfm.getCallToActions().isEmpty());
     assertEquals(2, heroCardCfm.getCallToActions().size());
-    Link link = heroCardCfm.getCallToActions().get(0);
+    SimpleLink link = heroCardCfm.getCallToActions().get(0);
     assertNotNull(link);
     assertEquals("Get started", link.getLinkText());
     assertEquals("/content/pillar/us/en", link.getLinkPath());
@@ -85,7 +85,7 @@ public class HeroCardCfmTest {
     assertNotNull(heroCardCfm);
     assertFalse(heroCardCfm.getBreadcrumbs().isEmpty());
     assertEquals(2, heroCardCfm.getBreadcrumbs().size());
-    Link link = heroCardCfm.getBreadcrumbs().get(0);
+    SimpleLink link = heroCardCfm.getBreadcrumbs().get(0);
     assertNotNull(link);
     assertEquals("Pillar Site", link.getLinkText());
     assertEquals("/content/pillar/us/en", link.getLinkPath());

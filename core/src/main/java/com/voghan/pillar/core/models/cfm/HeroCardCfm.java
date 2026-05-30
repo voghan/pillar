@@ -1,17 +1,16 @@
 package com.voghan.pillar.core.models.cfm;
 
+import com.voghan.pillar.common.links.model.SimpleLink;
 import com.voghan.pillar.core.models.HeroCard;
-import com.voghan.pillar.core.models.Link;
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.PostConstruct;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
-
-import javax.annotation.PostConstruct;
-import java.util.ArrayList;
-import java.util.List;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class HeroCardCfm extends CardCfm implements HeroCard {
@@ -22,7 +21,7 @@ public class HeroCardCfm extends CardCfm implements HeroCard {
   @ValueMapValue
   private List<String> breadcrumbs;
 
-  private final List<Link> breadcrumbLinks = new ArrayList<>();
+  private final List<SimpleLink> breadcrumbLinks = new ArrayList<>();
 
   @ValueMapValue
   private String backgroundImage;
@@ -39,7 +38,7 @@ public class HeroCardCfm extends CardCfm implements HeroCard {
       for (String path : breadcrumbs) {
         Resource cta = resourceResolver.getResource(path + "/jcr:content/data/" + version);
         if (cta != null) {
-          Link link = cta.adaptTo(LinkCfm.class);
+          SimpleLink link = cta.adaptTo(LinkCfm.class);
           breadcrumbLinks.add(link);
         }
       }
@@ -47,7 +46,7 @@ public class HeroCardCfm extends CardCfm implements HeroCard {
   }
 
   @Override
-  public List<Link> getBreadcrumbs() {
+  public List<SimpleLink> getBreadcrumbs() {
     return new ArrayList<>(breadcrumbLinks);
   }
 

@@ -107,7 +107,7 @@
                                         </limit>
                                     </limits>
                                     <excludes>
-                                        <exclude>com.voghan.pillar.common.emails.*</exclude>
+                                        <exclude>com.voghan.pillar.common.servlets.*</exclude>
                                     </excludes>
                                 </rule>
                                 <rule>

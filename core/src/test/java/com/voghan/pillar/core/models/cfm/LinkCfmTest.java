@@ -1,5 +1,8 @@
 package com.voghan.pillar.core.models.cfm;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import com.voghan.pillar.core.testcontext.AppAemContext;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
@@ -7,9 +10,6 @@ import org.apache.sling.api.resource.Resource;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-
-import static junit.framework.Assert.assertNotNull;
-import static junitx.framework.Assert.assertEquals;
 
 @ExtendWith(AemContextExtension.class)
 public class LinkCfmTest {

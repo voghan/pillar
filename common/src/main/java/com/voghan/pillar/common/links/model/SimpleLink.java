@@ -1,4 +1,4 @@
-package com.voghan.pillar.common.links;
+package com.voghan.pillar.common.links.model;
 
 public interface SimpleLink {
 

@@ -1,8 +1,8 @@
 package com.voghan.pillar.core.models.impl;
 
-import com.voghan.pillar.core.models.Link;
+import com.voghan.pillar.common.links.model.SimpleLink;
 
-public class PillarLink implements Link {
+public class PillarLink implements SimpleLink {
 
   private final String linkText;
   private final String linkPath;

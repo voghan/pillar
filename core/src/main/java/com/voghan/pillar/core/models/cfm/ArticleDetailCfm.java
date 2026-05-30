@@ -1,9 +1,8 @@
 package com.voghan.pillar.core.models.cfm;
 
 import com.voghan.pillar.common.links.SimpleLinkBuilder;
+import com.voghan.pillar.common.links.model.SimpleLink;
 import com.voghan.pillar.core.models.ArticleDetail;
-import com.voghan.pillar.core.models.Link;
-import com.voghan.pillar.core.models.impl.PillarLink;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -49,12 +48,12 @@ public class ArticleDetailCfm extends CardCfm implements ArticleDetail {
   @ValueMapValue
   private String content;
 
-  private final List<Link> actions = new ArrayList<>();
+  private final List<SimpleLink> actions = new ArrayList<>();
 
   @PostConstruct
   protected void init() {
     if (url != null) {
-      Link link = new PillarLink(ARTICLE_CTA_I18N, url);
+      SimpleLink link = linkBuilder.withDynamicUrl(url).withText(ARTICLE_CTA_I18N).build();
       actions.add(link);
     }
   }
@@ -75,7 +74,7 @@ public class ArticleDetailCfm extends CardCfm implements ArticleDetail {
   }
 
   @Override
-  public List<Link> getCallToActions() {
+  public List<SimpleLink> getCallToActions() {
     return new ArrayList<>(actions);
   }
 
@@ -98,7 +97,7 @@ public class ArticleDetailCfm extends CardCfm implements ArticleDetail {
 
   @Override
   public String getUrl() {
-    return linkBuilder != null ? linkBuilder.getLinkUrl(url) : url;
+    return linkBuilder != null ? linkBuilder.withPath(url).build().getLinkPath() : url;
   }
 
   @Override

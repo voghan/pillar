@@ -1,7 +1,10 @@
 package com.voghan.pillar.core.models.cfm;
 
+import com.voghan.pillar.common.links.model.SimpleLink;
 import com.voghan.pillar.core.models.Card;
-import com.voghan.pillar.core.models.Link;
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.PostConstruct;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
@@ -10,10 +13,6 @@ import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import javax.annotation.PostConstruct;
-import java.util.ArrayList;
-import java.util.List;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class CardCfm extends BaseModelCfm implements Card {
@@ -32,7 +31,7 @@ public class CardCfm extends BaseModelCfm implements Card {
   @ValueMapValue
   private List<String> callToActions;
 
-  private final List<Link> callToActionLinks = new ArrayList<>();
+  private final List<SimpleLink> callToActionLinks = new ArrayList<>();
 
   @PostConstruct
   protected void init() {
@@ -49,7 +48,7 @@ public class CardCfm extends BaseModelCfm implements Card {
       for (String path : callToActions) {
         Resource cta = resourceResolver.getResource(path + "/jcr:content/data/" + version);
         if (cta != null) {
-          Link link = cta.adaptTo(LinkCfm.class);
+          SimpleLink link = cta.adaptTo(LinkCfm.class);
           callToActionLinks.add(link);
         }
       }
@@ -67,7 +66,7 @@ public class CardCfm extends BaseModelCfm implements Card {
   }
 
   @Override
-  public List<Link> getCallToActions() {
+  public List<SimpleLink> getCallToActions() {
     return new ArrayList<>(callToActionLinks);
   }
 

@@ -5,8 +5,10 @@ import com.adobe.cq.wcm.core.components.commons.link.Link;
 import com.adobe.cq.wcm.core.components.commons.link.LinkManager;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
+import com.voghan.pillar.common.links.model.SimpleLink;
 import com.voghan.pillar.core.models.ArticleDetail;
 import com.voghan.pillar.core.models.cfm.ArticleDetailCfm;
+import com.voghan.pillar.core.models.impl.PillarLink;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import org.apache.commons.lang3.StringUtils;
@@ -42,14 +44,13 @@ public class ArticleDetailCmp extends BaseModelCmp  implements ArticleDetail {
 
   private ArticleDetail articleDetail;
 
-  private Page parentPage;
-
-  private boolean parentPageResolved = false;
+  private PillarLink parentLink;
 
   @PostConstruct
   protected void init() {
     logger.debug("initializing ArticleDetailCmp");
     articleDetail = new ArticleDetailCfm();
+    buildParentLink();
 
     String[] selectors = request.getRequestPathInfo().getSelectors();
     if (selectors == null || selectors.length == 0) return;
@@ -71,6 +72,18 @@ public class ArticleDetailCmp extends BaseModelCmp  implements ArticleDetail {
     }
   }
 
+  private void buildParentLink() {
+    PageManager pageManager = request.getResourceResolver().adaptTo(PageManager.class);
+    if (pageManager == null) return;
+    Page currentPage = pageManager.getContainingPage(request.getResource());
+    if (currentPage != null) {
+      Page parentPage = currentPage.getParent();
+      Link link = linkManager.get(parentPage).build();
+      String title = parentPage.getNavigationTitle() != null ? parentPage.getNavigationTitle() : parentPage.getTitle();
+      parentLink = new PillarLink(title, link.getURL());
+    }
+  }
+
   @Override
   public String getHeadline() {
     return articleDetail.getHeadline();
@@ -87,7 +100,7 @@ public class ArticleDetailCmp extends BaseModelCmp  implements ArticleDetail {
   }
 
   @Override
-  public List<com.voghan.pillar.core.models.Link> getCallToActions() {
+  public List<SimpleLink> getCallToActions() {
     return articleDetail.getCallToActions();
   }
 
@@ -118,33 +131,17 @@ public class ArticleDetailCmp extends BaseModelCmp  implements ArticleDetail {
   }
 
   public String getParentPageTitle() {
-    initParentPage();
-    if (parentPage == null) return null;
-    String navTitle = parentPage.getNavigationTitle();
-    return navTitle != null ? navTitle : parentPage.getTitle();
+    if (parentLink == null) return null;
+    return parentLink.getLinkText();
   }
 
   public String getParentPagePath() {
-    initParentPage();
-    if (parentPage == null) return null;
-    Link link = linkManager.get(parentPage).build();
-    return link.getURL();
+    if (parentLink == null) return null;
+    return parentLink.getLinkPath();
   }
 
   public boolean hasArticle() {
     return articleDetail != null && StringUtils.isNotBlank(articleDetail.getUrl());
   }
 
-  private void initParentPage() {
-    if (!parentPageResolved) {
-      parentPageResolved = true;
-      PageManager pageManager = request.getResourceResolver().adaptTo(PageManager.class);
-      if (pageManager != null) {
-        Page currentPage = pageManager.getContainingPage(request.getResource());
-        if (currentPage != null) {
-          parentPage = currentPage.getParent();
-        }
-      }
-    }
-  }
 }

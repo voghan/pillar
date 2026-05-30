@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.voghan.pillar.common.links.SimpleLinkBuilder;
-import com.voghan.pillar.core.models.Link;
+import com.voghan.pillar.common.links.model.SimpleLink;
 import com.voghan.pillar.core.testcontext.AppAemContext;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
@@ -23,7 +23,7 @@ public class ArticleDetailCfmTest {
   private static final String ARTICLE_PATH = "/pillar-core/model/cfm/articleDetail.json";
 
   private static final String ARTICLE_FRAGMENT = "/content/dam/articles/downhill-skiing-wyoming";
-  private static final String ARTICLE_URL = "/us/en/articles/downhill-skiing-wyoming";
+  private static final String ARTICLE_URL = "/content/pillar/us/en/articles/downhill-skiing-wyoming.html";
 
   @BeforeAll
   static void setup() {
@@ -66,7 +66,7 @@ public class ArticleDetailCfmTest {
   void getUrl_returnsArticleUrl() {
     ArticleDetailCfm model = getModel(ARTICLE_FRAGMENT, "master");
     assertNotNull(model);
-    assertEquals(ARTICLE_URL, model.getUrl());
+    assertEquals("/content/pillar/us/en/articles/downhill-skiing-wyoming.html", model.getUrl());
   }
 
   @Test
@@ -89,8 +89,8 @@ public class ArticleDetailCfmTest {
     assertNotNull(model);
     assertFalse(model.getCallToActions().isEmpty());
     assertEquals(1, model.getCallToActions().size());
-    Link link = model.getCallToActions().getFirst();
-    assertEquals(ARTICLE_URL, link.getLinkPath());
+    SimpleLink link = model.getCallToActions().getFirst();
+    assertEquals("/content/pillar/us/en/articles/downhill-skiing-wyoming.html", link.getLinkPath());
   }
 
   @Test

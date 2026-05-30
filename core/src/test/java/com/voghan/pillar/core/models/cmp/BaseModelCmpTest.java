@@ -1,5 +1,7 @@
 package com.voghan.pillar.core.models.cmp;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import com.voghan.pillar.core.models.cfm.LinkCfm;
 import com.voghan.pillar.core.testcontext.AppAemContext;
 import io.wcm.testing.mock.aem.junit5.AemContext;
@@ -7,8 +9,6 @@ import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-
-import static junit.framework.Assert.assertEquals;
 
 @ExtendWith(AemContextExtension.class)
 public class BaseModelCmpTest {
