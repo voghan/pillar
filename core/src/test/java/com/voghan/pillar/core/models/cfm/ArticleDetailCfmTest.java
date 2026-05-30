@@ -1,5 +1,12 @@
 package com.voghan.pillar.core.models.cfm;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import com.voghan.pillar.common.links.SimpleLinkBuilder;
+import com.voghan.pillar.core.models.Link;
 import com.voghan.pillar.core.testcontext.AppAemContext;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
@@ -8,9 +15,6 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertNotNull;
-
 @ExtendWith(AemContextExtension.class)
 public class ArticleDetailCfmTest {
 
@@ -18,65 +22,87 @@ public class ArticleDetailCfmTest {
 
   private static final String ARTICLE_PATH = "/pillar-core/model/cfm/articleDetail.json";
 
+  private static final String ARTICLE_FRAGMENT = "/content/dam/articles/downhill-skiing-wyoming";
+  private static final String ARTICLE_URL = "/us/en/articles/downhill-skiing-wyoming";
+
   @BeforeAll
   static void setup() {
-    context.addModelsForClasses(ArticleDetailCfm.class);
+    context.addModelsForClasses(ArticleDetailCfm.class, SimpleLinkBuilder.class);
     context.load().json(ARTICLE_PATH, "/content/dam/articles");
   }
 
   @Test
-  void getHeadline_default() {
-    ArticleDetailCfm model = getModel("/content/dam/articles/downhill-skiing-wyoming", "master");
+  void getHeadline_returnsHeadline() {
+    ArticleDetailCfm model = getModel(ARTICLE_FRAGMENT, "master");
     assertNotNull(model);
     assertEquals("Downhill Skiing Wyoming", model.getHeadline());
   }
 
   @Test
-  void getSubheadline_default() {
-    ArticleDetailCfm model = getModel("/content/dam/articles/downhill-skiing-wyoming", "master");
+  void getSubheadline_returnsSubheadline() {
+    ArticleDetailCfm model = getModel(ARTICLE_FRAGMENT, "master");
     assertNotNull(model);
     assertEquals("Jackson Hole Resort", model.getSubheadline());
   }
 
   @Test
-  void getDescription_default() {
-    ArticleDetailCfm model = getModel("/content/dam/articles/downhill-skiing-wyoming", "master");
+  void getShortDescription_returnsDescription() {
+    String expected = "<p>A skiers paradise far from crowds and close to nature with terrain so vast it appears uncharted. With 2,500 acres of "
+        + "legendary terrain, unmatched levels of snowfall each winter, and unparalleled backcountry access, Jackson Hole offers a truly unique "
+        + "skiing experience.</p>\n";
+    ArticleDetailCfm model = getModel(ARTICLE_FRAGMENT, "master");
     assertNotNull(model);
-    assertNotNull(model.getDescription());
-    assertEquals("<p>A skiers paradise far from crowds and close to nature with terrain so vast it appears uncharted. With 2,500 acres of legendary terrain, unmatched levels of snowfall each winter, and unparalleled backcountry access, Jackson Hole offers a truly unique skiing experience.</p>\n", model.getDescription());
+    assertEquals(expected, model.getShortDescription());
   }
 
   @Test
-  void getBannerImageUrl_default() {
-    ArticleDetailCfm model = getModel("/content/dam/articles/downhill-skiing-wyoming", "master");
+  void getBannerImageUrl_returnsDamPath() {
+    ArticleDetailCfm model = getModel(ARTICLE_FRAGMENT, "master");
     assertNotNull(model);
     assertEquals("/content/dam/pillar/images/en/cards/adobestock-185234795.jpeg", model.getBannerImageUrl());
   }
 
   @Test
-  void getUrl_default() {
-    ArticleDetailCfm model = getModel("/content/dam/articles/downhill-skiing-wyoming", "master");
+  void getUrl_returnsArticleUrl() {
+    ArticleDetailCfm model = getModel(ARTICLE_FRAGMENT, "master");
     assertNotNull(model);
-    assertEquals("/us/en/articles/downhill-skiing-wyoming", model.getUrl());
+    assertEquals(ARTICLE_URL, model.getUrl());
   }
 
   @Test
-  void getContent_default() {
-    ArticleDetailCfm model = getModel("/content/dam/articles/downhill-skiing-wyoming", "master");
+  void getContent_returnsContent() {
+    ArticleDetailCfm model = getModel(ARTICLE_FRAGMENT, "master");
     assertNotNull(model);
     assertNotNull(model.getContent());
   }
 
   @Test
-  void getPostDate_default() {
-    ArticleDetailCfm model = getModel("/content/dam/articles/downhill-skiing-wyoming", "master");
+  void getPostDate_returnsFormattedDate() {
+    ArticleDetailCfm model = getModel(ARTICLE_FRAGMENT, "master");
     assertNotNull(model);
     assertNotNull(model.getPostDate());
   }
 
   @Test
-  void getVersion_default() {
-    ArticleDetailCfm model = getModel("/content/dam/articles/downhill-skiing-wyoming", "master");
+  void getCallToActions_withUrl_returnsSingleLink() {
+    ArticleDetailCfm model = getModel(ARTICLE_FRAGMENT, "master");
+    assertNotNull(model);
+    assertFalse(model.getCallToActions().isEmpty());
+    assertEquals(1, model.getCallToActions().size());
+    Link link = model.getCallToActions().getFirst();
+    assertEquals(ARTICLE_URL, link.getLinkPath());
+  }
+
+  @Test
+  void isCallToActionEnabled_withUrl_returnsTrue() {
+    ArticleDetailCfm model = getModel(ARTICLE_FRAGMENT, "master");
+    assertNotNull(model);
+    assertTrue(model.isCallToActionEnabled());
+  }
+
+  @Test
+  void getVersion_returnsVariationName() {
+    ArticleDetailCfm model = getModel(ARTICLE_FRAGMENT, "master");
     assertNotNull(model);
     assertEquals("master", model.getVersion());
   }

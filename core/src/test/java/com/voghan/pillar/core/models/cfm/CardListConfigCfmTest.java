@@ -1,17 +1,17 @@
 package com.voghan.pillar.core.models.cfm;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import com.voghan.pillar.core.testcontext.AppAemContext;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
+import java.util.List;
 import org.apache.sling.api.resource.Resource;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-
-import java.util.List;
-
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertTrue;
 
 @ExtendWith(AemContextExtension.class)
 public class CardListConfigCfmTest {
@@ -60,11 +60,37 @@ public class CardListConfigCfmTest {
   }
 
   @Test
-  void getEnableSearch_default() {
-    Boolean expected = Boolean.TRUE;
+  void isEnableSearch_default() {
     cardListConfigCfm = getComponent("/content/dam/card-list-config/simple-card-list", "master");
 
-    Boolean actual = cardListConfigCfm.getEnableSearch();
+    boolean actual = cardListConfigCfm.isEnableSearch();
+
+    assertTrue(actual);
+  }
+
+  @Test
+  void isEnableSearch_whenDisabled_returnFalse() {
+    cardListConfigCfm = getComponent("/content/dam/card-list-config/articles", "master");
+
+    boolean actual = cardListConfigCfm.isEnableSearch();
+
+    assertFalse(actual);
+  }
+
+  @Test
+  void isEnablePostDate_default() {
+    cardListConfigCfm = getComponent("/content/dam/card-list-config/simple-card-list", "master");
+
+    boolean actual = cardListConfigCfm.isEnablePostDate();
+
+    assertFalse(actual);
+  }
+
+  @Test
+  void isEnablePostDate_whenEnabled_returnTrue() {
+    cardListConfigCfm = getComponent("/content/dam/card-list-config/articles", "master");
+
+    boolean actual = cardListConfigCfm.isEnablePostDate();
 
     assertTrue(actual);
   }

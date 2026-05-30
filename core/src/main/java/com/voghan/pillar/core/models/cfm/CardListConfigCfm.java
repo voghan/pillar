@@ -18,8 +18,6 @@ public class CardListConfigCfm implements CardListConfig {
 
   private final Logger logger = LoggerFactory.getLogger(getClass());
 
-  private static final String master = "master";
-
   @Self
   private Resource resource;
 
@@ -36,6 +34,9 @@ public class CardListConfigCfm implements CardListConfig {
   private Boolean enableSearch;
 
   @ValueMapValue
+  private Boolean enablePostDate;
+
+  @ValueMapValue
   private List<String> cardTags = new ArrayList<>();
 
   @ValueMapValue
@@ -43,13 +44,13 @@ public class CardListConfigCfm implements CardListConfig {
 
   @PostConstruct
   protected void init() {
-    logger.info("Building a Card List Config mode for {}", resource.getPath());
+    logger.debug("Building a Card List Config mode for {}", resource.getPath());
 
     buildSearchFilters();
   }
 
   private void buildSearchFilters() {
-    if (enableSearch) {
+    if (isEnableSearch()) {
       //TODO build filter options
     }
   }
@@ -68,8 +69,8 @@ public class CardListConfigCfm implements CardListConfig {
     return searchPath;
   }
 
-  public Boolean getEnableSearch() {
-    return enableSearch;
+  public boolean isEnableSearch() {
+    return Boolean.TRUE.equals(enableSearch);
   }
 
   public List<String> getCardTags() {
@@ -78,5 +79,10 @@ public class CardListConfigCfm implements CardListConfig {
 
   public List<String> getFilterTags() {
     return new ArrayList<>(filterTags);
+  }
+
+  @Override
+  public boolean isEnablePostDate() {
+    return Boolean.TRUE.equals(enablePostDate);
   }
 }

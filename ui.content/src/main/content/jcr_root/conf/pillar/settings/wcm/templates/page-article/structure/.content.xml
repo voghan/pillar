@@ -14,16 +14,22 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="pillar/components/experiencefragment/v1/experiencefragment"
                 fragmentVariationPath="/content/experience-fragments/pillar/us/en/site/header/master"/>
-            <articledetail
-                jcr:lastModifiedBy="admin"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="pillar/components/articledetail/v1/articledetail"
-                editable="{Boolean}true"/>
             <container
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="pillar/components/container/v1/container"
-                editable="{Boolean}true"
-                layout="responsiveGrid"/>
+                cq:styleIds="[1779927959937]"
+                layout="responsiveGrid">
+                <articledetail
+                  jcr:lastModifiedBy="admin"
+                  jcr:primaryType="nt:unstructured"
+                  sling:resourceType="pillar/components/articledetail/v1/articledetail"
+                  editable="{Boolean}true"/>
+                <container
+                  jcr:primaryType="nt:unstructured"
+                  sling:resourceType="pillar/components/container/v1/container"
+                  editable="{Boolean}true"
+                  layout="responsiveGrid"/>
+            </container>
             <experiencefragment-footer
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="pillar/components/experiencefragment/v1/experiencefragment"

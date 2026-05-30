@@ -62,7 +62,8 @@
           "string@shortDescription": "<p>Short description about the content returned.</p>\n",
           "string@headline": "Title for component",
           "jcr:uuid": "6bc02e35-2f1c-4fc7-99bb-2a49a85e0701",
-          "boolean@enableSearch": true
+          "boolean@enableSearch": true,
+          "boolean@enablePostDate": false
         }
       },
       "metadata": {
@@ -85,6 +86,8 @@
           "enableSearch": true,
           "headline@LastModified": "Fri Jan 02 2026 16:17:10 GMT-0600",
           "enableSearch@LastModified": "Fri Jan 02 2026 16:17:10 GMT-0600",
+          "enablePostDate": false,
+          "enablePostDate@LastModified": "Wed May 27 2026 22:10:55 GMT-0500",
           "filterTags": [
             "properties:orientation/portrait",
             "properties:orientation/landscape",
@@ -109,6 +112,91 @@
           ],
           "filterTags@LastModified": "Fri Jan 02 2026 16:17:10 GMT-0600",
           "shortDescription": "<p>Short description about the content returned.</p>\n"
+        }
+      }
+    }
+  },
+  "articles": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:mixinTypes": [
+      "mix:referenceable",
+      "mix:versionable"
+    ],
+    "jcr:createdBy": "admin",
+    "jcr:versionHistory": "b3d05c00-bf48-4608-9ae3-dbcbb6f4cf6d",
+    "jcr:predecessors": [
+      "4c80f934-71d4-4e94-991f-b49565edfec8"
+    ],
+    "jcr:created": "Wed May 27 2026 22:26:03 GMT-0500",
+    "jcr:baseVersion": "4c80f934-71d4-4e94-991f-b49565edfec8",
+    "jcr:isCheckedOut": true,
+    "jcr:uuid": "c25099ad-0fcc-4611-abe4-169cd8551093",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "jcr:title": "Articles",
+      "jcr:lastModifiedBy": "admin",
+      "contentFragment": true,
+      "cq:name": "articles",
+      "jcr:lastModified": "Wed May 27 2026 22:27:07 GMT-0500",
+      "lastFragmentSave": "Wed May 27 2026 22:27:07 GMT-0500",
+      "cq:parentPath": "/content/dam/pillar/cfm/card-list/articles",
+      "renditions": {
+        "jcr:primaryType": "nt:folder",
+        "jcr:createdBy": "admin",
+        "jcr:created": "Wed May 27 2026 22:26:03 GMT-0500"
+      },
+      "related": {
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "indexedData": {
+        "jcr:primaryType": "nt:unstructured",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:IndexedFragmentData"
+          ],
+          "@string@model": "/conf/pillar/settings/dam/cfm/models/cardlistconfig",
+          "@stringArray@variations": [],
+          "boolean@enablePostDate": true,
+          "string@headline": "All Articles",
+          "jcr:uuid": "1f7b99c9-3e80-4f35-8ab5-c6268740fa1a",
+          "boolean@enableSearch": false
+        }
+      },
+      "metadata": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ]
+      },
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "_strucVersion": 1,
+        "cq:model": "/conf/pillar/settings/dam/cfm/models/cardlistconfig",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "shortDescription@ContentType": "text/html",
+          "enableSearch": false,
+          "headline@LastModified": "Wed May 27 2026 22:27:07 GMT-0500",
+          "enableSearch@LastModified": "Wed May 27 2026 22:27:07 GMT-0500",
+          "enableSearch@LastModifiedBy": "admin",
+          "cardTags@LastModified": "Wed May 27 2026 22:26:03 GMT-0500",
+          "enablePostDate@LastModifiedBy": "admin",
+          "headline": "All Articles",
+          "searchPath": "/content/dam/pillar/cfm/article-detail/articles",
+          "placeholder@LastModified": "Wed May 27 2026 22:26:03 GMT-0500",
+          "searchPath@LastModified": "Wed May 27 2026 22:27:07 GMT-0500",
+          "enablePostDate@LastModified": "Wed May 27 2026 22:27:07 GMT-0500",
+          "shortDescription@LastModifiedBy": "admin",
+          "headline@LastModifiedBy": "admin",
+          "shortDescription@LastModified": "Wed May 27 2026 22:27:07 GMT-0500",
+          "enablePostDate": true,
+          "searchPath@LastModifiedBy": "admin",
+          "filterTags@LastModified": "Wed May 27 2026 22:26:03 GMT-0500"
         }
       }
     }

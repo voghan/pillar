@@ -1,9 +1,7 @@
 package com.voghan.pillar.core.models;
 
-public interface Link {
+import com.voghan.pillar.common.links.SimpleLink;
 
-  String getLinkText();
-
-  String getLinkPath();
+public interface Link extends SimpleLink {
 
 }

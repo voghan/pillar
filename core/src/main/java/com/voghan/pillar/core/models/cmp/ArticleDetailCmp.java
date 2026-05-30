@@ -7,6 +7,7 @@ import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
 import com.voghan.pillar.core.models.ArticleDetail;
 import com.voghan.pillar.core.models.cfm.ArticleDetailCfm;
+import java.util.List;
 import javax.annotation.PostConstruct;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -81,9 +82,20 @@ public class ArticleDetailCmp extends BaseModelCmp  implements ArticleDetail {
   }
 
   @Override
-  public String getDescription() {
-    return articleDetail.getDescription();
+  public String getShortDescription() {
+    return articleDetail.getShortDescription();
   }
+
+  @Override
+  public List<com.voghan.pillar.core.models.Link> getCallToActions() {
+    return articleDetail.getCallToActions();
+  }
+
+  @Override
+  public boolean isCallToActionEnabled() {
+    return articleDetail.isCallToActionEnabled();
+  }
+
 
   @Override
   public String getBannerImageUrl() {

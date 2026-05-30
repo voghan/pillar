@@ -1,29 +1,31 @@
 package com.voghan.pillar.core.models.cmp;
 
-import com.voghan.pillar.common.queries.SimpleQueryBuilder;
-import com.voghan.pillar.core.models.Card;
-import com.voghan.pillar.core.testcontext.AppAemContext;
-import io.wcm.testing.mock.aem.junit5.AemContext;
-import io.wcm.testing.mock.aem.junit5.AemContextExtension;
-import org.apache.sling.api.resource.Resource;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertFalse;
-import static junit.framework.Assert.assertNotNull;
-import static junit.framework.Assert.assertNull;
-import static junit.framework.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyMap;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.reset;
 import static org.mockito.Mockito.when;
+
+import com.adobe.cq.dam.cfm.ContentFragment;
+import com.adobe.cq.dam.cfm.FragmentTemplate;
+import com.voghan.pillar.common.queries.SimpleQueryBuilder;
+import com.voghan.pillar.core.models.Card;
+import com.voghan.pillar.core.models.cfm.ArticleDetailCfm;
+import com.voghan.pillar.core.testcontext.AppAemContext;
+import io.wcm.testing.mock.aem.junit5.AemContext;
+import io.wcm.testing.mock.aem.junit5.AemContextExtension;
+import java.util.ArrayList;
+import java.util.List;
+import org.apache.sling.api.resource.Resource;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 @ExtendWith(AemContextExtension.class)
 public class CardListCmpTest {
@@ -41,6 +43,8 @@ public class CardListCmpTest {
 
   final List<Resource> cards = new ArrayList<>();
 
+  static ContentFragment contentFragment = mock(ContentFragment.class);
+
   @BeforeAll
   static void setupAll() {
     context.addModelsForClasses(CardListCmp.class);
@@ -51,24 +55,25 @@ public class CardListCmpTest {
     context.load().json(DEMO_SIMPLE_CARD_PATH, "/content/dam/simple-cards");
     context.load().json(DEMO_LINKS_PATH, "/content/dam/links");
     context.registerService(SimpleQueryBuilder.class, simpleQueryBuilder);
+    context.registerAdapter(Resource.class, ContentFragment.class, contentFragment);
   }
 
   @BeforeEach
   void setup() {
     reset(simpleQueryBuilder);
+    reset(contentFragment);
 
     cards.clear();
-    cards.add(
-        context.request().getResourceResolver().getResource("/content/dam/simple-cards/option1")
-            .getChild("jcr:content"));
-    cards.add(
-        context.request().getResourceResolver().getResource("/content/dam/simple-cards/option2")
-            .getChild("jcr:content"));
+    Resource option1 = context.resourceResolver().getResource("/content/dam/simple-cards/option1");
+    Resource option2 = context.resourceResolver().getResource("/content/dam/simple-cards/option2");
+    cards.add(option1.getChild("jcr:content"));
+    cards.add(option2.getChild("jcr:content"));
+
   }
 
   @Test
   void getCards_default() {
-    when(simpleQueryBuilder.search(any(), anyMap())).thenReturn(cards);
+    mockQueryResults("/path");
 
     cardListCmp = getComponent("card_list");
 
@@ -105,7 +110,7 @@ public class CardListCmpTest {
 
   @Test
   void isCardsFound_default() {
-    when(simpleQueryBuilder.search(any(), anyMap())).thenReturn(cards);
+    mockQueryResults("/path");
 
     cardListCmp = getComponent("card_list");
 
@@ -183,8 +188,30 @@ public class CardListCmpTest {
     assertFalse(cardListCmp.isCardsFound());
   }
 
+  @Test
+  void getCards_whenArticleType_returnsArticle() {
+    mockQueryResults(ArticleDetailCfm.MODEL);
+
+    cardListCmp = getComponent("article_list");
+
+    assertNotNull(cardListCmp);
+    List<Card> snapshot = cardListCmp.getCards();
+    assertEquals(cards.size(), cardListCmp.getCards().size());
+  }
+
   CardListCmp getComponent(String component) {
     context.currentResource("/content/card-list" + "/jcr:content/root/container/container/" + component);
     return context.request().adaptTo(CardListCmp.class);
+  }
+
+  private void mockQueryResults(String model) {
+    when(simpleQueryBuilder.search(any(), anyMap())).thenReturn(cards);
+    FragmentTemplate template = mock(FragmentTemplate.class);
+    Resource resource = mock(Resource.class);
+    Resource parent  = mock(Resource.class);
+    when(contentFragment.getTemplate()).thenReturn(template);
+    when(template.adaptTo(Resource.class)).thenReturn(resource);
+    when(resource.getParent()).thenReturn(parent);
+    when(parent.getPath()).thenReturn(model);
   }
 }
