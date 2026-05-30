@@ -44,6 +44,13 @@ public class FlushCacheServlet extends SlingAllMethodsServlet {
     dispatcherHost = config.dispatcherHost();
   }
 
+  /**
+   * Example curl command:
+   * curl -X POST "http://localhost:4502/bin/pillar/flushcache?path=/content/pillar/us/en" \
+   *   -u admin:admin \
+   *   -H "Content-Type: application/json"
+   */
+
   @Override
   protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response)
       throws ServletException, IOException {
