@@ -83,7 +83,7 @@ public class ArticleDetailCmpTest {
   void getUrl_returnsArticleUrl() {
     ArticleDetailCmp model = getComponent(COMPONENT_PATH);
     assertNotNull(model);
-    assertEquals("/us/en/articles/downhill-skiing-wyoming", model.getUrl());
+    assertEquals("/content/pillar/us/en/articles/downhill-skiing-wyoming.html", model.getUrl());
   }
 
   @Test

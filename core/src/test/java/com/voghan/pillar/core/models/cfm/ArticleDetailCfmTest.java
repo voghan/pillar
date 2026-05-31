@@ -66,7 +66,7 @@ public class ArticleDetailCfmTest {
   void getUrl_returnsArticleUrl() {
     ArticleDetailCfm model = getModel(ARTICLE_FRAGMENT, "master");
     assertNotNull(model);
-    assertEquals("/content/pillar/us/en/articles/downhill-skiing-wyoming.html", model.getUrl());
+    assertEquals(ARTICLE_URL, model.getUrl());
   }
 
   @Test
@@ -90,7 +90,7 @@ public class ArticleDetailCfmTest {
     assertFalse(model.getCallToActions().isEmpty());
     assertEquals(1, model.getCallToActions().size());
     SimpleLink link = model.getCallToActions().getFirst();
-    assertEquals("/content/pillar/us/en/articles/downhill-skiing-wyoming.html", link.getLinkPath());
+    assertEquals(ARTICLE_URL, link.getLinkPath());
   }
 
   @Test
