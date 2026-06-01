@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.voghan.pillar.common.links.SimpleLinkBuilder;
 import com.voghan.pillar.core.models.cfm.ArticleDetailCfm;
 import com.voghan.pillar.core.testcontext.AppAemContext;
 import io.wcm.testing.mock.aem.junit5.AemContext;
@@ -39,7 +40,7 @@ public class ArticleDetailCmpTest {
 
   @BeforeAll
   static void setup() {
-    context.addModelsForClasses(ArticleDetailCmp.class, ArticleDetailCfm.class);
+    context.addModelsForClasses(ArticleDetailCmp.class, ArticleDetailCfm.class, SimpleLinkBuilder.class);
     context.load().json(PARENT_PAGE_JSON, ARTICLES_ROOT);
     context.load().json(DETAIL_PAGE_JSON, DETAIL_PAGE_ROOT);
     context.load().json(ARTICLE_JSON, DAM_ROOT);

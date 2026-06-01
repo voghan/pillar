@@ -6,13 +6,13 @@ import com.day.cq.wcm.api.PageManager;
 import com.drew.lang.annotations.NotNull;
 import com.voghan.pillar.common.links.impl.SimpleLinkImpl;
 import com.voghan.pillar.common.links.model.SimpleLink;
-import javax.annotation.PostConstruct;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,6 +27,9 @@ public class SimpleLinkBuilder {
   @Self
   private Resource resource;
 
+  @OSGiService
+  private SimpleLinkBuilderConfig config;
+
   private String url;
   private String text;
   private Resource providedResource;
@@ -37,12 +40,6 @@ public class SimpleLinkBuilder {
 
   private PageManager pageManager;
   private ResourceResolver resolver;
-
-
-  @PostConstruct
-  protected void init() {
-    logger.debug("Initializing SimpleLinkBuilder");
-  }
 
   public SimpleLinkBuilder withPage(Page page) {
     this.page = page;
@@ -71,13 +68,16 @@ public class SimpleLinkBuilder {
   }
 
   public SimpleLink build() {
+    //reset values
+    this.url = null;
+    this.text = null;
 
     if (page != null) {
       this.url = formatUrl(getPageUrl(page.getPath()));
       this.text = StringUtils.isNotBlank(page.getNavigationTitle()) ? page.getNavigationTitle() : page.getTitle();
     } else if (providedResource != null) {
-      this.url = formatUrl(getPageUrl(resource.getPath()));
-      this.text = providedResource.getValueMap().get("jcr:Tile", String.class);
+      this.url = formatUrl(getPageUrl(providedResource.getPath()));
+      this.text = providedResource.getValueMap().get("jcr:title", String.class);
     }
 
     // Override url if path provided
@@ -90,6 +90,15 @@ public class SimpleLinkBuilder {
     }
 
     return new SimpleLinkImpl(text, url);
+  }
+
+  public SimpleLinkBuilder rest() {
+    this.page = null;
+    this.providedResource = null;
+    this.providedPath = null;
+    this.providedText = null;
+    this.dynamicUrl = false;
+    return this;
   }
 
   protected boolean isExternalLink(String url) {
@@ -120,7 +129,7 @@ public class SimpleLinkBuilder {
       }
 
     } catch (Exception e) {
-      logger.info("Error occurred transforming {}", path, e);
+      logger.warn("Error occurred transforming {}", path, e);
     }
 
     return url;
@@ -144,7 +153,7 @@ public class SimpleLinkBuilder {
 
   protected String formatUrl(String url) {
     String formattedUrl = url;
-    if (!isExternalLink(url)) {
+    if (!isExternalLink(url) && !url.endsWith(".html")) {
       formattedUrl = getResolver().map(url) + ".html";
     }
 
@@ -155,7 +164,8 @@ public class SimpleLinkBuilder {
     String absolutePath = path;
 
     if (!isExternalLink(path) && !path.startsWith("/content/")) {
-      absolutePath = "/content/pillar" + path;
+      String siteRoot = config != null ? config.getSiteRoot() : "/content/pillar";
+      absolutePath = siteRoot + path;
     }
 
     return absolutePath;

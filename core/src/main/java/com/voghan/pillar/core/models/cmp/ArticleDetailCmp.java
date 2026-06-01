@@ -1,14 +1,12 @@
 package com.voghan.pillar.core.models.cmp;
 
 import com.adobe.cq.export.json.ComponentExporter;
-import com.adobe.cq.wcm.core.components.commons.link.Link;
-import com.adobe.cq.wcm.core.components.commons.link.LinkManager;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
+import com.voghan.pillar.common.links.SimpleLinkBuilder;
 import com.voghan.pillar.common.links.model.SimpleLink;
 import com.voghan.pillar.core.models.ArticleDetail;
 import com.voghan.pillar.core.models.cfm.ArticleDetailCfm;
-import com.voghan.pillar.core.models.impl.PillarLink;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import org.apache.commons.lang3.StringUtils;
@@ -16,6 +14,7 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.Via;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.slf4j.Logger;
@@ -37,14 +36,15 @@ public class ArticleDetailCmp extends BaseModelCmp  implements ArticleDetail {
   private SlingHttpServletRequest request;
 
   @Self
-  private LinkManager linkManager;
+  @Via("resource")
+  private SimpleLinkBuilder linkBuilder;
 
   @ValueMapValue
   private String fragmentPath;
 
   private ArticleDetail articleDetail;
 
-  private PillarLink parentLink;
+  private SimpleLink parentLink;
 
   @PostConstruct
   protected void init() {
@@ -78,9 +78,9 @@ public class ArticleDetailCmp extends BaseModelCmp  implements ArticleDetail {
     Page currentPage = pageManager.getContainingPage(request.getResource());
     if (currentPage != null) {
       Page parentPage = currentPage.getParent();
-      Link link = linkManager.get(parentPage).build();
-      String title = parentPage.getNavigationTitle() != null ? parentPage.getNavigationTitle() : parentPage.getTitle();
-      parentLink = new PillarLink(title, link.getURL());
+      if (parentPage != null) {
+        parentLink = linkBuilder.withPage(parentPage).build();
+      }
     }
   }
 

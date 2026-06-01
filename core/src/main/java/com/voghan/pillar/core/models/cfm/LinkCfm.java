@@ -27,7 +27,7 @@ public class LinkCfm extends BaseModelCfm implements SimpleLink {
   private SimpleLink link;
 
   @PostConstruct
-  public void init() {
+  protected void init() {
     link = linkBuilder.withPath(linkPath).withText(linkText).build();
   }
 

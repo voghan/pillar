@@ -35,6 +35,7 @@ public class SimpleLinkBuilderTest {
 
   @BeforeAll
   static void setupAll() {
+    context.registerService(SimpleLinkBuilderConfig.class, (SimpleLinkBuilderConfig) () -> "/content/pillar");
     context.addModelsForClasses(SimpleLinkBuilder.class);
     context.build().resource(ROOT_CONTENT).commit();
   }
@@ -82,12 +83,12 @@ public class SimpleLinkBuilderTest {
 
   @Test
   void withResource_setsUrlFromLinkManager() {
-    Resource res = context.resourceResolver().getResource(ROOT_CONTENT);
+    Resource res = context.resourceResolver().getResource("/content/pillar/us");
 
     SimpleLink result = getComponent().withResource(res).build();
 
     assertNotNull(result);
-    assertEquals("/content/pillar/us/en.html", result.getLinkPath());
+    assertEquals("/content/pillar/us.html", result.getLinkPath());
   }
 
   // -------------------------------------------------------------------------
@@ -113,8 +114,8 @@ public class SimpleLinkBuilderTest {
 
   @Test
   void withDynamicUrl_assetRelativePath_returnsAbsolutePath() {
-    String expected ="/content/pillar/en/us/articles.html";
-    String path = "/en/us/articles";
+    String expected ="/content/pillar/us/en/articles.html";
+    String path = "/us/en/articles";
 
     SimpleLink result = getComponent().withDynamicUrl(path).build();
 
@@ -129,6 +130,7 @@ public class SimpleLinkBuilderTest {
   @Test
   void build_afterWithText_returnsLinkWithText() {
     SimpleLink result = getComponent()
+        .rest()
         .withPath("/content/dam/pillar/image.png")
         .withText("Click Here")
         .build();
@@ -144,6 +146,30 @@ public class SimpleLinkBuilderTest {
 
     assertNotNull(result);
     assertNull(result.getLinkText());
+  }
+
+  @Test
+  void build_afterWithReset_returnsLinkWithText() {
+    SimpleLinkBuilder builder = getComponent();
+    SimpleLink result = builder
+        .withDynamicUrl("/us/en/home")
+        .withText("Click Here")
+        .build();
+
+    assertNotNull(result);
+    assertEquals("Click Here", result.getLinkText());
+    assertEquals("/content/pillar/us/en/home.html", result.getLinkPath());
+
+    result = builder
+        .rest()
+        .withPath("/content/pilar/us/en/articles")
+        .withText("Click again")
+        .build();
+
+    assertNotNull(result);
+    assertEquals("Click again", result.getLinkText());
+    assertEquals("/content/pilar/us/en/articles", result.getLinkPath());
+
   }
 
   // -------------------------------------------------------------------------
