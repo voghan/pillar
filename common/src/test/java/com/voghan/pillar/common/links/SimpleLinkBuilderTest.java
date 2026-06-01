@@ -113,11 +113,11 @@ public class SimpleLinkBuilderTest {
   }
 
   @Test
-  void withDynamicUrl_assetRelativePath_returnsAbsolutePath() {
+  void withRelativeUrl_assetRelativePath_returnsAbsolutePath() {
     String expected ="/content/pillar/us/en/articles.html";
     String path = "/us/en/articles";
 
-    SimpleLink result = getComponent().withDynamicUrl(path).build();
+    SimpleLink result = getComponent().withRelativeUrl(path).build();
 
     assertNotNull(result);
     assertEquals(expected, result.getLinkPath());
@@ -152,7 +152,7 @@ public class SimpleLinkBuilderTest {
   void build_afterWithReset_returnsLinkWithText() {
     SimpleLinkBuilder builder = getComponent();
     SimpleLink result = builder
-        .withDynamicUrl("/us/en/home")
+        .withRelativeUrl("/us/en/home")
         .withText("Click Here")
         .build();
 

@@ -53,7 +53,7 @@ public class ArticleDetailCfm extends CardCfm implements ArticleDetail {
   @PostConstruct
   protected void init() {
     if (url != null) {
-      SimpleLink link = linkBuilder.withDynamicUrl(url).withText(ARTICLE_CTA_I18N).build();
+      SimpleLink link = linkBuilder.withRelativeUrl(url).withText(ARTICLE_CTA_I18N).build();
       actions.add(link);
     }
   }
