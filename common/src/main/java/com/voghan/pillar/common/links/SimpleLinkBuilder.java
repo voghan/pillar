@@ -36,7 +36,7 @@ public class SimpleLinkBuilder {
   private String providedPath;
   private String providedText;
   private Page page;
-  private boolean dynamicUrl;
+  private boolean relativeUrl;
 
   private PageManager pageManager;
   private ResourceResolver resolver;
@@ -61,8 +61,8 @@ public class SimpleLinkBuilder {
     return this;
   }
 
-  public SimpleLinkBuilder withDynamicUrl(String url) {
-    this.dynamicUrl = true;
+  public SimpleLinkBuilder withRelativeUrl(String url) {
+    this.relativeUrl = true;
     this.providedPath = url;
     return this;
   }
@@ -97,7 +97,7 @@ public class SimpleLinkBuilder {
     this.providedResource = null;
     this.providedPath = null;
     this.providedText = null;
-    this.dynamicUrl = false;
+    this.relativeUrl = false;
     return this;
   }
 
@@ -118,7 +118,7 @@ public class SimpleLinkBuilder {
 
       String absPath = getAbsolutePath(path);
 
-      if (dynamicUrl) {
+      if (relativeUrl) {
         url = formatUrl(absPath);
       } else {
         pageManager = getPageManager();
