@@ -107,7 +107,7 @@
                                         </limit>
                                     </limits>
                                     <excludes>
-                                        <exclude>com.voghan.pillar.common.emails.*</exclude>
+                                        <exclude>com.voghan.pillar.common.links.impl.SimpleLinkBuilderConfigImpl</exclude>
                                     </excludes>
                                 </rule>
                                 <rule>

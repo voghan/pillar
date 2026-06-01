@@ -1,6 +1,11 @@
 package com.voghan.pillar.core.models.cmp;
 
-import com.voghan.pillar.core.models.Link;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import com.voghan.pillar.common.links.model.SimpleLink;
 import com.voghan.pillar.core.models.cfm.FeaturedCardCfm;
 import com.voghan.pillar.core.models.cfm.LinkCfm;
 import com.voghan.pillar.core.testcontext.AppAemContext;
@@ -9,11 +14,6 @@ import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertFalse;
-import static junit.framework.Assert.assertNotNull;
-import static junit.framework.Assert.assertTrue;
 
 @ExtendWith(AemContextExtension.class)
 public class FeaturedCardCmpTest {
@@ -66,7 +66,7 @@ public class FeaturedCardCmpTest {
     assertNotNull(model);
     assertFalse(model.getCallToActions().isEmpty());
     assertEquals(1, model.getCallToActions().size());
-    Link link = model.getCallToActions().getFirst();
+    SimpleLink link = model.getCallToActions().getFirst();
     assertNotNull(link);
     assertEquals("Get started", link.getLinkText());
     assertEquals("/content/pillar/us/en", link.getLinkPath());

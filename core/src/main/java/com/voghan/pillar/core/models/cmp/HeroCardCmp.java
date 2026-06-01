@@ -1,9 +1,11 @@
 package com.voghan.pillar.core.models.cmp;
 
 import com.adobe.cq.export.json.ComponentExporter;
+import com.voghan.pillar.common.links.model.SimpleLink;
 import com.voghan.pillar.core.models.HeroCard;
-import com.voghan.pillar.core.models.Link;
 import com.voghan.pillar.core.models.cfm.HeroCardCfm;
+import java.util.List;
+import javax.annotation.PostConstruct;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
@@ -14,9 +16,6 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import javax.annotation.PostConstruct;
-import java.util.List;
 
 @Model(
     adaptables = SlingHttpServletRequest.class,
@@ -70,12 +69,12 @@ public class HeroCardCmp extends BaseModelCmp implements HeroCard {
   }
 
   @Override
-  public List<Link> getCallToActions() {
+  public List<SimpleLink> getCallToActions() {
     return heroCard.getCallToActions();
   }
 
   @Override
-  public List<Link> getBreadcrumbs() {
+  public List<SimpleLink> getBreadcrumbs() {
     return heroCard.getBreadcrumbs();
   }
 

@@ -1,7 +1,8 @@
 package com.voghan.pillar.core.models.pages;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertNotNull;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import com.voghan.pillar.core.testcontext.AppAemContext;
 import io.wcm.testing.mock.aem.junit5.AemContext;

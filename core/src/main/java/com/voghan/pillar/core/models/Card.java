@@ -1,5 +1,6 @@
 package com.voghan.pillar.core.models;
 
+import com.voghan.pillar.common.links.model.SimpleLink;
 import java.util.List;
 
 public interface Card {
@@ -8,7 +9,7 @@ public interface Card {
 
   String getShortDescription();
 
-  List<Link> getCallToActions();
+  List<SimpleLink> getCallToActions();
 
   boolean isCallToActionEnabled();
 

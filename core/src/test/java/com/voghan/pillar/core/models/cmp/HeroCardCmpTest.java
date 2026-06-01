@@ -1,18 +1,17 @@
 package com.voghan.pillar.core.models.cmp;
 
-import com.voghan.pillar.core.models.Link;
-import com.voghan.pillar.core.models.cfm.LinkCfm;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import com.voghan.pillar.common.links.model.SimpleLink;
 import com.voghan.pillar.core.testcontext.AppAemContext;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertFalse;
-import static junit.framework.Assert.assertNotNull;
-import static junit.framework.Assert.assertTrue;
 
 @ExtendWith(AemContextExtension.class)
 public class HeroCardCmpTest {
@@ -75,7 +74,7 @@ public class HeroCardCmpTest {
     assertNotNull(heroCardCmp);
     assertFalse(heroCardCmp.getCallToActions().isEmpty());
     assertEquals(2, heroCardCmp.getCallToActions().size());
-    Link link = heroCardCmp.getCallToActions().get(0);
+    SimpleLink link = heroCardCmp.getCallToActions().get(0);
     assertNotNull(link);
     assertEquals("Get started", link.getLinkText());
     assertEquals("/content/pillar/us/en", link.getLinkPath());
@@ -88,7 +87,7 @@ public class HeroCardCmpTest {
     assertNotNull(heroCardCmp);
     assertFalse(heroCardCmp.getBreadcrumbs().isEmpty());
     assertEquals(2, heroCardCmp.getBreadcrumbs().size());
-    Link link = heroCardCmp.getBreadcrumbs().get(0);
+    SimpleLink link = heroCardCmp.getBreadcrumbs().get(0);
     assertNotNull(link);
     assertEquals("Pillar Site", link.getLinkText());
     assertEquals("/content/pillar/us/en", link.getLinkPath());

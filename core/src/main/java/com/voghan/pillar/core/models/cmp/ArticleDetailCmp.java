@@ -1,10 +1,10 @@
 package com.voghan.pillar.core.models.cmp;
 
 import com.adobe.cq.export.json.ComponentExporter;
-import com.adobe.cq.wcm.core.components.commons.link.Link;
-import com.adobe.cq.wcm.core.components.commons.link.LinkManager;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
+import com.voghan.pillar.common.links.SimpleLinkBuilder;
+import com.voghan.pillar.common.links.model.SimpleLink;
 import com.voghan.pillar.core.models.ArticleDetail;
 import com.voghan.pillar.core.models.cfm.ArticleDetailCfm;
 import java.util.List;
@@ -14,6 +14,7 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.Via;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.slf4j.Logger;
@@ -35,21 +36,21 @@ public class ArticleDetailCmp extends BaseModelCmp  implements ArticleDetail {
   private SlingHttpServletRequest request;
 
   @Self
-  private LinkManager linkManager;
+  @Via("resource")
+  private SimpleLinkBuilder linkBuilder;
 
   @ValueMapValue
   private String fragmentPath;
 
   private ArticleDetail articleDetail;
 
-  private Page parentPage;
-
-  private boolean parentPageResolved = false;
+  private SimpleLink parentLink;
 
   @PostConstruct
   protected void init() {
     logger.debug("initializing ArticleDetailCmp");
     articleDetail = new ArticleDetailCfm();
+    buildParentLink();
 
     String[] selectors = request.getRequestPathInfo().getSelectors();
     if (selectors == null || selectors.length == 0) return;
@@ -71,6 +72,18 @@ public class ArticleDetailCmp extends BaseModelCmp  implements ArticleDetail {
     }
   }
 
+  private void buildParentLink() {
+    PageManager pageManager = request.getResourceResolver().adaptTo(PageManager.class);
+    if (pageManager == null) return;
+    Page currentPage = pageManager.getContainingPage(request.getResource());
+    if (currentPage != null) {
+      Page parentPage = currentPage.getParent();
+      if (parentPage != null) {
+        parentLink = linkBuilder.withPage(parentPage).build();
+      }
+    }
+  }
+
   @Override
   public String getHeadline() {
     return articleDetail.getHeadline();
@@ -87,7 +100,7 @@ public class ArticleDetailCmp extends BaseModelCmp  implements ArticleDetail {
   }
 
   @Override
-  public List<com.voghan.pillar.core.models.Link> getCallToActions() {
+  public List<SimpleLink> getCallToActions() {
     return articleDetail.getCallToActions();
   }
 
@@ -118,33 +131,17 @@ public class ArticleDetailCmp extends BaseModelCmp  implements ArticleDetail {
   }
 
   public String getParentPageTitle() {
-    initParentPage();
-    if (parentPage == null) return null;
-    String navTitle = parentPage.getNavigationTitle();
-    return navTitle != null ? navTitle : parentPage.getTitle();
+    if (parentLink == null) return null;
+    return parentLink.getLinkText();
   }
 
   public String getParentPagePath() {
-    initParentPage();
-    if (parentPage == null) return null;
-    Link link = linkManager.get(parentPage).build();
-    return link.getURL();
+    if (parentLink == null) return null;
+    return parentLink.getLinkPath();
   }
 
   public boolean hasArticle() {
     return articleDetail != null && StringUtils.isNotBlank(articleDetail.getUrl());
   }
 
-  private void initParentPage() {
-    if (!parentPageResolved) {
-      parentPageResolved = true;
-      PageManager pageManager = request.getResourceResolver().adaptTo(PageManager.class);
-      if (pageManager != null) {
-        Page currentPage = pageManager.getContainingPage(request.getResource());
-        if (currentPage != null) {
-          parentPage = currentPage.getParent();
-        }
-      }
-    }
-  }
 }
