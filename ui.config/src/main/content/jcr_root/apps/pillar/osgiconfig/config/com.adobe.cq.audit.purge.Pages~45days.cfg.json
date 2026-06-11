@@ -1,0 +1,13 @@
+{
+  "auditlog.rule.contentpath": "/content/pillar",
+  "auditlog.rule.minimumage:Integer": 45,
+  "auditlog.rule.name": "pillar-45-days",
+  "auditlog.rule.types": [
+    "PageMoved",
+    "VersionCreated",
+    "PageRestored",
+    "PageRolled Out",
+    "PageValid",
+    "PageInvalid"
+  ]
+}

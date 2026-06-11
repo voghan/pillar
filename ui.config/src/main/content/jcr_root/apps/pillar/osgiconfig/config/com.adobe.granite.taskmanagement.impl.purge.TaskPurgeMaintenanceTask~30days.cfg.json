@@ -1,0 +1,7 @@
+{
+  "activeAge:Integer": 90,
+  "completedAge:Integer": 30,
+  "purgeActive": false,
+  "purgeCompleted": true,
+  "saveThreshold:Integer": 100
+}
