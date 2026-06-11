@@ -3,6 +3,7 @@
     "user.mapping":[
         "pillar.common:SimpleJobConsumer=[pillar-service-user]",
         "pillar.common:SimpleEmailService=[pillar-service-user]",
-        "pillar.common:SimpleAuthInfoPostProcessor=[pillar-service-user]"
+        "pillar.common:SimpleAuthInfoPostProcessor=[pillar-service-user]",
+        "pillar.common:SimpleEventListener=[pillar-service-user]"
     ]
 }
