@@ -29,7 +29,7 @@
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^5.7.0",
     "acorn": "^8.7.0",
-    "aem-clientlib-generator": "^1.8.0",
+    "aem-clientlib-generator": "^2.0.3",
     "aemsync": "^4.0.1",
     "autoprefixer": "^10.4.2",
     "browserslist": "^4.2.1",
