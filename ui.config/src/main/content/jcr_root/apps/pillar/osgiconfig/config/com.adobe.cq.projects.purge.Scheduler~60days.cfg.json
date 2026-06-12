@@ -1,0 +1,11 @@
+{
+  "scheduledpurge.daysold:Integer": 60,
+  "scheduledpurge.name": "pillar-60-days",
+  "scheduledpurge.purgeActive": false,
+  "scheduledpurge.purgeAssets": true,
+  "scheduledpurge.purgeGroups": true,
+  "scheduledpurge.saveThreshold:Integer": 20,
+  "scheduledpurge.templates": [
+  ],
+  "scheduledpurge.terminateRunningWorkflows": true
+}

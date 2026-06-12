@@ -1,0 +1,9 @@
+{
+  "versionpurge.maxAgeDays:Integer": 30,
+  "versionpurge.maxVersions:Integer": 5,
+  "versionpurge.minVersions:Integer": 0,
+  "versionpurge.paths": [
+    "/content/pillar"
+  ],
+  "versionpurge.recursive": true
+}

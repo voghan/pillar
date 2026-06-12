@@ -1,0 +1,13 @@
+{
+  "scheduledpurge.daysold:Integer": 28,
+  "scheduledpurge.modelIds": [
+  ],
+  "scheduledpurge.name": "pillar-28-day",
+  "scheduledpurge.workflowStatus": [
+    "RUNNING",
+    "COMPLETED",
+    "SUSPENDED",
+    "ABORTED",
+    "FAILED"
+  ]
+}
