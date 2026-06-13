@@ -21,11 +21,14 @@ import javax.jcr.RepositoryException;
 import java.util.HashMap;
 import java.util.Map;
 
-@Component(service = WorkflowProcess.class,
-    property = {"process.label=Pillar Workflow Notification Process"})
+@Component(
+    service = WorkflowProcess.class,
+    property = {
+        "process.label=Pillar Notification Process"
+    })
 public class NotificationProcess implements WorkflowProcess {
 
-  private final Logger logger = LoggerFactory.getLogger(getClass());
+  private static final Logger LOGGER = LoggerFactory.getLogger(NotificationProcess.class);
 
   public static final String SERVICE_NAME = "NotificationProcess";
   private static final String TEMPLATE = "/conf/pillar/notifications/email/workflow-notification.html";
@@ -45,17 +48,21 @@ public class NotificationProcess implements WorkflowProcess {
     String payload = (String) workItem.getWorkflowData().getPayload();
     String processArgs = metaDataMap.get("PROCESS_ARGS", String.class);
 
-    logger.info("Starting workflow for {} with args {}", payload, processArgs);
+    LOGGER.info("Starting workflow for {} with args {}", payload, processArgs);
 
     final Map<String, Object> authInfo = AuthUtil.getAuthInfo(SERVICE_NAME);
     try (ResourceResolver resourceResolver = resourceResolverFactory.getServiceResourceResolver(
         authInfo)) {
       String mailTo = getInitiatorEmail(resourceResolver, workItem);
+      if (mailTo == null) {
+        LOGGER.warn("No initiator email found for {}", workItem.getId());
+        return;
+      }
       Map<String, String> params = buildEmailMessage(resourceResolver, workItem, payload);
       emailService.sendEmail(mailTo, TEMPLATE, params);
 
     } catch (Exception e) {
-      logger.warn("Workflow process for {} failed.", payload, e);
+      LOGGER.warn("Workflow process for {} failed.", payload, e);
       throw new WorkflowException(e);
     }
 
@@ -88,6 +95,9 @@ public class NotificationProcess implements WorkflowProcess {
     String email = null;
     String initiatorUserId = workItem.getWorkflow().getInitiator();
     UserManager userManager = resourceResolver.adaptTo(UserManager.class);
+    if (userManager == null) {
+      return email;
+    }
     Authorizable authorizable = userManager.getAuthorizable(initiatorUserId);
 
     if (authorizable != null && authorizable.getProperty("./profile/email") != null) {
@@ -98,13 +108,11 @@ public class NotificationProcess implements WorkflowProcess {
   }
 
   protected String getAuthorLink(ResourceResolver resourceResolver, String path) {
-    String authorLink = "http://localhost:4502" + path;
-
-    if (externalizer != null && resourceResolver != null) {
-      authorLink = externalizer.externalLink(resourceResolver, Externalizer.AUTHOR, path);
+    if (externalizer == null || resourceResolver == null) {
+      return "http://localhost:4502" + path;
     }
 
-    return authorLink;
+    return externalizer.externalLink(resourceResolver, Externalizer.AUTHOR, path);
   }
 
 }

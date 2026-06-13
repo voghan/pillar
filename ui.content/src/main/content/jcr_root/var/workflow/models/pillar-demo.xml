@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:rep="internal"
     jcr:isCheckedOut="{Boolean}false"
     jcr:primaryType="cq:WorkflowModel"
-    jcr:uuid="0cbea8f3-6872-4223-87b4-227b4fffc94b"
+    jcr:uuid="86ccd8e2-4c6a-4af2-ad6e-330a351ff5ff"
     sling:resourceType="cq/workflow/components/model"
-    description="Sample workflow to request approval of content for publishing."
-    title="1. Request Publish Approval ">
+    description="No Description"
+    title="Pillar-Demo">
     <metaData
-        cq:generatingPage="/conf/global/settings/workflow/models/request-publish-approval/jcr:content"
-        cq:lastModified="{Long}1767617912101"
+        cq:generatingPage="/conf/global/settings/workflow/models/pillar-demo/jcr:content"
+        cq:lastModified="{Long}1781354306302"
         cq:lastModifiedBy="admin"
         jcr:primaryType="nt:unstructured"/>
     <nodes jcr:primaryType="nt:unstructured">
@@ -21,7 +21,7 @@
         <node1
             jcr:primaryType="cq:WorkflowNode"
             description="Description of step 1"
-            title="Select Approver"
+            title="Select pill"
             type="DYNAMIC_PARTICIPANT">
             <metaData
                 jcr:primaryType="nt:unstructured"
@@ -30,39 +30,52 @@
         </node1>
         <node2
             jcr:primaryType="cq:WorkflowNode"
-            title="Notification Step"
-            type="PROCESS">
-            <metaData
-                jcr:primaryType="nt:unstructured"
-                PROCESS="com.voghan.pillar.core.workflows.NotificationProcess"
-                PROCESS_AUTO_ADVANCE="true"/>
+            title="OR_SPLIT"
+            type="OR_SPLIT">
+            <metaData jcr:primaryType="nt:unstructured"/>
         </node2>
         <node3
             jcr:primaryType="cq:WorkflowNode"
-            description="A process to create a version for either a page or an asset."
-            title="Create Version"
-            type="PROCESS">
-            <metaData
-                jcr:primaryType="nt:unstructured"
-                PROCESS="com.day.cq.wcm.workflow.process.CreateVersionProcess"
-                PROCESS_AUTO_ADVANCE="true"/>
+            title="OR_JOIN"
+            type="OR_JOIN">
+            <metaData jcr:primaryType="nt:unstructured"/>
         </node3>
         <node4
             jcr:primaryType="cq:WorkflowNode"
-            description="A process to activate a page or asset"
-            title="Activate Page/Asset"
+            title="Red Pill"
             type="PROCESS">
             <metaData
                 jcr:primaryType="nt:unstructured"
-                PROCESS="com.day.cq.wcm.workflow.process.ActivatePageProcess"
+                PROCESS="com.voghan.pillar.core.workflows.SimpleLoggerProcess"
+                PROCESS_ARGS="EXIT_THE_MATRIX"
                 PROCESS_AUTO_ADVANCE="true"/>
         </node4>
         <node5
             jcr:primaryType="cq:WorkflowNode"
+            title="Blue Pill"
+            type="PROCESS">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                PROCESS="com.voghan.pillar.core.workflows.SimpleLoggerProcess"
+                PROCESS_ARGS="RETURN_TO_MATRIX"
+                PROCESS_AUTO_ADVANCE="true"/>
+        </node5>
+        <node6
+            jcr:primaryType="cq:WorkflowNode"
+            title="Pillar Email"
+            type="PROCESS">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                PROCESS="com.voghan.pillar.core.workflows.NotificationProcess"
+                PROCESS_ARGS="PILLAR_DEMO_END"
+                PROCESS_AUTO_ADVANCE="true"/>
+        </node6>
+        <node7
+            jcr:primaryType="cq:WorkflowNode"
             title="End"
             type="END">
             <metaData jcr:primaryType="nt:unstructured"/>
-        </node5>
+        </node7>
     </nodes>
     <transitions jcr:primaryType="nt:unstructured">
         <node0_x0023_node1
@@ -75,29 +88,51 @@
         <node1_x0023_node2
             jcr:primaryType="cq:WorkflowTransition"
             from="node1"
-            rule="\0"
             to="node2">
             <metaData jcr:primaryType="nt:unstructured"/>
         </node1_x0023_node2>
-        <node2_x0023_node3
+        <node2_x0023_node4
             jcr:primaryType="cq:WorkflowTransition"
             from="node2"
             rule="\0"
+            to="node4">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                isDefault="false"/>
+        </node2_x0023_node4>
+        <node4_x0023_node3
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node4"
             to="node3">
             <metaData jcr:primaryType="nt:unstructured"/>
-        </node2_x0023_node3>
-        <node3_x0023_node4
+        </node4_x0023_node3>
+        <node2_x0023_node5
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node2"
+            rule="\0"
+            to="node5">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                isDefault="false"/>
+        </node2_x0023_node5>
+        <node5_x0023_node3
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node5"
+            to="node3">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node5_x0023_node3>
+        <node3_x0023_node6
             jcr:primaryType="cq:WorkflowTransition"
             from="node3"
             rule="\0"
-            to="node4">
+            to="node6">
             <metaData jcr:primaryType="nt:unstructured"/>
-        </node3_x0023_node4>
-        <node4_x0023_node5
+        </node3_x0023_node6>
+        <node6_x0023_node7
             jcr:primaryType="cq:WorkflowTransition"
-            from="node4"
-            to="node5">
+            from="node6"
+            to="node7">
             <metaData jcr:primaryType="nt:unstructured"/>
-        </node4_x0023_node5>
+        </node6_x0023_node7>
     </transitions>
 </jcr:root>
