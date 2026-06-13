@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="4114f119-4bc3-4269-8446-1da76538783c">
+    <jcr:content
+        cq:name="demo-featured-card"
+        cq:parentPath="/content/dam/pillar/cfm/featured-cards/articles"
+        jcr:lastModified="{Date}2026-05-23T16:28:20.265-05:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="demo-featured-card"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2026-05-23T16:28:20.265-05:00">
+        <data
+            cq:model="/conf/pillar/settings/dam/cfm/models/featuredcard"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                callToActions_x0040_LastModified="{Date}2026-05-23T16:21:50.035-05:00"
+                headline="Downhill Skiing Wyoming"
+                headline_x0040_LastModified="{Date}2026-05-23T16:28:19.730-05:00"
+                headline_x0040_LastModifiedBy="admin"
+                image="/content/dam/pillar/images/en/cards/adobestock-185234795.jpeg"
+                image_x0040_LastModified="{Date}2026-05-23T16:28:19.732-05:00"
+                image_x0040_LastModifiedBy="admin"
+                shortDescription="&lt;p>The spectacular Tetons of Wyoming provide a wonderous backdrop for your Jackson Hole ski vacation.&amp;nbsp; Jackson Hole is unlike anywhere else in the US.&amp;nbsp; A skiers paradise far from crowds and close to nature with terrain so vast it appears uncharted.&amp;nbsp; With 2,500 acres of legendary terrain, unmatched levels of snowfall each winter, and unparalleled backcountry access, Jackson Hole offers a truly unique skiing experience.&lt;/p>&#xa;"
+                shortDescription_x0040_ContentType="text/html"
+                shortDescription_x0040_LastModified="{Date}2026-05-23T16:28:19.731-05:00"
+                shortDescription_x0040_LastModifiedBy="admin"
+                subheadline="Jackson Hole"
+                subheadline_x0040_LastModified="{Date}2026-05-23T16:28:19.729-05:00"
+                subheadline_x0040_LastModifiedBy="admin"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="cfaf06bc-9143-40e1-9943-24fa4a0bfa85"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/featuredcard"
+                _x0040_stringArray_x0040_variations="[]"
+                string_x0040_headline="Downhill Skiing Wyoming"
+                string_x0040_shortDescription="&lt;p>The spectacular Tetons of Wyoming provide a wonderous backdrop for your Jackson Hole ski vacation.&amp;nbsp; Jackson Hole is unlike anywhere else in the US.&amp;nbsp; A skiers paradise far from crowds and close to nature with terrain so vast it appears uncharted.&amp;nbsp; With 2,500 acres of legendary terrain, unmatched levels of snowfall each winter, and unparalleled backcountry access, Jackson Hole offers a truly unique skiing experience.&lt;/p>&#xa;"
+                string_x0040_subheadline="Jackson Hole"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="sling:OrderedFolder">
+    <jcr:content
+        jcr:lastModified="{Date}2026-01-01T17:37:07.997-06:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="basic-cards"
+        sourcing="false">
+        <policies jcr:primaryType="nt:unstructured">
+            <cfm
+                jcr:primaryType="nt:unstructured"
+                policy-cfm-allowedModelsByPaths="[/conf/pillar/settings/dam/cfm/models/card]"/>
+        </policies>
+    </jcr:content>
+    <demo/>
+</jcr:root>

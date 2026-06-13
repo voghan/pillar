@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="9ddd69c5-32b8-45bb-988c-f7be8c2d3116">
+    <jcr:content
+        cq:name="downhill-skiing-alta"
+        cq:parentPath="/content/dam/pillar/cfm/article-detail/articles"
+        jcr:lastModified="{Date}2026-05-27T22:32:26.693-05:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="downhill-skiing-alta"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2026-05-27T22:32:26.693-05:00">
+        <data
+            cq:model="/conf/pillar/settings/dam/cfm/models/articledetail"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                bannerImage_x0040_LastModified="{Date}2026-05-27T17:50:31.006-05:00"
+                content="&lt;p>Skiing at Alta Ski Area offers a pure, deeply traditional winter sports experience that is globally revered as a holy grail for powder enthusiasts. Located at the very top of Utah's Little Cottonwood Canyon, just next door to Snowbird, Alta is famously one of the last remaining skier-only resorts in the United States, strictly prohibiting snowboarding. Spanning 2,614 acres of skiable terrain, the mountain is blessed by a unique microclimate that drops an astonishing average of 546 inches of exceptionally light, dry snow every year. Boasting a 2,538-foot vertical drop, the resort features a reliable, high-altitude climate that sustains a long winter calendar running from mid-November through late April.&lt;/p>&#xa;&lt;p>The mountain’s layout is a masterpiece of natural topography, utilizing a system of six modern lifts to unlock a sprawling playground of open bowls, technical chutes, and perfectly spaced pine glades. Alta is legendary for its unique traversing culture, where skiers follow high-alpine side-steps and ridges to access iconic, untouched powder stashes like Mount Baldy, Devil's Castle, and Catherine's Area. The terrain distribution is incredibly balanced, ensuring that while expert freeriders challenge themselves on famous steep lines like Alf's High Rustler, intermediates and beginners can comfortably cruise down wide, meticulously groomed highway runs in the Albion basin.&lt;/p>&#xa;&lt;p>The culture at Alta is intentionally understated, fiercely preserving a nostalgic, community-first atmosphere that resists commercial flashiness. The base area is anchored by a collection of classic, intimate ski lodges—such as the historic Alta Lodge and the Goldminer's Daughter—where guests enjoy communal dining and a passionate, sport-focused après-ski scene. Because the resort is on the Ikon Pass network and directly connects to Snowbird via the Sugarloaf pass, it offers seamless access to one of the greatest ski zones on earth.&lt;/p>&#xa;"
+                content_x0040_ContentType="text/html"
+                content_x0040_LastModified="{Date}2026-05-27T17:51:54.620-05:00"
+                content_x0040_LastModifiedBy="admin"
+                description="&lt;p>Located at the very top of Utah's Little Cottonwood Canyon, just next door to Snowbird, Alta is famously one of the last remaining skier-only resorts in the United States, strictly prohibiting snowboarding. Spanning 2,614 acres of skiable terrain, the mountain is blessed by a unique microclimate that drops an astonishing average of 546 inches of exceptionally light, dry snow every year.&lt;/p>&#xa;"
+                description_x0040_ContentType="text/html"
+                description_x0040_LastModified="{Date}2026-05-27T17:51:54.616-05:00"
+                description_x0040_LastModifiedBy="admin"
+                headline="Downhill Skiing Alta"
+                headline_x0040_LastModified="{Date}2026-05-27T17:51:54.613-05:00"
+                headline_x0040_LastModifiedBy="admin"
+                placeholder_x0040_LastModified="{Date}2026-05-27T17:50:31.006-05:00"
+                postDate="{Date}2025-12-20T00:00:00.000Z"
+                postDate_x0040_LastModified="{Date}2026-05-27T22:32:26.669-05:00"
+                postDate_x0040_LastModifiedBy="admin"
+                shortDescription="&lt;p>Located at the very top of Utah's Little Cottonwood Canyon, just next door to Snowbird, Alta is famously one of the last remaining skier-only resorts in the United States, strictly prohibiting snowboarding. Spanning 2,614 acres of skiable terrain, the mountain is blessed by a unique microclimate that drops an astonishing average of 546 inches of exceptionally light, dry snow every year.&lt;/p>&#xa;"
+                shortDescription_x0040_ContentType="text/html"
+                shortDescription_x0040_LastModified="{Date}2026-05-27T22:32:26.658-05:00"
+                shortDescription_x0040_LastModifiedBy="admin"
+                subheadline="Skiing Utah"
+                subheadline_x0040_LastModified="{Date}2026-05-27T17:51:54.615-05:00"
+                subheadline_x0040_LastModifiedBy="admin"
+                url="/us/en/articles/downhill-skiing-alta"
+                url_x0040_LastModified="{Date}2026-05-27T17:51:54.611-05:00"
+                url_x0040_LastModifiedBy="admin"/>
+            <en
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                _x0040_variationCreationDate="{Date}2026-05-27T18:06:29.891-05:00"
+                bannerImage_x0040_LastModified="{Date}2026-05-27T18:06:29.895-05:00"
+                bannerImage_x0040_LastModifiedBy="admin"
+                content="&lt;p>Skiing at Alta Ski Area offers a pure, deeply traditional winter sports experience that is globally revered as a holy grail for powder enthusiasts. Located at the very top of Utah's Little Cottonwood Canyon, just next door to Snowbird, Alta is famously one of the last remaining skier-only resorts in the United States, strictly prohibiting snowboarding. Spanning 2,614 acres of skiable terrain, the mountain is blessed by a unique microclimate that drops an astonishing average of 546 inches of exceptionally light, dry snow every year. Boasting a 2,538-foot vertical drop, the resort features a reliable, high-altitude climate that sustains a long winter calendar running from mid-November through late April.&lt;/p>&#xa;&lt;p>The mountain’s layout is a masterpiece of natural topography, utilizing a system of six modern lifts to unlock a sprawling playground of open bowls, technical chutes, and perfectly spaced pine glades. Alta is legendary for its unique traversing culture, where skiers follow high-alpine side-steps and ridges to access iconic, untouched powder stashes like Mount Baldy, Devil's Castle, and Catherine's Area. The terrain distribution is incredibly balanced, ensuring that while expert freeriders challenge themselves on famous steep lines like Alf's High Rustler, intermediates and beginners can comfortably cruise down wide, meticulously groomed highway runs in the Albion basin.&lt;/p>&#xa;&lt;p>The culture at Alta is intentionally understated, fiercely preserving a nostalgic, community-first atmosphere that resists commercial flashiness. The base area is anchored by a collection of classic, intimate ski lodges—such as the historic Alta Lodge and the Goldminer's Daughter—where guests enjoy communal dining and a passionate, sport-focused après-ski scene. Because the resort is on the Ikon Pass network and directly connects to Snowbird via the Sugarloaf pass, it offers seamless access to one of the greatest ski zones on earth.&lt;/p>&#xa;"
+                content_x0040_ContentType="text/html"
+                content_x0040_LastModified="{Date}2026-05-27T18:06:29.898-05:00"
+                content_x0040_LastModifiedBy="admin"
+                description="&lt;p>Located at the very top of Utah's Little Cottonwood Canyon, just next door to Snowbird, Alta is famously one of the last remaining skier-only resorts in the United States, strictly prohibiting snowboarding. Spanning 2,614 acres of skiable terrain, the mountain is blessed by a unique microclimate that drops an astonishing average of 546 inches of exceptionally light, dry snow every year.&lt;/p>&#xa;"
+                description_x0040_ContentType="text/html"
+                description_x0040_LastModified="{Date}2026-05-27T18:06:29.894-05:00"
+                description_x0040_LastModifiedBy="admin"
+                headline="Downhill Skiing Alta"
+                headline_x0040_LastModified="{Date}2026-05-27T18:06:29.893-05:00"
+                headline_x0040_LastModifiedBy="admin"
+                placeholder_x0040_LastModified="{Date}2026-05-27T18:06:29.897-05:00"
+                placeholder_x0040_LastModifiedBy="admin"
+                postDate="{Date}2025-12-20T00:00:00.000Z"
+                postDate_x0040_LastModified="{Date}2026-05-27T18:06:29.897-05:00"
+                postDate_x0040_LastModifiedBy="admin"
+                subheadline="Skiing Utah"
+                subheadline_x0040_LastModified="{Date}2026-05-27T18:06:29.894-05:00"
+                subheadline_x0040_LastModifiedBy="admin"
+                url="/us/en/articles/downhill-skiing-alta"
+                url_x0040_LastModified="{Date}2026-05-27T18:06:29.893-05:00"
+                url_x0040_LastModifiedBy="admin"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="db716d59-eb05-4d43-be7d-d3bc240a640f"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/articledetail"
+                _x0040_stringArray_x0040_variations="[en]"
+                calendar_x0040_postDate="{Date}2025-12-20T00:00:00.000Z"
+                string_x0040_content="&lt;p>Skiing at Alta Ski Area offers a pure, deeply traditional winter sports experience that is globally revered as a holy grail for powder enthusiasts. Located at the very top of Utah's Little Cottonwood Canyon, just next door to Snowbird, Alta is famously one of the last remaining skier-only resorts in the United States, strictly prohibiting snowboarding. Spanning 2,614 acres of skiable terrain, the mountain is blessed by a unique microclimate that drops an astonishing average of 546 inches of exceptionally light, dry snow every year. Boasting a 2,538-foot vertical drop, the resort features a reliable, high-altitude climate that sustains a long winter calendar running from mid-November through late April.&lt;/p>&#xa;&lt;p>The mountain’s layout is a masterpiece of natural topography, utilizing a system of six modern lifts to unlock a sprawling playground of open bowls, technical chutes, and perfectly spaced pine glades. Alta is legendary for its unique traversing culture, where skiers follow high-alpine side-steps and ridges to access iconic, untouched powder stashes like Mount Baldy, Devil's Castle, and Catherine's Area. The terrain distribution is incredibly balanced, ensuring that while expert freeriders challenge themselves on famous steep lines like Alf's High Rustler, intermediates and beginners can comfortably cruise down wide, meticulously groomed highway runs in the Albion basin.&lt;/p>&#xa;&lt;p>The culture at Alta is intentionally understated, fiercely preserving a nostalgic, community-first atmosphere that resists commercial flashiness. The base area is anchored by a collection of classic, intimate ski lodges—such as the historic Alta Lodge and the Goldminer's Daughter—where guests enjoy communal dining and a passionate, sport-focused après-ski scene. Because the resort is on the Ikon Pass network and directly connects to Snowbird via the Sugarloaf pass, it offers seamless access to one of the greatest ski zones on earth.&lt;/p>&#xa;"
+                string_x0040_description="&lt;p>Located at the very top of Utah's Little Cottonwood Canyon, just next door to Snowbird, Alta is famously one of the last remaining skier-only resorts in the United States, strictly prohibiting snowboarding. Spanning 2,614 acres of skiable terrain, the mountain is blessed by a unique microclimate that drops an astonishing average of 546 inches of exceptionally light, dry snow every year.&lt;/p>&#xa;"
+                string_x0040_headline="Downhill Skiing Alta"
+                string_x0040_shortDescription="&lt;p>Located at the very top of Utah's Little Cottonwood Canyon, just next door to Snowbird, Alta is famously one of the last remaining skier-only resorts in the United States, strictly prohibiting snowboarding. Spanning 2,614 acres of skiable terrain, the mountain is blessed by a unique microclimate that drops an astonishing average of 546 inches of exceptionally light, dry snow every year.&lt;/p>&#xa;"
+                string_x0040_subheadline="Skiing Utah"
+                string_x0040_url="/us/en/articles/downhill-skiing-alta"/>
+            <en
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="5e612e5d-62d0-47c9-ad88-c974abe83e0d"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/articledetail"
+                calendar_x0040_postDate="{Date}2025-12-20T00:00:00.000Z"
+                string_x0040_content="&lt;p>Skiing at Alta Ski Area offers a pure, deeply traditional winter sports experience that is globally revered as a holy grail for powder enthusiasts. Located at the very top of Utah's Little Cottonwood Canyon, just next door to Snowbird, Alta is famously one of the last remaining skier-only resorts in the United States, strictly prohibiting snowboarding. Spanning 2,614 acres of skiable terrain, the mountain is blessed by a unique microclimate that drops an astonishing average of 546 inches of exceptionally light, dry snow every year. Boasting a 2,538-foot vertical drop, the resort features a reliable, high-altitude climate that sustains a long winter calendar running from mid-November through late April.&lt;/p>&#xa;&lt;p>The mountain’s layout is a masterpiece of natural topography, utilizing a system of six modern lifts to unlock a sprawling playground of open bowls, technical chutes, and perfectly spaced pine glades. Alta is legendary for its unique traversing culture, where skiers follow high-alpine side-steps and ridges to access iconic, untouched powder stashes like Mount Baldy, Devil's Castle, and Catherine's Area. The terrain distribution is incredibly balanced, ensuring that while expert freeriders challenge themselves on famous steep lines like Alf's High Rustler, intermediates and beginners can comfortably cruise down wide, meticulously groomed highway runs in the Albion basin.&lt;/p>&#xa;&lt;p>The culture at Alta is intentionally understated, fiercely preserving a nostalgic, community-first atmosphere that resists commercial flashiness. The base area is anchored by a collection of classic, intimate ski lodges—such as the historic Alta Lodge and the Goldminer's Daughter—where guests enjoy communal dining and a passionate, sport-focused après-ski scene. Because the resort is on the Ikon Pass network and directly connects to Snowbird via the Sugarloaf pass, it offers seamless access to one of the greatest ski zones on earth.&lt;/p>&#xa;"
+                string_x0040_description="&lt;p>Located at the very top of Utah's Little Cottonwood Canyon, just next door to Snowbird, Alta is famously one of the last remaining skier-only resorts in the United States, strictly prohibiting snowboarding. Spanning 2,614 acres of skiable terrain, the mountain is blessed by a unique microclimate that drops an astonishing average of 546 inches of exceptionally light, dry snow every year.&lt;/p>&#xa;"
+                string_x0040_headline="Downhill Skiing Alta"
+                string_x0040_subheadline="Skiing Utah"
+                string_x0040_url="/us/en/articles/downhill-skiing-alta"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <model jcr:primaryType="nt:unstructured">
+            <variations jcr:primaryType="nt:unstructured">
+                <en
+                    jcr:description="\0"
+                    jcr:mixinTypes="[cq:Taggable]"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="en"
+                    name="en">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        synchronizeWithVersion="[placeholder:ab51805f-4a7e-4d62-ba93-cfe55f9cf3a6,url:ab51805f-4a7e-4d62-ba93-cfe55f9cf3a6,headline:ab51805f-4a7e-4d62-ba93-cfe55f9cf3a6,subheadline:ab51805f-4a7e-4d62-ba93-cfe55f9cf3a6,description:ab51805f-4a7e-4d62-ba93-cfe55f9cf3a6,bannerImage:ab51805f-4a7e-4d62-ba93-cfe55f9cf3a6,postDate:ab51805f-4a7e-4d62-ba93-cfe55f9cf3a6,placeholder:ab51805f-4a7e-4d62-ba93-cfe55f9cf3a6,content:ab51805f-4a7e-4d62-ba93-cfe55f9cf3a6]"/>
+                </en>
+            </variations>
+        </model>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

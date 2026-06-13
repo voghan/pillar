@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="feb76c87-b04b-4d2a-93df-8dc030cdd786">
+    <jcr:content
+        cq:name="demo-article"
+        cq:parentPath="/content/dam/pillar/cfm/article-detail/demo"
+        jcr:lastModified="{Date}2026-05-25T07:47:30.159-05:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Demo Article"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2026-05-25T07:47:30.159-05:00">
+        <data
+            cq:model="/conf/pillar/settings/dam/cfm/models/articledetail"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                bannerImage="/content/dam/pillar/images/en/homepage/bigsky-hero.jpg"
+                bannerImage_x0040_LastModified="{Date}2026-05-25T07:47:30.102-05:00"
+                bannerImage_x0040_LastModifiedBy="admin"
+                content="&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent auctor arcu nisi. Donec id molestie lacus, quis malesuada metus. Ut quis dapibus nunc. Duis in urna eget velit imperdiet dapibus. Nullam augue dolor, sagittis nec purus vitae, congue euismod nisi. Cras euismod metus vitae auctor hendrerit. Donec nec tristique mauris. Maecenas ac turpis nec lectus volutpat blandit nec nec velit. Fusce ornare nulla id lacus fringilla porttitor. In pellentesque volutpat enim, et ullamcorper nisi efficitur sed. Duis varius semper condimentum. Curabitur blandit gravida lectus, id dapibus ipsum consectetur sed. Donec vulputate, orci eu tempus cursus, elit lorem cursus tortor, in dignissim lorem mi dictum elit. Nulla eget tellus ligula. Duis id feugiat ligula, ac tempus urna.&lt;/p>&#xa;&lt;p>Aliquam vel porta orci. Praesent non risus bibendum, aliquet libero et, pretium arcu. Maecenas ut posuere nulla. Nam id nulla cursus, rhoncus metus semper, ultricies lorem. Ut et urna id magna gravida rhoncus. Curabitur tempus tortor nunc, at placerat tellus tempor lacinia. Aenean eu velit porta, finibus sapien ac, auctor nisi. Mauris efficitur quam eget laoreet pellentesque. Proin sed quam at arcu aliquam gravida.&lt;/p>&#xa;&lt;p>In hac habitasse platea dictumst. Donec quam mauris, auctor et lacinia in, euismod at nisi. Praesent vel lacus et felis eleifend tempor sit amet sit amet odio. Nullam iaculis pretium mattis. Nulla pellentesque neque et accumsan posuere. Sed facilisis mollis augue, nec suscipit est porttitor eget. Duis id ornare nulla. Aliquam erat volutpat. Sed gravida, dui nec pellentesque tempus, libero nunc luctus erat, et lobortis enim justo in diam. Maecenas ac convallis risus, non sagittis tellus. Etiam at risus ex. Nam et ultricies lorem. Nullam lectus quam, lacinia vitae ipsum sit amet, posuere molestie lectus. Pellentesque ipsum tellus, pulvinar sed enim quis, maximus tincidunt nulla. Nunc sagittis non diam quis ultrices.&lt;/p>&#xa;"
+                content_x0040_ContentType="text/html"
+                content_x0040_LastModified="{Date}2026-05-25T07:47:30.111-05:00"
+                content_x0040_LastModifiedBy="admin"
+                description="&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent auctor arcu nisi. Donec id molestie lacus, quis malesuada metus. Ut quis dapibus nunc. Duis in urna eget velit imperdiet dapibus. Nullam augue dolor, sagittis nec purus vitae, congue euismod nisi. Cras euismod metus vitae auctor hendrerit. Donec nec tristique mauris. Maecenas ac turpis nec lectus volutpat blandit nec nec velit. Fusce ornare nulla id lacus fringilla porttitor. In pellentesque volutpat enim, et ullamcorper nisi efficitur sed. Duis varius semper condimentum. Curabitur blandit gravida lectus, id dapibus ipsum consectetur sed. Donec vulputate, orci eu tempus cursus, elit lorem cursus tortor, in dignissim lorem mi dictum elit. Nulla eget tellus ligula. Duis id feugiat ligula, ac tempus urna.&lt;/p>&#xa;&lt;p>Aliquam vel porta orci. Praesent non risus bibendum, aliquet libero et, pretium arcu. Maecenas ut posuere nulla. Nam id nulla cursus, rhoncus metus semper, ultricies lorem. Ut et urna id magna gravida rhoncus. Curabitur tempus tortor nunc, at placerat tellus tempor lacinia. Aenean eu velit porta, finibus sapien ac, auctor nisi. Mauris efficitur quam eget laoreet pellentesque. Proin sed quam at arcu aliquam gravida.&lt;/p>&#xa;&lt;p>In hac habitasse platea dictumst. Donec quam mauris, auctor et lacinia in, euismod at nisi. Praesent vel lacus et felis eleifend tempor sit amet sit amet odio. Nullam iaculis pretium mattis. Nulla pellentesque neque et accumsan posuere. Sed facilisis mollis augue, nec suscipit est porttitor eget. Duis id ornare nulla. Aliquam erat volutpat. Sed gravida, dui nec pellentesque tempus, libero nunc luctus erat, et lobortis enim justo in diam. Maecenas ac convallis risus, non sagittis tellus. Etiam at risus ex. Nam et ultricies lorem. Nullam lectus quam, lacinia vitae ipsum sit amet, posuere molestie lectus. Pellentesque ipsum tellus, pulvinar sed enim quis, maximus tincidunt nulla. Nunc sagittis non diam quis ultrices.&lt;/p>&#xa;"
+                description_x0040_ContentType="text/html"
+                description_x0040_LastModified="{Date}2026-05-25T07:47:30.101-05:00"
+                description_x0040_LastModifiedBy="admin"
+                headline="Demo Article"
+                headline_x0040_LastModified="{Date}2026-05-25T07:47:30.100-05:00"
+                headline_x0040_LastModifiedBy="admin"
+                placeholder_x0040_LastModified="{Date}2026-05-25T07:43:43.798-05:00"
+                postDate="{Date}2026-05-25T00:00:00.000Z"
+                postDate_x0040_LastModified="{Date}2026-05-25T07:47:30.110-05:00"
+                postDate_x0040_LastModifiedBy="admin"
+                subheadline="Subheadline"
+                subheadline_x0040_LastModified="{Date}2026-05-25T07:47:30.100-05:00"
+                subheadline_x0040_LastModifiedBy="admin"
+                url="/us/en/articles/demo-article"
+                url_x0040_LastModified="{Date}2026-05-25T07:47:30.097-05:00"
+                url_x0040_LastModifiedBy="admin"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="e15ef501-90a2-4064-91c4-8b6b2239c651"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/articledetail"
+                _x0040_stringArray_x0040_variations="[]"
+                calendar_x0040_postDate="{Date}2026-05-25T00:00:00.000Z"
+                string_x0040_content="&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent auctor arcu nisi. Donec id molestie lacus, quis malesuada metus. Ut quis dapibus nunc. Duis in urna eget velit imperdiet dapibus. Nullam augue dolor, sagittis nec purus vitae, congue euismod nisi. Cras euismod metus vitae auctor hendrerit. Donec nec tristique mauris. Maecenas ac turpis nec lectus volutpat blandit nec nec velit. Fusce ornare nulla id lacus fringilla porttitor. In pellentesque volutpat enim, et ullamcorper nisi efficitur sed. Duis varius semper condimentum. Curabitur blandit gravida lectus, id dapibus ipsum consectetur sed. Donec vulputate, orci eu tempus cursus, elit lorem cursus tortor, in dignissim lorem mi dictum elit. Nulla eget tellus ligula. Duis id feugiat ligula, ac tempus urna.&lt;/p>&#xa;&lt;p>Aliquam vel porta orci. Praesent non risus bibendum, aliquet libero et, pretium arcu. Maecenas ut posuere nulla. Nam id nulla cursus, rhoncus metus semper, ultricies lorem. Ut et urna id magna gravida rhoncus. Curabitur tempus tortor nunc, at placerat tellus tempor lacinia. Aenean eu velit porta, finibus sapien ac, auctor nisi. Mauris efficitur quam eget laoreet pellentesque. Proin sed quam at arcu aliquam gravida.&lt;/p>&#xa;&lt;p>In hac habitasse platea dictumst. Donec quam mauris, auctor et lacinia in, euismod at nisi. Praesent vel lacus et felis eleifend tempor sit amet sit amet odio. Nullam iaculis pretium mattis. Nulla pellentesque neque et accumsan posuere. Sed facilisis mollis augue, nec suscipit est porttitor eget. Duis id ornare nulla. Aliquam erat volutpat. Sed gravida, dui nec pellentesque tempus, libero nunc luctus erat, et lobortis enim justo in diam. Maecenas ac convallis risus, non sagittis tellus. Etiam at risus ex. Nam et ultricies lorem. Nullam lectus quam, lacinia vitae ipsum sit amet, posuere molestie lectus. Pellentesque ipsum tellus, pulvinar sed enim quis, maximus tincidunt nulla. Nunc sagittis non diam quis ultrices.&lt;/p>&#xa;"
+                string_x0040_description="&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent auctor arcu nisi. Donec id molestie lacus, quis malesuada metus. Ut quis dapibus nunc. Duis in urna eget velit imperdiet dapibus. Nullam augue dolor, sagittis nec purus vitae, congue euismod nisi. Cras euismod metus vitae auctor hendrerit. Donec nec tristique mauris. Maecenas ac turpis nec lectus volutpat blandit nec nec velit. Fusce ornare nulla id lacus fringilla porttitor. In pellentesque volutpat enim, et ullamcorper nisi efficitur sed. Duis varius semper condimentum. Curabitur blandit gravida lectus, id dapibus ipsum consectetur sed. Donec vulputate, orci eu tempus cursus, elit lorem cursus tortor, in dignissim lorem mi dictum elit. Nulla eget tellus ligula. Duis id feugiat ligula, ac tempus urna.&lt;/p>&#xa;&lt;p>Aliquam vel porta orci. Praesent non risus bibendum, aliquet libero et, pretium arcu. Maecenas ut posuere nulla. Nam id nulla cursus, rhoncus metus semper, ultricies lorem. Ut et urna id magna gravida rhoncus. Curabitur tempus tortor nunc, at placerat tellus tempor lacinia. Aenean eu velit porta, finibus sapien ac, auctor nisi. Mauris efficitur quam eget laoreet pellentesque. Proin sed quam at arcu aliquam gravida.&lt;/p>&#xa;&lt;p>In hac habitasse platea dictumst. Donec quam mauris, auctor et lacinia in, euismod at nisi. Praesent vel lacus et felis eleifend tempor sit amet sit amet odio. Nullam iaculis pretium mattis. Nulla pellentesque neque et accumsan posuere. Sed facilisis mollis augue, nec suscipit est porttitor eget. Duis id ornare nulla. Aliquam erat volutpat. Sed gravida, dui nec pellentesque tempus, libero nunc luctus erat, et lobortis enim justo in diam. Maecenas ac convallis risus, non sagittis tellus. Etiam at risus ex. Nam et ultricies lorem. Nullam lectus quam, lacinia vitae ipsum sit amet, posuere molestie lectus. Pellentesque ipsum tellus, pulvinar sed enim quis, maximus tincidunt nulla. Nunc sagittis non diam quis ultrices.&lt;/p>&#xa;"
+                string_x0040_headline="Demo Article"
+                string_x0040_subheadline="Subheadline"
+                string_x0040_url="/us/en/articles/demo-article"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Content-Package-Id: my_packages:pillar-sample-content
+Content-Package-Roots: /content/pillar,/content/dam/pillar,/content/expe
+ rience-fragments/pillar
+Content-Package-Type: content
+

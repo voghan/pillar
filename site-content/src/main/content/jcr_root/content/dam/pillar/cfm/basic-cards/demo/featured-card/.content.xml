@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="e7b031fc-cbec-4fcf-9153-d852e7d707ea">
+    <jcr:content
+        cq:name="featured-card"
+        cq:parentPath="/content/dam/pillar/cfm/basic-cards/demo"
+        jcr:lastModified="{Date}2026-05-24T10:02:56.623-05:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Featured Card"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2026-05-24T10:02:56.623-05:00">
+        <data
+            cq:model="/conf/pillar/settings/dam/cfm/models/card"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                callToActions="[/content/dam/pillar/cfm/links/demo/featured-card]"
+                callToActions_x0040_LastModified="{Date}2026-05-24T10:02:56.584-05:00"
+                callToActions_x0040_LastModifiedBy="admin"
+                headline="Featured Card"
+                headline_x0040_LastModified="{Date}2026-05-24T09:59:30.851-05:00"
+                headline_x0040_LastModifiedBy="admin"
+                shortDescription="&lt;p>The Featured Card component is a banner component that can be used anywhere on the site.&amp;nbsp; The Featured Card has options for title, subtitle, description, image, image position and links.&lt;/p>&#xa;"
+                shortDescription_x0040_ContentType="text/html"
+                shortDescription_x0040_LastModified="{Date}2026-05-24T09:59:30.853-05:00"
+                shortDescription_x0040_LastModifiedBy="admin"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="66d6e9b3-cd95-40c2-858b-b6662f73fa8f"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/card"
+                _x0040_stringArray_x0040_variations="[]"
+                string_x0040_headline="Featured Card"
+                string_x0040_shortDescription="&lt;p>The Featured Card component is a banner component that can be used anywhere on the site.&amp;nbsp; The Featured Card has options for title, subtitle, description, image, image position and links.&lt;/p>&#xa;"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

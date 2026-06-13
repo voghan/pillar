@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="1095b81b-d816-402d-b5aa-c947e8d91006">
+    <jcr:content
+        cq:name="card-list"
+        cq:parentPath="/content/dam/pillar/cfm/basic-cards/demo"
+        jcr:lastModified="{Date}2026-05-04T18:32:37.282-05:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Card List"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2026-05-04T18:32:37.282-05:00">
+        <data
+            cq:model="/conf/pillar/settings/dam/cfm/models/card"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                callToActions="[/content/dam/pillar/cfm/links/demo/demo-card-list]"
+                callToActions_x0040_LastModified="{Date}2026-05-04T18:32:37.027-05:00"
+                callToActions_x0040_LastModifiedBy="admin"
+                headline="Card List"
+                headline_x0040_LastModified="{Date}2026-05-04T18:32:37.023-05:00"
+                headline_x0040_LastModifiedBy="admin"
+                shortDescription="&lt;p>The Card List component is a list component that displays a set of simple cards.&amp;nbsp; The Card List component has options for a path of cards to display.&amp;nbsp;&amp;nbsp;&lt;/p>&#xa;"
+                shortDescription_x0040_ContentType="text/html"
+                shortDescription_x0040_LastModified="{Date}2026-05-03T22:27:18.774-05:00"
+                shortDescription_x0040_LastModifiedBy="admin"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="3836dc6d-27bf-4435-ac6c-0538a5410ebf"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/card"
+                _x0040_stringArray_x0040_variations="[]"
+                string_x0040_headline="Card List"
+                string_x0040_shortDescription="&lt;p>The Card List component is a list component that displays a set of simple cards.&amp;nbsp; The Card List component has options for a path of cards to display.&amp;nbsp;&amp;nbsp;&lt;/p>&#xa;"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

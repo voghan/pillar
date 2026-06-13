@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="54f4d714-42bc-4b65-bcd3-1821ca8d43b2">
+    <jcr:content
+        cq:name="downhill-skiing-bigsky"
+        cq:parentPath="/content/dam/pillar/cfm/article-detail/articles"
+        jcr:lastModified="{Date}2026-05-27T22:43:30.537-05:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="downhill-skiing-bigsky"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2026-05-27T22:43:30.537-05:00">
+        <data
+            cq:model="/conf/pillar/settings/dam/cfm/models/articledetail"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                bannerImage="/content/dam/pillar/images/en/homepage/bigsky-hero.jpg"
+                bannerImage_x0040_LastModified="{Date}2026-05-25T07:52:09.659-05:00"
+                bannerImage_x0040_LastModifiedBy="admin"
+                content="&lt;p>&lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/m/060dbw&quot;>Big Sky Resort&lt;/a>&lt;/u> in Montana offers an expansive alpine experience characterized by its massive 5,850 acres of skiable terrain across four mountains. With an average of 400 inches of consistent annual snowfall, the mountain provides high-quality conditions for its 317 named trails. The terrain is exceptionally diverse, offering a 4,350-foot continuous vertical drop that caters to all skill levels. While the resort is famous for its extreme &amp;quot;triple black diamond&amp;quot; runs and high-alpine chutes, approximately 50 percent of the mountain is dedicated to beginner and intermediate trails, such as the long, gentle cruisers like Mr. K and Sacajawea.&lt;/p>&#xa;&lt;p>The resort’s centerpiece is the Lone Peak Tram, which transports skiers to the 11,166-foot summit of Lone Peak in just four minutes. From the top, visitors can enjoy 360-degree panoramic views spanning three states and two national parks. Expert skiers often tackle iconic, committing lines from the peak like the Big Couloir or the wide-open steeps of the North Summit Snowfield. To support this vast terrain, Big Sky features a technologically advanced lift system that includes North America's only eight-person high-speed chairs and multiple heated &amp;quot;bubble&amp;quot; lifts with weather protection to ensure comfort on cold days.&lt;/p>&#xa;&lt;p>Beyond the slopes, the Mountain Village Base Area serves as a vibrant hub for après-ski and family activities. You can relax at the glass-enclosed Umbrella Bar, which offers craft cocktails and views of Lone Peak, or visit Westward Social for shareable plates. For families, the resort offers dedicated learning centers, six terrain parks, and festive seasonal events like cookie decorating and fireworks. Given your history of visiting Big Sky and your interest in high-performance gear like ZipFit liners, you might also appreciate the &amp;quot;Ski the Sky Loop,&amp;quot; a curated 27-run challenge designed for intermediate and advanced skiers to explore the entire mountain.&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;"
+                content_x0040_ContentType="text/html"
+                content_x0040_LastModified="{Date}2026-05-25T07:52:09.665-05:00"
+                content_x0040_LastModifiedBy="admin"
+                description="&lt;p>&lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/m/060dbw&quot;>Big Sky Resort&lt;/a>&lt;/u> in Montana offers an expansive alpine experience characterized by its massive 5,850 acres of skiable terrain across four mountains. With an average of 400 inches of consistent annual snowfall, the mountain provides high-quality conditions for its 317 named trails. The terrain is exceptionally diverse, offering a 4,350-foot continuous vertical drop that caters to all skill levels. While the resort is famous for its extreme &amp;quot;triple black diamond&amp;quot; runs and high-alpine chutes, approximately 50 percent of the mountain is dedicated to beginner and intermediate trails, such as the long, gentle cruisers like Mr. K and Sacajawea.&lt;/p>&#xa;&lt;p>The resort’s centerpiece is the Lone Peak Tram, which transports skiers to the 11,166-foot summit of Lone Peak in just four minutes. From the top, visitors can enjoy 360-degree panoramic views spanning three states and two national parks. Expert skiers often tackle iconic, committing lines from the peak like the Big Couloir or the wide-open steeps of the North Summit Snowfield. To support this vast terrain, Big Sky features a technologically advanced lift system that includes North America's only eight-person high-speed chairs and multiple heated &amp;quot;bubble&amp;quot; lifts with weather protection to ensure comfort on cold days.&lt;/p>&#xa;&lt;p>Beyond the slopes, the Mountain Village Base Area serves as a vibrant hub for après-ski and family activities. You can relax at the glass-enclosed Umbrella Bar, which offers craft cocktails and views of Lone Peak, or visit Westward Social for shareable plates. For families, the resort offers dedicated learning centers, six terrain parks, and festive seasonal events like cookie decorating and fireworks. Given your history of visiting Big Sky and your interest in high-performance gear like ZipFit liners, you might also appreciate the &amp;quot;Ski the Sky Loop,&amp;quot; a curated 27-run challenge designed for intermediate and advanced skiers to explore the entire mountain.&lt;/p>&#xa;"
+                description_x0040_ContentType="text/html"
+                description_x0040_LastModified="{Date}2026-05-25T07:52:09.659-05:00"
+                description_x0040_LastModifiedBy="admin"
+                headline="Downhill Skiing Big Sky"
+                headline_x0040_LastModified="{Date}2026-05-25T07:52:09.656-05:00"
+                headline_x0040_LastModifiedBy="admin"
+                placeholder_x0040_LastModified="{Date}2026-05-25T07:48:48.848-05:00"
+                postDate="{Date}2026-03-06T00:00:00.000Z"
+                postDate_x0040_LastModified="{Date}2026-05-27T22:43:30.497-05:00"
+                postDate_x0040_LastModifiedBy="admin"
+                shortDescription="&lt;p>With an average of 400 inches of consistent annual snowfall, the mountain provides high-quality conditions for its 317 named trails. The terrain is exceptionally diverse, offering a 4,350-foot continuous vertical drop that caters to all skill levels.&amp;nbsp;&lt;/p>&#xa;"
+                shortDescription_x0040_ContentType="text/html"
+                shortDescription_x0040_LastModified="{Date}2026-05-27T22:43:30.494-05:00"
+                shortDescription_x0040_LastModifiedBy="admin"
+                subheadline="Big Sky Resort"
+                subheadline_x0040_LastModified="{Date}2026-05-25T07:52:09.658-05:00"
+                subheadline_x0040_LastModifiedBy="admin"
+                url="/us/en/articles/downhill-skiing-bigsky"
+                url_x0040_LastModified="{Date}2026-05-25T07:52:09.655-05:00"
+                url_x0040_LastModifiedBy="admin"/>
+            <en
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                _x0040_variationCreationDate="{Date}2026-05-27T18:06:59.536-05:00"
+                bannerImage="/content/dam/pillar/images/en/homepage/bigsky-hero.jpg"
+                bannerImage_x0040_LastModified="{Date}2026-05-27T18:06:59.541-05:00"
+                bannerImage_x0040_LastModifiedBy="admin"
+                content="&lt;p>&lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/m/060dbw&quot;>Big Sky Resort&lt;/a>&lt;/u> in Montana offers an expansive alpine experience characterized by its massive 5,850 acres of skiable terrain across four mountains. With an average of 400 inches of consistent annual snowfall, the mountain provides high-quality conditions for its 317 named trails. The terrain is exceptionally diverse, offering a 4,350-foot continuous vertical drop that caters to all skill levels. While the resort is famous for its extreme &amp;quot;triple black diamond&amp;quot; runs and high-alpine chutes, approximately 50 percent of the mountain is dedicated to beginner and intermediate trails, such as the long, gentle cruisers like Mr. K and Sacajawea.&lt;/p>&#xa;&lt;p>The resort’s centerpiece is the Lone Peak Tram, which transports skiers to the 11,166-foot summit of Lone Peak in just four minutes. From the top, visitors can enjoy 360-degree panoramic views spanning three states and two national parks. Expert skiers often tackle iconic, committing lines from the peak like the Big Couloir or the wide-open steeps of the North Summit Snowfield. To support this vast terrain, Big Sky features a technologically advanced lift system that includes North America's only eight-person high-speed chairs and multiple heated &amp;quot;bubble&amp;quot; lifts with weather protection to ensure comfort on cold days.&lt;/p>&#xa;&lt;p>Beyond the slopes, the Mountain Village Base Area serves as a vibrant hub for après-ski and family activities. You can relax at the glass-enclosed Umbrella Bar, which offers craft cocktails and views of Lone Peak, or visit Westward Social for shareable plates. For families, the resort offers dedicated learning centers, six terrain parks, and festive seasonal events like cookie decorating and fireworks. Given your history of visiting Big Sky and your interest in high-performance gear like ZipFit liners, you might also appreciate the &amp;quot;Ski the Sky Loop,&amp;quot; a curated 27-run challenge designed for intermediate and advanced skiers to explore the entire mountain.&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;"
+                content_x0040_ContentType="text/html"
+                content_x0040_LastModified="{Date}2026-05-27T18:06:59.543-05:00"
+                content_x0040_LastModifiedBy="admin"
+                description="&lt;p>&lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/m/060dbw&quot;>Big Sky Resort&lt;/a>&lt;/u> in Montana offers an expansive alpine experience characterized by its massive 5,850 acres of skiable terrain across four mountains. With an average of 400 inches of consistent annual snowfall, the mountain provides high-quality conditions for its 317 named trails. The terrain is exceptionally diverse, offering a 4,350-foot continuous vertical drop that caters to all skill levels. While the resort is famous for its extreme &amp;quot;triple black diamond&amp;quot; runs and high-alpine chutes, approximately 50 percent of the mountain is dedicated to beginner and intermediate trails, such as the long, gentle cruisers like Mr. K and Sacajawea.&lt;/p>&#xa;&lt;p>The resort’s centerpiece is the Lone Peak Tram, which transports skiers to the 11,166-foot summit of Lone Peak in just four minutes. From the top, visitors can enjoy 360-degree panoramic views spanning three states and two national parks. Expert skiers often tackle iconic, committing lines from the peak like the Big Couloir or the wide-open steeps of the North Summit Snowfield. To support this vast terrain, Big Sky features a technologically advanced lift system that includes North America's only eight-person high-speed chairs and multiple heated &amp;quot;bubble&amp;quot; lifts with weather protection to ensure comfort on cold days.&lt;/p>&#xa;&lt;p>Beyond the slopes, the Mountain Village Base Area serves as a vibrant hub for après-ski and family activities. You can relax at the glass-enclosed Umbrella Bar, which offers craft cocktails and views of Lone Peak, or visit Westward Social for shareable plates. For families, the resort offers dedicated learning centers, six terrain parks, and festive seasonal events like cookie decorating and fireworks. Given your history of visiting Big Sky and your interest in high-performance gear like ZipFit liners, you might also appreciate the &amp;quot;Ski the Sky Loop,&amp;quot; a curated 27-run challenge designed for intermediate and advanced skiers to explore the entire mountain.&lt;/p>&#xa;"
+                description_x0040_ContentType="text/html"
+                description_x0040_LastModified="{Date}2026-05-27T18:06:59.540-05:00"
+                description_x0040_LastModifiedBy="admin"
+                headline="Downhill Skiing Big Sky"
+                headline_x0040_LastModified="{Date}2026-05-27T18:06:59.538-05:00"
+                headline_x0040_LastModifiedBy="admin"
+                placeholder_x0040_LastModified="{Date}2026-05-27T18:06:59.542-05:00"
+                placeholder_x0040_LastModifiedBy="admin"
+                postDate="{Date}2026-03-06T00:00:00.000Z"
+                postDate_x0040_LastModified="{Date}2026-05-27T18:06:59.542-05:00"
+                postDate_x0040_LastModifiedBy="admin"
+                subheadline="Big Sky Resort"
+                subheadline_x0040_LastModified="{Date}2026-05-27T18:06:59.539-05:00"
+                subheadline_x0040_LastModifiedBy="admin"
+                url="/us/en/articles/downhill-skiing-bigsky"
+                url_x0040_LastModified="{Date}2026-05-27T18:06:59.538-05:00"
+                url_x0040_LastModifiedBy="admin"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="7a25a737-b05c-47d6-9373-ab232adf8c9e"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/articledetail"
+                _x0040_stringArray_x0040_variations="[en]"
+                calendar_x0040_postDate="{Date}2026-03-06T00:00:00.000Z"
+                string_x0040_content="&lt;p>&lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/m/060dbw&quot;>Big Sky Resort&lt;/a>&lt;/u> in Montana offers an expansive alpine experience characterized by its massive 5,850 acres of skiable terrain across four mountains. With an average of 400 inches of consistent annual snowfall, the mountain provides high-quality conditions for its 317 named trails. The terrain is exceptionally diverse, offering a 4,350-foot continuous vertical drop that caters to all skill levels. While the resort is famous for its extreme &amp;quot;triple black diamond&amp;quot; runs and high-alpine chutes, approximately 50 percent of the mountain is dedicated to beginner and intermediate trails, such as the long, gentle cruisers like Mr. K and Sacajawea.&lt;/p>&#xa;&lt;p>The resort’s centerpiece is the Lone Peak Tram, which transports skiers to the 11,166-foot summit of Lone Peak in just four minutes. From the top, visitors can enjoy 360-degree panoramic views spanning three states and two national parks. Expert skiers often tackle iconic, committing lines from the peak like the Big Couloir or the wide-open steeps of the North Summit Snowfield. To support this vast terrain, Big Sky features a technologically advanced lift system that includes North America's only eight-person high-speed chairs and multiple heated &amp;quot;bubble&amp;quot; lifts with weather protection to ensure comfort on cold days.&lt;/p>&#xa;&lt;p>Beyond the slopes, the Mountain Village Base Area serves as a vibrant hub for après-ski and family activities. You can relax at the glass-enclosed Umbrella Bar, which offers craft cocktails and views of Lone Peak, or visit Westward Social for shareable plates. For families, the resort offers dedicated learning centers, six terrain parks, and festive seasonal events like cookie decorating and fireworks. Given your history of visiting Big Sky and your interest in high-performance gear like ZipFit liners, you might also appreciate the &amp;quot;Ski the Sky Loop,&amp;quot; a curated 27-run challenge designed for intermediate and advanced skiers to explore the entire mountain.&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;"
+                string_x0040_description="&lt;p>&lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/m/060dbw&quot;>Big Sky Resort&lt;/a>&lt;/u> in Montana offers an expansive alpine experience characterized by its massive 5,850 acres of skiable terrain across four mountains. With an average of 400 inches of consistent annual snowfall, the mountain provides high-quality conditions for its 317 named trails. The terrain is exceptionally diverse, offering a 4,350-foot continuous vertical drop that caters to all skill levels. While the resort is famous for its extreme &amp;quot;triple black diamond&amp;quot; runs and high-alpine chutes, approximately 50 percent of the mountain is dedicated to beginner and intermediate trails, such as the long, gentle cruisers like Mr. K and Sacajawea.&lt;/p>&#xa;&lt;p>The resort’s centerpiece is the Lone Peak Tram, which transports skiers to the 11,166-foot summit of Lone Peak in just four minutes. From the top, visitors can enjoy 360-degree panoramic views spanning three states and two national parks. Expert skiers often tackle iconic, committing lines from the peak like the Big Couloir or the wide-open steeps of the North Summit Snowfield. To support this vast terrain, Big Sky features a technologically advanced lift system that includes North America's only eight-person high-speed chairs and multiple heated &amp;quot;bubble&amp;quot; lifts with weather protection to ensure comfort on cold days.&lt;/p>&#xa;&lt;p>Beyond the slopes, the Mountain Village Base Area serves as a vibrant hub for après-ski and family activities. You can relax at the glass-enclosed Umbrella Bar, which offers craft cocktails and views of Lone Peak, or visit Westward Social for shareable plates. For families, the resort offers dedicated learning centers, six terrain parks, and festive seasonal events like cookie decorating and fireworks. Given your history of visiting Big Sky and your interest in high-performance gear like ZipFit liners, you might also appreciate the &amp;quot;Ski the Sky Loop,&amp;quot; a curated 27-run challenge designed for intermediate and advanced skiers to explore the entire mountain.&lt;/p>&#xa;"
+                string_x0040_headline="Downhill Skiing Big Sky"
+                string_x0040_shortDescription="&lt;p>With an average of 400 inches of consistent annual snowfall, the mountain provides high-quality conditions for its 317 named trails. The terrain is exceptionally diverse, offering a 4,350-foot continuous vertical drop that caters to all skill levels.&amp;nbsp;&lt;/p>&#xa;"
+                string_x0040_subheadline="Big Sky Resort"
+                string_x0040_url="/us/en/articles/downhill-skiing-bigsky"/>
+            <en
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="460832ed-19d3-43f9-b45b-4ffb0fb60fa8"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/articledetail"
+                calendar_x0040_postDate="{Date}2026-03-06T00:00:00.000Z"
+                string_x0040_content="&lt;p>&lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/m/060dbw&quot;>Big Sky Resort&lt;/a>&lt;/u> in Montana offers an expansive alpine experience characterized by its massive 5,850 acres of skiable terrain across four mountains. With an average of 400 inches of consistent annual snowfall, the mountain provides high-quality conditions for its 317 named trails. The terrain is exceptionally diverse, offering a 4,350-foot continuous vertical drop that caters to all skill levels. While the resort is famous for its extreme &amp;quot;triple black diamond&amp;quot; runs and high-alpine chutes, approximately 50 percent of the mountain is dedicated to beginner and intermediate trails, such as the long, gentle cruisers like Mr. K and Sacajawea.&lt;/p>&#xa;&lt;p>The resort’s centerpiece is the Lone Peak Tram, which transports skiers to the 11,166-foot summit of Lone Peak in just four minutes. From the top, visitors can enjoy 360-degree panoramic views spanning three states and two national parks. Expert skiers often tackle iconic, committing lines from the peak like the Big Couloir or the wide-open steeps of the North Summit Snowfield. To support this vast terrain, Big Sky features a technologically advanced lift system that includes North America's only eight-person high-speed chairs and multiple heated &amp;quot;bubble&amp;quot; lifts with weather protection to ensure comfort on cold days.&lt;/p>&#xa;&lt;p>Beyond the slopes, the Mountain Village Base Area serves as a vibrant hub for après-ski and family activities. You can relax at the glass-enclosed Umbrella Bar, which offers craft cocktails and views of Lone Peak, or visit Westward Social for shareable plates. For families, the resort offers dedicated learning centers, six terrain parks, and festive seasonal events like cookie decorating and fireworks. Given your history of visiting Big Sky and your interest in high-performance gear like ZipFit liners, you might also appreciate the &amp;quot;Ski the Sky Loop,&amp;quot; a curated 27-run challenge designed for intermediate and advanced skiers to explore the entire mountain.&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;"
+                string_x0040_description="&lt;p>&lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/m/060dbw&quot;>Big Sky Resort&lt;/a>&lt;/u> in Montana offers an expansive alpine experience characterized by its massive 5,850 acres of skiable terrain across four mountains. With an average of 400 inches of consistent annual snowfall, the mountain provides high-quality conditions for its 317 named trails. The terrain is exceptionally diverse, offering a 4,350-foot continuous vertical drop that caters to all skill levels. While the resort is famous for its extreme &amp;quot;triple black diamond&amp;quot; runs and high-alpine chutes, approximately 50 percent of the mountain is dedicated to beginner and intermediate trails, such as the long, gentle cruisers like Mr. K and Sacajawea.&lt;/p>&#xa;&lt;p>The resort’s centerpiece is the Lone Peak Tram, which transports skiers to the 11,166-foot summit of Lone Peak in just four minutes. From the top, visitors can enjoy 360-degree panoramic views spanning three states and two national parks. Expert skiers often tackle iconic, committing lines from the peak like the Big Couloir or the wide-open steeps of the North Summit Snowfield. To support this vast terrain, Big Sky features a technologically advanced lift system that includes North America's only eight-person high-speed chairs and multiple heated &amp;quot;bubble&amp;quot; lifts with weather protection to ensure comfort on cold days.&lt;/p>&#xa;&lt;p>Beyond the slopes, the Mountain Village Base Area serves as a vibrant hub for après-ski and family activities. You can relax at the glass-enclosed Umbrella Bar, which offers craft cocktails and views of Lone Peak, or visit Westward Social for shareable plates. For families, the resort offers dedicated learning centers, six terrain parks, and festive seasonal events like cookie decorating and fireworks. Given your history of visiting Big Sky and your interest in high-performance gear like ZipFit liners, you might also appreciate the &amp;quot;Ski the Sky Loop,&amp;quot; a curated 27-run challenge designed for intermediate and advanced skiers to explore the entire mountain.&lt;/p>&#xa;"
+                string_x0040_headline="Downhill Skiing Big Sky"
+                string_x0040_subheadline="Big Sky Resort"
+                string_x0040_url="/us/en/articles/downhill-skiing-bigsky"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <model jcr:primaryType="nt:unstructured">
+            <variations jcr:primaryType="nt:unstructured">
+                <en
+                    jcr:description="\0"
+                    jcr:mixinTypes="[cq:Taggable]"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="en"
+                    name="en">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        synchronizeWithVersion="[placeholder:aa6b082b-09be-4424-8a4b-8b5f5b341238,url:aa6b082b-09be-4424-8a4b-8b5f5b341238,headline:aa6b082b-09be-4424-8a4b-8b5f5b341238,subheadline:aa6b082b-09be-4424-8a4b-8b5f5b341238,description:aa6b082b-09be-4424-8a4b-8b5f5b341238,bannerImage:aa6b082b-09be-4424-8a4b-8b5f5b341238,postDate:aa6b082b-09be-4424-8a4b-8b5f5b341238,placeholder:aa6b082b-09be-4424-8a4b-8b5f5b341238,content:aa6b082b-09be-4424-8a4b-8b5f5b341238]"/>
+                </en>
+            </variations>
+        </model>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="d7dd7ba5-dff3-4f9d-be79-a0decd301d5f">
+    <jcr:content
+        cq:name="downhill-skiing-kirkwood"
+        cq:parentPath="/content/dam/pillar/cfm/article-detail/articles"
+        jcr:lastModified="{Date}2026-05-31T13:26:31.388-05:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="downhill-skiing-kirkwood"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2026-05-31T13:26:31.388-05:00">
+        <data
+            cq:model="/conf/pillar/settings/dam/cfm/models/articledetail"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                bannerImage_x0040_LastModified="{Date}2026-05-27T17:56:06.366-05:00"
+                content="&lt;p>Skiing at Kirkwood Mountain Resort offers an intense, authentic big-mountain experience that stands out as the hidden gem of the Lake Tahoe region. Situated 35 miles south of South Lake Tahoe along Carson Pass, Kirkwood's unique geographic placement creates a microclimate known as the &amp;quot;K-Factor.&amp;quot; This phenomenon drops an astonishing average of 354 inches of deep, exceptionally dry snow every year, often outperforming surrounding Tahoe resorts in both snow quality and depth. Spanning 2,300 acres of skiable terrain with a substantial 2,000-foot vertical drop, the resort features a high base elevation of 7,800 feet, ensuring a reliable, long-lasting winter season that typically runs from late November through April.&lt;/p>&#xa;&lt;p>The resort’s unique topography is defined by a massive, two-mile-long ridgeline that serves up some of the most challenging in-bounds terrain in North America. This setup makes Kirkwood a legendary paradise for advanced and expert freeriders, who flock to the mountain to test their skills on the steep chutes, intense cliff drops, and technical cornices of the iconic The Wall (Chair 10) and the legendary Wagon Wheel (Chair 6). However, the mountain is cleverly split; while the upper ridges cater to adrenaline seekers, the lower mountain and the separate Timber Creek base area offer isolated, incredibly gentle, and wide-open highway runs perfectly suited for beginners and progressing intermediates.&lt;/p>&#xa;&lt;p>The culture at Kirkwood is intentionally rugged, remote, and deeply focused on the pure sport of skiing and snowboarding, contrasting sharply with the commercial flashiness of Vail or Heavenly. The base village is small and understated, prioritizing functional amenities, cozy local pubs like the historic Kirkwood Inn, and a tight-knit community atmosphere where riders swap powder stories after a long day of charging the steeps. As a prominent destination on the Epic Pass network, Kirkwood provides an essential, untamed backcountry-style experience that remains a mandatory pilgrimage for any serious winter sports enthusiast visiting Northern California.&lt;/p>&#xa;"
+                content_x0040_ContentType="text/html"
+                content_x0040_LastModified="{Date}2026-05-27T17:57:53.900-05:00"
+                content_x0040_LastModifiedBy="admin"
+                description="&lt;p>Situated 35 miles south of South Lake Tahoe along Carson Pass, Kirkwood's unique geographic placement creates a microclimate known as the &amp;quot;K-Factor.&amp;quot; This phenomenon drops an astonishing average of 354 inches of deep, exceptionally dry snow every year, often outperforming surrounding Tahoe resorts in both snow quality and depth&lt;/p>&#xa;"
+                description_x0040_ContentType="text/html"
+                description_x0040_LastModified="{Date}2026-05-27T17:57:53.890-05:00"
+                description_x0040_LastModifiedBy="admin"
+                headline="Downhill Skiing Kirkwood"
+                headline_x0040_LastModified="{Date}2026-05-27T17:57:53.888-05:00"
+                headline_x0040_LastModifiedBy="admin"
+                placeholder_x0040_LastModified="{Date}2026-05-27T17:56:06.366-05:00"
+                postDate="{Date}2026-02-14T00:00:00.000Z"
+                postDate_x0040_LastModified="{Date}2026-05-31T13:26:13.925-05:00"
+                postDate_x0040_LastModifiedBy="admin"
+                shortDescription="&lt;p>Situated 35 miles south of South Lake Tahoe along Carson Pass, Kirkwood's unique geographic placement creates a microclimate known as the &amp;quot;K-Factor.&amp;quot; This phenomenon drops an astonishing average of 354 inches of deep, exceptionally dry snow every year, often outperforming surrounding Tahoe resorts in both snow quality and depth&lt;/p>&#xa;"
+                shortDescription_x0040_ContentType="text/html"
+                shortDescription_x0040_LastModified="{Date}2026-05-27T22:31:28.439-05:00"
+                shortDescription_x0040_LastModifiedBy="admin"
+                subheadline="Lake Tahoe"
+                subheadline_x0040_LastModified="{Date}2026-05-27T17:57:53.890-05:00"
+                subheadline_x0040_LastModifiedBy="admin"
+                url="/us/en/articles/downhill-skiing-kirkwood"
+                url_x0040_LastModified="{Date}2026-05-31T13:26:13.922-05:00"
+                url_x0040_LastModifiedBy="admin"/>
+            <en
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                _x0040_variationCreationDate="{Date}2026-05-27T18:07:18.820-05:00"
+                bannerImage_x0040_LastModified="{Date}2026-05-27T18:07:18.826-05:00"
+                bannerImage_x0040_LastModifiedBy="admin"
+                content="&lt;p>Skiing at Kirkwood Mountain Resort offers an intense, authentic big-mountain experience that stands out as the hidden gem of the Lake Tahoe region. Situated 35 miles south of South Lake Tahoe along Carson Pass, Kirkwood's unique geographic placement creates a microclimate known as the &amp;quot;K-Factor.&amp;quot; This phenomenon drops an astonishing average of 354 inches of deep, exceptionally dry snow every year, often outperforming surrounding Tahoe resorts in both snow quality and depth. Spanning 2,300 acres of skiable terrain with a substantial 2,000-foot vertical drop, the resort features a high base elevation of 7,800 feet, ensuring a reliable, long-lasting winter season that typically runs from late November through April.&lt;/p>&#xa;&lt;p>The resort’s unique topography is defined by a massive, two-mile-long ridgeline that serves up some of the most challenging in-bounds terrain in North America. This setup makes Kirkwood a legendary paradise for advanced and expert freeriders, who flock to the mountain to test their skills on the steep chutes, intense cliff drops, and technical cornices of the iconic The Wall (Chair 10) and the legendary Wagon Wheel (Chair 6). However, the mountain is cleverly split; while the upper ridges cater to adrenaline seekers, the lower mountain and the separate Timber Creek base area offer isolated, incredibly gentle, and wide-open highway runs perfectly suited for beginners and progressing intermediates.&lt;/p>&#xa;&lt;p>The culture at Kirkwood is intentionally rugged, remote, and deeply focused on the pure sport of skiing and snowboarding, contrasting sharply with the commercial flashiness of Vail or Heavenly. The base village is small and understated, prioritizing functional amenities, cozy local pubs like the historic Kirkwood Inn, and a tight-knit community atmosphere where riders swap powder stories after a long day of charging the steeps. As a prominent destination on the Epic Pass network, Kirkwood provides an essential, untamed backcountry-style experience that remains a mandatory pilgrimage for any serious winter sports enthusiast visiting Northern California.&lt;/p>&#xa;"
+                content_x0040_ContentType="text/html"
+                content_x0040_LastModified="{Date}2026-05-27T18:07:18.829-05:00"
+                content_x0040_LastModifiedBy="admin"
+                description="&lt;p>Situated 35 miles south of South Lake Tahoe along Carson Pass, Kirkwood's unique geographic placement creates a microclimate known as the &amp;quot;K-Factor.&amp;quot; This phenomenon drops an astonishing average of 354 inches of deep, exceptionally dry snow every year, often outperforming surrounding Tahoe resorts in both snow quality and depth&lt;/p>&#xa;"
+                description_x0040_ContentType="text/html"
+                description_x0040_LastModified="{Date}2026-05-27T18:07:18.826-05:00"
+                description_x0040_LastModifiedBy="admin"
+                headline="Downhill Skiing Kirkwood"
+                headline_x0040_LastModified="{Date}2026-05-27T18:07:18.824-05:00"
+                headline_x0040_LastModifiedBy="admin"
+                placeholder_x0040_LastModified="{Date}2026-05-27T18:07:18.828-05:00"
+                placeholder_x0040_LastModifiedBy="admin"
+                postDate="{Date}2026-02-14T00:00:00.000Z"
+                postDate_x0040_LastModified="{Date}2026-05-31T13:26:31.336-05:00"
+                postDate_x0040_LastModifiedBy="admin"
+                shortDescription_x0040_ContentType="text/html"
+                shortDescription_x0040_LastModified="{Date}2026-05-31T13:26:31.334-05:00"
+                shortDescription_x0040_LastModifiedBy="admin"
+                subheadline="Lake Tahoe"
+                subheadline_x0040_LastModified="{Date}2026-05-27T18:07:18.825-05:00"
+                subheadline_x0040_LastModifiedBy="admin"
+                url="/us/en/articles/downhill-skiing-kirkwood"
+                url_x0040_LastModified="{Date}2026-05-31T13:26:31.326-05:00"
+                url_x0040_LastModifiedBy="admin"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="d778c99e-959b-4c8b-b91e-9c5389b75766"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/articledetail"
+                _x0040_stringArray_x0040_variations="[en]"
+                calendar_x0040_postDate="{Date}2026-02-14T00:00:00.000Z"
+                string_x0040_content="&lt;p>Skiing at Kirkwood Mountain Resort offers an intense, authentic big-mountain experience that stands out as the hidden gem of the Lake Tahoe region. Situated 35 miles south of South Lake Tahoe along Carson Pass, Kirkwood's unique geographic placement creates a microclimate known as the &amp;quot;K-Factor.&amp;quot; This phenomenon drops an astonishing average of 354 inches of deep, exceptionally dry snow every year, often outperforming surrounding Tahoe resorts in both snow quality and depth. Spanning 2,300 acres of skiable terrain with a substantial 2,000-foot vertical drop, the resort features a high base elevation of 7,800 feet, ensuring a reliable, long-lasting winter season that typically runs from late November through April.&lt;/p>&#xa;&lt;p>The resort’s unique topography is defined by a massive, two-mile-long ridgeline that serves up some of the most challenging in-bounds terrain in North America. This setup makes Kirkwood a legendary paradise for advanced and expert freeriders, who flock to the mountain to test their skills on the steep chutes, intense cliff drops, and technical cornices of the iconic The Wall (Chair 10) and the legendary Wagon Wheel (Chair 6). However, the mountain is cleverly split; while the upper ridges cater to adrenaline seekers, the lower mountain and the separate Timber Creek base area offer isolated, incredibly gentle, and wide-open highway runs perfectly suited for beginners and progressing intermediates.&lt;/p>&#xa;&lt;p>The culture at Kirkwood is intentionally rugged, remote, and deeply focused on the pure sport of skiing and snowboarding, contrasting sharply with the commercial flashiness of Vail or Heavenly. The base village is small and understated, prioritizing functional amenities, cozy local pubs like the historic Kirkwood Inn, and a tight-knit community atmosphere where riders swap powder stories after a long day of charging the steeps. As a prominent destination on the Epic Pass network, Kirkwood provides an essential, untamed backcountry-style experience that remains a mandatory pilgrimage for any serious winter sports enthusiast visiting Northern California.&lt;/p>&#xa;"
+                string_x0040_description="&lt;p>Situated 35 miles south of South Lake Tahoe along Carson Pass, Kirkwood's unique geographic placement creates a microclimate known as the &amp;quot;K-Factor.&amp;quot; This phenomenon drops an astonishing average of 354 inches of deep, exceptionally dry snow every year, often outperforming surrounding Tahoe resorts in both snow quality and depth&lt;/p>&#xa;"
+                string_x0040_headline="Downhill Skiing Kirkwood"
+                string_x0040_shortDescription="&lt;p>Situated 35 miles south of South Lake Tahoe along Carson Pass, Kirkwood's unique geographic placement creates a microclimate known as the &amp;quot;K-Factor.&amp;quot; This phenomenon drops an astonishing average of 354 inches of deep, exceptionally dry snow every year, often outperforming surrounding Tahoe resorts in both snow quality and depth&lt;/p>&#xa;"
+                string_x0040_subheadline="Lake Tahoe"
+                string_x0040_url="/us/en/articles/downhill-skiing-kirkwood"/>
+            <en
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="9f443c4e-cadb-42fc-ac34-f56882eff89b"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/articledetail"
+                calendar_x0040_postDate="{Date}2026-02-14T00:00:00.000Z"
+                string_x0040_content="&lt;p>Skiing at Kirkwood Mountain Resort offers an intense, authentic big-mountain experience that stands out as the hidden gem of the Lake Tahoe region. Situated 35 miles south of South Lake Tahoe along Carson Pass, Kirkwood's unique geographic placement creates a microclimate known as the &amp;quot;K-Factor.&amp;quot; This phenomenon drops an astonishing average of 354 inches of deep, exceptionally dry snow every year, often outperforming surrounding Tahoe resorts in both snow quality and depth. Spanning 2,300 acres of skiable terrain with a substantial 2,000-foot vertical drop, the resort features a high base elevation of 7,800 feet, ensuring a reliable, long-lasting winter season that typically runs from late November through April.&lt;/p>&#xa;&lt;p>The resort’s unique topography is defined by a massive, two-mile-long ridgeline that serves up some of the most challenging in-bounds terrain in North America. This setup makes Kirkwood a legendary paradise for advanced and expert freeriders, who flock to the mountain to test their skills on the steep chutes, intense cliff drops, and technical cornices of the iconic The Wall (Chair 10) and the legendary Wagon Wheel (Chair 6). However, the mountain is cleverly split; while the upper ridges cater to adrenaline seekers, the lower mountain and the separate Timber Creek base area offer isolated, incredibly gentle, and wide-open highway runs perfectly suited for beginners and progressing intermediates.&lt;/p>&#xa;&lt;p>The culture at Kirkwood is intentionally rugged, remote, and deeply focused on the pure sport of skiing and snowboarding, contrasting sharply with the commercial flashiness of Vail or Heavenly. The base village is small and understated, prioritizing functional amenities, cozy local pubs like the historic Kirkwood Inn, and a tight-knit community atmosphere where riders swap powder stories after a long day of charging the steeps. As a prominent destination on the Epic Pass network, Kirkwood provides an essential, untamed backcountry-style experience that remains a mandatory pilgrimage for any serious winter sports enthusiast visiting Northern California.&lt;/p>&#xa;"
+                string_x0040_description="&lt;p>Situated 35 miles south of South Lake Tahoe along Carson Pass, Kirkwood's unique geographic placement creates a microclimate known as the &amp;quot;K-Factor.&amp;quot; This phenomenon drops an astonishing average of 354 inches of deep, exceptionally dry snow every year, often outperforming surrounding Tahoe resorts in both snow quality and depth&lt;/p>&#xa;"
+                string_x0040_headline="Downhill Skiing Kirkwood"
+                string_x0040_subheadline="Lake Tahoe"
+                string_x0040_url="/us/en/articles/downhill-skiing-kirkwood"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured">
+            <dam:cfVariations jcr:primaryType="nt:unstructured">
+                <en
+                    jcr:mixinTypes="[cq:Taggable]"
+                    jcr:primaryType="nt:unstructured"/>
+            </dam:cfVariations>
+        </metadata>
+        <model jcr:primaryType="nt:unstructured">
+            <variations jcr:primaryType="nt:unstructured">
+                <en
+                    jcr:description="\0"
+                    jcr:mixinTypes="[cq:Taggable]"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="en"
+                    name="en">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        synchronizeWithVersion="[placeholder:7ae48518-41c1-4596-ae88-f69588d88cf3,url:7ae48518-41c1-4596-ae88-f69588d88cf3,headline:7ae48518-41c1-4596-ae88-f69588d88cf3,subheadline:7ae48518-41c1-4596-ae88-f69588d88cf3,description:7ae48518-41c1-4596-ae88-f69588d88cf3,bannerImage:7ae48518-41c1-4596-ae88-f69588d88cf3,postDate:7ae48518-41c1-4596-ae88-f69588d88cf3,placeholder:7ae48518-41c1-4596-ae88-f69588d88cf3,content:7ae48518-41c1-4596-ae88-f69588d88cf3]"/>
+                </en>
+            </variations>
+        </model>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="45178a68-b857-4b26-a4c6-ac1df7c8feef">
+    <jcr:content
+        cq:name="featured-card"
+        cq:parentPath="/content/dam/pillar/cfm/links/demo"
+        jcr:lastModified="{Date}2026-05-24T10:02:20.722-05:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Featured Card"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2026-05-24T10:02:20.722-05:00">
+        <data
+            cq:model="/conf/pillar/settings/dam/cfm/models/link"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                linkPath="/content/pillar/language-head/en/demo/featured-card"
+                linkPath_x0040_LastModified="{Date}2026-05-24T10:02:20.670-05:00"
+                linkPath_x0040_LastModifiedBy="admin"
+                linkText="Featured Card"
+                linkText_x0040_LastModified="{Date}2026-05-24T10:02:20.669-05:00"
+                linkText_x0040_LastModifiedBy="admin"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="cb80d3c4-3504-48dc-bc26-ebe47125105b"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/link"
+                _x0040_stringArray_x0040_variations="[]"
+                string_x0040_linkText="Featured Card"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="f9a85ae7-f6ec-4b2c-9002-4178ed6adc9a">
+    <jcr:content
+        cq:name="downhill-skiing-lake-louise"
+        cq:parentPath="/content/dam/pillar/cfm/article-detail/articles"
+        jcr:lastModified="{Date}2026-05-27T22:33:30.327-05:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="downhill-skiing-lake-louise"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2026-05-27T22:33:30.327-05:00">
+        <data
+            cq:model="/conf/pillar/settings/dam/cfm/models/articledetail"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                bannerImage_x0040_LastModified="{Date}2026-05-27T17:38:19.614-05:00"
+                content="&lt;p>Skiing at &lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/m/0drypv&quot;>Lake Louise Ski Resort&lt;/a>&lt;/u> offers a legendary alpine experience that pairs vast terrain with some of the most striking, postcard-perfect scenery in the global winter sports community. Situated in the heart of Alberta's pristine Banff National Park, this massive destination spans 4,200 acres of skiable terrain spread across five distinct mountain faces. It comfortably ranks as one of the largest ski resorts in North America, boasting a substantial 3,250-foot vertical drop and a layout of up to 170 named runs. The resort is uniquely configured as a &amp;quot;friendly giant,&amp;quot; meaning that beginner, intermediate, and expert trails trace down from nearly every single chairlift. This inclusive design allows groups of vastly different skill levels to ride the lifts together and meet up at the bottom of each run.&lt;/p>&#xa;&lt;p>The mountain is broadly segmented into distinct zones that provide entirely different skiing environments. The front side features long, rolling intermediate cruisers and tree-lined pathways perfect for carving, while the subalpine Larch area provides exceptional glade skiing. For advanced and expert skiers looking to push their limits, the towering backside bowls and the newly fully integrated West Bowl serve up steep chutes, dramatic rock ridges, and wide-open expanses of signature Canadian Rockies powder. Because the resort enjoys a cold northern climate and a high base elevation of 5,400 feet, it maintains a remarkably reliable, dry snowpack. This reliable climate supports an extensive winter calendar stretching from early November through early May.&lt;/p>&#xa;&lt;p>The skiing environment is matched by a storied alpine culture and a classic Canadian lodge atmosphere. Skiers can take mid-day breaks to warm up with slope-side dining at the historic base chalets or take in the sweeping panoramic views of ice-capped peaks and glaciers from the mid-mountain Whitehorn Bistro. While there is no major commercial lodging directly at the mountain's immediate base, the charming hamlet of Lake Louise sits just minutes away, anchored by iconic luxury properties like the Fairmont Chateau Lake Louise. Beyond the downhill slopes, visitors can easily round out their vacation with iconic winter experiences, such as ice skating across the deeply frozen, snow-draped lake or taking a horse-drawn sleigh ride beneath the Victoria Glacier.&lt;/p>&#xa;"
+                content_x0040_ContentType="text/html"
+                content_x0040_LastModified="{Date}2026-05-27T17:39:48.264-05:00"
+                content_x0040_LastModifiedBy="admin"
+                description="&lt;p>Situated in the heart of Alberta's pristine Banff National Park, this massive destination spans 4,200 acres of skiable terrain spread across five distinct mountain faces. It comfortably ranks as one of the largest ski resorts in North America, boasting a substantial 3,250-foot vertical drop and a layout of up to 170 named runs.&amp;nbsp;&lt;/p>&#xa;"
+                description_x0040_ContentType="text/html"
+                description_x0040_LastModified="{Date}2026-05-27T17:39:48.241-05:00"
+                description_x0040_LastModifiedBy="admin"
+                headline="Downhill Skiing Lake Louise"
+                headline_x0040_LastModified="{Date}2026-05-27T17:39:48.233-05:00"
+                headline_x0040_LastModifiedBy="admin"
+                placeholder_x0040_LastModified="{Date}2026-05-27T17:38:19.614-05:00"
+                postDate="{Date}2026-09-01T00:00:00.000Z"
+                postDate_x0040_LastModified="{Date}2026-05-27T22:33:30.289-05:00"
+                postDate_x0040_LastModifiedBy="admin"
+                shortDescription="&lt;p>Situated in the heart of Alberta's pristine Banff National Park, this massive destination spans 4,200 acres of skiable terrain spread across five distinct mountain faces. It comfortably ranks as one of the largest ski resorts in North America, boasting a substantial 3,250-foot vertical drop and a layout of up to 170 named runs.&amp;nbsp;&lt;/p>&#xa;"
+                shortDescription_x0040_ContentType="text/html"
+                shortDescription_x0040_LastModified="{Date}2026-05-27T22:33:30.285-05:00"
+                shortDescription_x0040_LastModifiedBy="admin"
+                subheadline="Ski Big Three"
+                subheadline_x0040_LastModified="{Date}2026-05-27T17:39:48.236-05:00"
+                subheadline_x0040_LastModifiedBy="admin"
+                url="/us/en/articles/downhill-lake-louise"
+                url_x0040_LastModified="{Date}2026-05-27T17:39:48.227-05:00"
+                url_x0040_LastModifiedBy="admin"/>
+            <en
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                _x0040_variationCreationDate="{Date}2026-05-27T18:08:04.913-05:00"
+                bannerImage_x0040_LastModified="{Date}2026-05-27T18:08:04.921-05:00"
+                bannerImage_x0040_LastModifiedBy="admin"
+                content="&lt;p>Skiing at &lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/m/0drypv&quot;>Lake Louise Ski Resort&lt;/a>&lt;/u> offers a legendary alpine experience that pairs vast terrain with some of the most striking, postcard-perfect scenery in the global winter sports community. Situated in the heart of Alberta's pristine Banff National Park, this massive destination spans 4,200 acres of skiable terrain spread across five distinct mountain faces. It comfortably ranks as one of the largest ski resorts in North America, boasting a substantial 3,250-foot vertical drop and a layout of up to 170 named runs. The resort is uniquely configured as a &amp;quot;friendly giant,&amp;quot; meaning that beginner, intermediate, and expert trails trace down from nearly every single chairlift. This inclusive design allows groups of vastly different skill levels to ride the lifts together and meet up at the bottom of each run.&lt;/p>&#xa;&lt;p>The mountain is broadly segmented into distinct zones that provide entirely different skiing environments. The front side features long, rolling intermediate cruisers and tree-lined pathways perfect for carving, while the subalpine Larch area provides exceptional glade skiing. For advanced and expert skiers looking to push their limits, the towering backside bowls and the newly fully integrated West Bowl serve up steep chutes, dramatic rock ridges, and wide-open expanses of signature Canadian Rockies powder. Because the resort enjoys a cold northern climate and a high base elevation of 5,400 feet, it maintains a remarkably reliable, dry snowpack. This reliable climate supports an extensive winter calendar stretching from early November through early May.&lt;/p>&#xa;&lt;p>The skiing environment is matched by a storied alpine culture and a classic Canadian lodge atmosphere. Skiers can take mid-day breaks to warm up with slope-side dining at the historic base chalets or take in the sweeping panoramic views of ice-capped peaks and glaciers from the mid-mountain Whitehorn Bistro. While there is no major commercial lodging directly at the mountain's immediate base, the charming hamlet of Lake Louise sits just minutes away, anchored by iconic luxury properties like the Fairmont Chateau Lake Louise. Beyond the downhill slopes, visitors can easily round out their vacation with iconic winter experiences, such as ice skating across the deeply frozen, snow-draped lake or taking a horse-drawn sleigh ride beneath the Victoria Glacier.&lt;/p>&#xa;"
+                content_x0040_ContentType="text/html"
+                content_x0040_LastModified="{Date}2026-05-27T18:08:04.924-05:00"
+                content_x0040_LastModifiedBy="admin"
+                description="&lt;p>Situated in the heart of Alberta's pristine Banff National Park, this massive destination spans 4,200 acres of skiable terrain spread across five distinct mountain faces. It comfortably ranks as one of the largest ski resorts in North America, boasting a substantial 3,250-foot vertical drop and a layout of up to 170 named runs.&amp;nbsp;&lt;/p>&#xa;"
+                description_x0040_ContentType="text/html"
+                description_x0040_LastModified="{Date}2026-05-27T18:08:04.920-05:00"
+                description_x0040_LastModifiedBy="admin"
+                headline="Downhill Skiing Lake Louise"
+                headline_x0040_LastModified="{Date}2026-05-27T18:08:04.917-05:00"
+                headline_x0040_LastModifiedBy="admin"
+                placeholder_x0040_LastModified="{Date}2026-05-27T18:08:04.923-05:00"
+                placeholder_x0040_LastModifiedBy="admin"
+                postDate="{Date}2026-09-01T00:00:00.000Z"
+                postDate_x0040_LastModified="{Date}2026-05-27T18:08:04.922-05:00"
+                postDate_x0040_LastModifiedBy="admin"
+                subheadline="Ski Big Three"
+                subheadline_x0040_LastModified="{Date}2026-05-27T18:08:04.919-05:00"
+                subheadline_x0040_LastModifiedBy="admin"
+                url="/us/en/articles/downhill-lake-louise"
+                url_x0040_LastModified="{Date}2026-05-27T18:08:04.916-05:00"
+                url_x0040_LastModifiedBy="admin"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="6cb99ce0-76cf-463f-8f74-5d670eb3e5ae"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/articledetail"
+                _x0040_stringArray_x0040_variations="[en]"
+                calendar_x0040_postDate="{Date}2026-09-01T00:00:00.000Z"
+                string_x0040_content="&lt;p>Skiing at &lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/m/0drypv&quot;>Lake Louise Ski Resort&lt;/a>&lt;/u> offers a legendary alpine experience that pairs vast terrain with some of the most striking, postcard-perfect scenery in the global winter sports community. Situated in the heart of Alberta's pristine Banff National Park, this massive destination spans 4,200 acres of skiable terrain spread across five distinct mountain faces. It comfortably ranks as one of the largest ski resorts in North America, boasting a substantial 3,250-foot vertical drop and a layout of up to 170 named runs. The resort is uniquely configured as a &amp;quot;friendly giant,&amp;quot; meaning that beginner, intermediate, and expert trails trace down from nearly every single chairlift. This inclusive design allows groups of vastly different skill levels to ride the lifts together and meet up at the bottom of each run.&lt;/p>&#xa;&lt;p>The mountain is broadly segmented into distinct zones that provide entirely different skiing environments. The front side features long, rolling intermediate cruisers and tree-lined pathways perfect for carving, while the subalpine Larch area provides exceptional glade skiing. For advanced and expert skiers looking to push their limits, the towering backside bowls and the newly fully integrated West Bowl serve up steep chutes, dramatic rock ridges, and wide-open expanses of signature Canadian Rockies powder. Because the resort enjoys a cold northern climate and a high base elevation of 5,400 feet, it maintains a remarkably reliable, dry snowpack. This reliable climate supports an extensive winter calendar stretching from early November through early May.&lt;/p>&#xa;&lt;p>The skiing environment is matched by a storied alpine culture and a classic Canadian lodge atmosphere. Skiers can take mid-day breaks to warm up with slope-side dining at the historic base chalets or take in the sweeping panoramic views of ice-capped peaks and glaciers from the mid-mountain Whitehorn Bistro. While there is no major commercial lodging directly at the mountain's immediate base, the charming hamlet of Lake Louise sits just minutes away, anchored by iconic luxury properties like the Fairmont Chateau Lake Louise. Beyond the downhill slopes, visitors can easily round out their vacation with iconic winter experiences, such as ice skating across the deeply frozen, snow-draped lake or taking a horse-drawn sleigh ride beneath the Victoria Glacier.&lt;/p>&#xa;"
+                string_x0040_description="&lt;p>Situated in the heart of Alberta's pristine Banff National Park, this massive destination spans 4,200 acres of skiable terrain spread across five distinct mountain faces. It comfortably ranks as one of the largest ski resorts in North America, boasting a substantial 3,250-foot vertical drop and a layout of up to 170 named runs.&amp;nbsp;&lt;/p>&#xa;"
+                string_x0040_headline="Downhill Skiing Lake Louise"
+                string_x0040_shortDescription="&lt;p>Situated in the heart of Alberta's pristine Banff National Park, this massive destination spans 4,200 acres of skiable terrain spread across five distinct mountain faces. It comfortably ranks as one of the largest ski resorts in North America, boasting a substantial 3,250-foot vertical drop and a layout of up to 170 named runs.&amp;nbsp;&lt;/p>&#xa;"
+                string_x0040_subheadline="Ski Big Three"
+                string_x0040_url="/us/en/articles/downhill-lake-louise"/>
+            <en
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="c54a536f-7716-43d2-bc7f-3a3ce3c1a790"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/articledetail"
+                calendar_x0040_postDate="{Date}2026-09-01T00:00:00.000Z"
+                string_x0040_content="&lt;p>Skiing at &lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/m/0drypv&quot;>Lake Louise Ski Resort&lt;/a>&lt;/u> offers a legendary alpine experience that pairs vast terrain with some of the most striking, postcard-perfect scenery in the global winter sports community. Situated in the heart of Alberta's pristine Banff National Park, this massive destination spans 4,200 acres of skiable terrain spread across five distinct mountain faces. It comfortably ranks as one of the largest ski resorts in North America, boasting a substantial 3,250-foot vertical drop and a layout of up to 170 named runs. The resort is uniquely configured as a &amp;quot;friendly giant,&amp;quot; meaning that beginner, intermediate, and expert trails trace down from nearly every single chairlift. This inclusive design allows groups of vastly different skill levels to ride the lifts together and meet up at the bottom of each run.&lt;/p>&#xa;&lt;p>The mountain is broadly segmented into distinct zones that provide entirely different skiing environments. The front side features long, rolling intermediate cruisers and tree-lined pathways perfect for carving, while the subalpine Larch area provides exceptional glade skiing. For advanced and expert skiers looking to push their limits, the towering backside bowls and the newly fully integrated West Bowl serve up steep chutes, dramatic rock ridges, and wide-open expanses of signature Canadian Rockies powder. Because the resort enjoys a cold northern climate and a high base elevation of 5,400 feet, it maintains a remarkably reliable, dry snowpack. This reliable climate supports an extensive winter calendar stretching from early November through early May.&lt;/p>&#xa;&lt;p>The skiing environment is matched by a storied alpine culture and a classic Canadian lodge atmosphere. Skiers can take mid-day breaks to warm up with slope-side dining at the historic base chalets or take in the sweeping panoramic views of ice-capped peaks and glaciers from the mid-mountain Whitehorn Bistro. While there is no major commercial lodging directly at the mountain's immediate base, the charming hamlet of Lake Louise sits just minutes away, anchored by iconic luxury properties like the Fairmont Chateau Lake Louise. Beyond the downhill slopes, visitors can easily round out their vacation with iconic winter experiences, such as ice skating across the deeply frozen, snow-draped lake or taking a horse-drawn sleigh ride beneath the Victoria Glacier.&lt;/p>&#xa;"
+                string_x0040_description="&lt;p>Situated in the heart of Alberta's pristine Banff National Park, this massive destination spans 4,200 acres of skiable terrain spread across five distinct mountain faces. It comfortably ranks as one of the largest ski resorts in North America, boasting a substantial 3,250-foot vertical drop and a layout of up to 170 named runs.&amp;nbsp;&lt;/p>&#xa;"
+                string_x0040_headline="Downhill Skiing Lake Louise"
+                string_x0040_subheadline="Ski Big Three"
+                string_x0040_url="/us/en/articles/downhill-lake-louise"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <model jcr:primaryType="nt:unstructured">
+            <variations jcr:primaryType="nt:unstructured">
+                <en
+                    jcr:description="\0"
+                    jcr:mixinTypes="[cq:Taggable]"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="en"
+                    name="en">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        synchronizeWithVersion="[placeholder:c7238f17-76fe-4d12-9382-8bf85c7e1fda,url:c7238f17-76fe-4d12-9382-8bf85c7e1fda,headline:c7238f17-76fe-4d12-9382-8bf85c7e1fda,subheadline:c7238f17-76fe-4d12-9382-8bf85c7e1fda,description:c7238f17-76fe-4d12-9382-8bf85c7e1fda,bannerImage:c7238f17-76fe-4d12-9382-8bf85c7e1fda,postDate:c7238f17-76fe-4d12-9382-8bf85c7e1fda,placeholder:c7238f17-76fe-4d12-9382-8bf85c7e1fda,content:c7238f17-76fe-4d12-9382-8bf85c7e1fda]"/>
+                </en>
+            </variations>
+        </model>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

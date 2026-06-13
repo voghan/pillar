@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="14cbc06c-ee0f-4c95-b030-056d5505753d">
+    <jcr:content
+        cq:name="default"
+        cq:parentPath="/content/dam/pillar/cfm/featured-cards/demo"
+        jcr:lastModified="{Date}2026-05-24T09:48:53.810-05:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Default"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2026-05-24T09:48:53.810-05:00">
+        <data
+            cq:model="/conf/pillar/settings/dam/cfm/models/featuredcard"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                callToActions="[/content/dam/pillar/cfm/links/demo/demo-link]"
+                callToActions_x0040_LastModified="{Date}2026-05-24T09:48:53.580-05:00"
+                callToActions_x0040_LastModifiedBy="admin"
+                headline="Headline"
+                headline_x0040_LastModified="{Date}2026-05-24T09:48:53.577-05:00"
+                headline_x0040_LastModifiedBy="admin"
+                image="/content/dam/pillar/images/en/homepage/blue-card.png"
+                image_x0040_LastModified="{Date}2026-05-24T09:48:53.581-05:00"
+                image_x0040_LastModifiedBy="admin"
+                shortDescription="&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae libero sit amet eros dignissim tincidunt. Mauris auctor iaculis euismod. Aenean metus nulla, mollis a porttitor sit amet, efficitur ut sapien. Fusce faucibus ultrices dolor. Fusce vitae eros eu ligula sodales varius vitae mollis metus. Donec convallis dictum enim sed rutrum. Phasellus eu tempus risus. Ut fringilla est sit amet molestie venenatis. Morbi commodo ultrices lorem nec bibendum. Nulla aliquam arcu quis sapien cursus egestas. Aliquam erat volutpat. Proin lacinia ultricies eros, quis varius ante pharetra euismod. Proin iaculis, quam a aliquet tempor, ante eros tincidunt nibh, vel bibendum dolor metus sit amet enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;&lt;/p>&#xa;"
+                shortDescription_x0040_ContentType="text/html"
+                shortDescription_x0040_LastModified="{Date}2026-05-24T09:48:53.579-05:00"
+                shortDescription_x0040_LastModifiedBy="admin"
+                subheadline="Subheadline"
+                subheadline_x0040_LastModified="{Date}2026-05-24T09:48:53.576-05:00"
+                subheadline_x0040_LastModifiedBy="admin"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="cf04f13c-588b-4bdf-9f31-ae502c0b2f3b"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/featuredcard"
+                _x0040_stringArray_x0040_variations="[]"
+                string_x0040_headline="Headline"
+                string_x0040_shortDescription="&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae libero sit amet eros dignissim tincidunt. Mauris auctor iaculis euismod. Aenean metus nulla, mollis a porttitor sit amet, efficitur ut sapien. Fusce faucibus ultrices dolor. Fusce vitae eros eu ligula sodales varius vitae mollis metus. Donec convallis dictum enim sed rutrum. Phasellus eu tempus risus. Ut fringilla est sit amet molestie venenatis. Morbi commodo ultrices lorem nec bibendum. Nulla aliquam arcu quis sapien cursus egestas. Aliquam erat volutpat. Proin lacinia ultricies eros, quis varius ante pharetra euismod. Proin iaculis, quam a aliquet tempor, ante eros tincidunt nibh, vel bibendum dolor metus sit amet enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;&lt;/p>&#xa;"
+                string_x0040_subheadline="Subheadline"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

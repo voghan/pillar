@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="9ef5dc01-155d-4822-8f62-66b878ae3475">
+    <jcr:content
+        cq:name="downhill-skiing-vail"
+        cq:parentPath="/content/dam/pillar/cfm/article-detail/articles"
+        jcr:lastModified="{Date}2026-05-27T22:44:03.225-05:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="downhill-skiing-vail"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2026-05-27T22:44:03.225-05:00">
+        <data
+            cq:model="/conf/pillar/settings/dam/cfm/models/articledetail"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                bannerImage_x0040_LastModified="{Date}2026-05-27T17:23:30.408-05:00"
+                content="&lt;p>&lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/m/0h77y7&quot;>Skiing at Vail Resort&lt;/a>&lt;/u> offers a monumental experience characterized by its immense scale, spanning 5,317 acres of skiable terrain across the heart of Colorado's Rocky Mountains. As one of the largest ski resorts in North America, it features a 3,450-foot vertical drop and a diverse layout of 195 to 278 marked trails serviced by 31 to 33 modern lifts, including high-speed gondolas. The terrain is broadly categorized into three distinct sections: the heavily treed Front Side, which contains the majority of the resort's groomed runs; the legendary Back Bowls; and the more secluded Blue Sky Basin. With an average annual snowfall of approximately 354 inches, the resort typically operates from mid-November through mid-April, offering reliable conditions for skiers and snowboarders of all levels.&lt;/p>&#xa;&lt;p>The resort’s most celebrated feature is its expansive series of seven Back Bowls—Sun Down, Sun Up, Teacup, China, Siberia, Inner Mongolia, and Outer Mongolia—which alone encompass over 3,000 acres of south-facing, largely treeless terrain. These bowls are a primary draw for intermediate and advanced skiers seeking wide-open spaces, legendary powder, and challenging runs like those found in China Bowl. Further beyond the bowls lies Blue Sky Basin, a 644-acre backcountry-style area that provides a more immersive nature experience with its meadows, glades, and chutes. This variety ensures that even during a week-long trip, visitors rarely run out of new terrain to explore, from gentle beginner slopes at the summit to steep mogul runs and hidden powder stashes in the glades.&lt;/p>&#xa;&lt;p>Complementing the world-class skiing is the vibrant pedestrian culture of Vail Village and Lionshead, both designed with a charming Bavarian or Swiss-style aesthetic. These walkable villages are seamlessly integrated with the mountain, offering convenient ski-in/ski-out lodging and a legendary après-ski scene. After a day on the slopes, skiers can enjoy diverse dining options ranging from casual sports pubs like Garfinkel's to upmarket European-inspired eateries like Alpenrose. The atmosphere is particularly lively at the base of Gondola One, where spots like the Express Lift Bar offer a fun, social environment with DJs and cocktails.&lt;/p>&#xa;"
+                content_x0040_ContentType="text/html"
+                content_x0040_LastModified="{Date}2026-05-27T17:25:33.383-05:00"
+                content_x0040_LastModifiedBy="admin"
+                description="&lt;p>&lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/m/0h77y7&quot;>Skiing at Vail Resort&lt;/a>&lt;/u> offers a monumental experience characterized by its immense scale, spanning 5,317 acres of skiable terrain across the heart of Colorado's Rocky Mountains. As one of the largest ski resorts in North America, it features a 3,450-foot vertical drop and a diverse layout of 195 to 278 marked trails serviced by 31 to 33 modern lifts, including high-speed gondolas. The terrain is broadly categorized into three distinct sections: the heavily treed Front Side, which contains the majority of the resort's groomed runs; the legendary Back Bowls; and the more secluded Blue Sky Basin. With an average annual snowfall of approximately 354 inches, the resort typically operates from mid-November through mid-April, offering reliable conditions for skiers and snowboarders of all levels.&lt;/p>&#xa;"
+                description_x0040_ContentType="text/html"
+                description_x0040_LastModified="{Date}2026-05-27T17:25:33.369-05:00"
+                description_x0040_LastModifiedBy="admin"
+                headline="Downhill Skiing Vail"
+                headline_x0040_LastModified="{Date}2026-05-27T17:25:33.368-05:00"
+                headline_x0040_LastModifiedBy="admin"
+                placeholder_x0040_LastModified="{Date}2026-05-27T17:23:30.408-05:00"
+                postDate="{Date}2026-06-01T00:00:00.000Z"
+                postDate_x0040_LastModified="{Date}2026-05-27T22:44:03.178-05:00"
+                postDate_x0040_LastModifiedBy="admin"
+                shortDescription="&lt;p>As one of the largest ski resorts in North America, it features a 3,450-foot vertical drop and a diverse layout of 195 to 278 marked trails serviced by 31 to 33 modern lifts, including high-speed gondolas. The terrain is broadly categorized into three distinct sections: the heavily treed Front Side, which contains the majority of the resort's groomed runs; the legendary Back Bowls; and the more secluded Blue Sky Basin.&lt;/p>&#xa;"
+                shortDescription_x0040_ContentType="text/html"
+                shortDescription_x0040_LastModified="{Date}2026-05-27T22:44:03.162-05:00"
+                shortDescription_x0040_LastModifiedBy="admin"
+                subheadline="Vail Resorts"
+                subheadline_x0040_LastModified="{Date}2026-05-27T17:25:33.368-05:00"
+                subheadline_x0040_LastModifiedBy="admin"
+                url="/us/en/articles/downhill-skiing-vail"
+                url_x0040_LastModified="{Date}2026-05-27T17:25:33.367-05:00"
+                url_x0040_LastModifiedBy="admin"/>
+            <en
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                _x0040_variationCreationDate="{Date}2026-05-27T18:09:18.035-05:00"
+                bannerImage_x0040_LastModified="{Date}2026-05-27T18:09:18.041-05:00"
+                bannerImage_x0040_LastModifiedBy="admin"
+                content="&lt;p>&lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/m/0h77y7&quot;>Skiing at Vail Resort&lt;/a>&lt;/u> offers a monumental experience characterized by its immense scale, spanning 5,317 acres of skiable terrain across the heart of Colorado's Rocky Mountains. As one of the largest ski resorts in North America, it features a 3,450-foot vertical drop and a diverse layout of 195 to 278 marked trails serviced by 31 to 33 modern lifts, including high-speed gondolas. The terrain is broadly categorized into three distinct sections: the heavily treed Front Side, which contains the majority of the resort's groomed runs; the legendary Back Bowls; and the more secluded Blue Sky Basin. With an average annual snowfall of approximately 354 inches, the resort typically operates from mid-November through mid-April, offering reliable conditions for skiers and snowboarders of all levels.&lt;/p>&#xa;&lt;p>The resort’s most celebrated feature is its expansive series of seven Back Bowls—Sun Down, Sun Up, Teacup, China, Siberia, Inner Mongolia, and Outer Mongolia—which alone encompass over 3,000 acres of south-facing, largely treeless terrain. These bowls are a primary draw for intermediate and advanced skiers seeking wide-open spaces, legendary powder, and challenging runs like those found in China Bowl. Further beyond the bowls lies Blue Sky Basin, a 644-acre backcountry-style area that provides a more immersive nature experience with its meadows, glades, and chutes. This variety ensures that even during a week-long trip, visitors rarely run out of new terrain to explore, from gentle beginner slopes at the summit to steep mogul runs and hidden powder stashes in the glades.&lt;/p>&#xa;&lt;p>Complementing the world-class skiing is the vibrant pedestrian culture of Vail Village and Lionshead, both designed with a charming Bavarian or Swiss-style aesthetic. These walkable villages are seamlessly integrated with the mountain, offering convenient ski-in/ski-out lodging and a legendary après-ski scene. After a day on the slopes, skiers can enjoy diverse dining options ranging from casual sports pubs like Garfinkel's to upmarket European-inspired eateries like Alpenrose. The atmosphere is particularly lively at the base of Gondola One, where spots like the Express Lift Bar offer a fun, social environment with DJs and cocktails.&lt;/p>&#xa;"
+                content_x0040_ContentType="text/html"
+                content_x0040_LastModified="{Date}2026-05-27T18:09:18.045-05:00"
+                content_x0040_LastModifiedBy="admin"
+                description="&lt;p>&lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/m/0h77y7&quot;>Skiing at Vail Resort&lt;/a>&lt;/u> offers a monumental experience characterized by its immense scale, spanning 5,317 acres of skiable terrain across the heart of Colorado's Rocky Mountains. As one of the largest ski resorts in North America, it features a 3,450-foot vertical drop and a diverse layout of 195 to 278 marked trails serviced by 31 to 33 modern lifts, including high-speed gondolas. The terrain is broadly categorized into three distinct sections: the heavily treed Front Side, which contains the majority of the resort's groomed runs; the legendary Back Bowls; and the more secluded Blue Sky Basin. With an average annual snowfall of approximately 354 inches, the resort typically operates from mid-November through mid-April, offering reliable conditions for skiers and snowboarders of all levels.&lt;/p>&#xa;"
+                description_x0040_ContentType="text/html"
+                description_x0040_LastModified="{Date}2026-05-27T18:09:18.040-05:00"
+                description_x0040_LastModifiedBy="admin"
+                headline="Downhill Skiing Vail"
+                headline_x0040_LastModified="{Date}2026-05-27T18:09:18.038-05:00"
+                headline_x0040_LastModifiedBy="admin"
+                placeholder_x0040_LastModified="{Date}2026-05-27T18:09:18.043-05:00"
+                placeholder_x0040_LastModifiedBy="admin"
+                postDate="{Date}2026-06-01T00:00:00.000Z"
+                postDate_x0040_LastModified="{Date}2026-05-27T18:09:18.042-05:00"
+                postDate_x0040_LastModifiedBy="admin"
+                subheadline="Vail Resorts"
+                subheadline_x0040_LastModified="{Date}2026-05-27T18:09:18.039-05:00"
+                subheadline_x0040_LastModifiedBy="admin"
+                url="/us/en/articles/downhill-skiing-vail"
+                url_x0040_LastModified="{Date}2026-05-27T18:09:18.037-05:00"
+                url_x0040_LastModifiedBy="admin"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="cf6a409b-8312-4f66-90ea-32197d05331f"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/articledetail"
+                _x0040_stringArray_x0040_variations="[en]"
+                calendar_x0040_postDate="{Date}2026-06-01T00:00:00.000Z"
+                string_x0040_content="&lt;p>&lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/m/0h77y7&quot;>Skiing at Vail Resort&lt;/a>&lt;/u> offers a monumental experience characterized by its immense scale, spanning 5,317 acres of skiable terrain across the heart of Colorado's Rocky Mountains. As one of the largest ski resorts in North America, it features a 3,450-foot vertical drop and a diverse layout of 195 to 278 marked trails serviced by 31 to 33 modern lifts, including high-speed gondolas. The terrain is broadly categorized into three distinct sections: the heavily treed Front Side, which contains the majority of the resort's groomed runs; the legendary Back Bowls; and the more secluded Blue Sky Basin. With an average annual snowfall of approximately 354 inches, the resort typically operates from mid-November through mid-April, offering reliable conditions for skiers and snowboarders of all levels.&lt;/p>&#xa;&lt;p>The resort’s most celebrated feature is its expansive series of seven Back Bowls—Sun Down, Sun Up, Teacup, China, Siberia, Inner Mongolia, and Outer Mongolia—which alone encompass over 3,000 acres of south-facing, largely treeless terrain. These bowls are a primary draw for intermediate and advanced skiers seeking wide-open spaces, legendary powder, and challenging runs like those found in China Bowl. Further beyond the bowls lies Blue Sky Basin, a 644-acre backcountry-style area that provides a more immersive nature experience with its meadows, glades, and chutes. This variety ensures that even during a week-long trip, visitors rarely run out of new terrain to explore, from gentle beginner slopes at the summit to steep mogul runs and hidden powder stashes in the glades.&lt;/p>&#xa;&lt;p>Complementing the world-class skiing is the vibrant pedestrian culture of Vail Village and Lionshead, both designed with a charming Bavarian or Swiss-style aesthetic. These walkable villages are seamlessly integrated with the mountain, offering convenient ski-in/ski-out lodging and a legendary après-ski scene. After a day on the slopes, skiers can enjoy diverse dining options ranging from casual sports pubs like Garfinkel's to upmarket European-inspired eateries like Alpenrose. The atmosphere is particularly lively at the base of Gondola One, where spots like the Express Lift Bar offer a fun, social environment with DJs and cocktails.&lt;/p>&#xa;"
+                string_x0040_description="&lt;p>&lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/m/0h77y7&quot;>Skiing at Vail Resort&lt;/a>&lt;/u> offers a monumental experience characterized by its immense scale, spanning 5,317 acres of skiable terrain across the heart of Colorado's Rocky Mountains. As one of the largest ski resorts in North America, it features a 3,450-foot vertical drop and a diverse layout of 195 to 278 marked trails serviced by 31 to 33 modern lifts, including high-speed gondolas. The terrain is broadly categorized into three distinct sections: the heavily treed Front Side, which contains the majority of the resort's groomed runs; the legendary Back Bowls; and the more secluded Blue Sky Basin. With an average annual snowfall of approximately 354 inches, the resort typically operates from mid-November through mid-April, offering reliable conditions for skiers and snowboarders of all levels.&lt;/p>&#xa;"
+                string_x0040_headline="Downhill Skiing Vail"
+                string_x0040_shortDescription="&lt;p>As one of the largest ski resorts in North America, it features a 3,450-foot vertical drop and a diverse layout of 195 to 278 marked trails serviced by 31 to 33 modern lifts, including high-speed gondolas. The terrain is broadly categorized into three distinct sections: the heavily treed Front Side, which contains the majority of the resort's groomed runs; the legendary Back Bowls; and the more secluded Blue Sky Basin.&lt;/p>&#xa;"
+                string_x0040_subheadline="Vail Resorts"
+                string_x0040_url="/us/en/articles/downhill-skiing-vail"/>
+            <en
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="fef2b6fd-5076-4fd5-8f82-b1f88a815e84"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/articledetail"
+                calendar_x0040_postDate="{Date}2026-06-01T00:00:00.000Z"
+                string_x0040_content="&lt;p>&lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/m/0h77y7&quot;>Skiing at Vail Resort&lt;/a>&lt;/u> offers a monumental experience characterized by its immense scale, spanning 5,317 acres of skiable terrain across the heart of Colorado's Rocky Mountains. As one of the largest ski resorts in North America, it features a 3,450-foot vertical drop and a diverse layout of 195 to 278 marked trails serviced by 31 to 33 modern lifts, including high-speed gondolas. The terrain is broadly categorized into three distinct sections: the heavily treed Front Side, which contains the majority of the resort's groomed runs; the legendary Back Bowls; and the more secluded Blue Sky Basin. With an average annual snowfall of approximately 354 inches, the resort typically operates from mid-November through mid-April, offering reliable conditions for skiers and snowboarders of all levels.&lt;/p>&#xa;&lt;p>The resort’s most celebrated feature is its expansive series of seven Back Bowls—Sun Down, Sun Up, Teacup, China, Siberia, Inner Mongolia, and Outer Mongolia—which alone encompass over 3,000 acres of south-facing, largely treeless terrain. These bowls are a primary draw for intermediate and advanced skiers seeking wide-open spaces, legendary powder, and challenging runs like those found in China Bowl. Further beyond the bowls lies Blue Sky Basin, a 644-acre backcountry-style area that provides a more immersive nature experience with its meadows, glades, and chutes. This variety ensures that even during a week-long trip, visitors rarely run out of new terrain to explore, from gentle beginner slopes at the summit to steep mogul runs and hidden powder stashes in the glades.&lt;/p>&#xa;&lt;p>Complementing the world-class skiing is the vibrant pedestrian culture of Vail Village and Lionshead, both designed with a charming Bavarian or Swiss-style aesthetic. These walkable villages are seamlessly integrated with the mountain, offering convenient ski-in/ski-out lodging and a legendary après-ski scene. After a day on the slopes, skiers can enjoy diverse dining options ranging from casual sports pubs like Garfinkel's to upmarket European-inspired eateries like Alpenrose. The atmosphere is particularly lively at the base of Gondola One, where spots like the Express Lift Bar offer a fun, social environment with DJs and cocktails.&lt;/p>&#xa;"
+                string_x0040_description="&lt;p>&lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/m/0h77y7&quot;>Skiing at Vail Resort&lt;/a>&lt;/u> offers a monumental experience characterized by its immense scale, spanning 5,317 acres of skiable terrain across the heart of Colorado's Rocky Mountains. As one of the largest ski resorts in North America, it features a 3,450-foot vertical drop and a diverse layout of 195 to 278 marked trails serviced by 31 to 33 modern lifts, including high-speed gondolas. The terrain is broadly categorized into three distinct sections: the heavily treed Front Side, which contains the majority of the resort's groomed runs; the legendary Back Bowls; and the more secluded Blue Sky Basin. With an average annual snowfall of approximately 354 inches, the resort typically operates from mid-November through mid-April, offering reliable conditions for skiers and snowboarders of all levels.&lt;/p>&#xa;"
+                string_x0040_headline="Downhill Skiing Vail"
+                string_x0040_subheadline="Vail Resorts"
+                string_x0040_url="/us/en/articles/downhill-skiing-vail"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <model jcr:primaryType="nt:unstructured">
+            <variations jcr:primaryType="nt:unstructured">
+                <en
+                    jcr:description="\0"
+                    jcr:mixinTypes="[cq:Taggable]"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="en"
+                    name="en">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        synchronizeWithVersion="[placeholder:24f143a9-ef86-4b5d-93ad-5b18277ab3a8,url:24f143a9-ef86-4b5d-93ad-5b18277ab3a8,headline:24f143a9-ef86-4b5d-93ad-5b18277ab3a8,subheadline:24f143a9-ef86-4b5d-93ad-5b18277ab3a8,description:24f143a9-ef86-4b5d-93ad-5b18277ab3a8,bannerImage:24f143a9-ef86-4b5d-93ad-5b18277ab3a8,postDate:24f143a9-ef86-4b5d-93ad-5b18277ab3a8,placeholder:24f143a9-ef86-4b5d-93ad-5b18277ab3a8,content:24f143a9-ef86-4b5d-93ad-5b18277ab3a8]"/>
+                </en>
+            </variations>
+        </model>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>
