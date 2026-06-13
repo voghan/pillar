@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="ab339647-50f4-496f-aa79-10a4e2e6b837">
+    <jcr:content
+        cq:name="simple-card-list"
+        cq:parentPath="/content/dam/pillar/cfm/card-list/demo"
+        jcr:lastModified="{Date}2026-05-27T22:24:52.441-05:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Simple Card List"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2026-05-27T22:24:52.441-05:00">
+        <data
+            cq:model="/conf/pillar/settings/dam/cfm/models/cardlistconfig"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                cardTags_x0040_LastModified="{Date}2026-01-05T21:21:21.285-06:00"
+                enablePostDate="{Boolean}false"
+                enablePostDate_x0040_LastModified="{Date}2026-05-27T22:24:52.401-05:00"
+                enablePostDate_x0040_LastModifiedBy="admin"
+                enableSearch="{Boolean}false"
+                enableSearch_x0040_LastModified="{Date}2026-01-05T21:22:54.522-06:00"
+                filterTags_x0040_LastModified="{Date}2026-01-05T21:21:21.285-06:00"
+                headline="Pillar Demo Components"
+                headline_x0040_LastModified="{Date}2026-01-05T21:22:54.519-06:00"
+                placeholder_x0040_LastModified="{Date}2026-01-05T21:21:21.285-06:00"
+                searchPath="/content/dam/pillar/cfm/basic-cards/demo"
+                searchPath_x0040_LastModified="{Date}2026-01-05T21:22:54.521-06:00"
+                shortDescription="&lt;p>Explore the component samples.&lt;/p>&#xa;"
+                shortDescription_x0040_ContentType="text/html"
+                shortDescription_x0040_LastModified="{Date}2026-01-05T21:22:54.520-06:00"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="d6a07b10-9afd-4898-b1c1-01d81ec0f5ba"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/cardlistconfig"
+                _x0040_stringArray_x0040_variations="[]"
+                boolean_x0040_enablePostDate="{Boolean}false"
+                boolean_x0040_enableSearch="{Boolean}false"
+                string_x0040_headline="Pillar Demo Components"
+                string_x0040_shortDescription="&lt;p>Explore the component samples.&lt;/p>&#xa;"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2026-05-23T21:14:43.602-05:00"
+        cq:lastModifiedBy="admin"
+        cq:tags="[]"
+        cq:template="/conf/pillar/settings/wcm/templates/xf-web-variation"
+        cq:xfMasterVariation="{Boolean}true"
+        cq:xfVariantType="web"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Footer"
+        sling:resourceType="pillar/components/xfpage/v1/xfpage">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="pillar/components/container/v1/container"
+            layout="responsiveGrid">
+            <separator
+                cq:styleIds="[1779588654135]"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pillar/components/separator/v1/separator"/>
+            <text_1258991444
+                cq:styleIds="[1779581618162]"
+                jcr:created="{Date}2026-05-23T19:20:14.671-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2026-05-23T19:20:29.870-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pillar/components/text/v1/text"
+                text="&lt;p>Pillar&lt;/p>&#xa;"
+                textIsRich="true">
+                <cq:responsive jcr:primaryType="nt:unstructured">
+                    <default
+                        jcr:primaryType="nt:unstructured"
+                        offset="0"
+                        width="3"/>
+                </cq:responsive>
+            </text_1258991444>
+            <navigation
+                jcr:created="{Date}2026-05-23T19:05:11.421-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2026-05-23T20:40:40.906-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pillar/components/navigation/v1/navigation"
+                collectAllPages="false"
+                disableShadowing="false"
+                navigationRoot="/content/pillar/language-head"
+                structureDepth="2">
+                <cq:responsive jcr:primaryType="nt:unstructured">
+                    <default
+                        jcr:primaryType="nt:unstructured"
+                        offset="0"
+                        width="6"/>
+                </cq:responsive>
+            </navigation>
+            <text
+                cq:styleIds="[1779581604750]"
+                jcr:lastModified="{Date}2026-05-23T19:09:00.357-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pillar/components/text/v1/text"
+                text="&lt;p>Copyright 2026, Pillar. All rights reserved.&lt;/p>&#xd;&#xa;"
+                textIsRich="true"/>
+        </root>
+    </jcr:content>
+</jcr:root>

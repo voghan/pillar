@@ -38,6 +38,7 @@
         <module>it.tests</module>
         <module>dispatcher</module>
         <module>ui.tests</module>
+      <module>site-content</module>
     </modules>
     <properties>
         <aem.host>localhost</aem.host>

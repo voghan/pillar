@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="0e8cdeb5-d45a-4a78-a37d-5d83bb7dc61d">
+    <jcr:content
+        cq:name="demo-hero"
+        cq:parentPath="/content/dam/pillar/site/en/demo/hero"
+        jcr:lastModified="{Date}2025-12-31T11:43:43.016-06:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Demo Hero"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2025-12-31T11:43:43.016-06:00">
+        <data
+            cq:model="/conf/pillar/settings/dam/cfm/models/hero"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                backgroundImage="/content/dam/pillar/images/en/demo/asset.jpg"
+                backgroundImage_x0040_LastModified="{Date}2025-12-30T20:43:03.372-06:00"
+                breadcrumbs="[/content/dam/pillar/cfm/links/demo/homepagelink,/content/dam/pillar/cfm/links/demo/demo-link]"
+                breadcrumbs_x0040_LastModified="{Date}2025-12-30T19:27:41.556-06:00"
+                callToActions="[/content/dam/pillar/cfm/links/demo/link1,/content/dam/pillar/cfm/links/demo/link2]"
+                callToActions_x0040_LastModified="{Date}2025-12-30T19:27:41.557-06:00"
+                headline="Pillar Demo Components"
+                headline_x0040_LastModified="{Date}2025-12-30T19:27:41.553-06:00"
+                shortDescription="&lt;p>A simple framework of HTL components that utilize content fragments for their auhtoring experience.&lt;/p>&#xa;"
+                shortDescription_x0040_ContentType="text/html"
+                shortDescription_x0040_LastModified="{Date}2025-12-30T19:27:41.554-06:00"/>
+            <es
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                _x0040_variationCreationDate="{Date}2025-12-31T11:42:17.386-06:00"
+                backgroundImage="/content/dam/pillar/images/en/demo/asset.jpg"
+                backgroundImage_x0040_LastModified="{Date}2025-12-31T11:42:17.407-06:00"
+                breadcrumbs="[/content/dam/pillar/cfm/links/demo/homepagelink,/content/dam/pillar/cfm/links/demo/demo-link]"
+                breadcrumbs_x0040_LastModified="{Date}2025-12-31T11:42:17.401-06:00"
+                callToActions="[/content/dam/pillar/cfm/links/demo/link1,/content/dam/pillar/cfm/links/demo/link2]"
+                callToActions_x0040_LastModified="{Date}2025-12-31T11:42:17.405-06:00"
+                headline="Componentes de demostración de Pillar"
+                headline_x0040_LastModified="{Date}2025-12-31T11:43:42.830-06:00"
+                shortDescription="&lt;p>Un marco sencillo de componentes HTL que utilizan fragmentos de contenido para la experiencia de creación de contenido.&lt;/p>&#xa;"
+                shortDescription_x0040_ContentType="text/html"
+                shortDescription_x0040_LastModified="{Date}2025-12-31T11:43:42.835-06:00"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="349d48f7-1566-4604-b976-e21e4846f03f"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/hero"
+                _x0040_stringArray_x0040_variations="[es]"
+                string_x0040_headline="Pillar Demo Components"
+                string_x0040_shortDescription="&lt;p>A simple framework of HTL components that utilize content fragments for their auhtoring experience.&lt;/p>&#xa;"/>
+            <es
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="35c2eb39-8f7d-4672-bf56-0757b09a174c"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/hero"
+                string_x0040_headline="Componentes de demostración de Pillar"
+                string_x0040_shortDescription="&lt;p>Un marco sencillo de componentes HTL que utilizan fragmentos de contenido para la experiencia de creación de contenido.&lt;/p>&#xa;"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured">
+            <dam:cfVariations jcr:primaryType="nt:unstructured">
+                <es
+                    jcr:mixinTypes="[cq:Taggable]"
+                    jcr:primaryType="nt:unstructured"/>
+            </dam:cfVariations>
+        </metadata>
+        <model jcr:primaryType="nt:unstructured">
+            <variations jcr:primaryType="nt:unstructured">
+                <es
+                    jcr:description="\0"
+                    jcr:mixinTypes="[cq:Taggable]"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="es"
+                    name="es">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        synchronizeWithVersion="[headline:79c2c734-2d62-443f-a180-458bea3a74db,shortDescription:79c2c734-2d62-443f-a180-458bea3a74db,breadcrumbs:79c2c734-2d62-443f-a180-458bea3a74db,callToActions:79c2c734-2d62-443f-a180-458bea3a74db,backgroundImage:79c2c734-2d62-443f-a180-458bea3a74db]"/>
+                </es>
+            </variations>
+        </model>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

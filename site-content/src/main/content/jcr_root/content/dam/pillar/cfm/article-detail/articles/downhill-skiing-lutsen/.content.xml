@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="4de6032c-4e51-4801-8731-55b99d3d7d27">
+    <jcr:content
+        cq:name="downhill-skiing-lutsen"
+        cq:parentPath="/content/dam/pillar/cfm/article-detail/articles"
+        jcr:lastModified="{Date}2026-05-27T22:42:16.628-05:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="downhill-skiing-lutsen"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2026-05-27T22:42:16.628-05:00">
+        <data
+            cq:model="/conf/pillar/settings/dam/cfm/models/articledetail"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                bannerImage_x0040_LastModified="{Date}2026-05-27T17:19:58.317-05:00"
+                content="&lt;p>Skiing at &lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/m/025wqhs&quot;>Lutsen Mountains&lt;/a>&lt;/u> offers a unique &amp;quot;big mountain&amp;quot; experience that stands entirely unmatched in the Midwest. Nestled in the ancient Sawtooth Mountain range along Minnesota’s majestic North Shore, the resort is sprawled across four interconnected peaks: Eagle, Ullr, Mystery, and Moose Mountains. Boasting 95 sweeping runs and a lift-serviced vertical drop of 825 feet, Lutsen delivers more diverse terrain, long cruisers, and expansive acreage than any other regional destination. The vast layout allows skiers to &amp;quot;mountain hop&amp;quot; throughout the day, providing an authentic, multi-peak ski vacation without the expensive airfare required for trips out west.&lt;/p>&#xa;&lt;p>What truly elevates the experience is the stunning backdrop of Lake Superior, which is visible from just about anywhere on the mountain. As you glide down the meticulously groomed intermediate slopes or challenge yourself in the 60 acres of designated tree glades, the panoramic views of the icy blue, vast water create a breathtaking illusion of skiing directly into the ocean. The journey across the mountains is seamlessly tied together by the Summit Express Gondola—the only gondola in the Midwest—which transports riders high above the Poplar River Valley to the top of Moose Mountain, offering jaw-dropping scenery at every turn.&lt;/p>&#xa;&lt;p>Beyond the exceptional geography, Lutsen cultivates a deeply compelling winter culture infused with classic North Shore hospitality. Visitors can enjoy authentic ski-in/ski-out lodging, warm up with a hot meal or drink on the expansive deck of the &lt;a href=&quot;https://www.lutsen.com/&quot;>Summit Chalet&lt;/a> at the peak, and enjoy vibrant live music all week long. Because of its northern location and robust lake-effect snowfall, the resort enjoys a remarkably long season that frequently extends from mid-November well into April. It stands as a premier destination for families, friend groups, and passionate midwestern winter sports enthusiasts looking for maximum time on the snow.&lt;/p>&#xa;"
+                content_x0040_ContentType="text/html"
+                content_x0040_LastModified="{Date}2026-05-27T17:22:30.619-05:00"
+                content_x0040_LastModifiedBy="admin"
+                description="&lt;p>Skiing at &lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/m/025wqhs&quot;>Lutsen Mountains&lt;/a>&lt;/u> offers a unique &amp;quot;big mountain&amp;quot; experience that stands entirely unmatched in the Midwest. Nestled in the ancient Sawtooth Mountain range along Minnesota’s majestic North Shore, the resort is sprawled across four interconnected peaks: Eagle, Ullr, Mystery, and Moose Mountains. Boasting 95 sweeping runs and a lift-serviced vertical drop of 825 feet, Lutsen delivers more diverse terrain, long cruisers, and expansive acreage than any other regional destination.&amp;nbsp;&lt;/p>&#xa;"
+                description_x0040_ContentType="text/html"
+                description_x0040_LastModified="{Date}2026-05-27T17:22:30.605-05:00"
+                description_x0040_LastModifiedBy="admin"
+                headline="Downhill Skiing Lutsen"
+                headline_x0040_LastModified="{Date}2026-05-27T17:22:30.604-05:00"
+                headline_x0040_LastModifiedBy="admin"
+                placeholder_x0040_LastModified="{Date}2026-05-27T17:19:58.317-05:00"
+                postDate="{Date}2026-01-12T00:00:00.000Z"
+                postDate_x0040_LastModified="{Date}2026-05-27T22:42:16.548-05:00"
+                postDate_x0040_LastModifiedBy="admin"
+                shortDescription="&lt;p>Nestled in the ancient Sawtooth Mountain range along Minnesota’s majestic North Shore, the resort is sprawled across four interconnected peaks: Eagle, Ullr, Mystery, and Moose Mountains. Boasting 95 sweeping runs and a lift-serviced vertical drop of 825 feet, Lutsen delivers more diverse terrain, long cruisers, and expansive acreage than any other regional destination.&lt;/p>&#xa;"
+                shortDescription_x0040_ContentType="text/html"
+                shortDescription_x0040_LastModified="{Date}2026-05-27T22:42:16.001-05:00"
+                shortDescription_x0040_LastModifiedBy="admin"
+                subheadline="Lutsen Resort"
+                subheadline_x0040_LastModified="{Date}2026-05-27T17:22:30.604-05:00"
+                subheadline_x0040_LastModifiedBy="admin"
+                url="/us/en/articles/downhill-skiing-lutsen"
+                url_x0040_LastModified="{Date}2026-05-27T17:22:30.603-05:00"
+                url_x0040_LastModifiedBy="admin"/>
+            <en
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                _x0040_variationCreationDate="{Date}2026-05-27T18:08:27.850-05:00"
+                bannerImage_x0040_LastModified="{Date}2026-05-27T18:08:27.857-05:00"
+                bannerImage_x0040_LastModifiedBy="admin"
+                content="&lt;p>Skiing at &lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/m/025wqhs&quot;>Lutsen Mountains&lt;/a>&lt;/u> offers a unique &amp;quot;big mountain&amp;quot; experience that stands entirely unmatched in the Midwest. Nestled in the ancient Sawtooth Mountain range along Minnesota’s majestic North Shore, the resort is sprawled across four interconnected peaks: Eagle, Ullr, Mystery, and Moose Mountains. Boasting 95 sweeping runs and a lift-serviced vertical drop of 825 feet, Lutsen delivers more diverse terrain, long cruisers, and expansive acreage than any other regional destination. The vast layout allows skiers to &amp;quot;mountain hop&amp;quot; throughout the day, providing an authentic, multi-peak ski vacation without the expensive airfare required for trips out west.&lt;/p>&#xa;&lt;p>What truly elevates the experience is the stunning backdrop of Lake Superior, which is visible from just about anywhere on the mountain. As you glide down the meticulously groomed intermediate slopes or challenge yourself in the 60 acres of designated tree glades, the panoramic views of the icy blue, vast water create a breathtaking illusion of skiing directly into the ocean. The journey across the mountains is seamlessly tied together by the Summit Express Gondola—the only gondola in the Midwest—which transports riders high above the Poplar River Valley to the top of Moose Mountain, offering jaw-dropping scenery at every turn.&lt;/p>&#xa;&lt;p>Beyond the exceptional geography, Lutsen cultivates a deeply compelling winter culture infused with classic North Shore hospitality. Visitors can enjoy authentic ski-in/ski-out lodging, warm up with a hot meal or drink on the expansive deck of the &lt;a href=&quot;https://www.lutsen.com/&quot;>Summit Chalet&lt;/a> at the peak, and enjoy vibrant live music all week long. Because of its northern location and robust lake-effect snowfall, the resort enjoys a remarkably long season that frequently extends from mid-November well into April. It stands as a premier destination for families, friend groups, and passionate midwestern winter sports enthusiasts looking for maximum time on the snow.&lt;/p>&#xa;"
+                content_x0040_ContentType="text/html"
+                content_x0040_LastModified="{Date}2026-05-27T18:08:27.863-05:00"
+                content_x0040_LastModifiedBy="admin"
+                description="&lt;p>Skiing at &lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/m/025wqhs&quot;>Lutsen Mountains&lt;/a>&lt;/u> offers a unique &amp;quot;big mountain&amp;quot; experience that stands entirely unmatched in the Midwest. Nestled in the ancient Sawtooth Mountain range along Minnesota’s majestic North Shore, the resort is sprawled across four interconnected peaks: Eagle, Ullr, Mystery, and Moose Mountains. Boasting 95 sweeping runs and a lift-serviced vertical drop of 825 feet, Lutsen delivers more diverse terrain, long cruisers, and expansive acreage than any other regional destination.&amp;nbsp;&lt;/p>&#xa;"
+                description_x0040_ContentType="text/html"
+                description_x0040_LastModified="{Date}2026-05-27T18:08:27.853-05:00"
+                description_x0040_LastModifiedBy="admin"
+                headline="Downhill Skiing Lutsen"
+                headline_x0040_LastModified="{Date}2026-05-27T18:08:27.852-05:00"
+                headline_x0040_LastModifiedBy="admin"
+                placeholder_x0040_LastModified="{Date}2026-05-27T18:08:27.861-05:00"
+                placeholder_x0040_LastModifiedBy="admin"
+                postDate="{Date}2026-01-12T00:00:00.000Z"
+                postDate_x0040_LastModified="{Date}2026-05-27T18:08:27.860-05:00"
+                postDate_x0040_LastModifiedBy="admin"
+                subheadline="Lutsen Resort"
+                subheadline_x0040_LastModified="{Date}2026-05-27T18:08:27.853-05:00"
+                subheadline_x0040_LastModifiedBy="admin"
+                url="/us/en/articles/downhill-skiing-lutsen"
+                url_x0040_LastModified="{Date}2026-05-27T18:08:27.852-05:00"
+                url_x0040_LastModifiedBy="admin"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="cf343cf6-e971-41a7-a8ee-ba8ca5912413"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/articledetail"
+                _x0040_stringArray_x0040_variations="[en]"
+                calendar_x0040_postDate="{Date}2026-01-12T00:00:00.000Z"
+                string_x0040_content="&lt;p>Skiing at &lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/m/025wqhs&quot;>Lutsen Mountains&lt;/a>&lt;/u> offers a unique &amp;quot;big mountain&amp;quot; experience that stands entirely unmatched in the Midwest. Nestled in the ancient Sawtooth Mountain range along Minnesota’s majestic North Shore, the resort is sprawled across four interconnected peaks: Eagle, Ullr, Mystery, and Moose Mountains. Boasting 95 sweeping runs and a lift-serviced vertical drop of 825 feet, Lutsen delivers more diverse terrain, long cruisers, and expansive acreage than any other regional destination. The vast layout allows skiers to &amp;quot;mountain hop&amp;quot; throughout the day, providing an authentic, multi-peak ski vacation without the expensive airfare required for trips out west.&lt;/p>&#xa;&lt;p>What truly elevates the experience is the stunning backdrop of Lake Superior, which is visible from just about anywhere on the mountain. As you glide down the meticulously groomed intermediate slopes or challenge yourself in the 60 acres of designated tree glades, the panoramic views of the icy blue, vast water create a breathtaking illusion of skiing directly into the ocean. The journey across the mountains is seamlessly tied together by the Summit Express Gondola—the only gondola in the Midwest—which transports riders high above the Poplar River Valley to the top of Moose Mountain, offering jaw-dropping scenery at every turn.&lt;/p>&#xa;&lt;p>Beyond the exceptional geography, Lutsen cultivates a deeply compelling winter culture infused with classic North Shore hospitality. Visitors can enjoy authentic ski-in/ski-out lodging, warm up with a hot meal or drink on the expansive deck of the &lt;a href=&quot;https://www.lutsen.com/&quot;>Summit Chalet&lt;/a> at the peak, and enjoy vibrant live music all week long. Because of its northern location and robust lake-effect snowfall, the resort enjoys a remarkably long season that frequently extends from mid-November well into April. It stands as a premier destination for families, friend groups, and passionate midwestern winter sports enthusiasts looking for maximum time on the snow.&lt;/p>&#xa;"
+                string_x0040_description="&lt;p>Skiing at &lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/m/025wqhs&quot;>Lutsen Mountains&lt;/a>&lt;/u> offers a unique &amp;quot;big mountain&amp;quot; experience that stands entirely unmatched in the Midwest. Nestled in the ancient Sawtooth Mountain range along Minnesota’s majestic North Shore, the resort is sprawled across four interconnected peaks: Eagle, Ullr, Mystery, and Moose Mountains. Boasting 95 sweeping runs and a lift-serviced vertical drop of 825 feet, Lutsen delivers more diverse terrain, long cruisers, and expansive acreage than any other regional destination.&amp;nbsp;&lt;/p>&#xa;"
+                string_x0040_headline="Downhill Skiing Lutsen"
+                string_x0040_shortDescription="&lt;p>Nestled in the ancient Sawtooth Mountain range along Minnesota’s majestic North Shore, the resort is sprawled across four interconnected peaks: Eagle, Ullr, Mystery, and Moose Mountains. Boasting 95 sweeping runs and a lift-serviced vertical drop of 825 feet, Lutsen delivers more diverse terrain, long cruisers, and expansive acreage than any other regional destination.&lt;/p>&#xa;"
+                string_x0040_subheadline="Lutsen Resort"
+                string_x0040_url="/us/en/articles/downhill-skiing-lutsen"/>
+            <en
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="65ab2b0b-c325-4f48-adcd-ec027be32e90"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/articledetail"
+                calendar_x0040_postDate="{Date}2026-01-12T00:00:00.000Z"
+                string_x0040_content="&lt;p>Skiing at &lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/m/025wqhs&quot;>Lutsen Mountains&lt;/a>&lt;/u> offers a unique &amp;quot;big mountain&amp;quot; experience that stands entirely unmatched in the Midwest. Nestled in the ancient Sawtooth Mountain range along Minnesota’s majestic North Shore, the resort is sprawled across four interconnected peaks: Eagle, Ullr, Mystery, and Moose Mountains. Boasting 95 sweeping runs and a lift-serviced vertical drop of 825 feet, Lutsen delivers more diverse terrain, long cruisers, and expansive acreage than any other regional destination. The vast layout allows skiers to &amp;quot;mountain hop&amp;quot; throughout the day, providing an authentic, multi-peak ski vacation without the expensive airfare required for trips out west.&lt;/p>&#xa;&lt;p>What truly elevates the experience is the stunning backdrop of Lake Superior, which is visible from just about anywhere on the mountain. As you glide down the meticulously groomed intermediate slopes or challenge yourself in the 60 acres of designated tree glades, the panoramic views of the icy blue, vast water create a breathtaking illusion of skiing directly into the ocean. The journey across the mountains is seamlessly tied together by the Summit Express Gondola—the only gondola in the Midwest—which transports riders high above the Poplar River Valley to the top of Moose Mountain, offering jaw-dropping scenery at every turn.&lt;/p>&#xa;&lt;p>Beyond the exceptional geography, Lutsen cultivates a deeply compelling winter culture infused with classic North Shore hospitality. Visitors can enjoy authentic ski-in/ski-out lodging, warm up with a hot meal or drink on the expansive deck of the &lt;a href=&quot;https://www.lutsen.com/&quot;>Summit Chalet&lt;/a> at the peak, and enjoy vibrant live music all week long. Because of its northern location and robust lake-effect snowfall, the resort enjoys a remarkably long season that frequently extends from mid-November well into April. It stands as a premier destination for families, friend groups, and passionate midwestern winter sports enthusiasts looking for maximum time on the snow.&lt;/p>&#xa;"
+                string_x0040_description="&lt;p>Skiing at &lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/m/025wqhs&quot;>Lutsen Mountains&lt;/a>&lt;/u> offers a unique &amp;quot;big mountain&amp;quot; experience that stands entirely unmatched in the Midwest. Nestled in the ancient Sawtooth Mountain range along Minnesota’s majestic North Shore, the resort is sprawled across four interconnected peaks: Eagle, Ullr, Mystery, and Moose Mountains. Boasting 95 sweeping runs and a lift-serviced vertical drop of 825 feet, Lutsen delivers more diverse terrain, long cruisers, and expansive acreage than any other regional destination.&amp;nbsp;&lt;/p>&#xa;"
+                string_x0040_headline="Downhill Skiing Lutsen"
+                string_x0040_subheadline="Lutsen Resort"
+                string_x0040_url="/us/en/articles/downhill-skiing-lutsen"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <model jcr:primaryType="nt:unstructured">
+            <variations jcr:primaryType="nt:unstructured">
+                <en
+                    jcr:description="\0"
+                    jcr:mixinTypes="[cq:Taggable]"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="en"
+                    name="en">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        synchronizeWithVersion="[placeholder:023e0ded-f932-440b-9053-d643268f5f5f,url:023e0ded-f932-440b-9053-d643268f5f5f,headline:023e0ded-f932-440b-9053-d643268f5f5f,subheadline:023e0ded-f932-440b-9053-d643268f5f5f,description:023e0ded-f932-440b-9053-d643268f5f5f,bannerImage:023e0ded-f932-440b-9053-d643268f5f5f,postDate:023e0ded-f932-440b-9053-d643268f5f5f,placeholder:023e0ded-f932-440b-9053-d643268f5f5f,content:023e0ded-f932-440b-9053-d643268f5f5f]"/>
+                </en>
+            </variations>
+        </model>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

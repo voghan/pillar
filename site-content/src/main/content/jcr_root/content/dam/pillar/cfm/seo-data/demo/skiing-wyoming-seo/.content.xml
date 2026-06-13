@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="d89cc6c6-e3d0-4f21-ac5b-2bfa424d2baf">
+    <jcr:content
+        cq:lastModified="{Date}2026-05-24T15:45:11.792-05:00"
+        cq:lastModifiedBy="admin"
+        cq:name="skiing-wyoming-seo"
+        cq:parentPath="/content/dam/pillar/cfm/seo-data/articles"
+        jcr:lastModified="{Date}2026-05-24T15:44:23.002-05:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Skiing Wyoming SEO"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2026-05-24T15:44:23.002-05:00">
+        <data
+            cq:model="/conf/pillar/settings/dam/cfm/models/seodata"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                canonicalUrl="/us/en/articles/downhill-skiing-wyoming"
+                canonicalUrl_x0040_LastModified="{Date}2026-05-24T15:44:22.895-05:00"
+                canonicalUrl_x0040_LastModifiedBy="admin"
+                description="A skiers paradise far from crowds and close to nature with terrain so vast it appears uncharted.  With 2,500 acres of legendary terrain, unmatched levels of snowfall each winter, and unparalleled backcountry access, Jackson Hole offers a truly unique skii"
+                description_x0040_LastModified="{Date}2026-05-24T15:44:22.894-05:00"
+                description_x0040_LastModifiedBy="admin"
+                robots="[noindex,nofollow]"
+                robots_x0040_LastModified="{Date}2026-05-24T15:44:22.898-05:00"
+                robots_x0040_LastModifiedBy="admin"
+                thumbnail_x0040_LastModified="{Date}2026-05-24T15:41:25.777-05:00"
+                title="Downhill Skiing Wyoming"
+                title_x0040_LastModified="{Date}2026-05-24T15:44:22.892-05:00"
+                title_x0040_LastModifiedBy="admin"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="34bf7c5e-8cbe-447f-8878-99f6408ee596"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/seodata"
+                _x0040_stringArray_x0040_variations="[]"
+                string_x0040_canonicalUrl="/us/en/articles/downhill-skiing-wyoming"
+                string_x0040_description="A skiers paradise far from crowds and close to nature with terrain so vast it appears uncharted.  With 2,500 acres of legendary terrain, unmatched levels of snowfall each winter, and unparalleled backcountry access, Jackson Hole offers a truly unique skii"
+                string_x0040_title="Downhill Skiing Wyoming"
+                stringArray_x0040_robots="[noindex,nofollow]"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

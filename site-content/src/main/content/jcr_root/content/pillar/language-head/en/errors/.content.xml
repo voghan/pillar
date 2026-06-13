@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2026-05-27T20:40:12.056-05:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/pillar/settings/wcm/templates/page-content"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[mix:versionable]"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Error Pages"
+        jcr:uuid="9bb2f39f-91f1-4304-a3fd-84fe375c1583"
+        sling:resourceType="pillar/components/page/v1/page"
+        hideInNav="true">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="pillar/components/container/v1/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="pillar/components/container/v1/container"
+                layout="responsiveGrid">
+                <container
+                    cq:styleIds="[1779927959937]"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="pillar/components/container/v1/container"
+                    layout="responsiveGrid"/>
+            </container>
+        </root>
+        <cq:featuredimage
+            jcr:lastModified="{Date}2026-05-23T16:58:23.895-05:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="core/wcm/components/image/v3/image"
+            altValueFromDAM="true"/>
+    </jcr:content>
+    <_x0034_04/>
+    <_x0035_00/>
+</jcr:root>

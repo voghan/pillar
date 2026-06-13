@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:vlt="http://www.day.com/jcr/vault/1.0"
+    jcr:created="{Date}2026-06-11T01:45:10.092Z"
+    jcr:createdBy="admin"
+    jcr:description="\0"
+    jcr:lastModified="{Date}2026-06-11T01:45:10.092Z"
+    jcr:lastModifiedBy="admin"
+    jcr:primaryType="vlt:PackageDefinition"
+    buildCount="7"
+    builtWith="Adobe Experience Manager-6.5.2.LTS"
+    group="my_packages"
+    lastUnwrapped="{Date}2026-06-11T01:45:10.092Z"
+    lastUnwrappedBy="admin"
+    lastWrapped="{Date}2026-06-11T01:45:10.092Z"
+    lastWrappedBy="admin"
+    name="pillar-sample-content"
+    version="\0">
+    <filter jcr:primaryType="nt:unstructured">
+        <f0
+            jcr:primaryType="nt:unstructured"
+            mode="replace"
+            propertyRules="[]"
+            root="/content/pillar"
+            rules="[]"/>
+        <f1
+            jcr:primaryType="nt:unstructured"
+            mode="replace"
+            propertyRules="[]"
+            root="/content/experience-fragments/pillar"
+            rules="[]"/>
+        <f2
+            jcr:primaryType="nt:unstructured"
+            mode="replace"
+            propertyRules="[]"
+            root="/content/dam/pillar"
+            rules="[]"/>
+    </filter>
+</jcr:root>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="21f5f722-f354-4714-a370-71a9607d62a8">
+    <jcr:content
+        cq:name="downhill-skiing-banf-sunshine"
+        cq:parentPath="/content/dam/pillar/cfm/article-detail/articles"
+        jcr:lastModified="{Date}2026-05-27T22:42:59.618-05:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="downhill-skiing-banf-sunshine"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2026-05-27T22:42:59.618-05:00">
+        <data
+            cq:model="/conf/pillar/settings/dam/cfm/models/articledetail"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                bannerImage_x0040_LastModified="{Date}2026-05-27T17:33:17.828-05:00"
+                content="&lt;p>Skiing at &lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/g/11hb5tr53l&quot;>Banff Sunshine Village&lt;/a>&lt;/u> offers an elevated alpine experience perched directly on the Continental Divide within Canada's stunning Banff National Park. Spanning 3,358 acres of skiable terrain across three vast peaks—Mount Standish, Lookout Mountain, and Goat's Eye Mountain—the resort is celebrated for having some of the lightest, driest, and most abundant natural snow in the Canadian Rockies. Because its base sits at a high altitude of 5,440 feet and peaks out at 8,954 feet, Sunshine boasts an incredibly long, non-glacial season that stretches from early November through late May. The layout is highly unique; a scenic 4.5-mile gondola ride transports visitors from the base parking lot up to a vibrant, self-contained upper mountain village, which serves as the central hub for accessing the resort's 137 named trails and 12 modern lifts.&lt;/p>&#xa;&lt;p>The terrain distribution is exceptionally well-rounded, allocating 20% to beginners, 55% to intermediates, and 25% to advanced or expert riders. Because much of the resort sits well above the treeline, skiers are treated to wide-open powder bowls, massive unobstructed vistas, and the unique novelty of carving turns across the provincial border between Alberta and British Columbia in a single run. Intermediates can enjoy endless cruising on the rolling groomers of Mount Standish, while advanced skiers can challenge their endurance on the steep, sustained fall-lines of Goat's Eye Mountain. The resort also caters heavily to the freestyle community with its massive, 12-acre Divide Terrain Park, which packs more than 50 progressive features when fully operational.&lt;/p>&#xa;&lt;p>For extreme skiers, Sunshine Village is home to some of the most legendary, high-consequence in-bounds freeride terrain in North America, most notably Delirium Dive. This world-famous, 45-degree amphitheater of cliffs, chutes, and intense entry stairs features restrictions so severe that the resort requires all entrants to ski with a partner and carry full avalanche gear, including a transceiver, shovel, and probe. Access is strictly controlled by an electronic gate at the top of the Continental Divide chairlift that only unlocks when it detects a transmitting beacon. Once inside, expert riders are rewarded with deep wind-blown powder stashes, intense technical lines, and an unmatched backcountry feel that remains safely monitored and controlled by the &lt;a href=&quot;https://www.skibanff.com/&quot;>Sunshine Village Snow Safety team&lt;/a>.&lt;/p>&#xa;"
+                content_x0040_ContentType="text/html"
+                content_x0040_LastModified="{Date}2026-05-27T17:35:30.652-05:00"
+                content_x0040_LastModifiedBy="admin"
+                description="&lt;p>Spanning 3,358 acres of skiable terrain across three vast peaks—Mount Standish, Lookout Mountain, and Goat's Eye Mountain—the resort is celebrated for having some of the lightest, driest, and most abundant natural snow in the Canadian Rockies. Because its base sits at a high altitude of 5,440 feet and peaks out at 8,954 feet, Sunshine boasts an incredibly long, non-glacial season that stretches from early November through late May.&lt;/p>&#xa;"
+                description_x0040_ContentType="text/html"
+                description_x0040_LastModified="{Date}2026-05-27T17:35:30.622-05:00"
+                description_x0040_LastModifiedBy="admin"
+                headline="Downhill Skiing Sunshine Village"
+                headline_x0040_LastModified="{Date}2026-05-27T17:35:30.620-05:00"
+                headline_x0040_LastModifiedBy="admin"
+                placeholder_x0040_LastModified="{Date}2026-05-27T17:33:17.828-05:00"
+                postDate="{Date}2026-07-03T00:00:00.000Z"
+                postDate_x0040_LastModified="{Date}2026-05-27T22:42:59.571-05:00"
+                postDate_x0040_LastModifiedBy="admin"
+                shortDescription="&lt;p>Spanning 3,358 acres of skiable terrain across three vast peaks—Mount Standish, Lookout Mountain, and Goat's Eye Mountain—the resort is celebrated for having some of the lightest, driest, and most abundant natural snow in the Canadian Rockies. Because its base sits at a high altitude of 5,440 feet and peaks out at 8,954 feet, Sunshine boasts an incredibly long, non-glacial season that stretches from early November through late May.&amp;nbsp;&lt;/p>&#xa;"
+                shortDescription_x0040_ContentType="text/html"
+                shortDescription_x0040_LastModified="{Date}2026-05-27T22:42:59.567-05:00"
+                shortDescription_x0040_LastModifiedBy="admin"
+                subheadline="Ski Big Three"
+                subheadline_x0040_LastModified="{Date}2026-05-27T17:35:30.621-05:00"
+                subheadline_x0040_LastModifiedBy="admin"
+                url="/us/en/articles/downhill-skiing-banf-sunshine"
+                url_x0040_LastModified="{Date}2026-05-27T17:35:30.619-05:00"
+                url_x0040_LastModifiedBy="admin"/>
+            <en
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                _x0040_variationCreationDate="{Date}2026-05-27T18:08:51.030-05:00"
+                bannerImage_x0040_LastModified="{Date}2026-05-27T18:08:51.036-05:00"
+                bannerImage_x0040_LastModifiedBy="admin"
+                content="&lt;p>Skiing at &lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/g/11hb5tr53l&quot;>Banff Sunshine Village&lt;/a>&lt;/u> offers an elevated alpine experience perched directly on the Continental Divide within Canada's stunning Banff National Park. Spanning 3,358 acres of skiable terrain across three vast peaks—Mount Standish, Lookout Mountain, and Goat's Eye Mountain—the resort is celebrated for having some of the lightest, driest, and most abundant natural snow in the Canadian Rockies. Because its base sits at a high altitude of 5,440 feet and peaks out at 8,954 feet, Sunshine boasts an incredibly long, non-glacial season that stretches from early November through late May. The layout is highly unique; a scenic 4.5-mile gondola ride transports visitors from the base parking lot up to a vibrant, self-contained upper mountain village, which serves as the central hub for accessing the resort's 137 named trails and 12 modern lifts.&lt;/p>&#xa;&lt;p>The terrain distribution is exceptionally well-rounded, allocating 20% to beginners, 55% to intermediates, and 25% to advanced or expert riders. Because much of the resort sits well above the treeline, skiers are treated to wide-open powder bowls, massive unobstructed vistas, and the unique novelty of carving turns across the provincial border between Alberta and British Columbia in a single run. Intermediates can enjoy endless cruising on the rolling groomers of Mount Standish, while advanced skiers can challenge their endurance on the steep, sustained fall-lines of Goat's Eye Mountain. The resort also caters heavily to the freestyle community with its massive, 12-acre Divide Terrain Park, which packs more than 50 progressive features when fully operational.&lt;/p>&#xa;&lt;p>For extreme skiers, Sunshine Village is home to some of the most legendary, high-consequence in-bounds freeride terrain in North America, most notably Delirium Dive. This world-famous, 45-degree amphitheater of cliffs, chutes, and intense entry stairs features restrictions so severe that the resort requires all entrants to ski with a partner and carry full avalanche gear, including a transceiver, shovel, and probe. Access is strictly controlled by an electronic gate at the top of the Continental Divide chairlift that only unlocks when it detects a transmitting beacon. Once inside, expert riders are rewarded with deep wind-blown powder stashes, intense technical lines, and an unmatched backcountry feel that remains safely monitored and controlled by the &lt;a href=&quot;https://www.skibanff.com/&quot;>Sunshine Village Snow Safety team&lt;/a>.&lt;/p>&#xa;"
+                content_x0040_ContentType="text/html"
+                content_x0040_LastModified="{Date}2026-05-27T18:08:51.038-05:00"
+                content_x0040_LastModifiedBy="admin"
+                description="&lt;p>Spanning 3,358 acres of skiable terrain across three vast peaks—Mount Standish, Lookout Mountain, and Goat's Eye Mountain—the resort is celebrated for having some of the lightest, driest, and most abundant natural snow in the Canadian Rockies. Because its base sits at a high altitude of 5,440 feet and peaks out at 8,954 feet, Sunshine boasts an incredibly long, non-glacial season that stretches from early November through late May.&lt;/p>&#xa;"
+                description_x0040_ContentType="text/html"
+                description_x0040_LastModified="{Date}2026-05-27T18:08:51.036-05:00"
+                description_x0040_LastModifiedBy="admin"
+                headline="Downhill Skiing Sunshine Village"
+                headline_x0040_LastModified="{Date}2026-05-27T18:08:51.034-05:00"
+                headline_x0040_LastModifiedBy="admin"
+                placeholder_x0040_LastModified="{Date}2026-05-27T18:08:51.038-05:00"
+                placeholder_x0040_LastModifiedBy="admin"
+                postDate="{Date}2026-07-03T00:00:00.000Z"
+                postDate_x0040_LastModified="{Date}2026-05-27T18:08:51.037-05:00"
+                postDate_x0040_LastModifiedBy="admin"
+                subheadline="Ski Big Three"
+                subheadline_x0040_LastModified="{Date}2026-05-27T18:08:51.035-05:00"
+                subheadline_x0040_LastModifiedBy="admin"
+                url="/us/en/articles/downhill-skiing-banf-sunshine"
+                url_x0040_LastModified="{Date}2026-05-27T18:08:51.033-05:00"
+                url_x0040_LastModifiedBy="admin"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="c2a38888-c7c8-4a8e-9336-582533fa1c28"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/articledetail"
+                _x0040_stringArray_x0040_variations="[en]"
+                calendar_x0040_postDate="{Date}2026-07-03T00:00:00.000Z"
+                string_x0040_content="&lt;p>Skiing at &lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/g/11hb5tr53l&quot;>Banff Sunshine Village&lt;/a>&lt;/u> offers an elevated alpine experience perched directly on the Continental Divide within Canada's stunning Banff National Park. Spanning 3,358 acres of skiable terrain across three vast peaks—Mount Standish, Lookout Mountain, and Goat's Eye Mountain—the resort is celebrated for having some of the lightest, driest, and most abundant natural snow in the Canadian Rockies. Because its base sits at a high altitude of 5,440 feet and peaks out at 8,954 feet, Sunshine boasts an incredibly long, non-glacial season that stretches from early November through late May. The layout is highly unique; a scenic 4.5-mile gondola ride transports visitors from the base parking lot up to a vibrant, self-contained upper mountain village, which serves as the central hub for accessing the resort's 137 named trails and 12 modern lifts.&lt;/p>&#xa;&lt;p>The terrain distribution is exceptionally well-rounded, allocating 20% to beginners, 55% to intermediates, and 25% to advanced or expert riders. Because much of the resort sits well above the treeline, skiers are treated to wide-open powder bowls, massive unobstructed vistas, and the unique novelty of carving turns across the provincial border between Alberta and British Columbia in a single run. Intermediates can enjoy endless cruising on the rolling groomers of Mount Standish, while advanced skiers can challenge their endurance on the steep, sustained fall-lines of Goat's Eye Mountain. The resort also caters heavily to the freestyle community with its massive, 12-acre Divide Terrain Park, which packs more than 50 progressive features when fully operational.&lt;/p>&#xa;&lt;p>For extreme skiers, Sunshine Village is home to some of the most legendary, high-consequence in-bounds freeride terrain in North America, most notably Delirium Dive. This world-famous, 45-degree amphitheater of cliffs, chutes, and intense entry stairs features restrictions so severe that the resort requires all entrants to ski with a partner and carry full avalanche gear, including a transceiver, shovel, and probe. Access is strictly controlled by an electronic gate at the top of the Continental Divide chairlift that only unlocks when it detects a transmitting beacon. Once inside, expert riders are rewarded with deep wind-blown powder stashes, intense technical lines, and an unmatched backcountry feel that remains safely monitored and controlled by the &lt;a href=&quot;https://www.skibanff.com/&quot;>Sunshine Village Snow Safety team&lt;/a>.&lt;/p>&#xa;"
+                string_x0040_description="&lt;p>Spanning 3,358 acres of skiable terrain across three vast peaks—Mount Standish, Lookout Mountain, and Goat's Eye Mountain—the resort is celebrated for having some of the lightest, driest, and most abundant natural snow in the Canadian Rockies. Because its base sits at a high altitude of 5,440 feet and peaks out at 8,954 feet, Sunshine boasts an incredibly long, non-glacial season that stretches from early November through late May.&lt;/p>&#xa;"
+                string_x0040_headline="Downhill Skiing Sunshine Village"
+                string_x0040_shortDescription="&lt;p>Spanning 3,358 acres of skiable terrain across three vast peaks—Mount Standish, Lookout Mountain, and Goat's Eye Mountain—the resort is celebrated for having some of the lightest, driest, and most abundant natural snow in the Canadian Rockies. Because its base sits at a high altitude of 5,440 feet and peaks out at 8,954 feet, Sunshine boasts an incredibly long, non-glacial season that stretches from early November through late May.&amp;nbsp;&lt;/p>&#xa;"
+                string_x0040_subheadline="Ski Big Three"
+                string_x0040_url="/us/en/articles/downhill-skiing-banf-sunshine"/>
+            <en
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="a165f8af-b175-4493-af13-dea5e25a20a2"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/articledetail"
+                calendar_x0040_postDate="{Date}2026-07-03T00:00:00.000Z"
+                string_x0040_content="&lt;p>Skiing at &lt;u>&lt;a href=&quot;https://www.google.com/search?kgmid=/g/11hb5tr53l&quot;>Banff Sunshine Village&lt;/a>&lt;/u> offers an elevated alpine experience perched directly on the Continental Divide within Canada's stunning Banff National Park. Spanning 3,358 acres of skiable terrain across three vast peaks—Mount Standish, Lookout Mountain, and Goat's Eye Mountain—the resort is celebrated for having some of the lightest, driest, and most abundant natural snow in the Canadian Rockies. Because its base sits at a high altitude of 5,440 feet and peaks out at 8,954 feet, Sunshine boasts an incredibly long, non-glacial season that stretches from early November through late May. The layout is highly unique; a scenic 4.5-mile gondola ride transports visitors from the base parking lot up to a vibrant, self-contained upper mountain village, which serves as the central hub for accessing the resort's 137 named trails and 12 modern lifts.&lt;/p>&#xa;&lt;p>The terrain distribution is exceptionally well-rounded, allocating 20% to beginners, 55% to intermediates, and 25% to advanced or expert riders. Because much of the resort sits well above the treeline, skiers are treated to wide-open powder bowls, massive unobstructed vistas, and the unique novelty of carving turns across the provincial border between Alberta and British Columbia in a single run. Intermediates can enjoy endless cruising on the rolling groomers of Mount Standish, while advanced skiers can challenge their endurance on the steep, sustained fall-lines of Goat's Eye Mountain. The resort also caters heavily to the freestyle community with its massive, 12-acre Divide Terrain Park, which packs more than 50 progressive features when fully operational.&lt;/p>&#xa;&lt;p>For extreme skiers, Sunshine Village is home to some of the most legendary, high-consequence in-bounds freeride terrain in North America, most notably Delirium Dive. This world-famous, 45-degree amphitheater of cliffs, chutes, and intense entry stairs features restrictions so severe that the resort requires all entrants to ski with a partner and carry full avalanche gear, including a transceiver, shovel, and probe. Access is strictly controlled by an electronic gate at the top of the Continental Divide chairlift that only unlocks when it detects a transmitting beacon. Once inside, expert riders are rewarded with deep wind-blown powder stashes, intense technical lines, and an unmatched backcountry feel that remains safely monitored and controlled by the &lt;a href=&quot;https://www.skibanff.com/&quot;>Sunshine Village Snow Safety team&lt;/a>.&lt;/p>&#xa;"
+                string_x0040_description="&lt;p>Spanning 3,358 acres of skiable terrain across three vast peaks—Mount Standish, Lookout Mountain, and Goat's Eye Mountain—the resort is celebrated for having some of the lightest, driest, and most abundant natural snow in the Canadian Rockies. Because its base sits at a high altitude of 5,440 feet and peaks out at 8,954 feet, Sunshine boasts an incredibly long, non-glacial season that stretches from early November through late May.&lt;/p>&#xa;"
+                string_x0040_headline="Downhill Skiing Sunshine Village"
+                string_x0040_subheadline="Ski Big Three"
+                string_x0040_url="/us/en/articles/downhill-skiing-banf-sunshine"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <model jcr:primaryType="nt:unstructured">
+            <variations jcr:primaryType="nt:unstructured">
+                <en
+                    jcr:description="\0"
+                    jcr:mixinTypes="[cq:Taggable]"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="en"
+                    name="en">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        synchronizeWithVersion="[placeholder:7504a818-bc99-4ba2-aa58-fffecc51ac78,url:7504a818-bc99-4ba2-aa58-fffecc51ac78,headline:7504a818-bc99-4ba2-aa58-fffecc51ac78,subheadline:7504a818-bc99-4ba2-aa58-fffecc51ac78,description:7504a818-bc99-4ba2-aa58-fffecc51ac78,bannerImage:7504a818-bc99-4ba2-aa58-fffecc51ac78,postDate:7504a818-bc99-4ba2-aa58-fffecc51ac78,placeholder:7504a818-bc99-4ba2-aa58-fffecc51ac78,content:7504a818-bc99-4ba2-aa58-fffecc51ac78]"/>
+                </en>
+            </variations>
+        </model>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

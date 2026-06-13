@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="e0626185-56fe-45f0-b9eb-500da2779507">
+    <jcr:content
+        cq:name="downhill-skiing-snowbird"
+        cq:parentPath="/content/dam/pillar/cfm/article-detail/articles"
+        jcr:lastModified="{Date}2026-05-27T22:32:53.569-05:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="downhill-skiing-snowbird"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2026-05-27T22:32:53.569-05:00">
+        <data
+            cq:model="/conf/pillar/settings/dam/cfm/models/articledetail"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                bannerImage_x0040_LastModified="{Date}2026-05-27T17:47:10.161-05:00"
+                content="&lt;p>Skiing at Snowbird offers a legendary, high-octane alpine experience defined by its steep terrain and staggering snowfall totals. Situated just 29 miles from Salt Lake City in Utah's rugged Little Cottonwood Canyon, the resort shares a massive ridge with its neighbor, Alta, and spans 2,500 acres of skiable terrain. Snowbird is globally renowned for its exceptional snow quality, averaging over 500 inches of light, dry &amp;quot;intermountain&amp;quot; powder every year. Boasting a massive 3,243-foot vertical drop that peaks at an elevation of 11,000 feet on Hidden Peak, the resort features a reliable climate that fuels one of the longest ski seasons in North America, often stretching from late November well into May or June.&lt;/p>&#xa;&lt;p>The mountain's layout is engineered for maximum vertical endurance and is famously anchored by the Snowbird Aerial Tram, which whisks passengers from the base to the summit in just under 10 minutes. The terrain is a paradise for advanced and expert freeriders, packed with massive bowls, intense cliff bands, tight chutes, and technical glades across Gad Valley, Peruvian Gulch, and Mineral Basin. For an entirely unique mountain transit experience, skiers can ride the Peruvian Tunnel—a unique 600-foot conveyor belt that transports guests directly through the inside of the mountain to access the sunny, wide-open bowls on the backside. While the resort is famous for its adrenaline-pumping black diamonds, it also features long, meticulously groomed intermediate cruisers and dedicated beginner zones near the base.&lt;/p>&#xa;&lt;p>The base atmosphere is centered around the iconic, brutalist-style architecture of the Cliff Lodge, offering a functional, upscale ski-in/ski-out experience complete with rooftop hot tubs overlooking the canyon. The après-ski culture is energetic yet deeply focused on the sport, where dedicated powder-hounds gather at spots like the Tram Club to swap stories after a long day of charging the steeps. Because it is a part of the Ikon Pass and AltaBird pass networks, visitors can easily expand their trip to explore the connected terrain next door, making it a definitive bucket-list destination for serious winter sports enthusiasts.&lt;/p>&#xa;&lt;p>If you are thinking about booking a trip to Utah, let me know if you would like me to find lodging rates at the Cliff Lodge, look into the rules for the AltaBird dual-mountain pass, or map out the easiest airport shuttle options from Salt Lake City!&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;"
+                content_x0040_ContentType="text/html"
+                content_x0040_LastModified="{Date}2026-05-27T17:49:05.260-05:00"
+                content_x0040_LastModifiedBy="admin"
+                description="&lt;p>Situated just 29 miles from Salt Lake City in Utah's rugged Little Cottonwood Canyon, the resort shares a massive ridge with its neighbor, Alta, and spans 2,500 acres of skiable terrain. Snowbird is globally renowned for its exceptional snow quality, averaging over 500 inches of light, dry &amp;quot;intermountain&amp;quot; powder every year.&amp;nbsp;&lt;/p>&#xa;"
+                description_x0040_ContentType="text/html"
+                description_x0040_LastModified="{Date}2026-05-27T17:49:05.249-05:00"
+                description_x0040_LastModifiedBy="admin"
+                headline="Downhill Skiing Snowbird"
+                headline_x0040_LastModified="{Date}2026-05-27T17:49:05.247-05:00"
+                headline_x0040_LastModifiedBy="admin"
+                placeholder_x0040_LastModified="{Date}2026-05-27T17:47:10.161-05:00"
+                postDate="{Date}2026-01-11T00:00:00.000Z"
+                postDate_x0040_LastModified="{Date}2026-05-27T22:32:53.521-05:00"
+                postDate_x0040_LastModifiedBy="admin"
+                shortDescription="&lt;p>Situated just 29 miles from Salt Lake City in Utah's rugged Little Cottonwood Canyon, the resort shares a massive ridge with its neighbor, Alta, and spans 2,500 acres of skiable terrain. Snowbird is globally renowned for its exceptional snow quality, averaging over 500 inches of light, dry &amp;quot;intermountain&amp;quot; powder every year.&lt;/p>&#xa;"
+                shortDescription_x0040_ContentType="text/html"
+                shortDescription_x0040_LastModified="{Date}2026-05-27T22:32:53.518-05:00"
+                shortDescription_x0040_LastModifiedBy="admin"
+                subheadline="Skiing Utah"
+                subheadline_x0040_LastModified="{Date}2026-05-27T17:49:05.248-05:00"
+                subheadline_x0040_LastModifiedBy="admin"
+                url="/us/en/articles/downhill-skiing-snowbird"
+                url_x0040_LastModified="{Date}2026-05-27T17:49:05.247-05:00"
+                url_x0040_LastModifiedBy="admin"/>
+            <en
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                _x0040_variationCreationDate="{Date}2026-05-27T18:07:43.102-05:00"
+                bannerImage_x0040_LastModified="{Date}2026-05-27T18:07:43.108-05:00"
+                bannerImage_x0040_LastModifiedBy="admin"
+                content="&lt;p>Skiing at Snowbird offers a legendary, high-octane alpine experience defined by its steep terrain and staggering snowfall totals. Situated just 29 miles from Salt Lake City in Utah's rugged Little Cottonwood Canyon, the resort shares a massive ridge with its neighbor, Alta, and spans 2,500 acres of skiable terrain. Snowbird is globally renowned for its exceptional snow quality, averaging over 500 inches of light, dry &amp;quot;intermountain&amp;quot; powder every year. Boasting a massive 3,243-foot vertical drop that peaks at an elevation of 11,000 feet on Hidden Peak, the resort features a reliable climate that fuels one of the longest ski seasons in North America, often stretching from late November well into May or June.&lt;/p>&#xa;&lt;p>The mountain's layout is engineered for maximum vertical endurance and is famously anchored by the Snowbird Aerial Tram, which whisks passengers from the base to the summit in just under 10 minutes. The terrain is a paradise for advanced and expert freeriders, packed with massive bowls, intense cliff bands, tight chutes, and technical glades across Gad Valley, Peruvian Gulch, and Mineral Basin. For an entirely unique mountain transit experience, skiers can ride the Peruvian Tunnel—a unique 600-foot conveyor belt that transports guests directly through the inside of the mountain to access the sunny, wide-open bowls on the backside. While the resort is famous for its adrenaline-pumping black diamonds, it also features long, meticulously groomed intermediate cruisers and dedicated beginner zones near the base.&lt;/p>&#xa;&lt;p>The base atmosphere is centered around the iconic, brutalist-style architecture of the Cliff Lodge, offering a functional, upscale ski-in/ski-out experience complete with rooftop hot tubs overlooking the canyon. The après-ski culture is energetic yet deeply focused on the sport, where dedicated powder-hounds gather at spots like the Tram Club to swap stories after a long day of charging the steeps. Because it is a part of the Ikon Pass and AltaBird pass networks, visitors can easily expand their trip to explore the connected terrain next door, making it a definitive bucket-list destination for serious winter sports enthusiasts.&lt;/p>&#xa;&lt;p>If you are thinking about booking a trip to Utah, let me know if you would like me to find lodging rates at the Cliff Lodge, look into the rules for the AltaBird dual-mountain pass, or map out the easiest airport shuttle options from Salt Lake City!&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;"
+                content_x0040_ContentType="text/html"
+                content_x0040_LastModified="{Date}2026-05-27T18:07:43.111-05:00"
+                content_x0040_LastModifiedBy="admin"
+                description="&lt;p>Situated just 29 miles from Salt Lake City in Utah's rugged Little Cottonwood Canyon, the resort shares a massive ridge with its neighbor, Alta, and spans 2,500 acres of skiable terrain. Snowbird is globally renowned for its exceptional snow quality, averaging over 500 inches of light, dry &amp;quot;intermountain&amp;quot; powder every year.&amp;nbsp;&lt;/p>&#xa;"
+                description_x0040_ContentType="text/html"
+                description_x0040_LastModified="{Date}2026-05-27T18:07:43.107-05:00"
+                description_x0040_LastModifiedBy="admin"
+                headline="Downhill Skiing Snowbird"
+                headline_x0040_LastModified="{Date}2026-05-27T18:07:43.105-05:00"
+                headline_x0040_LastModifiedBy="admin"
+                placeholder_x0040_LastModified="{Date}2026-05-27T18:07:43.110-05:00"
+                placeholder_x0040_LastModifiedBy="admin"
+                postDate="{Date}2026-01-11T00:00:00.000Z"
+                postDate_x0040_LastModified="{Date}2026-05-27T18:07:43.109-05:00"
+                postDate_x0040_LastModifiedBy="admin"
+                subheadline="Skiing Utah"
+                subheadline_x0040_LastModified="{Date}2026-05-27T18:07:43.106-05:00"
+                subheadline_x0040_LastModifiedBy="admin"
+                url="/us/en/articles/downhill-skiing-snowbird"
+                url_x0040_LastModified="{Date}2026-05-27T18:07:43.104-05:00"
+                url_x0040_LastModifiedBy="admin"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="cb4d8e75-37be-4a0a-b2ea-706a3a302bc0"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/articledetail"
+                _x0040_stringArray_x0040_variations="[en]"
+                calendar_x0040_postDate="{Date}2026-01-11T00:00:00.000Z"
+                string_x0040_content="&lt;p>Skiing at Snowbird offers a legendary, high-octane alpine experience defined by its steep terrain and staggering snowfall totals. Situated just 29 miles from Salt Lake City in Utah's rugged Little Cottonwood Canyon, the resort shares a massive ridge with its neighbor, Alta, and spans 2,500 acres of skiable terrain. Snowbird is globally renowned for its exceptional snow quality, averaging over 500 inches of light, dry &amp;quot;intermountain&amp;quot; powder every year. Boasting a massive 3,243-foot vertical drop that peaks at an elevation of 11,000 feet on Hidden Peak, the resort features a reliable climate that fuels one of the longest ski seasons in North America, often stretching from late November well into May or June.&lt;/p>&#xa;&lt;p>The mountain's layout is engineered for maximum vertical endurance and is famously anchored by the Snowbird Aerial Tram, which whisks passengers from the base to the summit in just under 10 minutes. The terrain is a paradise for advanced and expert freeriders, packed with massive bowls, intense cliff bands, tight chutes, and technical glades across Gad Valley, Peruvian Gulch, and Mineral Basin. For an entirely unique mountain transit experience, skiers can ride the Peruvian Tunnel—a unique 600-foot conveyor belt that transports guests directly through the inside of the mountain to access the sunny, wide-open bowls on the backside. While the resort is famous for its adrenaline-pumping black diamonds, it also features long, meticulously groomed intermediate cruisers and dedicated beginner zones near the base.&lt;/p>&#xa;&lt;p>The base atmosphere is centered around the iconic, brutalist-style architecture of the Cliff Lodge, offering a functional, upscale ski-in/ski-out experience complete with rooftop hot tubs overlooking the canyon. The après-ski culture is energetic yet deeply focused on the sport, where dedicated powder-hounds gather at spots like the Tram Club to swap stories after a long day of charging the steeps. Because it is a part of the Ikon Pass and AltaBird pass networks, visitors can easily expand their trip to explore the connected terrain next door, making it a definitive bucket-list destination for serious winter sports enthusiasts.&lt;/p>&#xa;&lt;p>If you are thinking about booking a trip to Utah, let me know if you would like me to find lodging rates at the Cliff Lodge, look into the rules for the AltaBird dual-mountain pass, or map out the easiest airport shuttle options from Salt Lake City!&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;"
+                string_x0040_description="&lt;p>Situated just 29 miles from Salt Lake City in Utah's rugged Little Cottonwood Canyon, the resort shares a massive ridge with its neighbor, Alta, and spans 2,500 acres of skiable terrain. Snowbird is globally renowned for its exceptional snow quality, averaging over 500 inches of light, dry &amp;quot;intermountain&amp;quot; powder every year.&amp;nbsp;&lt;/p>&#xa;"
+                string_x0040_headline="Downhill Skiing Snowbird"
+                string_x0040_shortDescription="&lt;p>Situated just 29 miles from Salt Lake City in Utah's rugged Little Cottonwood Canyon, the resort shares a massive ridge with its neighbor, Alta, and spans 2,500 acres of skiable terrain. Snowbird is globally renowned for its exceptional snow quality, averaging over 500 inches of light, dry &amp;quot;intermountain&amp;quot; powder every year.&lt;/p>&#xa;"
+                string_x0040_subheadline="Skiing Utah"
+                string_x0040_url="/us/en/articles/downhill-skiing-snowbird"/>
+            <en
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="a8ed02a4-8f5f-497b-bcc7-259d8e8c5cc1"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/articledetail"
+                calendar_x0040_postDate="{Date}2026-01-11T00:00:00.000Z"
+                string_x0040_content="&lt;p>Skiing at Snowbird offers a legendary, high-octane alpine experience defined by its steep terrain and staggering snowfall totals. Situated just 29 miles from Salt Lake City in Utah's rugged Little Cottonwood Canyon, the resort shares a massive ridge with its neighbor, Alta, and spans 2,500 acres of skiable terrain. Snowbird is globally renowned for its exceptional snow quality, averaging over 500 inches of light, dry &amp;quot;intermountain&amp;quot; powder every year. Boasting a massive 3,243-foot vertical drop that peaks at an elevation of 11,000 feet on Hidden Peak, the resort features a reliable climate that fuels one of the longest ski seasons in North America, often stretching from late November well into May or June.&lt;/p>&#xa;&lt;p>The mountain's layout is engineered for maximum vertical endurance and is famously anchored by the Snowbird Aerial Tram, which whisks passengers from the base to the summit in just under 10 minutes. The terrain is a paradise for advanced and expert freeriders, packed with massive bowls, intense cliff bands, tight chutes, and technical glades across Gad Valley, Peruvian Gulch, and Mineral Basin. For an entirely unique mountain transit experience, skiers can ride the Peruvian Tunnel—a unique 600-foot conveyor belt that transports guests directly through the inside of the mountain to access the sunny, wide-open bowls on the backside. While the resort is famous for its adrenaline-pumping black diamonds, it also features long, meticulously groomed intermediate cruisers and dedicated beginner zones near the base.&lt;/p>&#xa;&lt;p>The base atmosphere is centered around the iconic, brutalist-style architecture of the Cliff Lodge, offering a functional, upscale ski-in/ski-out experience complete with rooftop hot tubs overlooking the canyon. The après-ski culture is energetic yet deeply focused on the sport, where dedicated powder-hounds gather at spots like the Tram Club to swap stories after a long day of charging the steeps. Because it is a part of the Ikon Pass and AltaBird pass networks, visitors can easily expand their trip to explore the connected terrain next door, making it a definitive bucket-list destination for serious winter sports enthusiasts.&lt;/p>&#xa;&lt;p>If you are thinking about booking a trip to Utah, let me know if you would like me to find lodging rates at the Cliff Lodge, look into the rules for the AltaBird dual-mountain pass, or map out the easiest airport shuttle options from Salt Lake City!&lt;/p>&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xa;"
+                string_x0040_description="&lt;p>Situated just 29 miles from Salt Lake City in Utah's rugged Little Cottonwood Canyon, the resort shares a massive ridge with its neighbor, Alta, and spans 2,500 acres of skiable terrain. Snowbird is globally renowned for its exceptional snow quality, averaging over 500 inches of light, dry &amp;quot;intermountain&amp;quot; powder every year.&amp;nbsp;&lt;/p>&#xa;"
+                string_x0040_headline="Downhill Skiing Snowbird"
+                string_x0040_subheadline="Skiing Utah"
+                string_x0040_url="/us/en/articles/downhill-skiing-snowbird"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <model jcr:primaryType="nt:unstructured">
+            <variations jcr:primaryType="nt:unstructured">
+                <en
+                    jcr:description="\0"
+                    jcr:mixinTypes="[cq:Taggable]"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="en"
+                    name="en">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        synchronizeWithVersion="[placeholder:a1fc7bf2-093f-44b1-93a0-2269aa57d533,url:a1fc7bf2-093f-44b1-93a0-2269aa57d533,headline:a1fc7bf2-093f-44b1-93a0-2269aa57d533,subheadline:a1fc7bf2-093f-44b1-93a0-2269aa57d533,description:a1fc7bf2-093f-44b1-93a0-2269aa57d533,bannerImage:a1fc7bf2-093f-44b1-93a0-2269aa57d533,postDate:a1fc7bf2-093f-44b1-93a0-2269aa57d533,placeholder:a1fc7bf2-093f-44b1-93a0-2269aa57d533,content:a1fc7bf2-093f-44b1-93a0-2269aa57d533]"/>
+                </en>
+            </variations>
+        </model>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

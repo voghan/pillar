@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:dam="http://www.day.com/dam/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:referenceable,mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="c25099ad-0fcc-4611-abe4-169cd8551093">
+    <jcr:content
+        cq:name="articles"
+        cq:parentPath="/content/dam/pillar/cfm/card-list/articles"
+        jcr:lastModified="{Date}2026-05-27T22:27:07.071-05:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent"
+        jcr:title="Articles"
+        contentFragment="{Boolean}true"
+        lastFragmentSave="{Date}2026-05-27T22:27:07.071-05:00">
+        <data
+            cq:model="/conf/pillar/settings/dam/cfm/models/cardlistconfig"
+            jcr:primaryType="nt:unstructured"
+            _strucVersion="{Long}1">
+            <master
+                jcr:mixinTypes="[cq:Taggable,dam:cfVariationNode]"
+                jcr:primaryType="nt:unstructured"
+                cardTags_x0040_LastModified="{Date}2026-05-27T22:26:03.219-05:00"
+                enablePostDate="{Boolean}true"
+                enablePostDate_x0040_LastModified="{Date}2026-05-27T22:27:07.041-05:00"
+                enablePostDate_x0040_LastModifiedBy="admin"
+                enableSearch="{Boolean}false"
+                enableSearch_x0040_LastModified="{Date}2026-05-27T22:27:07.042-05:00"
+                enableSearch_x0040_LastModifiedBy="admin"
+                filterTags_x0040_LastModified="{Date}2026-05-27T22:26:03.219-05:00"
+                headline="All Articles"
+                headline_x0040_LastModified="{Date}2026-05-27T22:27:07.037-05:00"
+                headline_x0040_LastModifiedBy="admin"
+                placeholder_x0040_LastModified="{Date}2026-05-27T22:26:03.219-05:00"
+                searchPath="/content/dam/pillar/cfm/article-detail/articles"
+                searchPath_x0040_LastModified="{Date}2026-05-27T22:27:07.039-05:00"
+                searchPath_x0040_LastModifiedBy="admin"
+                shortDescription_x0040_ContentType="text/html"
+                shortDescription_x0040_LastModified="{Date}2026-05-27T22:27:07.038-05:00"
+                shortDescription_x0040_LastModifiedBy="admin"/>
+        </data>
+        <indexedData jcr:primaryType="nt:unstructured">
+            <master
+                jcr:mixinTypes="[dam:IndexedFragmentData]"
+                jcr:primaryType="nt:unstructured"
+                jcr:uuid="1f7b99c9-3e80-4f35-8ab5-c6268740fa1a"
+                _x0040_string_x0040_model="/conf/pillar/settings/dam/cfm/models/cardlistconfig"
+                _x0040_stringArray_x0040_variations="[]"
+                boolean_x0040_enablePostDate="{Boolean}true"
+                boolean_x0040_enableSearch="{Boolean}false"
+                string_x0040_headline="All Articles"/>
+        </indexedData>
+        <metadata
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>
