@@ -39,6 +39,7 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -121,7 +122,7 @@ public class NotificationProcessTest {
     assertEquals("Wally", params.getValue().get("givenName"));
     assertEquals("payload", params.getValue().get("payload"));
     assertEquals("My Workflow", params.getValue().get("workflowModel"));
-//        assertEquals(null, params.getValue().get("authorLink"));
+    assertEquals(null, params.getValue().get("authorLink"));
 
     List<LoggingEvent> loggingEvents = logger.getLoggingEvents();
     assertEquals(1, loggingEvents.size());
@@ -130,6 +131,45 @@ public class NotificationProcessTest {
     assertAll(
         () -> assertEquals(Level.INFO, loggingEvent.getLevel()),
         () -> assertEquals(2, loggingEvent.getArguments().size())
+    );
+  }
+
+  @Test
+  void execute_whenNoEmail_skipEmail() throws WorkflowException, RepositoryException {
+
+    WorkItem workItem = mock(WorkItem.class);
+    WorkflowData workflowData = mock(WorkflowData.class);
+    WorkflowModel workflowModel = mock(WorkflowModel.class);
+    Workflow workflow = mock(Workflow.class);
+    WorkflowSession workflowSession = mock(WorkflowSession.class);
+    MetaDataMap metaDataMap = mock(MetaDataMap.class);
+    Value value = mock(Value.class);
+    Value[] values = new Value[]{value};
+    when(workItem.getWorkflowData()).thenReturn(workflowData);
+    when(workItem.getWorkflow()).thenReturn(workflow);
+    when(workflow.getInitiator()).thenReturn("admin");
+    when(workflowData.getPayload()).thenReturn("payload");
+    when(metaDataMap.get("PROCESS_ARGS", String.class)).thenReturn("args");
+    when(userManager.getAuthorizable("admin")).thenReturn(authorizable);
+    when(resourceResolver.adaptTo(UserManager.class)).thenReturn(userManager);
+    when(userManager.getAuthorizable("admin")).thenReturn(authorizable);
+    when(authorizable.getProperty("./profile/email")).thenReturn(values);
+    when(value.getString()).thenReturn(null);
+    when(workflowData.getMetaDataMap()).thenReturn(metaDataMap);
+    ArgumentCaptor<String> mailTo = ArgumentCaptor.forClass(String.class);
+    ArgumentCaptor<String> tempalte = ArgumentCaptor.forClass(String.class);
+    ArgumentCaptor<Map<String, String>> params = ArgumentCaptor.forClass(Map.class);
+    notificationProcess.execute(workItem, workflowSession, metaDataMap);
+
+    verify(emailService, times(0)).sendEmail(mailTo.capture(), tempalte.capture(), params.capture());
+
+    List<LoggingEvent> loggingEvents = logger.getLoggingEvents();
+    assertEquals(2, loggingEvents.size());
+    LoggingEvent loggingEvent = loggingEvents.get(1);
+
+    assertAll(
+        () -> assertEquals(Level.WARN, loggingEvent.getLevel()),
+        () -> assertEquals(1, loggingEvent.getArguments().size())
     );
   }
 }
