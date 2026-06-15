@@ -3,56 +3,58 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:designPath="/libs/settings/wcm/designs/default"
-        cq:lastModified="{Date}2026-06-15T06:33:17.970-05:00"
+        cq:lastModified="{Date}2026-06-14T22:34:05.437-05:00"
         cq:lastModifiedBy="admin"
         cq:template="/libs/cq/workflow/templates/model"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Pillar Demo"
+        jcr:title="Pillar Demo - Is Page"
         sling:resourceType="cq/workflow/components/pages/model">
         <flow
             jcr:primaryType="nt:unstructured"
             sling:resourceType="foundation/components/parsys">
-            <initiatorparticipant
-                jcr:created="{Date}2016-12-14T08:11:19.175-05:00"
+            <process_copy
+                jcr:created="{Date}2026-06-14T12:04:28.175-05:00"
                 jcr:createdBy="admin"
-                jcr:description="Description of step 1"
-                jcr:lastModified="{Date}2026-06-13T07:37:33.122-05:00"
+                jcr:lastModified="{Date}2026-06-14T12:06:46.374-05:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                jcr:title="Select pill"
-                sling:resourceType="cq/workflow/components/workflow/initiatorparticipantchooser">
+                jcr:title="Check if Page"
+                sling:resourceType="cq/workflow/components/model/process">
                 <metaData
                     jcr:primaryType="nt:unstructured"
-                    DYNAMIC_PARTICIPANT="/libs/workflow/scripts/initiator-participant-chooser.ecma"
+                    PROCESS="com.voghan.pillar.core.workflows.SimplePageConditionRule"
                     PROCESS_AUTO_ADVANCE="true"/>
-            </initiatorparticipant>
-            <or
-                jcr:created="{Date}2026-06-13T07:24:39.846-05:00"
+            </process_copy>
+            <or_copy
+                jcr:created="{Date}2026-06-14T12:06:52.451-05:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2026-06-15T06:33:17.337-05:00"
+                jcr:lastModified="{Date}2026-06-14T22:34:04.924-05:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
+                jcr:title="Is Page"
                 sling:resourceType="cq/workflow/components/model/or"
                 branches="2"
-                branchName1="Exit the matrix"
-                branchName2="Return to the matrix"
+                branchName1="Page found"
+                branchName2="Invalid Input"
                 branchOrder="[0,1]"
-                orSplit="true">
+                default1="true"
+                orSplit="true"
+                scriptPath1="/apps/workflow/scripts/is_evaluated_condition.ecma">
                 <_x0031_
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="cq/flow/components/parsys">
                     <process
-                        jcr:created="{Date}2026-06-13T07:24:47.932-05:00"
+                        jcr:created="{Date}2026-06-14T12:17:47.506-05:00"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2026-06-13T07:36:47.956-05:00"
+                        jcr:lastModified="{Date}2026-06-14T14:39:15.375-05:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
-                        jcr:title="Red Pill"
+                        jcr:title="Log Success"
                         sling:resourceType="cq/workflow/components/model/process">
                         <metaData
                             jcr:primaryType="nt:unstructured"
                             PROCESS="com.voghan.pillar.core.workflows.SimpleLoggerProcess"
-                            PROCESS_ARGS="EXIT_THE_MATRIX"
+                            PROCESS_ARGS="VALID_PAGE"
                             PROCESS_AUTO_ADVANCE="true"/>
                     </process>
                 </_x0031_>
@@ -60,35 +62,35 @@
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="cq/flow/components/parsys">
                     <process
-                        jcr:created="{Date}2026-06-13T07:26:03.528-05:00"
+                        jcr:created="{Date}2026-06-14T12:09:19.896-05:00"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2026-06-13T07:37:02.882-05:00"
+                        jcr:lastModified="{Date}2026-06-14T12:21:02.800-05:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
-                        jcr:title="Blue Pill"
+                        jcr:title="Log Payload Error"
                         sling:resourceType="cq/workflow/components/model/process">
                         <metaData
                             jcr:primaryType="nt:unstructured"
                             PROCESS="com.voghan.pillar.core.workflows.SimpleLoggerProcess"
-                            PROCESS_ARGS="RETURN_TO_MATRIX"
+                            PROCESS_ARGS="PAYLOAD_ERROR"
                             PROCESS_AUTO_ADVANCE="true"/>
                     </process>
                 </_x0032_>
-            </or>
-            <process
-                jcr:created="{Date}2026-06-13T07:31:02.451-05:00"
+            </or_copy>
+            <process_236645803_co
+                jcr:created="{Date}2026-06-14T12:19:05.549-05:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2026-06-13T07:33:07.207-05:00"
+                jcr:lastModified="{Date}2026-06-14T12:19:49.473-05:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                jcr:title="Pillar Email"
+                jcr:title="Log Completion"
                 sling:resourceType="cq/workflow/components/model/process">
                 <metaData
                     jcr:primaryType="nt:unstructured"
-                    PROCESS="com.voghan.pillar.core.workflows.NotificationProcess"
-                    PROCESS_ARGS="PILLAR_DEMO_END"
+                    PROCESS="com.voghan.pillar.core.workflows.SimpleLoggerProcess"
+                    PROCESS_ARGS="WORKFLOW_COMPETE"
                     PROCESS_AUTO_ADVANCE="true"/>
-            </process>
+            </process_236645803_co>
         </flow>
     </jcr:content>
 </jcr:root>

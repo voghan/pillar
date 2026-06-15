@@ -1,0 +1,7 @@
+function check() {
+    if (workflowData.getPayloadType() == "JCR_PATH") {
+        var path = workflowData.getPayload().toString();
+        return (path.indexOf("/content/pillar/language-head/") == 0);
+    }
+    return false;
+}
