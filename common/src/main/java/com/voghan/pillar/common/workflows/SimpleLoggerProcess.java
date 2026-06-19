@@ -1,4 +1,4 @@
-package com.voghan.pillar.core.workflows;
+package com.voghan.pillar.common.workflows;
 
 import com.adobe.granite.workflow.WorkflowException;
 import com.adobe.granite.workflow.WorkflowSession;

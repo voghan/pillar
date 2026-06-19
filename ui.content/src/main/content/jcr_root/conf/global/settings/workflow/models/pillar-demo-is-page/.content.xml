@@ -22,7 +22,7 @@
                 sling:resourceType="cq/workflow/components/model/process">
                 <metaData
                     jcr:primaryType="nt:unstructured"
-                    PROCESS="com.voghan.pillar.core.workflows.SimplePageConditionRule"
+                    PROCESS="com.voghan.pillar.common.workflows.SimplePageConditionRule"
                     PROCESS_AUTO_ADVANCE="true"/>
             </process_copy>
             <or_copy
@@ -53,7 +53,7 @@
                         sling:resourceType="cq/workflow/components/model/process">
                         <metaData
                             jcr:primaryType="nt:unstructured"
-                            PROCESS="com.voghan.pillar.core.workflows.SimpleLoggerProcess"
+                            PROCESS="com.voghan.pillar.common.workflows.SimpleLoggerProcess"
                             PROCESS_ARGS="VALID_PAGE"
                             PROCESS_AUTO_ADVANCE="true"/>
                     </process>
@@ -71,7 +71,7 @@
                         sling:resourceType="cq/workflow/components/model/process">
                         <metaData
                             jcr:primaryType="nt:unstructured"
-                            PROCESS="com.voghan.pillar.core.workflows.SimpleLoggerProcess"
+                            PROCESS="com.voghan.pillar.common.workflows.SimpleLoggerProcess"
                             PROCESS_ARGS="PAYLOAD_ERROR"
                             PROCESS_AUTO_ADVANCE="true"/>
                     </process>
@@ -87,7 +87,7 @@
                 sling:resourceType="cq/workflow/components/model/process">
                 <metaData
                     jcr:primaryType="nt:unstructured"
-                    PROCESS="com.voghan.pillar.core.workflows.SimpleLoggerProcess"
+                    PROCESS="com.voghan.pillar.common.workflows.SimpleLoggerProcess"
                     PROCESS_ARGS="WORKFLOW_COMPETE"
                     PROCESS_AUTO_ADVANCE="true"/>
             </process_236645803_co>

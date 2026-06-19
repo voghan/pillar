@@ -1,11 +1,11 @@
-package com.voghan.pillar.core.workflows;
+package com.voghan.pillar.common.workflows;
 
+import com.adobe.granite.asset.api.Asset;
 import com.adobe.granite.workflow.WorkflowException;
 import com.adobe.granite.workflow.WorkflowSession;
 import com.adobe.granite.workflow.exec.WorkItem;
 import com.adobe.granite.workflow.exec.WorkflowProcess;
 import com.adobe.granite.workflow.metadata.MetaDataMap;
-import com.day.cq.wcm.api.Page;
 import com.voghan.pillar.common.AuthUtil;
 import java.util.Map;
 import org.apache.sling.api.resource.LoginException;
@@ -21,13 +21,13 @@ import org.slf4j.LoggerFactory;
     // com.adobe.granite.workflow.exec.EvalScript unavailable
     service = WorkflowProcess.class,
     property = {
-        "process.label=Pillar Simple Page Condition Rule"
+        "process.label=Pillar Simple Asset Condition Rule"
     }
 )
-public class SimplePageConditionRule implements WorkflowProcess {
-  private static final Logger LOGGER = LoggerFactory.getLogger(SimplePageConditionRule.class);
+public class SimpleAssetConditionRule implements WorkflowProcess {
+  private static final Logger LOGGER = LoggerFactory.getLogger(SimpleAssetConditionRule.class);
 
-  public static final String SERVICE_NAME = "SimplePageConditionRule";
+  public static final String SERVICE_NAME = "SimpleAssetConditionRule";
 
   @Reference
   private ResourceResolverFactory resourceResolverFactory;
@@ -43,14 +43,13 @@ public class SimplePageConditionRule implements WorkflowProcess {
     final Map<String, Object> authInfo = AuthUtil.getAuthInfo(SERVICE_NAME);
     try (ResourceResolver resourceResolver = resourceResolverFactory.getServiceResourceResolver(authInfo)) {
       Resource resource = resourceResolver.getResource(payloadPath);
-      boolean pageFound = resource != null && resource.adaptTo(Page.class) != null;
-      workItem.getWorkflowData().getMetaDataMap().put("evaluated", pageFound);
-      LOGGER.info("Evaluated payload {} as {}", payloadPath, pageFound);
+      boolean assetFound = resource != null && resource.adaptTo(Asset.class) != null;
+      workItem.getWorkflowData().getMetaDataMap().put("evaluated", assetFound);
+      LOGGER.info("Evaluated payload {} as {}", payloadPath, assetFound);
     } catch (LoginException e) {
       LOGGER.warn("Workflow process for {} failed.", payloadPath, e);
       throw new WorkflowException(e);
     }
-
   }
 
 }

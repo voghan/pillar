@@ -47,7 +47,7 @@
             type="PROCESS">
             <metaData
                 jcr:primaryType="nt:unstructured"
-                PROCESS="com.voghan.pillar.core.workflows.SimpleLoggerProcess"
+                PROCESS="com.voghan.pillar.common.workflows.SimpleLoggerProcess"
                 PROCESS_ARGS="EXIT_THE_MATRIX"
                 PROCESS_AUTO_ADVANCE="true"/>
         </node4>
@@ -57,7 +57,7 @@
             type="PROCESS">
             <metaData
                 jcr:primaryType="nt:unstructured"
-                PROCESS="com.voghan.pillar.core.workflows.SimpleLoggerProcess"
+                PROCESS="com.voghan.pillar.common.workflows.SimpleLoggerProcess"
                 PROCESS_ARGS="RETURN_TO_MATRIX"
                 PROCESS_AUTO_ADVANCE="true"/>
         </node5>

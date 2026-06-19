@@ -47,7 +47,7 @@
             type="PROCESS">
             <metaData
                 jcr:primaryType="nt:unstructured"
-                PROCESS="com.voghan.pillar.core.workflows.SimpleLoggerProcess"
+                PROCESS="com.voghan.pillar.common.workflows.SimpleLoggerProcess"
                 PROCESS_ARGS="ROLLOUT_ACTIVATE"
                 PROCESS_AUTO_ADVANCE="true"/>
         </node4>
@@ -57,7 +57,7 @@
             type="PROCESS">
             <metaData
                 jcr:primaryType="nt:unstructured"
-                PROCESS="com.voghan.pillar.core.workflows.SimpleLoggerProcess"
+                PROCESS="com.voghan.pillar.common.workflows.SimpleLoggerProcess"
                 PROCESS_ARGS="ACTIVATE_PAGE"
                 PROCESS_AUTO_ADVANCE="true"/>
         </node5>
@@ -67,7 +67,7 @@
             type="PROCESS">
             <metaData
                 jcr:primaryType="nt:unstructured"
-                PROCESS="com.voghan.pillar.core.workflows.SimpleLoggerProcess"
+                PROCESS="com.voghan.pillar.common.workflows.SimpleLoggerProcess"
                 PROCESS_ARGS="WORKFLOW_COMPETE"
                 PROCESS_AUTO_ADVANCE="true"/>
         </node6>

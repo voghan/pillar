@@ -51,8 +51,7 @@ public class NotificationProcess implements WorkflowProcess {
     LOGGER.info("Starting workflow for {} with args {}", payload, processArgs);
 
     final Map<String, Object> authInfo = AuthUtil.getAuthInfo(SERVICE_NAME);
-    try (ResourceResolver resourceResolver = resourceResolverFactory.getServiceResourceResolver(
-        authInfo)) {
+    try (ResourceResolver resourceResolver = resourceResolverFactory.getServiceResourceResolver(authInfo)) {
       String mailTo = getInitiatorEmail(resourceResolver, workItem);
       if (mailTo == null) {
         LOGGER.warn("No initiator email found for {}", workItem.getId());
