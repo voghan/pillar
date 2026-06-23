@@ -3,13 +3,13 @@
     jcr:isCheckedOut="{Boolean}false"
     jcr:mixinTypes="[rep:AccessControllable]"
     jcr:primaryType="cq:WorkflowModel"
-    jcr:uuid="86ccd8e2-4c6a-4af2-ad6e-330a351ff5ff"
+    jcr:uuid="1e41ab01-30ef-495f-ab66-c70487ab92fa"
     sling:resourceType="cq/workflow/components/model"
     description="No Description"
-    title="Pillar Demo">
+    title="Pillar Demo - Is Page">
     <metaData
-        cq:generatingPage="/conf/global/settings/workflow/models/pillar-demo/jcr:content"
-        cq:lastModified="{Long}1781523201052"
+        cq:generatingPage="/conf/global/settings/workflow/models/pillar-demo-is-page/jcr:content"
+        cq:lastModified="{Long}1781494546185"
         cq:lastModifiedBy="admin"
         jcr:primaryType="nt:unstructured"/>
     <nodes jcr:primaryType="nt:unstructured">
@@ -21,12 +21,11 @@
         </node0>
         <node1
             jcr:primaryType="cq:WorkflowNode"
-            description="Description of step 1"
-            title="Select pill"
-            type="DYNAMIC_PARTICIPANT">
+            title="Check if Page"
+            type="PROCESS">
             <metaData
                 jcr:primaryType="nt:unstructured"
-                DYNAMIC_PARTICIPANT="/libs/workflow/scripts/initiator-participant-chooser.ecma"
+                PROCESS="com.voghan.pillar.common.workflows.SimplePageConditionRule"
                 PROCESS_AUTO_ADVANCE="true"/>
         </node1>
         <node2
@@ -43,32 +42,32 @@
         </node3>
         <node4
             jcr:primaryType="cq:WorkflowNode"
-            title="Red Pill"
+            title="Log Success"
             type="PROCESS">
             <metaData
                 jcr:primaryType="nt:unstructured"
                 PROCESS="com.voghan.pillar.common.workflows.SimpleLoggerProcess"
-                PROCESS_ARGS="EXIT_THE_MATRIX"
+                PROCESS_ARGS="VALID_PAGE"
                 PROCESS_AUTO_ADVANCE="true"/>
         </node4>
         <node5
             jcr:primaryType="cq:WorkflowNode"
-            title="Blue Pill"
+            title="Log Payload Error"
             type="PROCESS">
             <metaData
                 jcr:primaryType="nt:unstructured"
                 PROCESS="com.voghan.pillar.common.workflows.SimpleLoggerProcess"
-                PROCESS_ARGS="RETURN_TO_MATRIX"
+                PROCESS_ARGS="PAYLOAD_ERROR"
                 PROCESS_AUTO_ADVANCE="true"/>
         </node5>
         <node6
             jcr:primaryType="cq:WorkflowNode"
-            title="Pillar Email"
+            title="Log Completion"
             type="PROCESS">
             <metaData
                 jcr:primaryType="nt:unstructured"
-                PROCESS="com.voghan.pillar.core.workflows.NotificationProcess"
-                PROCESS_ARGS="PILLAR_DEMO_END"
+                PROCESS="com.voghan.pillar.common.workflows.SimpleLoggerProcess"
+                PROCESS_ARGS="WORKFLOW_COMPETE"
                 PROCESS_AUTO_ADVANCE="true"/>
         </node6>
         <node7
@@ -95,11 +94,11 @@
         <node2_x0023_node4
             jcr:primaryType="cq:WorkflowTransition"
             from="node2"
-            rule="\0"
+            rule="/apps/workflow/scripts/is_evaluated_condition.ecma"
             to="node4">
             <metaData
                 jcr:primaryType="nt:unstructured"
-                isDefault="false"/>
+                isDefault="true"/>
         </node2_x0023_node4>
         <node4_x0023_node3
             jcr:primaryType="cq:WorkflowTransition"

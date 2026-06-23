@@ -8,8 +8,14 @@
     <filter root="/conf/pillar/settings/cloudconfigs" mode="merge"/>
     <filter root="/conf/pillar/settings/dam"/>
     <filter root="/conf/pillar/settings/wcm"/>
-    <filter root="/conf/global/settings/workflow/models/pillar-demo/"/>
+    <filter root="/conf/global/settings/workflow/models/pillar-demo"/>
+    <filter root="/conf/global/settings/workflow/models/pillar-demo-is-language-main"/>
+    <filter root="/conf/global/settings/workflow/models/pillar-demo-is-page"/>
+    <filter root="/conf/global/settings/workflow/models/pillar-publish-page"/>
     <filter root="/var/workflow/models/pillar-demo"/>
+    <filter root="/var/workflow/models/pillar-demo-is-language-main"/>
+    <filter root="/var/workflow/models/pillar-demo-is-page"/>
+    <filter root="/var/workflow/models/pillar-publish-page"/>
     <filter root="/content/pillar" mode="merge"/>
     <filter root="/content/dam/pillar" mode="merge">
         <exclude pattern="/content/dam/pillar(/.*)?"/>

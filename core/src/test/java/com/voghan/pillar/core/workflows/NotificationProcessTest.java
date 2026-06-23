@@ -38,9 +38,11 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
 
 @ExtendWith({AemContextExtension.class, MockitoExtension.class})
@@ -172,4 +174,121 @@ public class NotificationProcessTest {
         () -> assertEquals(1, loggingEvent.getArguments().size())
     );
   }
+
+  @Test
+  void execute_whenLoginException_throwsWorkflowException() throws LoginException {
+    Map<String, Object> expectedParams = Collections.singletonMap(
+        ResourceResolverFactory.SUBSERVICE, (Object) NotificationProcess.SERVICE_NAME);
+    when(resourceResolverFactory.getServiceResourceResolver(expectedParams))
+        .thenThrow(new LoginException("test"));
+
+    WorkItem workItem = mock(WorkItem.class);
+    WorkflowData workflowData = mock(WorkflowData.class);
+    WorkflowSession workflowSession = mock(WorkflowSession.class);
+    MetaDataMap metaDataMap = mock(MetaDataMap.class);
+    when(workItem.getWorkflowData()).thenReturn(workflowData);
+    when(workflowData.getPayload()).thenReturn("payload");
+
+    assertThrows(WorkflowException.class,
+        () -> notificationProcess.execute(workItem, workflowSession, metaDataMap));
+  }
+
+  @Test
+  void execute_whenUserManagerNull_skipsEmail() throws WorkflowException, RepositoryException {
+    WorkItem workItem = mock(WorkItem.class);
+    WorkflowData workflowData = mock(WorkflowData.class);
+    Workflow workflow = mock(Workflow.class);
+    WorkflowSession workflowSession = mock(WorkflowSession.class);
+    MetaDataMap metaDataMap = mock(MetaDataMap.class);
+    when(workItem.getWorkflowData()).thenReturn(workflowData);
+    when(workItem.getWorkflow()).thenReturn(workflow);
+    when(workflow.getInitiator()).thenReturn("admin");
+    when(workflowData.getPayload()).thenReturn("payload");
+    when(resourceResolver.adaptTo(UserManager.class)).thenReturn(null);
+
+    notificationProcess.execute(workItem, workflowSession, metaDataMap);
+
+    verifyNoInteractions(emailService);
+    List<LoggingEvent> loggingEvents = logger.getLoggingEvents();
+    assertEquals(2, loggingEvents.size());
+    LoggingEvent warnEvent = loggingEvents.get(1);
+    assertAll(
+        () -> assertEquals(Level.WARN, warnEvent.getLevel()),
+        () -> assertEquals(1, warnEvent.getArguments().size())
+    );
+  }
+
+  @Test
+  void execute_whenAuthorizableNull_skipsEmail() throws WorkflowException, RepositoryException {
+    WorkItem workItem = mock(WorkItem.class);
+    WorkflowData workflowData = mock(WorkflowData.class);
+    Workflow workflow = mock(Workflow.class);
+    WorkflowSession workflowSession = mock(WorkflowSession.class);
+    MetaDataMap metaDataMap = mock(MetaDataMap.class);
+    when(workItem.getWorkflowData()).thenReturn(workflowData);
+    when(workItem.getWorkflow()).thenReturn(workflow);
+    when(workflow.getInitiator()).thenReturn("admin");
+    when(workflowData.getPayload()).thenReturn("payload");
+    when(resourceResolver.adaptTo(UserManager.class)).thenReturn(userManager);
+    when(userManager.getAuthorizable("admin")).thenReturn(null);
+
+    notificationProcess.execute(workItem, workflowSession, metaDataMap);
+
+    verifyNoInteractions(emailService);
+    List<LoggingEvent> loggingEvents = logger.getLoggingEvents();
+    assertEquals(2, loggingEvents.size());
+    LoggingEvent warnEvent = loggingEvents.get(1);
+    assertAll(
+        () -> assertEquals(Level.WARN, warnEvent.getLevel()),
+        () -> assertEquals(1, warnEvent.getArguments().size())
+    );
+  }
+
+  @Test
+  void execute_whenEmailPropertyNull_skipsEmail() throws WorkflowException, RepositoryException {
+    WorkItem workItem = mock(WorkItem.class);
+    WorkflowData workflowData = mock(WorkflowData.class);
+    Workflow workflow = mock(Workflow.class);
+    WorkflowSession workflowSession = mock(WorkflowSession.class);
+    MetaDataMap metaDataMap = mock(MetaDataMap.class);
+    when(workItem.getWorkflowData()).thenReturn(workflowData);
+    when(workItem.getWorkflow()).thenReturn(workflow);
+    when(workflow.getInitiator()).thenReturn("admin");
+    when(workflowData.getPayload()).thenReturn("payload");
+    when(resourceResolver.adaptTo(UserManager.class)).thenReturn(userManager);
+    when(userManager.getAuthorizable("admin")).thenReturn(authorizable);
+    when(authorizable.getProperty("./profile/email")).thenReturn(null);
+
+    notificationProcess.execute(workItem, workflowSession, metaDataMap);
+
+    verifyNoInteractions(emailService);
+    List<LoggingEvent> loggingEvents = logger.getLoggingEvents();
+    assertEquals(2, loggingEvents.size());
+    LoggingEvent warnEvent = loggingEvents.get(1);
+    assertAll(
+        () -> assertEquals(Level.WARN, warnEvent.getLevel()),
+        () -> assertEquals(1, warnEvent.getArguments().size())
+    );
+  }
+
+  @Test
+  void execute_whenRepositoryException_throwsWorkflowException() throws RepositoryException {
+    WorkItem workItem = mock(WorkItem.class);
+    WorkflowData workflowData = mock(WorkflowData.class);
+    Workflow workflow = mock(Workflow.class);
+    WorkflowSession workflowSession = mock(WorkflowSession.class);
+    MetaDataMap metaDataMap = mock(MetaDataMap.class);
+    when(workItem.getWorkflowData()).thenReturn(workflowData);
+    when(workItem.getWorkflow()).thenReturn(workflow);
+    when(workflow.getInitiator()).thenReturn("admin");
+    when(workflowData.getPayload()).thenReturn("payload");
+    when(resourceResolver.adaptTo(UserManager.class)).thenReturn(userManager);
+    when(userManager.getAuthorizable("admin")).thenReturn(authorizable);
+    when(authorizable.getProperty("./profile/email")).thenThrow(new RepositoryException("test"));
+
+    assertThrows(WorkflowException.class,
+        () -> notificationProcess.execute(workItem, workflowSession, metaDataMap));
+  }
+
+  //externalizer
 }

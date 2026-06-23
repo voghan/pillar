@@ -4,4 +4,5 @@
     <filter root="/apps/pillar/components"/>
     <filter root="/apps/pillar/i18n"/>
     <filter root="/apps/pillar/config"/>
+    <filter root="/apps/workflow/scripts"/>
 </workspaceFilter>

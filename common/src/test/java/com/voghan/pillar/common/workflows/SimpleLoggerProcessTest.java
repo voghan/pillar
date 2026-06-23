@@ -1,4 +1,4 @@
-package com.voghan.pillar.core.workflows;
+package com.voghan.pillar.common.workflows;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;

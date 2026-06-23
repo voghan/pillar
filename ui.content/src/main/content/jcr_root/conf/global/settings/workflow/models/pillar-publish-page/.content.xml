@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/libs/settings/wcm/designs/default"
+        cq:lastModified="{Date}2026-06-14T22:36:30.284-05:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/libs/cq/workflow/templates/model"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Pillar Publish Page"
+        sling:resourceType="cq/workflow/components/pages/model">
+        <flow
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <process
+                jcr:created="{Date}2026-06-14T12:04:28.175-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2026-06-14T12:06:46.374-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Check if Page"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.voghan.pillar.common.workflows.SimplePageConditionRule"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process>
+            <or
+                jcr:created="{Date}2026-06-14T12:06:52.451-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2026-06-14T22:36:17.760-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Is Page"
+                sling:resourceType="cq/workflow/components/model/or"
+                branches="2"
+                branchName1="Page found"
+                branchName2="Invalid Input"
+                branchOrder="[0,1]"
+                default1="true"
+                orSplit="true"
+                scriptPath1="/apps/workflow/scripts/is_evaluated_condition.ecma">
+                <_x0031_
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="cq/flow/components/parsys">
+                    <or
+                        jcr:created="{Date}2026-06-14T12:10:19.120-05:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2026-06-14T22:36:29.793-05:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Check Language Page"
+                        sling:resourceType="cq/workflow/components/model/or"
+                        branches="2"
+                        branchName1="Language Main"
+                        branchName2="Language Copy"
+                        branchOrder="[0,1]"
+                        default1="true"
+                        orSplit="true"
+                        scriptPath1="/apps/workflow/scripts/is_language_main.ecma">
+                        <_x0031_
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="cq/flow/components/parsys">
+                            <process
+                                jcr:created="{Date}2026-06-14T12:13:15.292-05:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2026-06-14T12:16:22.650-05:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Rollout &amp; Activate"
+                                sling:resourceType="cq/workflow/components/model/process">
+                                <metaData
+                                    jcr:primaryType="nt:unstructured"
+                                    PROCESS="com.voghan.pillar.common.workflows.SimpleLoggerProcess"
+                                    PROCESS_ARGS="ROLLOUT_ACTIVATE"
+                                    PROCESS_AUTO_ADVANCE="true"/>
+                            </process>
+                        </_x0031_>
+                        <_x0032_
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="cq/flow/components/parsys">
+                            <process
+                                jcr:created="{Date}2026-06-14T12:13:20.732-05:00"
+                                jcr:createdBy="admin"
+                                jcr:lastModified="{Date}2026-06-14T12:16:01.455-05:00"
+                                jcr:lastModifiedBy="admin"
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Activate"
+                                sling:resourceType="cq/workflow/components/model/process">
+                                <metaData
+                                    jcr:primaryType="nt:unstructured"
+                                    PROCESS="com.voghan.pillar.common.workflows.SimpleLoggerProcess"
+                                    PROCESS_ARGS="ACTIVATE_PAGE"
+                                    PROCESS_AUTO_ADVANCE="true"/>
+                            </process>
+                        </_x0032_>
+                    </or>
+                    <process
+                        jcr:created="{Date}2026-06-14T12:17:47.506-05:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2026-06-14T12:18:52.887-05:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Email Completion"
+                        sling:resourceType="cq/workflow/components/model/process">
+                        <metaData
+                            jcr:primaryType="nt:unstructured"
+                            PROCESS="com.voghan.pillar.core.workflows.NotificationProcess"
+                            PROCESS_AUTO_ADVANCE="true"/>
+                    </process>
+                </_x0031_>
+                <_x0032_
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="cq/flow/components/parsys">
+                    <process
+                        jcr:created="{Date}2026-06-14T12:09:19.896-05:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2026-06-14T12:21:02.800-05:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Log Payload Error"
+                        sling:resourceType="cq/workflow/components/model/process">
+                        <metaData
+                            jcr:primaryType="nt:unstructured"
+                            PROCESS="com.voghan.pillar.common.workflows.SimpleLoggerProcess"
+                            PROCESS_ARGS="PAYLOAD_ERROR"
+                            PROCESS_AUTO_ADVANCE="true"/>
+                    </process>
+                </_x0032_>
+            </or>
+            <process_236645803
+                jcr:created="{Date}2026-06-14T12:19:05.549-05:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2026-06-14T12:19:49.473-05:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Log Completion"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.voghan.pillar.common.workflows.SimpleLoggerProcess"
+                    PROCESS_ARGS="WORKFLOW_COMPETE"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process_236645803>
+        </flow>
+    </jcr:content>
+</jcr:root>

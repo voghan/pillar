@@ -3,13 +3,13 @@
     jcr:isCheckedOut="{Boolean}false"
     jcr:mixinTypes="[rep:AccessControllable]"
     jcr:primaryType="cq:WorkflowModel"
-    jcr:uuid="86ccd8e2-4c6a-4af2-ad6e-330a351ff5ff"
+    jcr:uuid="981d1e2a-3162-4668-9082-b6bb5fd73dfe"
     sling:resourceType="cq/workflow/components/model"
     description="No Description"
-    title="Pillar Demo">
+    title="Pillar Publish Page">
     <metaData
-        cq:generatingPage="/conf/global/settings/workflow/models/pillar-demo/jcr:content"
-        cq:lastModified="{Long}1781523201052"
+        cq:generatingPage="/conf/global/settings/workflow/models/pillar-publish-page/jcr:content"
+        cq:lastModified="{Long}1781494591620"
         cq:lastModifiedBy="admin"
         jcr:primaryType="nt:unstructured"/>
     <nodes jcr:primaryType="nt:unstructured">
@@ -21,12 +21,11 @@
         </node0>
         <node1
             jcr:primaryType="cq:WorkflowNode"
-            description="Description of step 1"
-            title="Select pill"
-            type="DYNAMIC_PARTICIPANT">
+            title="Check if Page"
+            type="PROCESS">
             <metaData
                 jcr:primaryType="nt:unstructured"
-                DYNAMIC_PARTICIPANT="/libs/workflow/scripts/initiator-participant-chooser.ecma"
+                PROCESS="com.voghan.pillar.common.workflows.SimplePageConditionRule"
                 PROCESS_AUTO_ADVANCE="true"/>
         </node1>
         <node2
@@ -43,40 +42,71 @@
         </node3>
         <node4
             jcr:primaryType="cq:WorkflowNode"
-            title="Red Pill"
-            type="PROCESS">
-            <metaData
-                jcr:primaryType="nt:unstructured"
-                PROCESS="com.voghan.pillar.common.workflows.SimpleLoggerProcess"
-                PROCESS_ARGS="EXIT_THE_MATRIX"
-                PROCESS_AUTO_ADVANCE="true"/>
+            title="OR_SPLIT"
+            type="OR_SPLIT">
+            <metaData jcr:primaryType="nt:unstructured"/>
         </node4>
         <node5
             jcr:primaryType="cq:WorkflowNode"
-            title="Blue Pill"
+            title="OR_JOIN"
+            type="OR_JOIN">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node5>
+        <node6
+            jcr:primaryType="cq:WorkflowNode"
+            title="Rollout &amp; Activate"
             type="PROCESS">
             <metaData
                 jcr:primaryType="nt:unstructured"
                 PROCESS="com.voghan.pillar.common.workflows.SimpleLoggerProcess"
-                PROCESS_ARGS="RETURN_TO_MATRIX"
-                PROCESS_AUTO_ADVANCE="true"/>
-        </node5>
-        <node6
-            jcr:primaryType="cq:WorkflowNode"
-            title="Pillar Email"
-            type="PROCESS">
-            <metaData
-                jcr:primaryType="nt:unstructured"
-                PROCESS="com.voghan.pillar.core.workflows.NotificationProcess"
-                PROCESS_ARGS="PILLAR_DEMO_END"
+                PROCESS_ARGS="ROLLOUT_ACTIVATE"
                 PROCESS_AUTO_ADVANCE="true"/>
         </node6>
         <node7
             jcr:primaryType="cq:WorkflowNode"
+            title="Activate"
+            type="PROCESS">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                PROCESS="com.voghan.pillar.common.workflows.SimpleLoggerProcess"
+                PROCESS_ARGS="ACTIVATE_PAGE"
+                PROCESS_AUTO_ADVANCE="true"/>
+        </node7>
+        <node8
+            jcr:primaryType="cq:WorkflowNode"
+            title="Email Completion"
+            type="PROCESS">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                PROCESS="com.voghan.pillar.core.workflows.NotificationProcess"
+                PROCESS_AUTO_ADVANCE="true"/>
+        </node8>
+        <node9
+            jcr:primaryType="cq:WorkflowNode"
+            title="Log Payload Error"
+            type="PROCESS">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                PROCESS="com.voghan.pillar.common.workflows.SimpleLoggerProcess"
+                PROCESS_ARGS="PAYLOAD_ERROR"
+                PROCESS_AUTO_ADVANCE="true"/>
+        </node9>
+        <node10
+            jcr:primaryType="cq:WorkflowNode"
+            title="Log Completion"
+            type="PROCESS">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                PROCESS="com.voghan.pillar.common.workflows.SimpleLoggerProcess"
+                PROCESS_ARGS="WORKFLOW_COMPETE"
+                PROCESS_AUTO_ADVANCE="true"/>
+        </node10>
+        <node11
+            jcr:primaryType="cq:WorkflowNode"
             title="End"
             type="END">
             <metaData jcr:primaryType="nt:unstructured"/>
-        </node7>
+        </node11>
     </nodes>
     <transitions jcr:primaryType="nt:unstructured">
         <node0_x0023_node1
@@ -95,46 +125,81 @@
         <node2_x0023_node4
             jcr:primaryType="cq:WorkflowTransition"
             from="node2"
-            rule="\0"
+            rule="/apps/workflow/scripts/is_evaluated_condition.ecma"
             to="node4">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node2_x0023_node4>
+        <node4_x0023_node6
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node4"
+            rule="/apps/workflow/scripts/is_language_main.ecma"
+            to="node6">
+            <metaData
+                jcr:primaryType="nt:unstructured"
+                isDefault="true"/>
+        </node4_x0023_node6>
+        <node6_x0023_node5
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node6"
+            to="node5">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node6_x0023_node5>
+        <node4_x0023_node7
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node4"
+            rule="\0"
+            to="node7">
             <metaData
                 jcr:primaryType="nt:unstructured"
                 isDefault="false"/>
-        </node2_x0023_node4>
-        <node4_x0023_node3
+        </node4_x0023_node7>
+        <node7_x0023_node5
             jcr:primaryType="cq:WorkflowTransition"
-            from="node4"
+            from="node7"
+            to="node5">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node7_x0023_node5>
+        <node5_x0023_node8
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node5"
+            rule="\0"
+            to="node8">
+            <metaData jcr:primaryType="nt:unstructured"/>
+        </node5_x0023_node8>
+        <node8_x0023_node3
+            jcr:primaryType="cq:WorkflowTransition"
+            from="node8"
             to="node3">
             <metaData jcr:primaryType="nt:unstructured"/>
-        </node4_x0023_node3>
-        <node2_x0023_node5
+        </node8_x0023_node3>
+        <node2_x0023_node9
             jcr:primaryType="cq:WorkflowTransition"
             from="node2"
             rule="\0"
-            to="node5">
+            to="node9">
             <metaData
                 jcr:primaryType="nt:unstructured"
                 isDefault="false"/>
-        </node2_x0023_node5>
-        <node5_x0023_node3
+        </node2_x0023_node9>
+        <node9_x0023_node3
             jcr:primaryType="cq:WorkflowTransition"
-            from="node5"
+            from="node9"
             to="node3">
             <metaData jcr:primaryType="nt:unstructured"/>
-        </node5_x0023_node3>
-        <node3_x0023_node6
+        </node9_x0023_node3>
+        <node3_x0023_node10
             jcr:primaryType="cq:WorkflowTransition"
             from="node3"
             rule="\0"
-            to="node6">
+            to="node10">
             <metaData jcr:primaryType="nt:unstructured"/>
-        </node3_x0023_node6>
-        <node6_x0023_node7
+        </node3_x0023_node10>
+        <node10_x0023_node11
             jcr:primaryType="cq:WorkflowTransition"
-            from="node6"
-            to="node7">
+            from="node10"
+            to="node11">
             <metaData jcr:primaryType="nt:unstructured"/>
-        </node6_x0023_node7>
+        </node10_x0023_node11>
     </transitions>
     <rep:policy jcr:primaryType="rep:ACL">
         <allow

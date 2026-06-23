@@ -1,0 +1,3 @@
+function check() {
+  return workflowData.getMetaDataMap().get("evaluated", false);
+}

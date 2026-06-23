@@ -58,6 +58,9 @@
                         <filter>
                             <root>/apps/msm</root>
                         </filter>
+                        <filter>
+                            <root>/apps/workflow</root>
+                        </filter>
 
                         <!-- Immutable context-aware configurations -->
                         <filter>
