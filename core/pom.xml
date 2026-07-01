@@ -133,6 +133,18 @@ Import-Package: javax.annotation;version=0.0.0,*
     </build>
 
     <dependencies>
+        <!--
+          Complete Gson impl for tests, declared FIRST so its classes win the test
+          classpath ahead of the uber-jar (which ships a custom, internally
+          inconsistent Gson public API with no internal/** package). At runtime AEM
+          provides Gson via OSGi, so this stays test-scoped.
+        -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.9</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>com.voghan.pillar</groupId>
             <artifactId>pillar.common</artifactId>
