@@ -33,6 +33,7 @@ import javax.servlet.ServletException;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
+import static com.voghan.pillar.core.servlets.PageImportServlet.CONTENT_FAILED_VALIDATION;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.anyMap;
@@ -43,6 +44,12 @@ import static org.mockito.Mockito.when;
 @ExtendWith({AemContextExtension.class, MockitoExtension.class})
 class PageImportServletTest {
 
+  private static final String VALID_PAYLOAD = "{"
+      + "\"page\":{\"title\":\"Home\",\"name\":\"home\",\"template\":\"simple\","
+      + "\"description\":\"desc\",\"path\":\"/content/pillar/language-head/en/demo\"},"
+      + "\"body\":{\"sling:resourceType\":\"pillar/components/container/v1/container\"}"
+      + "}";
+
   @InjectMocks
   private PageImportServlet fixture;
 
@@ -51,10 +58,7 @@ class PageImportServletTest {
 
   @Test
   void doPost_validJson_returnsOk(AemContext context) throws ServletException, IOException {
-    String body = "{"
-        + "\"page\":{\"title\":\"Home\",\"name\":\"home\",\"template\":\"simple\",\"description\":\"desc\"},"
-        + "\"body\":{\"sling:resourceType\":\"pillar/components/container/v1/container\"}"
-        + "}";
+    String body = VALID_PAYLOAD;
     Job job = mock(Job.class);
     when(jobManager.addJob(eq(PageImportJobConsumer.JOB_TOPIC), anyMap())).thenReturn(job);
     when(job.getId()).thenReturn("job-id");
@@ -75,7 +79,7 @@ class PageImportServletTest {
     assertEquals(SlingHttpServletResponse.SC_BAD_REQUEST, response.getStatus());
     String out = response.getOutputAsString();
     assertTrue(out.contains("\"success\":false"), out);
-    assertTrue(out.contains("Body content is required."), out);
+    assertTrue(out.contains(CONTENT_FAILED_VALIDATION), out);
   }
 
   @Test
@@ -85,30 +89,92 @@ class PageImportServletTest {
     assertEquals(SlingHttpServletResponse.SC_BAD_REQUEST, response.getStatus());
     String out = response.getOutputAsString();
     assertTrue(out.contains("\"success\":false"), out);
-    assertTrue(out.contains("Post data is not formatted correctly."), out);
+    assertTrue(out.contains(CONTENT_FAILED_VALIDATION), out);
   }
 
   @Test
-  void doPost_missingRequiredField_returnsServiceUnavailable(AemContext context) throws ServletException, IOException {
-    // "page" object present but required "title" scalar is absent -> NPE caught as 500
-    MockSlingHttpServletResponse response = post(context, "{\"page\":{},\"body\":{}}");
+  void doPost_missingPageJson_returnsBadRequest(AemContext context) throws ServletException, IOException {
+    MockSlingHttpServletResponse response = post(context, "{\"body\":{} }");
+
+    assertEquals(SlingHttpServletResponse.SC_BAD_REQUEST, response.getStatus());
+    String out = response.getOutputAsString();
+    assertTrue(out.contains("\"success\":false"), out);
+    assertTrue(out.contains(CONTENT_FAILED_VALIDATION), out);
+  }
+
+  @Test
+  void doPost_missingBodyJson_returnsBadRequest(AemContext context) throws ServletException, IOException {
+    MockSlingHttpServletResponse response = post(context, "{\"page\":{} }");
+
+    assertEquals(SlingHttpServletResponse.SC_BAD_REQUEST, response.getStatus());
+    String out = response.getOutputAsString();
+    assertTrue(out.contains("\"success\":false"), out);
+    assertTrue(out.contains(CONTENT_FAILED_VALIDATION), out);
+  }
+
+  @Test
+  void doPost_primitiveBodyJson_returnsBadRequest(AemContext context) throws ServletException, IOException {
+    MockSlingHttpServletResponse response = post(context, "{\"page\":{},\"body\":\"primative\"}");
+
+    assertEquals(SlingHttpServletResponse.SC_BAD_REQUEST, response.getStatus());
+    String out = response.getOutputAsString();
+    assertTrue(out.contains("\"success\":false"), out);
+    assertTrue(out.contains(CONTENT_FAILED_VALIDATION), out);
+  }
+
+  @Test
+  void doPost_primitivePageJson_returnsBadRequest(AemContext context) throws ServletException, IOException {
+    MockSlingHttpServletResponse response = post(context, "{\"page\":\"primative\",\"body\":{}}");
+
+    assertEquals(SlingHttpServletResponse.SC_BAD_REQUEST, response.getStatus());
+    String out = response.getOutputAsString();
+    assertTrue(out.contains("\"success\":false"), out);
+    assertTrue(out.contains(CONTENT_FAILED_VALIDATION), out);
+  }
+
+  @Test
+  void doPost_pageMissingRequiredField_returnsBadRequest(AemContext context) throws ServletException, IOException {
+    // "page" is an object but lacks the required "path"/"title"/... scalars.
+    MockSlingHttpServletResponse response = post(context, "{\"page\":{\"name\":\"home\"},\"body\":{}}");
+
+    assertEquals(SlingHttpServletResponse.SC_BAD_REQUEST, response.getStatus());
+    String out = response.getOutputAsString();
+    assertTrue(out.contains("\"success\":false"), out);
+    assertTrue(out.contains(CONTENT_FAILED_VALIDATION), out);
+  }
+
+  @Test
+  void doPost_bodyMissingResourceType_returnsBadRequest(AemContext context) throws ServletException, IOException {
+    String body = "{"
+        + "\"page\":{\"title\":\"Home\",\"name\":\"home\",\"template\":\"simple\","
+        + "\"description\":\"desc\",\"path\":\"/content/pillar/language-head/en/demo\"},"
+        + "\"body\":{\"layout\":\"responsiveGrid\"}"
+        + "}";
+
+    MockSlingHttpServletResponse response = post(context, body);
+
+    assertEquals(SlingHttpServletResponse.SC_BAD_REQUEST, response.getStatus());
+    String out = response.getOutputAsString();
+    assertTrue(out.contains("\"success\":false"), out);
+    assertTrue(out.contains(CONTENT_FAILED_VALIDATION), out);
+  }
+
+  @Test
+  void doPost_jobNotCreated_returnsServiceUnavailable(AemContext context) throws ServletException, IOException {
+    // Valid payload, but the job manager cannot enqueue (addJob returns null on the unstubbed mock).
+    MockSlingHttpServletResponse response = post(context, VALID_PAYLOAD);
 
     assertEquals(SlingHttpServletResponse.SC_SERVICE_UNAVAILABLE, response.getStatus());
     assertTrue(response.getOutputAsString().contains("\"success\":false"));
   }
 
   @Test
-  void doPost_missingRequiredField_returnsServerError(AemContext context) throws ServletException, IOException {
-    // "page" object present but required "title" scalar is absent -> NPE caught as 500
-    String body = "{"
-            + "\"page\":{\"title\":\"Home\",\"name\":\"home\",\"template\":\"simple\",\"description\":\"desc\"},"
-            + "\"body\":{\"sling:resourceType\":\"pillar/components/container/v1/container\"}"
-            + "}";
+  void doPost_jobIdThrows_returnsServerError(AemContext context) throws ServletException, IOException {
     Job job = mock(Job.class);
     when(jobManager.addJob(eq(PageImportJobConsumer.JOB_TOPIC), anyMap())).thenReturn(job);
     when(job.getId()).thenThrow(new RuntimeException("internal error"));
 
-    MockSlingHttpServletResponse response = post(context, body);
+    MockSlingHttpServletResponse response = post(context, VALID_PAYLOAD);
 
     assertEquals(SlingHttpServletResponse.SC_INTERNAL_SERVER_ERROR, response.getStatus());
     assertTrue(response.getOutputAsString().contains("\"success\":false"));

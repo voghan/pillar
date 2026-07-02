@@ -2,7 +2,7 @@
   "page": {
     "title": "Generated Page Content",
     "name": "simple-page",
-    "description":"Generated page content that was cleared via page import api",
+    "description":"Generated page content that was created via page import api",
     "template": "/conf/pillar/settings/wcm/templates/page-content",
     "path": "/content/pillar/language-head/en/demo/imports"
   },

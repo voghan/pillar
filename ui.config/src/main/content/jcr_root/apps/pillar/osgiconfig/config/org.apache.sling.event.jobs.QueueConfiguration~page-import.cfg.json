@@ -1,0 +1,10 @@
+{
+  "queue.name": "Asset Import Queue",
+  "queue.topics": ["com/pillar/jobs/page-import"],
+  "queue.type": "UNORDERED",
+  "queue.maxparallel": 10,
+  "queue.retries": 5,
+  "queue.retrydelay": 30000,
+  "queue.priority": "NORM",
+  "queue.keepJobs": false
+}

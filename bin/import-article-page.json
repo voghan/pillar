@@ -1,9 +1,9 @@
 {
   "page": {
-    "title": "Generated Page Content",
-    "name": "simple-page",
-    "description":"Generated page content that was cleared via page import api",
-    "template": "/conf/pillar/settings/wcm/templates/page-content",
+    "title": "Generated Article Detail Page",
+    "name": "article-detail-page",
+    "description":"Generated article detail page content that was created via page import api",
+    "template": "/conf/pillar/settings/wcm/templates/page-article",
     "path": "/content/pillar/language-head/en/demo/imports"
   },
   "body": {
@@ -12,12 +12,9 @@
     "cq:styleIds": [
       "1779927959937"
     ],
-    "articledetail": {
-      "jcr:primaryType": "nt:unstructured",
-      "jcr:lastModifiedBy": "admin",
-      "jcr:lastModified": "Wed May 27 2026 19:30:33 GMT-0500",
+    "articledetail-0": {
       "sling:resourceType": "pillar/components/articledetail/v1/articledetail",
-      "fragmentPath": "/content/dam/pillar/cfm/article-detail/articles"
+      "fragmentPath": "/content/dam/pillar/cfm/article-detail/demo"
     }
   }
 }

@@ -17,6 +17,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Map;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.ArgumentMatchers.anyMap;
@@ -175,7 +176,7 @@ public class PageImportJobConsumerTest {
 
         JobConsumer.JobResult result = fixture.process(buildJob(payload(containerBody())));
 
-        assertEquals(JobConsumer.JobResult.FAILED, result);
+        assertEquals(JobConsumer.JobResult.CANCEL, result);
     }
 
     @Test
@@ -186,7 +187,7 @@ public class PageImportJobConsumerTest {
 
         JobConsumer.JobResult result = fixture.process(buildJob(payload(containerBody())));
 
-        assertEquals(JobConsumer.JobResult.FAILED, result);
+        assertEquals(JobConsumer.JobResult.CANCEL, result);
     }
 
     @Test
@@ -284,21 +285,114 @@ public class PageImportJobConsumerTest {
     }
 
     @Test
-    void process_ignoredComponentPrefixes_createNothing() throws LoginException, WCMException, PersistenceException {
+    void process_imageComponent_createsNodeWithImageProps() throws LoginException, WCMException, PersistenceException {
         stubResolverAndPageManager();
         stubCreatedPage(createdPage());
+        Resource container = mock(Resource.class);
+        when(resourceResolver.getResource(CONTAINER_PATH)).thenReturn(container);
 
-        // image-/list-/separator-/text- prefixes are recognized but currently no-ops.
+        // "alt" is a JSON object (non-primitive) -> getProperty returns null for it.
         String body = "\"body\":{\"sling:resourceType\":\"" + CONTAINER_TYPE + "\","
-                + "\"image-1\":{\"sling:resourceType\":\"x\"},"
-                + "\"list-1\":{\"sling:resourceType\":\"x\"},"
-                + "\"separator-1\":{\"sling:resourceType\":\"x\"},"
-                + "\"text-1\":{\"sling:resourceType\":\"x\"}}";
+                + "\"image-1\":{\"sling:resourceType\":\"pillar/components/image/v1/image\","
+                + "\"fileReference\":\"/content/dam/img.png\",\"imageFromPageImage\":\"false\","
+                + "\"alt\":{\"nested\":1},\"isDecorative\":\"true\"}}";
 
         JobConsumer.JobResult result = fixture.process(buildJob(payload(body)));
 
         assertEquals(JobConsumer.JobResult.OK, result);
-        verify(resourceResolver, never()).getResource(anyString());
+        ArgumentCaptor<Map<String, Object>> props = ArgumentCaptor.forClass(Map.class);
+        verify(resourceResolver).create(eq(container), eq("image-1"), props.capture());
+        assertEquals("pillar/components/image/v1/image", props.getValue().get("sling:resourceType"));
+        assertEquals("/content/dam/img.png", props.getValue().get("fileReference"));
+        assertEquals("false", props.getValue().get("imageFromPageImage"));
+        assertEquals("true", props.getValue().get("isDecorative"));
+        assertNull(props.getValue().get("alt"));
+    }
+
+    @Test
+    void process_textComponent_createsNodeWithTextProps() throws LoginException, WCMException, PersistenceException {
+        stubResolverAndPageManager();
+        stubCreatedPage(createdPage());
+        Resource container = mock(Resource.class);
+        when(resourceResolver.getResource(CONTAINER_PATH)).thenReturn(container);
+
+        String body = "\"body\":{\"sling:resourceType\":\"" + CONTAINER_TYPE + "\","
+                + "\"text-1\":{\"sling:resourceType\":\"pillar/components/text/v1/text\","
+                + "\"text\":\"<p>Hi</p>\",\"textIsRich\":\"true\"}}";
+
+        JobConsumer.JobResult result = fixture.process(buildJob(payload(body)));
+
+        assertEquals(JobConsumer.JobResult.OK, result);
+        ArgumentCaptor<Map<String, Object>> props = ArgumentCaptor.forClass(Map.class);
+        verify(resourceResolver).create(eq(container), eq("text-1"), props.capture());
+        assertEquals("pillar/components/text/v1/text", props.getValue().get("sling:resourceType"));
+        assertEquals("<p>Hi</p>", props.getValue().get("text"));
+        assertEquals("true", props.getValue().get("textIsRich"));
+    }
+
+    @Test
+    void process_separatorComponent_createsNodeAndAppliesStyleIds() throws LoginException, WCMException, PersistenceException {
+        stubResolverAndPageManager();
+        stubCreatedPage(createdPage());
+        Resource container = mock(Resource.class);
+        when(resourceResolver.getResource(CONTAINER_PATH)).thenReturn(container);
+
+        // The created separator node is looked up again by addStyleIds to set cq:styleIds.
+        String separatorPath = CONTAINER_PATH + "/separator-1";
+        Resource separator = mock(Resource.class);
+        when(resourceResolver.create(eq(container), eq("separator-1"), anyMap())).thenReturn(separator);
+        when(separator.getPath()).thenReturn(separatorPath);
+        ModifiableValueMap separatorVm = mock(ModifiableValueMap.class);
+        when(resourceResolver.getResource(separatorPath)).thenReturn(separator);
+        when(separator.adaptTo(ModifiableValueMap.class)).thenReturn(separatorVm);
+
+        String body = "\"body\":{\"sling:resourceType\":\"" + CONTAINER_TYPE + "\","
+                + "\"separator-1\":{\"sling:resourceType\":\"pillar/components/separator/v1/separator\","
+                + "\"isDecorative\":\"true\",\"cq:styleIds\":[\"111\",\"222\"]}}";
+
+        JobConsumer.JobResult result = fixture.process(buildJob(payload(body)));
+
+        assertEquals(JobConsumer.JobResult.OK, result);
+        ArgumentCaptor<Object> styleIds = ArgumentCaptor.forClass(Object.class);
+        verify(separatorVm).put(eq("cq:styleIds"), styleIds.capture());
+        assertArrayEquals(new String[]{"111", "222"}, (String[]) styleIds.getValue());
+    }
+
+    @Test
+    void process_articleDetailComponent_createsFixedNodeUnderRootContainer()
+            throws LoginException, WCMException, PersistenceException {
+        stubResolverAndPageManager();
+        stubCreatedPage(createdPage());
+        // articledetail is created under root/container (not root/container/container) with a fixed node name.
+        String articleContainerPath = PAGE_PATH + "/jcr:content/root/container";
+        Resource container = mock(Resource.class);
+        when(resourceResolver.getResource(articleContainerPath)).thenReturn(container);
+
+        String body = "\"body\":{\"sling:resourceType\":\"" + CONTAINER_TYPE + "\","
+                + "\"articledetail-1\":{\"sling:resourceType\":\"pillar/components/articledetail/v1/articledetail\","
+                + "\"fragmentPath\":\"/content/dam/article\"}}";
+
+        JobConsumer.JobResult result = fixture.process(buildJob(payload(body)));
+
+        assertEquals(JobConsumer.JobResult.OK, result);
+        ArgumentCaptor<Map<String, Object>> props = ArgumentCaptor.forClass(Map.class);
+        verify(resourceResolver).create(eq(container), eq("articledetail"), props.capture());
+        assertEquals("pillar/components/articledetail/v1/articledetail", props.getValue().get("sling:resourceType"));
+        assertEquals("/content/dam/article", props.getValue().get("fragmentPath"));
+    }
+
+    @Test
+    void process_nonObjectComponentMember_isSkipped() throws LoginException, WCMException, PersistenceException {
+        stubResolverAndPageManager();
+        stubCreatedPage(createdPage());
+
+        // hero-cards-1 is a string, not an object -> skipped before any container lookup.
+        String body = "\"body\":{\"sling:resourceType\":\"" + CONTAINER_TYPE + "\","
+                + "\"hero-cards-1\":\"not-an-object\"}";
+
+        JobConsumer.JobResult result = fixture.process(buildJob(payload(body)));
+
+        assertEquals(JobConsumer.JobResult.OK, result);
         verify(resourceResolver, never()).create(any(), anyString(), anyMap());
     }
 
