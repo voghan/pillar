@@ -29,6 +29,7 @@ import org.osgi.service.component.propertytypes.ServiceDescription;
 import javax.servlet.Servlet;
 import javax.servlet.ServletException;
 import java.io.IOException;
+import java.io.Serial;
 
 /**
  * Servlet that writes some sample content into the response. It is mounted for all resources of a
@@ -37,21 +38,21 @@ import java.io.IOException;
  */
 @Component(service = {Servlet.class})
 @SlingServletResourceTypes(
-    resourceTypes = "pillar/components/page",
+    resourceTypes = "pillar/components/page/v1/page",
     methods = HttpConstants.METHOD_GET,
     extensions = "txt")
 @ServiceDescription("Simple Demo Servlet")
 public class SimpleServlet extends SlingSafeMethodsServlet {
 
+  @Serial
   private static final long serialVersionUID = 1L;
 
   @Override
-  protected void doGet(final SlingHttpServletRequest req,
-      final SlingHttpServletResponse resp) throws ServletException, IOException {
-    final Resource resource = req.getResource();
-    resp.setContentType("text/plain");
-    resp.getWriter().write("Title = " + resource.getValueMap().get(JcrConstants.JCR_TITLE));
-    resp.getWriter()
-        .write("\nDescription = " + resource.getValueMap().get(JcrConstants.JCR_DESCRIPTION));
+  protected void doGet(final SlingHttpServletRequest request, final SlingHttpServletResponse response)
+          throws ServletException, IOException {
+    final Resource resource = request.getResource();
+    response.setContentType("text/plain");
+    response.getWriter().write("Title = " + resource.getValueMap().get(JcrConstants.JCR_TITLE));
+    response.getWriter().write("\nDescription = " + resource.getValueMap().get(JcrConstants.JCR_DESCRIPTION));
   }
 }

@@ -1,0 +1,47 @@
+{
+  "page": {
+    "title": "Generated Page Content",
+    "name": "simple-page",
+    "description":"Generated page content that was created via page import api",
+    "template": "/conf/pillar/settings/wcm/templates/page-content",
+    "path": "/content/pillar/language-head/en/demo/imports"
+  },
+  "body": {
+    "layout": "responsiveGrid",
+    "sling:resourceType": "pillar/components/container/v1/container",
+    "cq:styleIds": [
+      "1779927959937"
+    ],
+    "hero-cards-1": {
+      "variationName": "master",
+      "sling:resourceType": "pillar/components/hero/v1/hero",
+      "fragmentPath": "/content/dam/pillar/cfm/hero-cards/homepage/homepage"
+    },
+    "featured-1": {
+      "variationName": "master",
+      "sling:resourceType": "pillar/components/featured/v1/featured",
+      "fragmentPath": "/content/dam/pillar/cfm/featured-cards/articles/demo-featured-card"
+    },
+    "simple-card-1": {
+      "variationName": "master",
+      "jcr:lastModified": "Tue Dec 30 2025 16:25:56 GMT-0600",
+      "sling:resourceType": "pillar/components/card/v1/card",
+      "fragmentPath": "/content/dam/pillar/cfm/simple-cards/homepage/option1"
+    },
+    "simple-card-2": {
+      "variationName": "master",
+      "sling:resourceType": "pillar/components/card/v1/card",
+      "fragmentPath": "/content/dam/pillar/cfm/simple-cards/homepage/option2"
+    },
+    "simple-card-3": {
+      "variationName": "master",
+      "sling:resourceType": "pillar/components/card/v1/card",
+      "fragmentPath": "/content/dam/pillar/cfm/simple-cards/homepage/option3"
+    },
+    "card-list-1": {
+      "variationName": "master",
+      "sling:resourceType": "pillar/components/card-list/v1/card-list",
+      "fragmentPath": "/content/dam/pillar/cfm/card-list/demo/simple-card-list"
+    }
+  }
+}

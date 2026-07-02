@@ -1,0 +1,20 @@
+{
+  "page": {
+    "title": "Generated Article Detail Page",
+    "name": "article-detail-page",
+    "description":"Generated article detail page content that was created via page import api",
+    "template": "/conf/pillar/settings/wcm/templates/page-article",
+    "path": "/content/pillar/language-head/en/demo/imports"
+  },
+  "body": {
+    "layout": "responsiveGrid",
+    "sling:resourceType": "pillar/components/container/v1/container",
+    "cq:styleIds": [
+      "1779927959937"
+    ],
+    "articledetail-0": {
+      "sling:resourceType": "pillar/components/articledetail/v1/articledetail",
+      "fragmentPath": "/content/dam/pillar/cfm/article-detail/demo"
+    }
+  }
+}
