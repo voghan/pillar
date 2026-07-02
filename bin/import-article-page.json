@@ -1,0 +1,23 @@
+{
+  "page": {
+    "title": "Generated Page Content",
+    "name": "simple-page",
+    "description":"Generated page content that was cleared via page import api",
+    "template": "/conf/pillar/settings/wcm/templates/page-content",
+    "path": "/content/pillar/language-head/en/demo/imports"
+  },
+  "body": {
+    "layout": "responsiveGrid",
+    "sling:resourceType": "pillar/components/container/v1/container",
+    "cq:styleIds": [
+      "1779927959937"
+    ],
+    "articledetail": {
+      "jcr:primaryType": "nt:unstructured",
+      "jcr:lastModifiedBy": "admin",
+      "jcr:lastModified": "Wed May 27 2026 19:30:33 GMT-0500",
+      "sling:resourceType": "pillar/components/articledetail/v1/articledetail",
+      "fragmentPath": "/content/dam/pillar/cfm/article-detail/articles"
+    }
+  }
+}

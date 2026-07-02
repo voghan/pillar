@@ -1,0 +1,52 @@
+{
+  "page": {
+    "title": "Generated Page Content",
+    "name": "simple-page",
+    "description":"Generated page content that was cleared via page import api",
+    "template": "/conf/pillar/settings/wcm/templates/page-content",
+    "path": "/content/pillar/language-head/en/demo/imports"
+  },
+  "body": {
+    "layout": "responsiveGrid",
+    "sling:resourceType": "pillar/components/container/v1/container",
+    "cq:styleIds": [
+      "1779927959937"
+    ],
+    "image-1": {
+      "imageFromPageImage": "false",
+      "fileReference": "/content/dam/pillar/images/en/homepage/bigsky-hero.jpg",
+      "alt": "some alt text",
+      "displayPopupTitle": "true",
+      "linkTarget": "_self",
+      "titleValueFromDAM": "true",
+      "sling:resourceType": "pillar/components/image/v1/image",
+      "isDecorative": "false",
+      "altValueFromDAM": "false"
+    },
+    "separator-1": {
+      "sling:resourceType": "pillar/components/separator/v1/separator",
+      "isDecorative": "false",
+      "cq:styleIds": [
+        "1779588639917",
+        "1779588736278"
+      ]
+    },
+    "text-1": {
+      "text": "\u003Cp\u003ERich text\u003C/p\u003E\r\n",
+      "sling:resourceType": "pillar/components/text/v1/text",
+      "textIsRich": "true"
+    },
+    "list": {
+      "showModificationDate": "false",
+      "tagsMatch": "any",
+      "linkItems": "false",
+      "parentPage": "/content/pillar/language-head/en/demo/imports",
+      "sortOrder": "asc",
+      "displayItemAsTeaser": "false",
+      "showDescription": "false",
+      "sling:resourceType": "pillar/components/list/v1/list",
+      "childDepth": "1",
+      "listFrom": "children"
+    }
+  }
+}

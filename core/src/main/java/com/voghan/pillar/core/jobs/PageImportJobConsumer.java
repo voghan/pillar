@@ -105,41 +105,47 @@ public class PageImportJobConsumer implements JobConsumer {
 
         String containerPath = page.getPath() + "/jcr:content/root/container/container";
         LOGGER.info("PageBody keys {}", pageBody.keySet());
-        for (String key: pageBody.keySet()) {
-            if (key.startsWith("hero-cards-")) {
+        for (String key : pageBody.keySet()) {
+            if (key.startsWith("hero-cards-") || key.startsWith("simple-card-") || key.startsWith("card-list-") || key.startsWith("featured-")) {
                 JsonObject cmp = pageBody.getAsJsonObject(key);
-                String cmpResourceType = cmp.get("sling:resourceType").getAsString();
-                String variationName = cmp.get("variationName").getAsString();
-                String fragmentPath = cmp.get("fragmentPath").getAsString();
-                addSingleComponent(resourceResolver, containerPath, key, cmpResourceType, variationName, fragmentPath);
-            } else if (key.startsWith("simple-card-")) {
+                if(!cmp.isJsonObject() || !cmp.has("sling:resourceType")) {
+                    LOGGER.warn("Missing required field for component");
+                    continue;
+                }
+                addSingleComponent(resourceResolver, containerPath, key, cmp);
+            } else if (key.startsWith("image-")) {
                 JsonObject cmp = pageBody.getAsJsonObject(key);
-                String cmpResourceType = cmp.get("sling:resourceType").getAsString();
-                String variationName = cmp.get("variationName").getAsString();
-                String fragmentPath = cmp.get("fragmentPath").getAsString();
-                addSingleComponent(resourceResolver, containerPath, key, cmpResourceType, variationName, fragmentPath);
+            } else if (key.startsWith("list-")) {
+                JsonObject cmp = pageBody.getAsJsonObject(key);
+            } else if (key.startsWith("separator-")) {
+                JsonObject cmp = pageBody.getAsJsonObject(key);
+            } else if (key.startsWith("text-")) {
+                JsonObject cmp = pageBody.getAsJsonObject(key);
             }
         }
 
     }
 
-    protected void addSingleComponent(ResourceResolver resourceResolver, String containerPath, String componentNodeName,
-                                      String resourceType, String variationName, String fragmentPath)
+    protected void addSingleComponent(ResourceResolver resourceResolver, String containerPath, String componentNodeName, JsonObject cmp)
             throws PersistenceException {
-        Resource containerResource = resourceResolver.getResource(containerPath);
 
+        Resource containerResource = resourceResolver.getResource(containerPath);
         if (containerResource != null) {
             // Define the properties for the new component
             Map<String, Object> componentProps = new HashMap<>();
             componentProps.put("jcr:primaryType", "nt:unstructured");
-            componentProps.put("sling:resourceType", resourceType);
-            componentProps.put("variationName", variationName);
-            componentProps.put("fragmentPath", fragmentPath);
+            componentProps.put("sling:resourceType", getFragmentPath(cmp, "sling:resourceType"));
+            componentProps.put("variationName", getFragmentPath(cmp, "variationName"));
+            componentProps.put("fragmentPath", getFragmentPath(cmp, "fragmentPath"));
 
             // Create a uniquely named node under the container (e.g., text_123)
             resourceResolver.create(containerResource, componentNodeName, componentProps);
         } else {
             LOGGER.warn("Missing container resource, skipping component");
         }
+    }
+
+    private static String getFragmentPath(JsonObject cmp, String key) {
+        return cmp.keySet().contains(key) ? cmp.get(key).getAsString() : null;
     }
 }

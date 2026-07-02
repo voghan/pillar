@@ -18,6 +18,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.ArgumentMatchers.anyMap;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
@@ -218,6 +219,87 @@ public class PageImportJobConsumerTest {
         JobConsumer.JobResult result = fixture.process(mock(Job.class));
 
         assertEquals(JobConsumer.JobResult.CANCEL, result);
+    }
+
+    @Test
+    void process_createsComponentsForAllSupportedPrefixes() throws LoginException, WCMException, PersistenceException {
+        stubResolverAndPageManager();
+        stubCreatedPage(createdPage());
+        Resource container = mock(Resource.class);
+        when(resourceResolver.getResource(CONTAINER_PATH)).thenReturn(container);
+
+        String body = "\"body\":{\"sling:resourceType\":\"" + CONTAINER_TYPE + "\","
+                + "\"card-list-1\":{\"sling:resourceType\":\"pillar/components/cardlist/v1/cardlist\","
+                + "\"variationName\":\"master\",\"fragmentPath\":\"/content/dam/cl\"},"
+                + "\"featured-1\":{\"sling:resourceType\":\"pillar/components/featured/v1/featured\","
+                + "\"variationName\":\"master\",\"fragmentPath\":\"/content/dam/f\"}}";
+
+        JobConsumer.JobResult result = fixture.process(buildJob(payload(body)));
+
+        assertEquals(JobConsumer.JobResult.OK, result);
+        verify(resourceResolver).create(eq(container), eq("card-list-1"), anyMap());
+        verify(resourceResolver).create(eq(container), eq("featured-1"), anyMap());
+    }
+
+    @Test
+    void process_componentMissingResourceType_isSkipped() throws LoginException, WCMException, PersistenceException {
+        stubResolverAndPageManager();
+        stubCreatedPage(createdPage());
+        Resource container = mock(Resource.class);
+        when(resourceResolver.getResource(CONTAINER_PATH)).thenReturn(container);
+
+        // hero-cards-1 lacks sling:resourceType -> skipped; simple-card-1 is valid -> created.
+        String body = "\"body\":{\"sling:resourceType\":\"" + CONTAINER_TYPE + "\","
+                + "\"hero-cards-1\":{\"variationName\":\"master\",\"fragmentPath\":\"/p\"},"
+                + "\"simple-card-1\":{\"sling:resourceType\":\"pillar/components/card/v1/card\","
+                + "\"variationName\":\"master\",\"fragmentPath\":\"/content/dam/card\"}}";
+
+        JobConsumer.JobResult result = fixture.process(buildJob(payload(body)));
+
+        assertEquals(JobConsumer.JobResult.OK, result);
+        verify(resourceResolver).create(eq(container), eq("simple-card-1"), anyMap());
+        verify(resourceResolver, never()).create(any(), eq("hero-cards-1"), anyMap());
+    }
+
+    @Test
+    void process_optionalFieldsAbsent_storedAsNull() throws LoginException, WCMException, PersistenceException {
+        stubResolverAndPageManager();
+        stubCreatedPage(createdPage());
+        Resource container = mock(Resource.class);
+        when(resourceResolver.getResource(CONTAINER_PATH)).thenReturn(container);
+
+        // Only the required sling:resourceType is present; variationName/fragmentPath are absent.
+        String body = "\"body\":{\"sling:resourceType\":\"" + CONTAINER_TYPE + "\","
+                + "\"featured-1\":{\"sling:resourceType\":\"pillar/components/featured/v1/featured\"}}";
+
+        JobConsumer.JobResult result = fixture.process(buildJob(payload(body)));
+
+        assertEquals(JobConsumer.JobResult.OK, result);
+        ArgumentCaptor<Map<String, Object>> props = ArgumentCaptor.forClass(Map.class);
+        verify(resourceResolver).create(eq(container), eq("featured-1"), props.capture());
+        assertEquals("pillar/components/featured/v1/featured", props.getValue().get("sling:resourceType"));
+        assertEquals("nt:unstructured", props.getValue().get("jcr:primaryType"));
+        assertNull(props.getValue().get("variationName"));
+        assertNull(props.getValue().get("fragmentPath"));
+    }
+
+    @Test
+    void process_ignoredComponentPrefixes_createNothing() throws LoginException, WCMException, PersistenceException {
+        stubResolverAndPageManager();
+        stubCreatedPage(createdPage());
+
+        // image-/list-/separator-/text- prefixes are recognized but currently no-ops.
+        String body = "\"body\":{\"sling:resourceType\":\"" + CONTAINER_TYPE + "\","
+                + "\"image-1\":{\"sling:resourceType\":\"x\"},"
+                + "\"list-1\":{\"sling:resourceType\":\"x\"},"
+                + "\"separator-1\":{\"sling:resourceType\":\"x\"},"
+                + "\"text-1\":{\"sling:resourceType\":\"x\"}}";
+
+        JobConsumer.JobResult result = fixture.process(buildJob(payload(body)));
+
+        assertEquals(JobConsumer.JobResult.OK, result);
+        verify(resourceResolver, never()).getResource(anyString());
+        verify(resourceResolver, never()).create(any(), anyString(), anyMap());
     }
 
     // --- helpers ---
