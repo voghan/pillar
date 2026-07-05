@@ -15,6 +15,9 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class HeroCardCfm extends CardCfm implements HeroCard {
 
+
+  public static final String MODEL = "/conf/pillar/settings/dam/cfm/models/hero";
+
   @Self
   private Resource resource;
 

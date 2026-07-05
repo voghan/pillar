@@ -12,6 +12,9 @@ import javax.annotation.PostConstruct;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class SimpleCardCfm extends CardCfm implements SimpleCard {
 
+
+  public static final String MODEL = "/conf/pillar/settings/dam/cfm/models/simplecard";
+
   @Self
   private Resource resource;
 

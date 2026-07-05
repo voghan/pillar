@@ -1,0 +1,22 @@
+{
+  "content": {
+    "title": "Featured Card",
+    "name": "featured-card",
+    "path": "/content/dam/pillar/cfm/featured-cards/imports",
+    "model": "/conf/pillar/settings/dam/cfm/models/featuredcard",
+    "data": {
+      "master": {
+        "headline": "Featured Card",
+        "subheadline": "Featured",
+        "image": "/content/dam/pillar/images/en/homepage/blue-card.png",
+        "shortDescription": "\u003Cp\u003ELorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae libero sit amet eros dignissim tincidunt.\u003C/p\u003E\n",
+        "callToActions": [
+          {
+            "linkText":"Learn more",
+            "linkPath": "/content/page/learn"
+          }
+        ]
+      }
+    }
+  }
+}

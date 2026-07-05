@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 public class LinkCfm extends BaseModelCfm implements SimpleLink {
 
   private final Logger logger = LoggerFactory.getLogger(getClass());
+  public static final String MODEL = "/conf/pillar/settings/dam/cfm/models/link";
 
   @Self
   private SimpleLinkBuilder linkBuilder;

@@ -1,0 +1,10 @@
+{
+  "content": {
+    "title": "downhill-skiing-snowbird",
+    "name": "downhill-skiing-snowbird",
+    "path": "/content/dam/pillar/cfm/imports",
+    "model": "/conf/pillar/settings/dam/cfm/models/other",
+    "data": {
+    }
+  }
+}

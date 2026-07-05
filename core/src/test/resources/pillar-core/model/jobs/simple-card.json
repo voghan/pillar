@@ -1,0 +1,25 @@
+{
+  "content": {
+    "title": "downhill-skiing-snowbird",
+    "name": "downhill-skiing-snowbird",
+    "path": "/content/dam/pillar/cfm/imports",
+    "model": "/conf/pillar/settings/dam/cfm/models/simplecard",
+    "data": {
+      "master": {
+        "headline": "Simple Card",
+        "image": "/content/dam/pillar/images/en/homepage/blue-card.png",
+        "shortDescription": "\u003Cp\u003ELorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae libero sit amet eros dignissim tincidunt.\u003C/p\u003E\n",
+        "callToActions": [
+          {
+            "linkText":"Explore",
+            "linkPath": "/content/page/explore"
+          },
+          {
+            "linkText":"Learn more",
+            "linkPath": "/content/page/learn"
+          }
+        ]
+      }
+    }
+  }
+}

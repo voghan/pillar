@@ -1,6 +1,6 @@
 {
-  "queue.name": "Page Import Queue",
-  "queue.topics": ["com/pillar/jobs/page-import"],
+  "queue.name": "Content Fragment Import Queue",
+  "queue.topics": ["com/pillar/jobs/cfm-import"],
   "queue.type": "UNORDERED",
   "queue.maxparallel": 10,
   "queue.retries": 5,
