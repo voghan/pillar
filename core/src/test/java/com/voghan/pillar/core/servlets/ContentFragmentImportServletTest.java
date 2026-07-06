@@ -66,6 +66,19 @@ class ContentFragmentImportServletTest {
           "  }\n" +
           "}";
 
+  private static final String INVALID_PAYLOAD_MISSING_MODEL =
+          "{\n" +
+          "  \"content\": {\n" +
+          "    \"title\": \"downhill-skiing-snowbird\",\n" +
+          "    \"name\": \"downhill-skiing-snowbird\",\n" +
+          "    \"path\": \"/content/dam/pillar/cfm/basic-cards/imports\",\n" +
+          "    \"data\": {\n" +
+          "      \"master\": {\n" +
+          "      }\n" +
+          "    }\n" +
+          "  }\n" +
+          "}";
+
   @InjectMocks
   private ContentFragmentImportServlet fixture;
 
@@ -109,8 +122,8 @@ class ContentFragmentImportServletTest {
   }
 
   @Test
-  void doPost_missingPageJson_returnsBadRequest(AemContext context) throws ServletException, IOException {
-    MockSlingHttpServletResponse response = post(context, "{\"body\":{} }");
+  void doPost_primitiveContentJson_returnsBadRequest(AemContext context) throws ServletException, IOException {
+    MockSlingHttpServletResponse response = post(context, "{\"content\":\"primative\"}");
 
     assertEquals(SlingHttpServletResponse.SC_BAD_REQUEST, response.getStatus());
     String out = response.getOutputAsString();
@@ -119,55 +132,8 @@ class ContentFragmentImportServletTest {
   }
 
   @Test
-  void doPost_missingBodyJson_returnsBadRequest(AemContext context) throws ServletException, IOException {
-    MockSlingHttpServletResponse response = post(context, "{\"page\":{} }");
-
-    assertEquals(SlingHttpServletResponse.SC_BAD_REQUEST, response.getStatus());
-    String out = response.getOutputAsString();
-    assertTrue(out.contains("\"success\":false"), out);
-    assertTrue(out.contains(CONTENT_FAILED_VALIDATION), out);
-  }
-
-  @Test
-  void doPost_primitiveBodyJson_returnsBadRequest(AemContext context) throws ServletException, IOException {
-    MockSlingHttpServletResponse response = post(context, "{\"page\":{},\"body\":\"primative\"}");
-
-    assertEquals(SlingHttpServletResponse.SC_BAD_REQUEST, response.getStatus());
-    String out = response.getOutputAsString();
-    assertTrue(out.contains("\"success\":false"), out);
-    assertTrue(out.contains(CONTENT_FAILED_VALIDATION), out);
-  }
-
-  @Test
-  void doPost_primitivePageJson_returnsBadRequest(AemContext context) throws ServletException, IOException {
-    MockSlingHttpServletResponse response = post(context, "{\"page\":\"primative\",\"body\":{}}");
-
-    assertEquals(SlingHttpServletResponse.SC_BAD_REQUEST, response.getStatus());
-    String out = response.getOutputAsString();
-    assertTrue(out.contains("\"success\":false"), out);
-    assertTrue(out.contains(CONTENT_FAILED_VALIDATION), out);
-  }
-
-  @Test
-  void doPost_pageMissingRequiredField_returnsBadRequest(AemContext context) throws ServletException, IOException {
-    // "page" is an object but lacks the required "path"/"title"/... scalars.
-    MockSlingHttpServletResponse response = post(context, "{\"page\":{\"name\":\"home\"},\"body\":{}}");
-
-    assertEquals(SlingHttpServletResponse.SC_BAD_REQUEST, response.getStatus());
-    String out = response.getOutputAsString();
-    assertTrue(out.contains("\"success\":false"), out);
-    assertTrue(out.contains(CONTENT_FAILED_VALIDATION), out);
-  }
-
-  @Test
-  void doPost_bodyMissingResourceType_returnsBadRequest(AemContext context) throws ServletException, IOException {
-    String body = "{"
-        + "\"page\":{\"title\":\"Home\",\"name\":\"home\",\"template\":\"simple\","
-        + "\"description\":\"desc\",\"path\":\"/content/pillar/language-head/en/demo\"},"
-        + "\"body\":{\"layout\":\"responsiveGrid\"}"
-        + "}";
-
-    MockSlingHttpServletResponse response = post(context, body);
+  void doPost_missingModelJson_returnsBadRequest(AemContext context) throws ServletException, IOException {
+    MockSlingHttpServletResponse response = post(context, INVALID_PAYLOAD_MISSING_MODEL);
 
     assertEquals(SlingHttpServletResponse.SC_BAD_REQUEST, response.getStatus());
     String out = response.getOutputAsString();

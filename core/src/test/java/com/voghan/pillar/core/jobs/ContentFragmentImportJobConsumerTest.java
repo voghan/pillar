@@ -7,6 +7,7 @@ import com.adobe.cq.dam.cfm.FragmentData;
 import com.adobe.cq.dam.cfm.FragmentTemplate;
 import com.voghan.pillar.core.models.cfm.ArticleDetailCfm;
 import com.voghan.pillar.core.models.cfm.CardCfm;
+import com.voghan.pillar.core.models.cfm.CardListConfigCfm;
 import com.voghan.pillar.core.models.cfm.FeaturedCardCfm;
 import com.voghan.pillar.core.models.cfm.SimpleCardCfm;
 import org.apache.sling.api.resource.LoginException;
@@ -57,8 +58,9 @@ public class ContentFragmentImportJobConsumerTest {
     private static final String RES_BASIC_CARD           = "pillar-core/model/jobs/basic-card.json";
     private static final String RES_GENERIC_CFM          = "pillar-core/model/jobs/generic-cfm.json";
     private static final String RES_HERO_CARD            = "pillar-core/model/jobs/hero-card.json";
-    private static final String RES_SIMPLE_CARD            = "pillar-core/model/jobs/simple-card.json";
-    private static final String RES_FEATURED_CARD            = "pillar-core/model/jobs/featured-card.json";
+    private static final String RES_SIMPLE_CARD          = "pillar-core/model/jobs/simple-card.json";
+    private static final String RES_FEATURED_CARD        = "pillar-core/model/jobs/featured-card.json";
+    private static final String RES_CARD_LIST            = "pillar-core/model/jobs/card-list.json";
 
     @InjectMocks
     private ContentFragmentImportJobConsumer fixture;
@@ -257,6 +259,20 @@ public class ContentFragmentImportJobConsumerTest {
         assertEquals(JobConsumer.JobResult.OK, result);
         verify(resourceResolver, times(1)).commit();
         verify(element).setContent("Featured Card", "text/plain");
+    }
+
+    @Test
+    void process_cardListModel_returnsOK()
+            throws LoginException, ContentFragmentException, PersistenceException, IOException {
+        stubResolver();
+        ContentFragment fragment = stubModel(CardListConfigCfm.MODEL, FOLDER);
+        ContentElement element = stubElements(fragment);
+
+        JobConsumer.JobResult result = fixture.process(buildJob(RES_CARD_LIST));
+
+        assertEquals(JobConsumer.JobResult.OK, result);
+        verify(resourceResolver, times(1)).commit();
+        verify(element).setContent("Pillar Demo Components", "text/plain");
     }
 
     // --- helpers ---

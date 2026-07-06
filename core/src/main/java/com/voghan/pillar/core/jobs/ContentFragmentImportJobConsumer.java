@@ -51,6 +51,7 @@ public class ContentFragmentImportJobConsumer implements JobConsumer {
     private static final Gson GSON = new Gson();
     protected static final String SERVICE_NAME = "ContentFragmentImportJobConsumer";
     public static final String JOB_TOPIC = "com/pillar/jobs/cfm-import";
+    public static final String DEFAULT_LINK_PATH = "/content/dam/pillar/cfm/links/imports";
 
     @Reference
     private ResourceResolverFactory resourceResolverFactory;
@@ -171,9 +172,9 @@ public class ContentFragmentImportJobConsumer implements JobConsumer {
             JsonObject master = data.getAsJsonObject("master");
             setTextProperty(contentFragment, master, "headline", "text/plain");
             setTextProperty(contentFragment, master, "shortDescription", "text/html");
-            setTextProperty(contentFragment, master, "searchPath", "text/html");
-            setTextProperty(contentFragment, master, "enableSearch", "text/html");
-            setTextProperty(contentFragment, master, "enablePostDate", "text/html");
+            setTextProperty(contentFragment, master, "searchPath", "text/plain");
+            setTextProperty(contentFragment, master, "enableSearch", "text/plain");
+            setTextProperty(contentFragment, master, "enablePostDate", "text/plain");
             setTagProperty(contentFragment, master, "filterTags");
             setTagProperty(contentFragment, master, "cardTags");
         }
@@ -224,7 +225,7 @@ public class ContentFragmentImportJobConsumer implements JobConsumer {
             for (JsonElement element : jsonArray) {
                 JsonObject jsonObject = element.getAsJsonObject();
                 try {
-                    ContentFragment link = createContentFragment(resourceResolver, LinkCfm.MODEL, "/content/dam/pillar/cfm/links/imports", "link", "link");
+                    ContentFragment link = createContentFragment(resourceResolver, LinkCfm.MODEL, DEFAULT_LINK_PATH, "link", "link");
                     if (link != null) {
                         setTextProperty(link, jsonObject, "linkText", "text/plain");
                         setTextProperty(link, jsonObject, "linkPath", "text/plain");

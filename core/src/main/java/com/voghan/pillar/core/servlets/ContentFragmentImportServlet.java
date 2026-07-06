@@ -26,9 +26,8 @@ import java.util.Map;
 
 @Component(service = {Servlet.class})
 @SlingServletResourceTypes(
-        resourceTypes = "pillar/components/page/v1/page",
+        resourceTypes = "pillar/endpoints/cfm-import/v1",
         methods = HttpConstants.METHOD_POST,
-        selectors = "cfm.import",
         extensions = "json")
 @ServiceDescription("Service creates content fragments from JSON posted to the servlet")
 public class ContentFragmentImportServlet extends AbstractImportServlet {
@@ -91,9 +90,13 @@ public class ContentFragmentImportServlet extends AbstractImportServlet {
     private static boolean isValidRequest(@NotNull String body) {
         JsonObject payload = GSON.fromJson(body, JsonObject.class);
         if (payload == null
-                || !payload.has("content")
-                || !payload.get("content").isJsonObject()
-                || !hasRequiredScalars(payload.getAsJsonObject("content"), REQUIRED_FIELDS)) {
+                || !hasRequiredObjects(payload, List.of("content"))) {
+            return false;
+        }
+
+        JsonObject content = payload.getAsJsonObject("content");
+        if (!hasRequiredScalars(content, REQUIRED_FIELDS) ||
+                !hasRequiredObjects(content, List.of("data"))){
             return false;
         }
 

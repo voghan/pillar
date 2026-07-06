@@ -27,9 +27,8 @@ import java.util.Map;
 
 @Component(service = {Servlet.class})
 @SlingServletResourceTypes(
-        resourceTypes = "pillar/components/page/v1/page",
+        resourceTypes = "pillar/endpoints/page-import/v1",
         methods = HttpConstants.METHOD_POST,
-        selectors = "page.import",
         extensions = "json")
 @ServiceDescription("Service creates pages from JSON posted to the servlet")
 public class PageImportServlet extends AbstractImportServlet {
@@ -104,8 +103,8 @@ public class PageImportServlet extends AbstractImportServlet {
             return false;
         }
 
-        return hasRequiredScalars(payload.getAsJsonObject("page"), REQUIRED_PAGE_FIELDS)
-                && hasRequiredScalars(payload.getAsJsonObject("body"), REQUIRED_BODY_FIELDS);
+        return hasRequiredPrimitives(payload.getAsJsonObject("page"), REQUIRED_PAGE_FIELDS)
+                && hasRequiredPrimitives(payload.getAsJsonObject("body"), REQUIRED_BODY_FIELDS);
     }
 
 }

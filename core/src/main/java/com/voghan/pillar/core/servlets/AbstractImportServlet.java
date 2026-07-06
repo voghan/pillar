@@ -26,4 +26,22 @@ public class AbstractImportServlet extends SlingAllMethodsServlet {
         }
         return true;
     }
+
+    public static boolean hasRequiredPrimitives(JsonObject json, List<String> fields) {
+        for (String field : fields) {
+            if (!json.has(field) || !json.get(field).isJsonPrimitive()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean hasRequiredObjects(JsonObject json, List<String> fields) {
+        for (String field : fields) {
+            if (!json.has(field) || !json.get(field).isJsonObject()) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
