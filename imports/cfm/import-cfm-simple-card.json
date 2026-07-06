@@ -1,0 +1,21 @@
+{
+  "content": {
+    "title": "Simple Card",
+    "name": "simple-card-demo",
+    "path": "/content/dam/pillar/cfm/simple-cards/imports",
+    "model": "/conf/pillar/settings/dam/cfm/models/simplecard",
+    "data": {
+      "master": {
+        "headline": "Simple Card",
+        "image": "/content/dam/pillar/images/en/homepage/blue-card.png",
+        "shortDescription": "\u003Cp\u003ELorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae libero sit amet eros dignissim tincidunt.\u003C/p\u003E\n",
+        "callToActions": [
+          {
+            "linkText":"Learn more",
+            "linkPath": "/content/page/learn"
+          }
+        ]
+      }
+    }
+  }
+}

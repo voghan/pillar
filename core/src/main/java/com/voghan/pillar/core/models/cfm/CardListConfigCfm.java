@@ -18,6 +18,8 @@ public class CardListConfigCfm implements CardListConfig {
 
   private final Logger logger = LoggerFactory.getLogger(getClass());
 
+  public static final String MODEL = "/conf/pillar/settings/dam/cfm/models/cardlistconfig";
+
   @Self
   private Resource resource;
 

@@ -8,7 +8,12 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.voghan.pillar.common.AuthUtil;
-import org.apache.sling.api.resource.*;
+import org.apache.sling.api.resource.LoginException;
+import org.apache.sling.api.resource.ModifiableValueMap;
+import org.apache.sling.api.resource.PersistenceException;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ResourceResolverFactory;
 import org.apache.sling.event.jobs.Job;
 import org.apache.sling.event.jobs.consumer.JobConsumer;
 import org.osgi.framework.Constants;
@@ -55,7 +60,7 @@ public class PageImportJobConsumer implements JobConsumer {
             }
 
             JsonObject payload = GSON.fromJson(pageData, JsonObject.class);
-            Page page = createPage(payload, resourceResolver, pageManager);
+            Page page = createPage(payload, pageManager);
             if (page == null) {
                 LOGGER.warn("Unable to create page for job {}", job.getId());
                 return JobResult.FAILED;
@@ -66,19 +71,18 @@ public class PageImportJobConsumer implements JobConsumer {
 
             // Save changes
             resourceResolver.commit();
-
-        } catch (WCMException | PersistenceException e) {
+        } catch (LoginException | WCMException | PersistenceException e) {
             LOGGER.warn(e.getMessage(), e);
             return JobResult.CANCEL;
         } catch (Exception e) {
-            LOGGER.warn(e.getMessage(), e);
+            LOGGER.error(e.getMessage(), e);
             return JobResult.CANCEL;
         }
 
         return JobResult.OK;
     }
 
-    private Page createPage(JsonObject payload, ResourceResolver resourceResolver, PageManager pageManager) throws WCMException, PersistenceException {
+    private Page createPage(JsonObject payload, PageManager pageManager) throws WCMException {
         JsonObject pageJson = payload.getAsJsonObject("page");
         String title = pageJson.get("title").getAsString();
         String name = pageJson.get("name").getAsString();

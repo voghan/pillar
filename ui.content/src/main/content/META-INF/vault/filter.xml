@@ -16,6 +16,7 @@
     <filter root="/var/workflow/models/pillar-demo-is-language-main"/>
     <filter root="/var/workflow/models/pillar-demo-is-page"/>
     <filter root="/var/workflow/models/pillar-publish-page"/>
+    <filter root="/content/cq:graphql/pillar"/>
     <filter root="/content/pillar" mode="merge"/>
     <filter root="/content/dam/pillar" mode="merge">
         <exclude pattern="/content/dam/pillar(/.*)?"/>

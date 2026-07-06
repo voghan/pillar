@@ -3,12 +3,11 @@ package com.voghan.pillar.core.servlets;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
-import com.voghan.pillar.core.jobs.PageImportJobConsumer;
+import com.voghan.pillar.core.jobs.ContentFragmentImportJobConsumer;
 import org.apache.commons.io.IOUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.servlets.HttpConstants;
-import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 import org.apache.sling.event.jobs.Job;
 import org.apache.sling.event.jobs.JobManager;
 import org.apache.sling.servlets.annotations.SlingServletResourceTypes;
@@ -27,19 +26,16 @@ import java.util.Map;
 
 @Component(service = {Servlet.class})
 @SlingServletResourceTypes(
-        resourceTypes = "pillar/endpoints/page-import/v1",
+        resourceTypes = "pillar/endpoints/cfm-import/v1",
         methods = HttpConstants.METHOD_POST,
         extensions = "json")
-@ServiceDescription("Service creates pages from JSON posted to the servlet")
-public class PageImportServlet extends AbstractImportServlet {
-    private static final Logger LOGGER = LoggerFactory.getLogger(PageImportServlet.class);
+@ServiceDescription("Service creates content fragments from JSON posted to the servlet")
+public class ContentFragmentImportServlet extends AbstractImportServlet {
+    private static final Logger LOGGER = LoggerFactory.getLogger(ContentFragmentImportServlet.class);
     private static final Gson GSON = new Gson();
 
-    // Scalar fields the consumer reads unconditionally; a payload missing any of them
-    // would enqueue successfully and then silently fail in the job, so reject it up front.
-    private static final List<String> REQUIRED_PAGE_FIELDS =
-            List.of("title", "name", "template", "description", "path");
-    private static final List<String> REQUIRED_BODY_FIELDS = List.of("sling:resourceType");
+    private static final List<String> REQUIRED_FIELDS =
+            List.of("title", "name", "model", "data", "path");
 
     @Reference
     private JobManager jobManager;
@@ -60,29 +56,31 @@ public class PageImportServlet extends AbstractImportServlet {
 
             // Validate input
             if (!isValidRequest(body)) {
+                LOGGER.info(CONTENT_FAILED_VALIDATION);
                 handleErrorResponse(response, result, SlingHttpServletResponse.SC_BAD_REQUEST, CONTENT_FAILED_VALIDATION);
                 response.getWriter().write(GSON.toJson(result));
                 return;
             }
 
             Map<String, Object> params = new HashMap<>();
-            params.put(PageImportJobConsumer.PAGE_DATA, body);
-            Job job = jobManager.addJob(PageImportJobConsumer.JOB_TOPIC, params);
+            params.put(ContentFragmentImportJobConsumer.IMPORT_DATA, body);
+            Job job = jobManager.addJob(ContentFragmentImportJobConsumer.JOB_TOPIC, params);
             if (job == null) {
+                LOGGER.info(JOB_CREATION_ERROR_MESSAGE);
                 handleErrorResponse(response, result, SlingHttpServletResponse.SC_SERVICE_UNAVAILABLE, JOB_CREATION_ERROR_MESSAGE);
             } else {
-                String message = "Page import job started " + job.getId();
+                String message = "Content Fragment import job started " + job.getId();
                 LOGGER.info(message);
                 response.setStatus(SlingHttpServletResponse.SC_OK);
                 result.addProperty("success", true);
                 result.addProperty("message", message);
             }
-
-        } catch (JsonSyntaxException e) {
-            LOGGER.error("Error processing page import", e);
+        } catch (
+        JsonSyntaxException e) {
+            LOGGER.error("Error processing content fragment import", e);
             handleErrorResponse(response, result, SlingHttpServletResponse.SC_BAD_REQUEST, CONTENT_FAILED_VALIDATION);
         } catch (Exception e) {
-            LOGGER.error("Error processing page import", e);
+            LOGGER.error("Error processing content fragment import", e);
             handleErrorResponse(response, result, SlingHttpServletResponse.SC_INTERNAL_SERVER_ERROR, INTERNAL_ERROR_OCCURRED);
         }
 
@@ -91,20 +89,17 @@ public class PageImportServlet extends AbstractImportServlet {
 
     private static boolean isValidRequest(@NotNull String body) {
         JsonObject payload = GSON.fromJson(body, JsonObject.class);
-        if (payload == null) {
+        if (payload == null
+                || !hasRequiredObjects(payload, List.of("content"))) {
             return false;
         }
 
-        if (!payload.has("page") || !payload.has("body")) {
+        JsonObject content = payload.getAsJsonObject("content");
+        if (!hasRequiredScalars(content, REQUIRED_FIELDS) ||
+                !hasRequiredObjects(content, List.of("data"))){
             return false;
         }
 
-        if (!payload.get("page").isJsonObject() || !payload.get("body").isJsonObject()) {
-            return false;
-        }
-
-        return hasRequiredPrimitives(payload.getAsJsonObject("page"), REQUIRED_PAGE_FIELDS)
-                && hasRequiredPrimitives(payload.getAsJsonObject("body"), REQUIRED_BODY_FIELDS);
+        return true;
     }
-
 }

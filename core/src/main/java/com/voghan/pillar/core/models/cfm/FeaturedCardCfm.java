@@ -11,6 +11,9 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class FeaturedCardCfm extends CardCfm implements FeaturedCard {
 
+
+  public static final String MODEL = "/conf/pillar/settings/dam/cfm/models/featuredcard";
+
   @Self
   private Resource resource;
 

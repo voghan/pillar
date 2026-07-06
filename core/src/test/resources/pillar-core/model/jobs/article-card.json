@@ -1,0 +1,19 @@
+{
+  "content": {
+    "title": "downhill-skiing-snowbird",
+    "name": "downhill-skiing-snowbird",
+    "path": "/content/dam/pillar/cfm/imports",
+    "model": "/conf/pillar/settings/dam/cfm/models/articledetail",
+    "data": {
+      "master": {
+        "headline": "Downhill Skiing Snowbird",
+        "url": "/us/en/articles/downhill-skiing-snowbird",
+        "subheadline": "Skiing Utah",
+        "postDate": "Sun Jan 11 2026 00:00:00 GMT+0000",
+        "content": "<p>Full body content</p>",
+        "shortDescription": "\u003Cp\u003EShort description\u003C/p\u003E",
+        "bannerImage": "/content/dam/pillar/images/en/cards/adobestock-185234795.jpeg"
+      }
+    }
+  }
+}

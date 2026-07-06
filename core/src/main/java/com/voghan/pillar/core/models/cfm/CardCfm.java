@@ -18,6 +18,7 @@ import org.slf4j.LoggerFactory;
 public class CardCfm extends BaseModelCfm implements Card {
 
   private final Logger logger = LoggerFactory.getLogger(getClass());
+  public static final String MODEL = "/conf/pillar/settings/dam/cfm/models/card";
 
   @Self
   private Resource resource;

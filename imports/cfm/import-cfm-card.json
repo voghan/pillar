@@ -1,0 +1,20 @@
+{
+  "content": {
+    "title": "downhill-skiing-snowbird",
+    "name": "downhill-skiing-snowbird",
+    "path": "/content/dam/pillar/cfm/basic-cards/imports",
+    "model": "/conf/pillar/settings/dam/cfm/models/card",
+    "data": {
+      "master": {
+        "headline": "Downhill Skiing Snowbird",
+        "shortDescription": "\u003Cp\u003ESituated just 29 miles from Salt Lake City in Utah's rugged Little Cottonwood Canyon, the resort shares a massive ridge with its neighbor, Alta, and spans 2,500 acres of skiable terrain.\u003C/p\u003E",
+        "callToActions": [
+          {
+            "linkText":"Learn more",
+            "linkPath": "/content/page/learn"
+          }
+        ]
+      }
+    }
+  }
+}

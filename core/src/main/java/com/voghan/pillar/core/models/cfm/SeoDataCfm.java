@@ -11,6 +11,8 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class SeoDataCfm extends BaseModelCfm implements SeoData {
 
+  public static final String MODEL ="/conf/pillar/settings/dam/cfm/models/seodata";
+
   @ValueMapValue
   private String title;
 

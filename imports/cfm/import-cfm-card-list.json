@@ -1,0 +1,25 @@
+{
+  "content": {
+    "title": "downhill-skiing-snowbird",
+    "name": "downhill-skiing-snowbird",
+    "path": "/content/dam/pillar/cfm/card-list/imports",
+    "model": "/conf/pillar/settings/dam/cfm/models/cardlistconfig",
+    "data": {
+      "master": {
+        "headline": "Pillar Demo Components",
+        "shortDescription": "\u003Cp\u003EExplore the component samples.\u003C/p\u003E",
+        "searchPath": "/content/dam/pillar/cfm/basic-cards/demo",
+        "enablePostDate": true,
+        "enableSearch": true,
+        "filterTags": [
+          "properties:orientation/portrait",
+          "properties:orientation/landscape",
+          "properties:orientation/square"
+        ],
+        "cardTags": [
+          "properties:style/color"
+        ]
+      }
+    }
+  }
+}
