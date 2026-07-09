@@ -1,0 +1,17 @@
+{
+	cardList {
+    items {
+      _path
+      headline
+      shortDescription {
+        html
+      }
+      callToActions {
+        ... on LinkModel {
+          linkText
+          linkPath
+        }
+      }
+    }
+  }
+}

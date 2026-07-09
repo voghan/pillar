@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content jcr:primaryType="nt:unstructured"/>
+    <all-hero-cards
+        jcr:created="{Date}2026-07-06T19:46:23.623-05:00"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="graphql/persistent/query">
+        <jcr:content
+            jcr:data="{Binary}\0"
+            jcr:lastModified="{Date}2026-07-06T20:19:06.763-05:00"
+            jcr:mimeType="text/html"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="graphql/persistent/query/content"/>
+    </all-hero-cards>
+    <get-hero-by-path
+        jcr:created="{Date}2026-07-06T20:20:23.262-05:00"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="graphql/persistent/query">
+        <jcr:content
+            jcr:data="{Binary}\0"
+            jcr:mimeType="text/html"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="graphql/persistent/query/content"/>
+    </get-hero-by-path>
+    <find-available-links
+        jcr:created="{Date}2026-07-06T20:58:46.071-05:00"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="graphql/persistent/query">
+        <jcr:content
+            jcr:data="{Binary}\0"
+            jcr:lastModified="{Date}2026-07-06T21:33:31.097-05:00"
+            jcr:mimeType="text/html"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="graphql/persistent/query/content"/>
+    </find-available-links>
+</jcr:root>

@@ -1,0 +1,22 @@
+{
+  articledetailList {
+    items {
+      _path
+      url
+      headline
+      subheadline
+      shortDescription {
+        html
+      }
+      bannerImage {
+        ... on ImageRef {
+          _path
+        }
+      }
+      postDate
+      content {
+        html
+      }
+    }
+  }
+}

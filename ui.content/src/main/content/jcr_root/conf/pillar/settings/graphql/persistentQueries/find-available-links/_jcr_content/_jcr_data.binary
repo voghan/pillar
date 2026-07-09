@@ -1,0 +1,28 @@
+query FindAvailableLinks($text: String!, $url: String!)
+{
+  linkList (
+    filter: {
+      linkText: {
+        _expressions: [
+          {
+            value: $text
+          }
+        ]
+      }
+      linkPath: {
+        _expressions: [
+          {
+            value: $url
+          }
+        ]
+      }
+    }
+  ) 
+  { 
+    items { 
+      _path 
+      linkText 
+      linkPath
+    } 
+  } 
+} 

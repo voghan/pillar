@@ -60,21 +60,15 @@
                         </_x0031_767294903946>
                         <_x0031_767296266025
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="dam/cfm/models/editor/components/contentreference"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                             fieldLabel="Search Path"
-                            filter="hierarchy"
                             listOrder="10"
-                            metaType="reference"
+                            metaType="text-single"
                             name="searchPath"
-                            nameSuffix="contentReference"
                             renderReadOnly="false"
                             showEmptyInReadOnly="true"
-                            showThumbnail="true"
-                            valueType="string/reference">
-                            <granite:data
-                                jcr:primaryType="nt:unstructured"
-                                showThumbnail="true"
-                                thumbnail-validation="cfm.validation.thumbnail.show"/>
+                            valueType="string">
+                            <granite:data jcr:primaryType="nt:unstructured"/>
                         </_x0031_767296266025>
                         <_x0031_767295342823
                             jcr:primaryType="nt:unstructured"

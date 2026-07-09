@@ -1,0 +1,16 @@
+{
+  seodataList {
+    items {
+      _path
+      title
+      description
+      canonicalUrl
+      thumbnail {
+        ... on ImageRef {
+          _path
+        }
+      }
+      robots
+    }
+  }
+}

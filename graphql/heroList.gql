@@ -1,0 +1,23 @@
+{
+  heroList {
+    items {
+      _path
+      headline
+      shortDescription {
+        html
+      }
+      breadcrumbs {
+        ... on LinkModel {
+          linkText
+          linkPath
+        }
+      }
+      callToActions {
+        ... on LinkModel {
+          linkText
+          linkPath
+        }
+      }
+    }
+  }
+}

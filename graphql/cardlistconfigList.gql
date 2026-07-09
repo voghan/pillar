@@ -1,0 +1,16 @@
+{
+  cardlistconfigList {
+    items {
+      _path
+      headline
+      shortDescription {
+        html
+      }
+      searchPath
+      enablePostDate
+      enableSearch
+      cardTags
+      filterTags
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  simplecardList {
+    items {
+      _path
+      headline
+      shortDescription {
+        html
+      }
+      callToActions {
+        ... on LinkModel {
+          _path
+          linkText
+          linkPath
+        }
+      }
+      image {
+        ... on ImageRef {
+          _path
+        }
+      }
+      _variation
+      _variations
+    }
+  }
+}

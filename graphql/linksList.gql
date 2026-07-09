@@ -1,0 +1,10 @@
+{
+  linkList
+  {
+    items {
+      _path
+      linkText
+      linkPath
+    }
+  }
+}

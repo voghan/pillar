@@ -1,0 +1,21 @@
+{
+  featuredcardList {
+    items {
+      _path
+      headline
+      subheadline
+      image {
+        ... on ImageRef {
+              _path
+          }
+      }
+      shortDescription {
+        html
+      }
+      callToActions {
+        linkText
+        linkPath
+      }
+    }
+  }
+}
