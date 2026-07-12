@@ -1,4 +1,4 @@
-package com.voghan.pillar.common.handler;
+package com.voghan.pillar.common.events;
 
 import com.day.cq.workflow.event.WorkflowEvent;
 import org.osgi.framework.Constants;

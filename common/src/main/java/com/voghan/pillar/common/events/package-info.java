@@ -14,6 +14,6 @@
  *  limitations under the License.
  */
 @Version("1.0")
-package com.voghan.pillar.common.handler;
+package com.voghan.pillar.common.events;
 
 import org.osgi.annotation.versioning.Version;

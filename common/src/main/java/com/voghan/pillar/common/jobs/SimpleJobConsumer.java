@@ -1,17 +1,10 @@
 package com.voghan.pillar.common.jobs;
 
-import static com.voghan.pillar.common.jobs.SimpleJobConsumer.JOB_TOPIC;
-
-import com.day.cq.commons.jcr.JcrConstants;
-import com.day.cq.wcm.api.NameConstants;
 import com.voghan.pillar.common.AuthUtil;
-import java.util.Map;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.LoginException;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceResolverFactory;
-import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.event.jobs.Job;
 import org.apache.sling.event.jobs.consumer.JobConsumer;
 import org.osgi.framework.Constants;
@@ -20,18 +13,29 @@ import org.osgi.service.component.annotations.Reference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Map;
+
+import static com.voghan.pillar.common.jobs.SimpleJobConsumer.JOB_TOPIC;
+
 @Component(service = JobConsumer.class, immediate = true, property = {
     Constants.SERVICE_DESCRIPTION + "= Simple Sling Job",
     JobConsumer.PROPERTY_TOPICS + "=" + JOB_TOPIC
 })
 public class SimpleJobConsumer implements JobConsumer {
 
-  private final Logger LOGGER = LoggerFactory.getLogger(getClass());
+  private static final Logger LOGGER = LoggerFactory.getLogger(SimpleJobConsumer.class);
 
   protected static final String SERVICE_NAME = "SimpleJobConsumer";
-  public static final String JOB_TOPIC = "simple/sling/job";
+  public static final String JOB_TOPIC = "com/pillar/common/job/simple";
   public static final String JOB_PATH = "job_path";
   public static final String JOB_TYPE = "job_type";
+
+  public enum JobType {
+    ADDED,            // the resource has been added
+    REMOVED,          // the resource has been removed
+    CHANGED,          // the resource has been changed
+    MOVED,            // the resource has been moved
+  }
 
   @Reference
   private ResourceResolverFactory resourceResolverFactory;
@@ -55,9 +59,7 @@ public class SimpleJobConsumer implements JobConsumer {
     String type = job.getProperty(JOB_TYPE, String.class);
     Resource resource = resourceResolver.getResource(path);
     if (resource != null) {
-      ValueMap valueMap = resource.getValueMap();
-      String modifiedBy = valueMap.get(JcrConstants.JCR_LAST_MODIFIED_BY, String.class);
-      LOGGER.info("Resource {} modified {} by {}", path, type, modifiedBy);
+      LOGGER.info("Resource {} modified {}", path, type);
     } else {
       LOGGER.info("Resource is not found {}", path);
     }

@@ -11,3 +11,4 @@ node_modules/
 /ui.frontend/dist/
 /ui.tests/test-module/node/
 /ui.tests/test-module/node_modules/
+/ui.config/src/main/content/jcr_root/apps/pillar/osgiconfig/config.local/
