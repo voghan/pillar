@@ -4,6 +4,7 @@
         "pillar.core:NotificationProcess=[pillar-service-user]",
         "pillar.core:SimplePageConditionRule=[pillar-service-user]",
         "pillar.core:PageImportJobConsumer=[pillar-import-service-user]",
-        "pillar.core:ContentFragmentImportJobConsumer=[pillar-import-service-user]"
+        "pillar.core:ContentFragmentImportJobConsumer=[pillar-import-service-user]",
+        "pillar.core:BulkWorkflowJobConsumer=[pillar-read-service-user]"
     ]
 }

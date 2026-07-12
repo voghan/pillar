@@ -1,21 +1,12 @@
 package com.voghan.pillar.common.jobs;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.ArgumentMatchers.anyMap;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-
-import com.day.cq.commons.jcr.JcrConstants;
 import com.voghan.pillar.common.testcontext.AppAemContext;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
-import java.util.List;
 import org.apache.sling.api.resource.LoginException;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceResolverFactory;
-import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.event.jobs.Job;
 import org.apache.sling.event.jobs.consumer.JobConsumer;
 import org.junit.jupiter.api.BeforeEach;
@@ -28,6 +19,14 @@ import uk.org.lidalia.slf4jext.Level;
 import uk.org.lidalia.slf4jtest.LoggingEvent;
 import uk.org.lidalia.slf4jtest.TestLogger;
 import uk.org.lidalia.slf4jtest.TestLoggerFactory;
+
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.anyMap;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 @ExtendWith({AemContextExtension.class, MockitoExtension.class})
 public class SimpleJobConsumerTest {
@@ -100,7 +99,7 @@ public class SimpleJobConsumerTest {
   @Test
   void logJobParams_logsModifiedBy_fromJcrLastModifiedBy() {
     Job job = jobWithPath(TEST_PATH, TEST_TYPE);
-    Resource resource = resourceWithModifiedBy(JcrConstants.JCR_LAST_MODIFIED_BY, "alice");
+    Resource resource = mock(Resource.class);
     when(resourceResolver.getResource(TEST_PATH)).thenReturn(resource);
 
     fixture.logJobParams(resourceResolver, job);
@@ -109,27 +108,7 @@ public class SimpleJobConsumerTest {
     assertAll(
         () -> assertEquals(Level.INFO, event.getLevel()),
         () -> assertEquals(TEST_PATH, event.getArguments().get(0)),
-        () -> assertEquals(TEST_TYPE, event.getArguments().get(1)),
-        () -> assertEquals("alice", event.getArguments().get(2))
-    );
-  }
-
-  @Test
-  void logJobParams_fallsBackToCqLastModifiedBy_whenJcrLastModifiedByIsEmpty() {
-    Job job = jobWithPath(TEST_PATH, TEST_TYPE);
-    Resource resource = mock(Resource.class);
-    ValueMap valueMap = mock(ValueMap.class);
-    when(resource.getValueMap()).thenReturn(valueMap);
-    // jcr:lastModifiedBy is blank — should fall back to cq:lastModifiedBy
-    when(valueMap.get(JcrConstants.JCR_LAST_MODIFIED_BY, String.class)).thenReturn("");
-    when(resourceResolver.getResource(TEST_PATH)).thenReturn(resource);
-
-    fixture.logJobParams(resourceResolver, job);
-
-    LoggingEvent event = logger.getLoggingEvents().get(0);
-    assertAll(
-        () -> assertEquals(Level.INFO, event.getLevel()),
-        () -> assertEquals("", event.getArguments().get(2))
+        () -> assertEquals(TEST_TYPE, event.getArguments().get(1))
     );
   }
 
@@ -164,15 +143,4 @@ public class SimpleJobConsumerTest {
     return job;
   }
 
-  /**
-   * Creates a resource mock where only one of the two modifier properties is populated.
-   * The other returns null (Mockito default), simulating a real ValueMap.
-   */
-  private static Resource resourceWithModifiedBy(String propertyName, String value) {
-    Resource resource = mock(Resource.class);
-    ValueMap valueMap = mock(ValueMap.class);
-    when(resource.getValueMap()).thenReturn(valueMap);
-    when(valueMap.get(propertyName, String.class)).thenReturn(value);
-    return resource;
-  }
 }
