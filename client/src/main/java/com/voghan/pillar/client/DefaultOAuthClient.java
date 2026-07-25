@@ -44,7 +44,11 @@ public class DefaultOAuthClient {
             TokenResponse token = authClient.requestAccessToken("authorization_code", jwt);
             LOGGER.info("Access token: {}", token.accessToken());
 
+<<<<<<< HEAD
             token = authClient.refresh(token.refreshToken);
+=======
+            token = authClient.refresh(token.refreshToken());
+>>>>>>> f1ebe614 (Feature: Added client module and scopes for OAuth)
             LOGGER.info("Refresh token: {}", token.refreshToken());
 
         } catch (Exception e) {

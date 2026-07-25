@@ -8,6 +8,10 @@ import org.mockito.MockedConstruction;
 import org.mockito.MockedStatic;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+<<<<<<< HEAD
+=======
+import java.io.IOException;
+>>>>>>> f1ebe614 (Feature: Added client module and scopes for OAuth)
 import java.net.http.HttpClient;
 import java.net.http.HttpResponse;
 
@@ -30,6 +34,7 @@ public class DefaultOAuthClientTest {
     HttpResponse response;
 
     @Test
+<<<<<<< HEAD
     void main_executeMock() {
         String[] arguments = {};
 
@@ -38,6 +43,20 @@ public class DefaultOAuthClientTest {
         try (MockedConstruction<DefaultOAuthClient> mockedClient = mockConstruction(
                 DefaultOAuthClient.class,
                 (mock, context) -> when(mock.requestAccessToken(any(), any())).thenReturn(tokenResponse))) {
+=======
+    void main_executeMock() throws IOException, InterruptedException {
+        String[] arguments = {};
+        DefaultOAuthClient.TokenResponse tokenResponse = mock(DefaultOAuthClient.TokenResponse.class);
+
+        try (MockedConstruction<DefaultOAuthClient> mockedClient = mockConstruction(DefaultOAuthClient.class,
+                ((mock, context) -> {
+                    when(mock.requestAccessToken(any(), any())).thenReturn(tokenResponse);
+                    when(mock.refresh(any())).thenReturn(tokenResponse);
+                }))) {
+            when(tokenResponse.accessToken()).thenReturn("access_token");
+            when(tokenResponse.refreshToken()).thenReturn("refresh_token");
+
+>>>>>>> f1ebe614 (Feature: Added client module and scopes for OAuth)
             assertDoesNotThrow(() -> DefaultOAuthClient.main(arguments));
         }
     }
@@ -92,4 +111,30 @@ public class DefaultOAuthClientTest {
         }
 
     }
+<<<<<<< HEAD
+=======
+
+    @Test
+    void refresh_returns200Status() throws Exception {
+
+        String tokenUrl = "https://token-url";
+        String clientId = "clientId";
+        String clientSecret = "clientSecret";
+        String refreshToken = "jwt_token";
+        String responseJson = "{\"access_token\":\"access_token_value\",\"expires_in\":3600}";
+
+        try (MockedStatic<HttpClient> mockedHttpClient = mockStatic(HttpClient.class)) {
+            mockedHttpClient.when(() -> HttpClient.newHttpClient()).thenReturn(httpClient);
+            when(httpClient.send(any(), any())).thenReturn(response);
+            when(response.statusCode()).thenReturn(200);
+            when(response.body()).thenReturn(responseJson);
+
+            DefaultOAuthClient client = new DefaultOAuthClient(tokenUrl, clientId, clientSecret);
+            DefaultOAuthClient.TokenResponse tokenResponse = client.refresh(refreshToken);
+            assertNotNull(tokenResponse);
+            assertEquals("access_token_value", tokenResponse.accessToken());
+        }
+
+    }
+>>>>>>> f1ebe614 (Feature: Added client module and scopes for OAuth)
 }
