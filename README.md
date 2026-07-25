@@ -51,6 +51,66 @@ Or to deploy only a single content package, run in the sub-module directory (i.e
 
     mvn clean install -PautoInstallPackage
 
+## Local AEM install
+
+Install AEM for author
+```
+java -Xmx2048M -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=30303 -jar aem-author-p4502.jar -gui -r"author,local"
+```
+Update start script
+
+Update CQ_RUNMODE
+```
+ runmode(s)
+# will not be used if repository is already present
+if [ -z "$CQ_RUNMODE" ]; then
+        CQ_RUNMODE='authoa,local'
+fi
+```
+Update CQ_JVM_OPTS
+```
+# default JVM options
+if [ -z "$CQ_JVM_OPTS" ]; then
+        CQ_JVM_OPTS='-server -Xmx4g -Djava.awt.headless=true -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005'
+        # add the required JPMS modules, if needed
+        java --add-modules java.se.ee -version >/dev/null 2>&1
+        if [ $? -eq 0 ]; then
+               CQ_JVM_OPTS="${CQ_JVM_OPTS} --add-modules java.se.ee"
+        fi
+fi
+```
+Install AEM for publisher
+```
+java -Xmx2048M -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=30303 -jar aem-publish-p4503.jar -gui -r"publish,local"
+```
+Update CQ_PORT
+```
+# TCP port used for stop and status scripts
+if [ -z "$CQ_PORT" ]; then
+        CQ_PORT=4503
+fi
+```
+
+Update CQ_RUNMODE
+```
+# runmode(s)
+# will not be used if repository is already present
+if [ -z "$CQ_RUNMODE" ]; then
+        CQ_RUNMODE='publish,local'
+fi
+```
+Update CQ_JVM_OPTS
+```
+# default JVM options
+if [ -z "$CQ_JVM_OPTS" ]; then
+        CQ_JVM_OPTS='-server -Xmx2g -Djava.awt.headless=true'
+        # add the required JPMS modules, if needed
+        java --add-modules java.se.ee -version >/dev/null 2>&1
+        if [ $? -eq 0 ]; then
+               CQ_JVM_OPTS="${CQ_JVM_OPTS} --add-modules java.se.ee"
+        fi
+fi
+```
 ## Documentation
 
 The build process also generates documentation in the form of README.md files in each module directory for easy

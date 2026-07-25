@@ -1,0 +1,23 @@
+query LinksByText($text: String!) 
+{ 
+  linkList (  
+    filter: { 
+      linkText: { 
+        _expressions: [
+          { 
+            value: $text 
+          }
+        ] 
+      }
+    }
+  ) 
+  { 
+    items { 
+      _path 
+      linkText 
+      linkPath {
+        __typename
+      }
+    } 
+  } 
+} 

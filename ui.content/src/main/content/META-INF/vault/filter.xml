@@ -8,6 +8,7 @@
     <filter root="/conf/pillar/settings/cloudconfigs" mode="merge"/>
     <filter root="/conf/pillar/settings/dam"/>
     <filter root="/conf/pillar/settings/wcm"/>
+    <filter root="/conf/pillar/settings/graphql" mode="merge"/>
     <filter root="/conf/global/settings/workflow/models/pillar-demo"/>
     <filter root="/conf/global/settings/workflow/models/pillar-demo-is-language-main"/>
     <filter root="/conf/global/settings/workflow/models/pillar-demo-is-page"/>
@@ -30,4 +31,5 @@
     </filter>
     <filter root="/content/experience-fragments/pillar" mode="merge"/>
     <filter root="/etc/map/http/localhost.4502"/>
+    <filter root="/oak:index" mode="merge"/>
 </workspaceFilter>

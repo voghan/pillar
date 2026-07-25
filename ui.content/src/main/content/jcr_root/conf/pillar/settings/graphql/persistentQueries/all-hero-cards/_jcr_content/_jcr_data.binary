@@ -1,0 +1,15 @@
+{
+  heroList {
+    items {
+      _path
+      headline
+      shortDescription {
+        html
+      }
+      callToActions {
+        linkText
+        linkPath
+      }
+    }
+  }
+}
