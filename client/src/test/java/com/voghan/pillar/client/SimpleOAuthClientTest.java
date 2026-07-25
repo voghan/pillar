@@ -93,7 +93,7 @@ public class SimpleOAuthClientTest {
     }
 
     @Test
-    void requestAccessToken_returns200Status() throws Exception {
+    void requestAccessToken_returnsOkStatus() throws Exception {
 
         String tokenUrl = "https://token-url";
         String clientId = "clientId";
@@ -141,7 +141,7 @@ public class SimpleOAuthClientTest {
     }
 
     @Test
-    void getContent_returns4200Status() throws Exception {
+    void getContent_returnsOkStatus() throws Exception {
 
         String tokenUrl = "https://token-url";
         String clientId = "clientId";
@@ -162,6 +162,31 @@ public class SimpleOAuthClientTest {
             SimpleOAuthClient client = new SimpleOAuthClient(tokenUrl, clientId, clientSecret);
             String content = client.getContent(jwtToken, "");
             assertNotNull(content);
+        }
+    }
+
+    @Test
+    void getContent_returns404Status() throws Exception {
+
+        String tokenUrl = "https://token-url";
+        String clientId = "clientId";
+        String clientSecret = "clientSecret";
+        String jwtToken = "jwt_token";
+        String responseJson = "{\"access_token\":\"access_token_value\",\"expires_in\":3600}";
+
+        try (MockedStatic<RequestBuilder> mockedRequestBuilder = mockStatic(RequestBuilder.class);
+             MockedStatic<HttpClientBuilder> mockedHttpClientBuilder = mockStatic(HttpClientBuilder.class);
+             MockedStatic<IOUtils> mockedIOUtils = mockStatic(IOUtils.class)) {
+            mockedRequestBuilder.when(() -> RequestBuilder.post()).thenReturn(requestBuilder);
+            mockedHttpClientBuilder.when(() -> HttpClientBuilder.create()).thenReturn(clientBuilder);
+            mockedIOUtils.when(()->IOUtils.toString(eq(inputStream), eq(StandardCharsets.UTF_8))).thenReturn(responseJson);
+
+            when(statusLine.getStatusCode()).thenReturn(HttpStatus.SC_NOT_FOUND);
+            when(entity.getContent()).thenReturn(inputStream);
+
+            SimpleOAuthClient client = new SimpleOAuthClient(tokenUrl, clientId, clientSecret);
+            String content = client.getContent(jwtToken, "");
+            assertNull(content);
         }
     }
 }
