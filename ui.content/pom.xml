@@ -51,6 +51,7 @@
                     <properties>
                         <cloudManagerTarget>none</cloudManagerTarget>
                     </properties>
+                    <allowIndexDefinitions>true</allowIndexDefinitions>
                     <group>com.voghan.pillar</group>
                     <name>pillar.ui.content</name>
                     <packageType>content</packageType>

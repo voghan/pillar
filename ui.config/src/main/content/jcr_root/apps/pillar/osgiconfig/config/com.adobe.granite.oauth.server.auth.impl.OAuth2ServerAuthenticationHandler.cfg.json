@@ -1,0 +1,7 @@
+{
+  "jaas.controlFlag": "sufficient",
+  "jaas.ranking:Integer": 1100,
+  "jaas.realmName": "jackrabbit.oak",
+  "oauth.offline.validation": true,
+  "path": "/"
+}

@@ -1,0 +1,15 @@
+{
+  heroByPath (_path: "/content/dam/pillar/cfm/hero-cards/imports/downhill-skiing-snowbird")  {
+    item {
+      _path
+      headline
+      shortDescription {
+        html
+      }
+      callToActions {
+        linkText
+        linkPath
+      }
+    }
+  }
+}
