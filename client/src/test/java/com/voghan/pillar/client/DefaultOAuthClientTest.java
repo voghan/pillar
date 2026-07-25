@@ -8,10 +8,7 @@ import org.mockito.MockedConstruction;
 import org.mockito.MockedStatic;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-<<<<<<< HEAD
-=======
 import java.io.IOException;
->>>>>>> f1ebe614 (Feature: Added client module and scopes for OAuth)
 import java.net.http.HttpClient;
 import java.net.http.HttpResponse;
 
@@ -34,16 +31,6 @@ public class DefaultOAuthClientTest {
     HttpResponse response;
 
     @Test
-<<<<<<< HEAD
-    void main_executeMock() {
-        String[] arguments = {};
-
-        DefaultOAuthClient.TokenResponse tokenResponse = mock(DefaultOAuthClient.TokenResponse.class);
-
-        try (MockedConstruction<DefaultOAuthClient> mockedClient = mockConstruction(
-                DefaultOAuthClient.class,
-                (mock, context) -> when(mock.requestAccessToken(any(), any())).thenReturn(tokenResponse))) {
-=======
     void main_executeMock() throws IOException, InterruptedException {
         String[] arguments = {};
         DefaultOAuthClient.TokenResponse tokenResponse = mock(DefaultOAuthClient.TokenResponse.class);
@@ -56,7 +43,6 @@ public class DefaultOAuthClientTest {
             when(tokenResponse.accessToken()).thenReturn("access_token");
             when(tokenResponse.refreshToken()).thenReturn("refresh_token");
 
->>>>>>> f1ebe614 (Feature: Added client module and scopes for OAuth)
             assertDoesNotThrow(() -> DefaultOAuthClient.main(arguments));
         }
     }
@@ -111,8 +97,6 @@ public class DefaultOAuthClientTest {
         }
 
     }
-<<<<<<< HEAD
-=======
 
     @Test
     void refresh_returns200Status() throws Exception {
@@ -136,5 +120,4 @@ public class DefaultOAuthClientTest {
         }
 
     }
->>>>>>> f1ebe614 (Feature: Added client module and scopes for OAuth)
 }
