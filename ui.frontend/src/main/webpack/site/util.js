@@ -142,10 +142,6 @@ import jQuery from "jquery";
                 else if (config.target instanceof jQuery) {
                     // Already normalized.
                 }
-                else if (config.target && config.target.nodeType === 1) {
-                    // Accept only concrete Element nodes for direct wrapping.
-                    config.target = $(config.target);
-                }
                 else {
                     config.target = $this;
                 }
