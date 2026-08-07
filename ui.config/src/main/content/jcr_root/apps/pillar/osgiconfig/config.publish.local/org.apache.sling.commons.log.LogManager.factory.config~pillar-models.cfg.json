@@ -1,0 +1,8 @@
+{
+  "org.apache.sling.commons.log.names": [
+    "com.voghan.pillar.core.models"
+  ],
+  "org.apache.sling.commons.log.level": "debug",
+  "org.apache.sling.commons.log.file": "logs/pillar-models.log",
+  "org.apache.sling.commons.log.additiv": "false"
+}

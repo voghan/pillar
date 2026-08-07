@@ -1,6 +1,9 @@
 {
   "resource.resolver.mapping": [
-    "/content/pillar/</",
-    "/:/"
+    "/:/",
+    "/content/pillar/us/en>/en",
+    "/content/pillar/us/es>/es",
+    "/content/pillar/ca/en>/ca/en",
+    "/content/pillar/ca/fr>/ca/fr"
   ]
 }
