@@ -55,6 +55,11 @@ public class SimpleCardCmp extends BaseModelCmp implements SimpleCard {
   }
 
   @Override
+  public String getName() {
+    return simpleCard.getName();
+  }
+
+  @Override
   public String getHeadline() {
     return simpleCard.getHeadline();
   }

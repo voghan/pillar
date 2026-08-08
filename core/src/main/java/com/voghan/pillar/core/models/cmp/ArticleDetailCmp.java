@@ -85,6 +85,11 @@ public class ArticleDetailCmp extends BaseModelCmp  implements ArticleDetail {
   }
 
   @Override
+  public String getName() {
+    return articleDetail.getName();
+  }
+
+  @Override
   public String getHeadline() {
     return articleDetail.getHeadline();
   }

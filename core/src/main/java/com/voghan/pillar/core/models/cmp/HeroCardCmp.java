@@ -59,6 +59,11 @@ public class HeroCardCmp extends BaseModelCmp implements HeroCard {
   }
 
   @Override
+  public String getName() {
+    return heroCard.getName();
+  }
+
+  @Override
   public String getHeadline() {
     return heroCard.getHeadline();
   }
