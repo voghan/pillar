@@ -1,0 +1,33 @@
+package com.voghan.pillar.core.models.cfm;
+
+import com.voghan.pillar.core.models.Text;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.models.annotations.DefaultInjectionStrategy;
+import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.Self;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+@Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
+public class TextCfm extends BaseModelCfm implements Text {
+    private final Logger logger = LoggerFactory.getLogger(getClass());
+
+    public static final String MODEL = "/conf/pillar/settings/dam/cfm/models/text";
+
+    @Self
+    private Resource resource;
+
+    @ValueMapValue
+    private String text;
+
+    @Override
+    public boolean isRichText() {
+        return text != null && text.contains("<p>");
+    }
+
+    @Override
+    public String getText() {
+        return text;
+    }
+}

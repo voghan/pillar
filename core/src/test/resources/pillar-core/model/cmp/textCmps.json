@@ -1,0 +1,70 @@
+{
+  "jcr:primaryType": "cq:Page",
+  "jcr:createdBy": "brian",
+  "jcr:created": "Sun Aug 09 2026 08:20:34 GMT-0500",
+  "jcr:content": {
+    "jcr:primaryType": "cq:PageContent",
+    "jcr:createdBy": "brian",
+    "jcr:title": "Text",
+    "cq:template": "/conf/pillar/settings/wcm/templates/page-content",
+    "jcr:created": "Sun Aug 09 2026 08:20:34 GMT-0500",
+    "cq:lastModified": "Sun Aug 09 2026 08:57:13 GMT-0500",
+    "sling:resourceType": "pillar/components/page/v1/page",
+    "cq:lastModifiedBy": "brian",
+    "root": {
+      "jcr:primaryType": "nt:unstructured",
+      "layout": "responsiveGrid",
+      "sling:resourceType": "pillar/components/container/v1/container",
+      "container": {
+        "jcr:primaryType": "nt:unstructured",
+        "layout": "responsiveGrid",
+        "sling:resourceType": "pillar/components/container/v1/container",
+        "container": {
+          "jcr:primaryType": "nt:unstructured",
+          "layout": "responsiveGrid",
+          "sling:resourceType": "pillar/components/container/v1/container",
+          "text_empty": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "brian",
+            "jcr:lastModifiedBy": "brian",
+            "jcr:created": "Sun Aug 09 2026 08:20:43 GMT-0500"
+          },
+          "text_rich": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "brian",
+            "jcr:lastModifiedBy": "brian",
+            "jcr:created": "Sun Aug 09 2026 08:20:43 GMT-0500",
+            "jcr:lastModified": "Sun Aug 09 2026 08:21:10 GMT-0500",
+            "variationName": "master",
+            "fragmentPath": "/content/dam/text/demo-rich-text",
+            "cq:styleIds": [
+              "1779581618162"
+            ]
+          },
+          "text_simple": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "brian",
+            "jcr:lastModifiedBy": "brian",
+            "jcr:created": "Sun Aug 09 2026 08:52:05 GMT-0500",
+            "variationName": "master",
+            "jcr:lastModified": "Sun Aug 09 2026 08:54:26 GMT-0500",
+            "sling:resourceType": "pillar/components/text/v2/text",
+            "fragmentPath": "/content/dam/text/demo-simple-text"
+          },
+          "text_long": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "brian",
+            "jcr:lastModifiedBy": "brian",
+            "jcr:created": "Sun Aug 09 2026 08:56:36 GMT-0500",
+            "jcr:lastModified": "Sun Aug 09 2026 08:57:13 GMT-0500",
+            "sling:resourceType": "pillar/components/text/v2/text",
+            "fragmentPath": "/content/dam/text/demo-text-long",
+            "cq:styleIds": [
+              "1779581604750"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
