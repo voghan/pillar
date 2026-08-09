@@ -1,0 +1,228 @@
+{
+  "jcr:primaryType": "sling:Folder",
+  "jcr:createdBy": "brian",
+  "jcr:created": "Sun Aug 09 2026 08:26:32 GMT-0500",
+  "jcr:content": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:title": "demo",
+    "sourcing": "false"
+  },
+  "demo-text-long": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:mixinTypes": [
+      "mix:referenceable",
+      "mix:versionable"
+    ],
+    "jcr:createdBy": "brian",
+    "jcr:versionHistory": "5417786e-9e5a-4d3e-8a80-0f8fcb8c918c",
+    "jcr:predecessors": [
+      "134aabf2-2b1f-4f91-b9ad-ef16dd9bcc49"
+    ],
+    "jcr:created": "Sun Aug 09 2026 08:28:26 GMT-0500",
+    "jcr:baseVersion": "134aabf2-2b1f-4f91-b9ad-ef16dd9bcc49",
+    "jcr:isCheckedOut": true,
+    "jcr:uuid": "46feb258-cbec-4a25-91d4-d00109f2ef64",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "jcr:title": "Demo Text Long",
+      "jcr:lastModifiedBy": "brian",
+      "contentFragment": true,
+      "cq:name": "demo-text-long",
+      "jcr:lastModified": "Sun Aug 09 2026 08:28:48 GMT-0500",
+      "lastFragmentSave": "Sun Aug 09 2026 08:28:48 GMT-0500",
+      "cq:parentPath": "/content/dam/pillar/cfm/text/demo",
+      "renditions": {
+        "jcr:primaryType": "nt:folder",
+        "jcr:createdBy": "brian",
+        "jcr:created": "Sun Aug 09 2026 08:28:26 GMT-0500"
+      },
+      "related": {
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "indexedData": {
+        "jcr:primaryType": "nt:unstructured",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:IndexedFragmentData"
+          ],
+          "@string@model": "/conf/pillar/settings/dam/cfm/models/text",
+          "@stringArray@variations": [],
+          "string@text": "\u003Ch2\u003ESomehting\u003C/h2\u003E\n\u003Cp\u003EWKND is a collective of outdoors, music, crafts, adventure sports, and travel enthusiasts that want to share our experiences, connections, and expertise with the world. Our objective is create a community to help like-minded adventure seekers find fun, engaging, and responsible ways to to enjoy life and create lasting memories.\u003C/p\u003E\n\u003Ch3\u003EAdditional\u003C/h3\u003E\n\u003Cp\u003EWKND is a collective of outdoors, music, crafts, adventure sports, and travel enthusiasts that want to share our experiences, connections, and expertise with the world. Our objective is create a community to help like-minded adventure seekers find fun, engaging, and responsible ways to to enjoy life and create lasting memories.\u003C/p\u003E\n",
+          "jcr:uuid": "8aac1f9d-ffbb-4c86-bff8-288fba502292"
+        }
+      },
+      "metadata": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ]
+      },
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "_strucVersion": 1,
+        "cq:model": "/conf/pillar/settings/dam/cfm/models/text",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "text@ContentType": "text/html",
+          "text": "\u003Ch2\u003ESomehting\u003C/h2\u003E\n\u003Cp\u003EWKND is a collective of outdoors, music, crafts, adventure sports, and travel enthusiasts that want to share our experiences, connections, and expertise with the world. Our objective is create a community to help like-minded adventure seekers find fun, engaging, and responsible ways to to enjoy life and create lasting memories.\u003C/p\u003E\n\u003Ch3\u003EAdditional\u003C/h3\u003E\n\u003Cp\u003EWKND is a collective of outdoors, music, crafts, adventure sports, and travel enthusiasts that want to share our experiences, connections, and expertise with the world. Our objective is create a community to help like-minded adventure seekers find fun, engaging, and responsible ways to to enjoy life and create lasting memories.\u003C/p\u003E\n",
+          "text@LastModified": "Sun Aug 09 2026 08:28:48 GMT-0500",
+          "text@LastModifiedBy": "brian"
+        }
+      }
+    }
+  },
+  "demo-rich-text": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:mixinTypes": [
+      "mix:referenceable",
+      "mix:versionable"
+    ],
+    "jcr:createdBy": "brian",
+    "jcr:versionHistory": "eadd0074-8b14-4692-854b-4fe4e0006e78",
+    "jcr:predecessors": [
+      "caaeeb24-388e-48a1-8119-0ff86e95fa9e"
+    ],
+    "jcr:created": "Sun Aug 09 2026 08:27:03 GMT-0500",
+    "jcr:baseVersion": "caaeeb24-388e-48a1-8119-0ff86e95fa9e",
+    "jcr:isCheckedOut": true,
+    "jcr:uuid": "66457f83-d6d3-47e2-9f9e-20f93d61ba2c",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "jcr:title": "Demo Simple Text",
+      "jcr:lastModifiedBy": "brian",
+      "contentFragment": true,
+      "cq:name": "demo-simple-text",
+      "jcr:lastModified": "Sun Aug 09 2026 08:27:44 GMT-0500",
+      "lastFragmentSave": "Sun Aug 09 2026 08:27:44 GMT-0500",
+      "cq:parentPath": "/content/dam/pillar/cfm/text/demo",
+      "renditions": {
+        "jcr:primaryType": "nt:folder",
+        "jcr:createdBy": "brian",
+        "jcr:created": "Sun Aug 09 2026 08:27:03 GMT-0500"
+      },
+      "related": {
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "indexedData": {
+        "jcr:primaryType": "nt:unstructured",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:IndexedFragmentData"
+          ],
+          "@string@model": "/conf/pillar/settings/dam/cfm/models/text",
+          "@stringArray@variations": [],
+          "string@text": "\u003Cp\u003EWKND is a collective of outdoors, music, crafts, adventure sports, and travel enthusiasts that want to share our experiences, connections, and expertise with the world. Our objective is create a community to help like-minded adventure seekers find fun, engaging, and responsible ways to to enjoy life and create lasting memories.\u003C/p\u003E\n",
+          "jcr:uuid": "95ad6f29-0f88-4920-a289-cf567e047973"
+        }
+      },
+      "metadata": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ]
+      },
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "_strucVersion": 1,
+        "cq:model": "/conf/pillar/settings/dam/cfm/models/text",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "text@ContentType": "text/html",
+          "text": "\u003Cp\u003EWKND is a collective of outdoors, music, crafts, adventure sports, and travel enthusiasts that want to share our experiences, connections, and expertise with the world. Our objective is create a community to help like-minded adventure seekers find fun, engaging, and responsible ways to to enjoy life and create lasting memories.\u003C/p\u003E\n",
+          "text@LastModified": "Sun Aug 09 2026 08:27:44 GMT-0500",
+          "text@LastModifiedBy": "brian"
+        }
+      }
+    }
+  },
+  "demo-simple-text": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:mixinTypes": [
+      "mix:referenceable",
+      "mix:versionable"
+    ],
+    "jcr:createdBy": "brian",
+    "jcr:versionHistory": "eadd0074-8b14-4692-854b-4fe4e0006e78",
+    "jcr:predecessors": [
+      "caaeeb24-388e-48a1-8119-0ff86e95fa9e"
+    ],
+    "jcr:created": "Sun Aug 09 2026 08:27:03 GMT-0500",
+    "jcr:baseVersion": "caaeeb24-388e-48a1-8119-0ff86e95fa9e",
+    "jcr:isCheckedOut": true,
+    "jcr:uuid": "66457f83-d6d3-47e2-9f9e-20f93d61ba2c",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "jcr:title": "Demo Simple Text",
+      "jcr:lastModifiedBy": "brian",
+      "contentFragment": true,
+      "cq:name": "demo-simple-text",
+      "jcr:lastModified": "Sun Aug 09 2026 08:27:44 GMT-0500",
+      "lastFragmentSave": "Sun Aug 09 2026 08:27:44 GMT-0500",
+      "cq:parentPath": "/content/dam/pillar/cfm/text/demo",
+      "renditions": {
+        "jcr:primaryType": "nt:folder",
+        "jcr:createdBy": "brian",
+        "jcr:created": "Sun Aug 09 2026 08:27:03 GMT-0500"
+      },
+      "related": {
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "indexedData": {
+        "jcr:primaryType": "nt:unstructured",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:IndexedFragmentData"
+          ],
+          "@string@model": "/conf/pillar/settings/dam/cfm/models/text",
+          "@stringArray@variations": [],
+          "string@text": "WKND is a collective of outdoors, music, crafts, adventure sports, and travel enthusiasts that want to share our experiences, connections, and expertise with the world. Our objective is create a community to help like-minded adventure seekers find fun, engaging, and responsible ways to to enjoy life and create lasting memories.",
+          "jcr:uuid": "95ad6f29-0f88-4920-a289-cf567e047973"
+        }
+      },
+      "metadata": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ]
+      },
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "_strucVersion": 1,
+        "cq:model": "/conf/pillar/settings/dam/cfm/models/text",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "text@ContentType": "text/html",
+          "text": "WKND is a collective of outdoors, music, crafts, adventure sports, and travel enthusiasts that want to share our experiences, connections, and expertise with the world. Our objective is create a community to help like-minded adventure seekers find fun, engaging, and responsible ways to to enjoy life and create lasting memories.",
+          "text@LastModified": "Sun Aug 09 2026 08:27:44 GMT-0500",
+          "text@LastModifiedBy": "brian"
+        },
+        "en": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "text@ContentType": "text/html",
+          "text": "WKND is a collective of outdoors, music, crafts, adventure sports, and travel enthusiasts that want to share our experiences, connections, and expertise with the world. Our objective is create a community to help like-minded adventure seekers find fun, engaging, and responsible ways to to enjoy life and create lasting memories.",
+          "text@LastModified": "Sun Aug 09 2026 08:27:44 GMT-0500",
+          "text@LastModifiedBy": "brian"
+        }
+      }
+    }
+  }
+}
