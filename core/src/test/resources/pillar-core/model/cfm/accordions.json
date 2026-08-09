@@ -1,0 +1,185 @@
+{
+  "jcr:primaryType": "sling:Folder",
+  "jcr:createdBy": "brian",
+  "jcr:created": "Sat Aug 08 2026 15:03:38 GMT-0500",
+  "multi-expand": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:mixinTypes": [
+      "mix:referenceable",
+      "mix:versionable"
+    ],
+    "jcr:createdBy": "brian",
+    "jcr:versionHistory": "34fe0c47-ebef-430d-955e-25aade6ad4e6",
+    "jcr:predecessors": [
+      "ff137698-d109-4b31-b6a6-39445e3d3696"
+    ],
+    "jcr:created": "Sat Aug 08 2026 19:45:23 GMT-0500",
+    "jcr:baseVersion": "ff137698-d109-4b31-b6a6-39445e3d3696",
+    "jcr:isCheckedOut": true,
+    "jcr:uuid": "c02b758d-0678-4988-b858-f2fa655b511d",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "jcr:title": "multi-expand",
+      "jcr:lastModifiedBy": "brian",
+      "contentFragment": true,
+      "cq:name": "multi-expand",
+      "jcr:lastModified": "Sat Aug 08 2026 19:46:24 GMT-0500",
+      "lastFragmentSave": "Sat Aug 08 2026 19:46:24 GMT-0500",
+      "cq:parentPath": "/content/dam/pillar/cfm/accordion/demo",
+      "renditions": {
+        "jcr:primaryType": "nt:folder",
+        "jcr:createdBy": "brian",
+        "jcr:created": "Sat Aug 08 2026 19:45:23 GMT-0500"
+      },
+      "related": {
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "indexedData": {
+        "jcr:primaryType": "nt:unstructured",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:IndexedFragmentData"
+          ],
+          "@string@model": "/conf/pillar/settings/dam/cfm/models/accordionconfig",
+          "@stringArray@variations": [],
+          "boolean@singleExpansion": false,
+          "jcr:uuid": "1ede1f3c-0c7e-4db3-9396-a382834053d0"
+        }
+      },
+      "metadata": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ]
+      },
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "_strucVersion": 1,
+        "cq:model": "/conf/pillar/settings/dam/cfm/models/accordionconfig",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "accordionItems@LastModified": "Sat Aug 08 2026 19:46:24 GMT-0500",
+          "singleExpansion@LastModified": "Sat Aug 08 2026 19:46:24 GMT-0500",
+          "singleExpansion@LastModifiedBy": "brian",
+          "singleExpansion": false,
+          "accordionItems@LastModifiedBy": "brian",
+          "accordionItems": [
+            "/content/dam/simple-cards/option1",
+            "/content/dam/simple-cards/option2",
+            "/content/dam/simple-cards/option3",
+            "/content/dam/simple-cards/option4"
+          ],
+          "headingElement": "h3"
+        },
+        "en": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "accordionItems@LastModified": "Sat Aug 08 2026 19:46:24 GMT-0500",
+          "singleExpansion@LastModified": "Sat Aug 08 2026 19:46:24 GMT-0500",
+          "singleExpansion@LastModifiedBy": "brian",
+          "singleExpansion": false,
+          "expandedItems@LastModifiedBy": "brian",
+          "expandedItems": [
+            "/content/dam/simple-cards/option2"
+          ],
+          "accordionItems@LastModifiedBy": "brian",
+          "accordionItems": [
+            "/content/dam/simple-cards/option1",
+            "/content/dam/simple-cards/option2",
+            "/content/dam/simple-cards/option3",
+            "/content/dam/simple-cards/option4"
+          ],
+          "headingElement": "h2"
+        }
+      }
+    }
+  },
+  "accordion-demo": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:mixinTypes": [
+      "mix:referenceable",
+      "mix:versionable"
+    ],
+    "jcr:createdBy": "brian",
+    "jcr:versionHistory": "640deb18-a695-4e05-adb9-9a612d76843f",
+    "jcr:predecessors": [
+      "94b404d2-7d7e-4347-89fe-784b87d74351"
+    ],
+    "jcr:created": "Sat Aug 08 2026 15:03:59 GMT-0500",
+    "jcr:baseVersion": "94b404d2-7d7e-4347-89fe-784b87d74351",
+    "jcr:isCheckedOut": true,
+    "jcr:uuid": "5205332b-d4b1-4455-bfc0-a1787c644973",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "jcr:title": "accordion-demo",
+      "jcr:lastModifiedBy": "brian",
+      "contentFragment": true,
+      "cq:name": "accordion-demo",
+      "jcr:lastModified": "Sat Aug 08 2026 15:07:18 GMT-0500",
+      "lastFragmentSave": "Sat Aug 08 2026 15:07:18 GMT-0500",
+      "cq:parentPath": "/content/dam/pillar/cfm/accordion/demo",
+      "renditions": {
+        "jcr:primaryType": "nt:folder",
+        "jcr:createdBy": "brian",
+        "jcr:created": "Sat Aug 08 2026 15:03:59 GMT-0500"
+      },
+      "related": {
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "indexedData": {
+        "jcr:primaryType": "nt:unstructured",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:IndexedFragmentData"
+          ],
+          "@string@model": "/conf/pillar/settings/dam/cfm/models/accordionconfig",
+          "@stringArray@variations": [],
+          "boolean@singleExpansion": true,
+          "jcr:uuid": "75d2f3da-f6a8-4781-ab92-ba627942ded1"
+        }
+      },
+      "metadata": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ]
+      },
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "_strucVersion": 1,
+        "cq:model": "/conf/pillar/settings/dam/cfm/models/accordionconfig",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "accordionItems@LastModified": "Sat Aug 08 2026 15:07:18 GMT-0500",
+          "singleExpansion@LastModified": "Sat Aug 08 2026 15:05:13 GMT-0500",
+          "singleExpansion@LastModifiedBy": "brian",
+          "singleExpansion": true,
+          "accordionItems@LastModifiedBy": "brian",
+          "accordionItems": [
+            "/content/dam/simple-cards/option1",
+            "/content/dam/simple-cards/option2",
+            "/content/dam/simple-cards/option3"
+          ]
+        }
+      }
+    }
+  },
+  "jcr:content": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:title": "demo",
+    "sourcing": "false"
+  }
+}

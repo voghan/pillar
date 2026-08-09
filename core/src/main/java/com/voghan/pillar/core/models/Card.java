@@ -5,6 +5,8 @@ import java.util.List;
 
 public interface Card {
 
+  String getName();
+
   String getHeadline();
 
   String getShortDescription();

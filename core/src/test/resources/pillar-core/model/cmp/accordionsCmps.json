@@ -1,0 +1,60 @@
+{
+  "jcr:primaryType": "cq:Page",
+  "jcr:createdBy": "brian",
+  "jcr:created": "Sat Aug 08 2026 15:01:33 GMT-0500",
+  "jcr:content": {
+    "jcr:primaryType": "cq:PageContent",
+    "jcr:createdBy": "brian",
+    "jcr:title": "Accordion",
+    "cq:template": "/conf/pillar/settings/wcm/templates/page-content",
+    "jcr:created": "Sat Aug 08 2026 15:01:33 GMT-0500",
+    "cq:lastModified": "Sat Aug 08 2026 20:09:28 GMT-0500",
+    "sling:resourceType": "pillar/components/page/v1/page",
+    "cq:lastModifiedBy": "brian",
+    "root": {
+      "jcr:primaryType": "nt:unstructured",
+      "layout": "responsiveGrid",
+      "sling:resourceType": "pillar/components/container/v1/container",
+      "container": {
+        "jcr:primaryType": "nt:unstructured",
+        "layout": "responsiveGrid",
+        "sling:resourceType": "pillar/components/container/v1/container",
+        "container": {
+          "jcr:primaryType": "nt:unstructured",
+          "layout": "responsiveGrid",
+          "sling:resourceType": "pillar/components/container/v1/container",
+          "accordion_single": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "brian",
+            "jcr:lastModifiedBy": "brian",
+            "jcr:created": "Sat Aug 08 2026 15:01:45 GMT-0500",
+            "id": "acc",
+            "variationName": "master",
+            "jcr:lastModified": "Sat Aug 08 2026 16:08:21 GMT-0500",
+            "sling:resourceType": "pillar/components/accordion/v1/accordion",
+            "fragmentPath": "/content/dam/accordions/accordion-demo"
+          },
+          "accordion_multi": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "brian",
+            "jcr:lastModifiedBy": "brian",
+            "jcr:created": "Sat Aug 08 2026 15:25:45 GMT-0500",
+            "variationName": "en",
+            "jcr:lastModified": "Sat Aug 08 2026 20:09:28 GMT-0500",
+            "sling:resourceType": "pillar/components/accordion/v1/accordion",
+            "fragmentPath": "/content/dam/accordions/multi-expand"
+          },
+          "accordion_null": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "brian",
+            "jcr:lastModifiedBy": "brian",
+            "jcr:created": "Sat Aug 08 2026 15:25:45 GMT-0500",
+            "variationName": "en",
+            "jcr:lastModified": "Sat Aug 08 2026 20:09:28 GMT-0500",
+            "sling:resourceType": "pillar/components/accordion/v1/accordion"
+          }
+        }
+      }
+    }
+  }
+}

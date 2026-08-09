@@ -53,6 +53,11 @@ public class FeaturedCardCmp extends BaseModelCmp implements FeaturedCard {
   }
 
   @Override
+  public String getName() {
+    return featuredCard.getName();
+  }
+
+  @Override
   public String getSubheadline() {
     return featuredCard.getSubheadline();
   }
