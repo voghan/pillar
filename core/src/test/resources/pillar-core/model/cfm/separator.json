@@ -1,0 +1,309 @@
+{
+  "jcr:primaryType": "sling:Folder",
+  "jcr:createdBy": "brian",
+  "jcr:created": "Sun Aug 09 2026 13:48:57 GMT-0500",
+  "separator-large-hidden": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:mixinTypes": [
+      "mix:referenceable",
+      "mix:versionable"
+    ],
+    "jcr:createdBy": "brian",
+    "jcr:versionHistory": "71b9aa3c-939e-431f-b6f5-0b186cdce97f",
+    "jcr:predecessors": [
+      "5183f149-5599-466b-bc04-077961c79f3b"
+    ],
+    "jcr:created": "Sun Aug 09 2026 13:52:44 GMT-0500",
+    "jcr:baseVersion": "5183f149-5599-466b-bc04-077961c79f3b",
+    "jcr:isCheckedOut": true,
+    "jcr:uuid": "2d8331bf-666e-4545-9863-f81258c6ee7f",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "jcr:title": "separator-large-hidden",
+      "jcr:lastModifiedBy": "brian",
+      "contentFragment": true,
+      "cq:name": "separator-large-hidden",
+      "jcr:lastModified": "Sun Aug 09 2026 13:52:56 GMT-0500",
+      "lastFragmentSave": "Sun Aug 09 2026 13:52:56 GMT-0500",
+      "cq:parentPath": "/content/dam/pillar/cfm/separator/demo",
+      "renditions": {
+        "jcr:primaryType": "nt:folder",
+        "jcr:createdBy": "brian",
+        "jcr:created": "Sun Aug 09 2026 13:52:44 GMT-0500"
+      },
+      "related": {
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "indexedData": {
+        "jcr:primaryType": "nt:unstructured",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:IndexedFragmentData"
+          ],
+          "@string@model": "/conf/pillar/settings/dam/cfm/models/separator",
+          "@stringArray@variations": [],
+          "boolean@decorative": false,
+          "string@color": "hidden",
+          "string@spacing": "large",
+          "jcr:uuid": "db8c1a23-1eac-4751-bb79-ecc10aecd9d0"
+        }
+      },
+      "metadata": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ]
+      },
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "_strucVersion": 1,
+        "cq:model": "/conf/pillar/settings/dam/cfm/models/separator",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "spacing": "large",
+          "color@LastModifiedBy": "brian",
+          "decorative": false,
+          "color@LastModified": "Sun Aug 09 2026 13:52:56 GMT-0500",
+          "spacing@LastModified": "Sun Aug 09 2026 13:52:56 GMT-0500",
+          "spacing@LastModifiedBy": "brian",
+          "decorative@LastModifiedBy": "brian",
+          "color": "hidden",
+          "decorative@LastModified": "Sun Aug 09 2026 13:52:56 GMT-0500"
+        },
+        "en": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "spacing": "large",
+          "color@LastModifiedBy": "brian",
+          "decorative": false,
+          "color@LastModified": "Sun Aug 09 2026 13:52:56 GMT-0500",
+          "spacing@LastModified": "Sun Aug 09 2026 13:52:56 GMT-0500",
+          "spacing@LastModifiedBy": "brian",
+          "decorative@LastModifiedBy": "brian",
+          "color": "hidden",
+          "decorative@LastModified": "Sun Aug 09 2026 13:52:56 GMT-0500"
+        }
+      }
+    }
+  },
+  "separator-default": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:mixinTypes": [
+      "mix:referenceable"
+    ],
+    "jcr:createdBy": "brian",
+    "jcr:created": "Sun Aug 09 2026 13:49:52 GMT-0500",
+    "jcr:uuid": "5ae94dac-a84e-41fe-aed9-21a504f08a04",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "jcr:title": "separator-default",
+      "contentFragment": true,
+      "renditions": {
+        "jcr:primaryType": "nt:folder",
+        "jcr:createdBy": "brian",
+        "jcr:created": "Sun Aug 09 2026 13:49:52 GMT-0500"
+      },
+      "related": {
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "indexedData": {
+        "jcr:primaryType": "nt:unstructured",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:IndexedFragmentData"
+          ],
+          "@string@model": "/conf/pillar/settings/dam/cfm/models/separator",
+          "@stringArray@variations": [],
+          "jcr:uuid": "3d3c2627-afc5-4f84-b017-5ce1391dad8a"
+        }
+      },
+      "metadata": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ]
+      },
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "_strucVersion": 1,
+        "cq:model": "/conf/pillar/settings/dam/cfm/models/separator",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "color@LastModified": "Sun Aug 09 2026 13:49:52 GMT-0500",
+          "spacing@LastModified": "Sun Aug 09 2026 13:49:52 GMT-0500",
+          "decorative@LastModified": "Sun Aug 09 2026 13:49:52 GMT-0500"
+        }
+      }
+    }
+  },
+  "separator-medium-dark": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:mixinTypes": [
+      "mix:referenceable",
+      "mix:versionable"
+    ],
+    "jcr:createdBy": "brian",
+    "jcr:versionHistory": "68318c59-b2af-47c4-82ff-afb9fdbb722e",
+    "jcr:predecessors": [
+      "574ef32f-ce03-42cd-9165-5d8603656f08"
+    ],
+    "jcr:created": "Sun Aug 09 2026 13:50:38 GMT-0500",
+    "jcr:baseVersion": "574ef32f-ce03-42cd-9165-5d8603656f08",
+    "jcr:isCheckedOut": true,
+    "jcr:uuid": "5a2394d6-5051-496b-be79-0a3b85d09a5c",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "jcr:title": "separator-medium-dark",
+      "jcr:lastModifiedBy": "brian",
+      "contentFragment": true,
+      "cq:name": "separator-medium-dark",
+      "jcr:lastModified": "Sun Aug 09 2026 13:50:50 GMT-0500",
+      "lastFragmentSave": "Sun Aug 09 2026 13:50:50 GMT-0500",
+      "cq:parentPath": "/content/dam/pillar/cfm/separator/demo",
+      "renditions": {
+        "jcr:primaryType": "nt:folder",
+        "jcr:createdBy": "brian",
+        "jcr:created": "Sun Aug 09 2026 13:50:38 GMT-0500"
+      },
+      "related": {
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "indexedData": {
+        "jcr:primaryType": "nt:unstructured",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:IndexedFragmentData"
+          ],
+          "@string@model": "/conf/pillar/settings/dam/cfm/models/separator",
+          "@stringArray@variations": [],
+          "boolean@decorative": false,
+          "string@color": "dark",
+          "string@spacing": "medium",
+          "jcr:uuid": "ed564812-6a6e-49bb-a844-4804dc4388aa"
+        }
+      },
+      "metadata": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ]
+      },
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "_strucVersion": 1,
+        "cq:model": "/conf/pillar/settings/dam/cfm/models/separator",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "spacing": "medium",
+          "color@LastModifiedBy": "brian",
+          "decorative": false,
+          "color@LastModified": "Sun Aug 09 2026 13:50:50 GMT-0500",
+          "spacing@LastModified": "Sun Aug 09 2026 13:50:50 GMT-0500",
+          "spacing@LastModifiedBy": "brian",
+          "decorative@LastModifiedBy": "brian",
+          "color": "dark",
+          "decorative@LastModified": "Sun Aug 09 2026 13:50:50 GMT-0500"
+        }
+      }
+    }
+  },
+  "jcr:content": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:title": "demo",
+    "sourcing": "false"
+  },
+  "separator-small-light-decorative": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:mixinTypes": [
+      "mix:referenceable",
+      "mix:versionable"
+    ],
+    "jcr:createdBy": "brian",
+    "jcr:versionHistory": "870d0557-7932-43ab-ad59-66ef8d837272",
+    "jcr:predecessors": [
+      "e95dc088-0e17-4e26-9c52-b114a2373c5c"
+    ],
+    "jcr:created": "Sun Aug 09 2026 13:51:21 GMT-0500",
+    "jcr:baseVersion": "e95dc088-0e17-4e26-9c52-b114a2373c5c",
+    "jcr:isCheckedOut": true,
+    "jcr:uuid": "9e0861c7-7264-4547-b4e7-47310ead83f5",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "jcr:title": "separator-small-light-decorative",
+      "jcr:lastModifiedBy": "brian",
+      "contentFragment": true,
+      "cq:name": "separator-small-light-decorative",
+      "jcr:lastModified": "Sun Aug 09 2026 13:51:40 GMT-0500",
+      "lastFragmentSave": "Sun Aug 09 2026 13:51:40 GMT-0500",
+      "cq:parentPath": "/content/dam/pillar/cfm/separator/demo",
+      "renditions": {
+        "jcr:primaryType": "nt:folder",
+        "jcr:createdBy": "brian",
+        "jcr:created": "Sun Aug 09 2026 13:51:21 GMT-0500"
+      },
+      "related": {
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "indexedData": {
+        "jcr:primaryType": "nt:unstructured",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:IndexedFragmentData"
+          ],
+          "@string@model": "/conf/pillar/settings/dam/cfm/models/separator",
+          "@stringArray@variations": [],
+          "boolean@decorative": true,
+          "string@color": "light",
+          "string@spacing": "small",
+          "jcr:uuid": "93208295-f16e-4e14-bc85-f8b5b37ffc95"
+        }
+      },
+      "metadata": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ]
+      },
+      "data": {
+        "jcr:primaryType": "nt:unstructured",
+        "_strucVersion": 1,
+        "cq:model": "/conf/pillar/settings/dam/cfm/models/separator",
+        "master": {
+          "jcr:primaryType": "nt:unstructured",
+          "jcr:mixinTypes": [
+            "dam:cfVariationNode",
+            "cq:Taggable"
+          ],
+          "spacing": "small",
+          "color@LastModifiedBy": "brian",
+          "decorative": true,
+          "color@LastModified": "Sun Aug 09 2026 13:51:40 GMT-0500",
+          "spacing@LastModified": "Sun Aug 09 2026 13:51:40 GMT-0500",
+          "spacing@LastModifiedBy": "brian",
+          "decorative@LastModifiedBy": "brian",
+          "color": "light",
+          "decorative@LastModified": "Sun Aug 09 2026 13:51:40 GMT-0500"
+        }
+      }
+    }
+  }
+}

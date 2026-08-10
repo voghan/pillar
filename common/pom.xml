@@ -108,6 +108,7 @@
                                     </limits>
                                     <excludes>
                                         <exclude>com.voghan.pillar.common.links.impl.SimpleLinkBuilderConfigImpl</exclude>
+                                        <exclude>com.voghan.pillar.common.policies.PolicyUtils</exclude>
                                     </excludes>
                                 </rule>
                                 <rule>
