@@ -3,14 +3,15 @@ package com.voghan.pillar.core.models.cmp;
 import com.adobe.cq.wcm.core.components.models.Component;
 import com.adobe.cq.wcm.core.components.models.Page;
 import com.adobe.cq.wcm.core.components.models.datalayer.ComponentData;
-import org.apache.sling.api.resource.Resource;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ScriptVariable;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.jetbrains.annotations.Nullable;
 
-@Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
+@Model(adaptables = SlingHttpServletRequest.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class BaseModelCmp implements Component {
 
   @ScriptVariable
@@ -32,7 +33,7 @@ public class BaseModelCmp implements Component {
   }
 
   @Override
-  public @Nullable
+  public @Nullable @JsonProperty("appliedCssClassNames")
   String getAppliedCssClasses() {
     return Component.super.getAppliedCssClasses();
   }
