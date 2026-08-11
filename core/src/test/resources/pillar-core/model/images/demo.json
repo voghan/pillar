@@ -1,0 +1,334 @@
+{
+  "jcr:primaryType": "sling:OrderedFolder",
+  "jcr:createdBy": "admin",
+  "jcr:created": "Wed Jun 24 2026 20:54:41 GMT-0500",
+  "jcr:content": {
+    "jcr:primaryType": "nt:unstructured",
+    "jcr:mixinTypes": [
+      "cq:ReplicationStatus"
+    ],
+    "jcr:title": "demo",
+    "cq:lastReplicationAction": "Activate",
+    "cq:lastReplicatedBy": "brian",
+    "cq:lastReplicated": "Fri Jul 24 2026 06:36:08 GMT-0500",
+    "sourcing": "false",
+    "folderThumbnail": {
+      "jcr:primaryType": "nt:file",
+      "jcr:createdBy": "admin",
+      "jcr:created": "Wed Jun 24 2026 20:54:41 GMT-0500",
+      "jcr:content": {
+        "jcr:primaryType": "nt:unstructured",
+        "dam:folderThumbnailPaths": [
+          "/content/dam/pillar/images/en/demo/asset.jpg"
+        ],
+        "height": 240,
+        "jcr:mimeType": "application/octet-stream",
+        "bgcolor": -1,
+        "width": 280,
+        "jcr:lastModified": "Thu Jun 25 2026 01:54:41 GMT+0000",
+        ":jcr:data": 22378
+      }
+    }
+  },
+  "4d2245b9.png": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:mixinTypes": [
+      "mix:versionable"
+    ],
+    "jcr:createdBy": "admin",
+    "jcr:versionHistory": "83d9d2f2-3774-47af-b9a1-473fe3aeed11",
+    "jcr:predecessors": [
+      "8f8ef4a4-8dd3-4f96-b4ab-e216fd81c5cd"
+    ],
+    "jcr:created": "Wed Jun 24 2026 20:54:41 GMT-0500",
+    "jcr:baseVersion": "8f8ef4a4-8dd3-4f96-b4ab-e216fd81c5cd",
+    "jcr:isCheckedOut": true,
+    "jcr:uuid": "8b952833-248d-488b-a3ab-11bb84fc1bb9",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "jcr:mixinTypes": [
+        "cq:ReplicationStatus"
+      ],
+      "cq:lastReplicationAction": "Activate",
+      "cq:lastReplicatedBy": "brian",
+      "jcr:lastModifiedBy": "brian",
+      "cq:lastReplicated": "Fri Jul 24 2026 06:36:08 GMT-0500",
+      "cq:lastModified": "Tue Dec 30 2025 20:42:22 GMT-0600",
+      "dam:assetState": "processed",
+      "cq:name": "asset.jpg",
+      "jcr:lastModified": "Thu Jul 02 2026 07:29:56 GMT-0500",
+      "cq:parentPath": "/content/dam/pillar/images/en/demo",
+      "cq:lastModifiedBy": "admin",
+      "renditions": {
+        "jcr:primaryType": "nt:folder",
+        "jcr:createdBy": "brian",
+        "jcr:created": "Thu Jul 02 2026 07:29:55 GMT-0500",
+        "cq5dam.thumbnail.48.48.png": {
+          "jcr:primaryType": "nt:file",
+          "jcr:createdBy": "brian",
+          "jcr:created": "Thu Jul 02 2026 07:29:55 GMT-0500",
+          "jcr:content": {
+            "jcr:primaryType": "nt:resource",
+            "jcr:lastModifiedBy": "workflow-process-service",
+            "jcr:mimeType": "image/png",
+            "jcr:lastModified": "Thu Jul 02 2026 07:29:56 GMT-0500",
+            ":jcr:data": 346,
+            "jcr:uuid": "5e66adb4-4367-4625-a3db-66340baafea4"
+          }
+        },
+        "cq5dam.thumbnail.140.100.png": {
+          "jcr:primaryType": "nt:file",
+          "jcr:createdBy": "brian",
+          "jcr:created": "Thu Jul 02 2026 07:29:55 GMT-0500",
+          "jcr:content": {
+            "jcr:primaryType": "nt:resource",
+            "jcr:lastModifiedBy": "workflow-process-service",
+            "jcr:mimeType": "image/png",
+            "jcr:lastModified": "Thu Jul 02 2026 07:29:56 GMT-0500",
+            ":jcr:data": 2625,
+            "jcr:uuid": "06b176fc-5c0e-4767-98c6-fc11539f79b8"
+          }
+        },
+        "cq5dam.web.1280.1280.jpeg": {
+          "jcr:primaryType": "nt:file",
+          "jcr:createdBy": "brian",
+          "jcr:created": "Thu Jul 02 2026 07:29:55 GMT-0500",
+          "jcr:content": {
+            "jcr:primaryType": "nt:resource",
+            "jcr:lastModifiedBy": "workflow-process-service",
+            "jcr:mimeType": "image/jpeg",
+            "jcr:lastModified": "Thu Jul 02 2026 07:29:56 GMT-0500",
+            ":jcr:data": 19720,
+            "jcr:uuid": "21f583ef-4733-4bdf-9d7f-91925df787a8"
+          }
+        },
+        "original": {
+          "jcr:primaryType": "nt:file",
+          "jcr:createdBy": "brian",
+          "jcr:created": "Thu Jul 02 2026 07:29:55 GMT-0500",
+          "jcr:content": {
+            "jcr:primaryType": "nt:resource",
+            "jcr:lastModifiedBy": "brian",
+            "jcr:mimeType": "image/jpeg",
+            "jcr:lastModified": "Thu Jul 02 2026 12:29:55 GMT+0000",
+            ":jcr:data": 71731,
+            "jcr:uuid": "0359c7dd-a9a3-4cd4-bf66-626f88d3e330"
+          }
+        },
+        "cq5dam.thumbnail.319.319.png": {
+          "jcr:primaryType": "nt:file",
+          "jcr:createdBy": "brian",
+          "jcr:created": "Thu Jul 02 2026 07:29:55 GMT-0500",
+          "jcr:content": {
+            "jcr:primaryType": "nt:resource",
+            "jcr:lastModifiedBy": "workflow-process-service",
+            "jcr:mimeType": "image/png",
+            "jcr:lastModified": "Thu Jul 02 2026 07:29:56 GMT-0500",
+            ":jcr:data": 11619,
+            "jcr:uuid": "9db4e331-cf01-4fc6-8da5-d957a53974ea"
+          }
+        }
+      },
+      "related": {
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "metadata": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ],
+        "dam:Physicalheightininches": "0.7083333134651184",
+        "tiff:Compression": 6,
+        "dam:Physicalwidthininches": "13.05555534362793",
+        "dam:JpgFromRawStart": 382,
+        "dam:Fileformat": "JPEG",
+        "dam:Progressive": "yes",
+        "tiff:ImageLength": 51,
+        "tiff:YResolution": "72/1",
+        "exif:ColorSpace": 65535,
+        "jcr:lastModifiedBy": "brian",
+        "xmp:CreatorTool": "Adobe Photoshop CC (Macintosh)",
+        "dam:extracted": "Thu Jul 02 2026 07:29:56 GMT-0500",
+        "dc:format": "image/jpeg",
+        "dam:Bitsperpixel": 24,
+        "exif:ExifVersion": "0221",
+        "xmpMM:DocumentID": "xmp.did:AE2E3F741ACA11E39F4CD06DF927654C",
+        "dam:MIMEtype": "image/jpeg",
+        "tiff:Orientation": 1,
+        "exif:ExifImageWidth": 940,
+        "dam:JpgFromRawLength": 988,
+        "dam:Physicalwidthindpi": 72,
+        "dam:Physicalheightindpi": 72,
+        "tiff:ResolutionUnit": 2,
+        "xmpMM:OriginalDocumentID": "xmp.did:4576AD9C112068118083FEAE8F0AE3A0",
+        "dc:modified": "Sat Dec 27 2025 19:20:05 GMT-0600",
+        "photoshop:ColorMode": 3,
+        "dam:Numberofimages": 1,
+        "tiff:XResolution": "72/1",
+        "exif:PixelYDimension": 51,
+        "dam:ExifOffset": 232,
+        "xmp:MetadataDate": "Thu Jan 01 2015 00:00:00 GMT+0000",
+        "exif:PixelXDimension": 940,
+        "jcr:lastModified": "Thu Jul 02 2026 07:29:56 GMT-0500",
+        "dam:Numberoftextualcomments": 0,
+        "tiff:BitsPerSample_xmpArrayType": "rdf:Seq",
+        "xmpMM:InstanceID": "xmp.iid:61e45f9c-a0cb-4560-83c5-054bb35d320a",
+        "xmp:ModifyDate": "Thu Jan 01 2015 00:00:00 GMT+0000",
+        "tiff:BitsPerSample": [8, 8, 8],
+        "xmp:CreateDate": "Thu Jan 01 2015 00:00:00 GMT+0000",
+        "tiff:ImageWidth": 940,
+        "dam:sha1": "33b20b2688b3a1a5f8a0834cebb4d4be1d12a5f4",
+        "dam:size": 71731,
+        "dam:ColorSpace": -1,
+        "tiff:SamplesPerPixel": 3,
+        "tiff:PhotometricInterpretation": 2,
+        "exif:ExifImageLength": 51,
+        "xmpMM:DerivedFrom": {
+          "jcr:primaryType": "nt:unstructured",
+          "stRef:instanceID": "xmp.iid:524b6b7f-6449-45a6-b6fd-22994ff6a8fe",
+          "xmpNodeType": "xmpStruct",
+          "stRef:documentID": "xmp.did:4576AD9C112068118083FEAE8F0AE3A0"
+        },
+        "xmpMM:History": {
+          "jcr:primaryType": "nt:unstructured",
+          "xmpNodeType": "xmpArray",
+          "xmpArraySize": 1,
+          "xmpArrayType": "rdf:Seq",
+          "1": {
+            "jcr:primaryType": "nt:unstructured",
+            "stEvt:action": "saved",
+            "xmpNodeType": "xmpStruct",
+            "stEvt:softwareAgent": "Adobe Photoshop CC (Macintosh)",
+            "stEvt:when": "Thu Jan 01 2015 00:00:00 GMT+0000",
+            "stEvt:changed": "/",
+            "stEvt:instanceID": "xmp.iid:61e45f9c-a0cb-4560-83c5-054bb35d320a"
+          }
+        }
+      }
+    }
+  },
+  "asset_en.jpg": {
+    "jcr:primaryType": "dam:Asset",
+    "jcr:mixinTypes": [
+      "mix:referenceable",
+      "mix:versionable"
+    ],
+    "jcr:createdBy": "admin",
+    "jcr:versionHistory": "d799eb11-1553-4b4a-bc6b-7e38d8c680ae",
+    "jcr:predecessors": [
+      "bfd33a07-f658-4d89-8b47-de70cb731c76"
+    ],
+    "jcr:created": "Wed Jun 24 2026 20:54:41 GMT-0500",
+    "jcr:baseVersion": "bfd33a07-f658-4d89-8b47-de70cb731c76",
+    "jcr:isCheckedOut": true,
+    "jcr:uuid": "c282f52f-3fcf-4ad8-86db-d4c0458dac29",
+    "jcr:content": {
+      "jcr:primaryType": "dam:AssetContent",
+      "jcr:mixinTypes": [
+        "cq:ReplicationStatus"
+      ],
+      "cq:lastReplicationAction": "Activate",
+      "cq:lastReplicatedBy": "brian",
+      "jcr:lastModifiedBy": "brian",
+      "cq:lastReplicated": "Fri Jul 24 2026 06:36:08 GMT-0500",
+      "dam:assetState": "processed",
+      "cq:name": "BrianLogo2019-medium.png",
+      "jcr:lastModified": "Thu Jul 02 2026 07:29:56 GMT-0500",
+      "cq:parentPath": "/content/dam/pillar/images/en/demo",
+      "renditions": {
+        "jcr:primaryType": "nt:folder",
+        "jcr:createdBy": "brian",
+        "jcr:created": "Thu Jul 02 2026 07:29:55 GMT-0500",
+        "cq5dam.web.1280.1280.png": {
+          "jcr:primaryType": "nt:file",
+          "jcr:createdBy": "brian",
+          "jcr:created": "Thu Jul 02 2026 07:29:55 GMT-0500",
+          "jcr:content": {
+            "jcr:primaryType": "oak:Resource",
+            "jcr:lastModifiedBy": "workflow-process-service",
+            "jcr:mimeType": "image/png",
+            "jcr:lastModified": "Thu Jul 02 2026 07:29:56 GMT-0500",
+            ":jcr:data": 23906
+          }
+        },
+        "cq5dam.thumbnail.48.48.png": {
+          "jcr:primaryType": "nt:file",
+          "jcr:createdBy": "brian",
+          "jcr:created": "Thu Jul 02 2026 07:29:55 GMT-0500",
+          "jcr:content": {
+            "jcr:primaryType": "oak:Resource",
+            "jcr:lastModifiedBy": "workflow-process-service",
+            "jcr:mimeType": "image/png",
+            "jcr:lastModified": "Thu Jul 02 2026 07:29:56 GMT-0500",
+            ":jcr:data": 1866
+          }
+        },
+        "cq5dam.thumbnail.140.100.png": {
+          "jcr:primaryType": "nt:file",
+          "jcr:createdBy": "brian",
+          "jcr:created": "Thu Jul 02 2026 07:29:55 GMT-0500",
+          "jcr:content": {
+            "jcr:primaryType": "oak:Resource",
+            "jcr:lastModifiedBy": "workflow-process-service",
+            "jcr:mimeType": "image/png",
+            "jcr:lastModified": "Thu Jul 02 2026 07:29:56 GMT-0500",
+            ":jcr:data": 5474
+          }
+        },
+        "original": {
+          "jcr:primaryType": "nt:file",
+          "jcr:createdBy": "brian",
+          "jcr:created": "Thu Jul 02 2026 07:29:55 GMT-0500",
+          "jcr:content": {
+            "jcr:primaryType": "oak:Resource",
+            "jcr:lastModifiedBy": "brian",
+            "jcr:mimeType": "image/png",
+            "jcr:lastModified": "Thu Jul 02 2026 12:29:55 GMT+0000",
+            ":jcr:data": 28080
+          }
+        },
+        "cq5dam.thumbnail.319.319.png": {
+          "jcr:primaryType": "nt:file",
+          "jcr:createdBy": "brian",
+          "jcr:created": "Thu Jul 02 2026 07:29:55 GMT-0500",
+          "jcr:content": {
+            "jcr:primaryType": "oak:Resource",
+            "jcr:lastModifiedBy": "workflow-process-service",
+            "jcr:mimeType": "image/png",
+            "jcr:lastModified": "Thu Jul 02 2026 07:29:56 GMT-0500",
+            ":jcr:data": 23171
+          }
+        }
+      },
+      "related": {
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "metadata": {
+        "jcr:primaryType": "nt:unstructured",
+        "jcr:mixinTypes": [
+          "cq:Taggable"
+        ],
+        "dam:Physicalheightininches": "1.0300021171569824",
+        "dam:Physicalwidthininches": "1.2000024318695068",
+        "dam:Fileformat": "PNG",
+        "dam:Progressive": "no",
+        "tiff:ImageLength": 309,
+        "jcr:lastModifiedBy": "brian",
+        "dam:extracted": "Thu Jul 02 2026 07:29:56 GMT-0500",
+        "dc:format": "image/png",
+        "dam:Bitsperpixel": 32,
+        "dam:MIMEtype": "image/png",
+        "dam:Comments": "XML:com.adobe.xmp: \u003C?xpacket begin=\"﻿\" id=\"W5M0MpCehiHzreSzNTczkc9d\"?\u003E\n\u003Cx:xmpmeta xmlns:x=\"adobe:ns:meta/\" x:xmptk=\"Adobe XMP Core 5.6-c148 79.164050, 2019/10/01-18:03:16        \"\u003E\n \u003Crdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003E\n  \u003Crdf:Description rdf:about=\"\"\n    xmlns:dam=\"http://www.day.com/dam/1.0\"\n    xmlns:tiff=\"http://ns.adobe.com/tiff/1.0/\"\n    xmlns:dc=\"http://purl.org/dc/elements/1.1/\"\n   dam:Physicalheightininches=\"1.0300021171569824\"\n   dam:Physicalwidthininches=\"1.2000024318695068\"\n   dam:Fileformat=\"PNG\"\n   dam:Progressive=\"no\"\n   dam:extracted=\"2026-01-05T21:16:39.809-06:00\"\n   dam:Bitsperpixel=\"32\"\n   dam:MIMEtype=\"image/png\"\n   dam:Physicalwidthindpi=\"300\"\n   dam:Physicalheightindpi=\"300\"\n   dam:Numberofimages=\"1\"\n   dam:Numberoftextualcomments=\"0\"\n   dam:sha1=\"d0e0018151e0dfa313dee97ccee713029f08b67d\"\n   dam:size=\"27024\"\n   tiff:ImageLength=\"309\"\n   tiff:ImageWidth=\"360\"\n   dc:format=\"image/png\"\n   dc:modified=\"2026-01-05T21:16:40.668-06:00\"/\u003E\n \u003C/rdf:RDF\u003E\n\u003C/x:xmpmeta\u003E\n\u003C?xpacket end=\"r\"?\u003E\n",
+        "dam:Physicalwidthindpi": 300,
+        "dam:Physicalheightindpi": 300,
+        "dc:modified": "Mon Jan 05 2026 21:16:40 GMT-0600",
+        "dam:Numberofimages": 1,
+        "jcr:lastModified": "Thu Jul 02 2026 07:29:56 GMT-0500",
+        "dam:Numberoftextualcomments": 1,
+        "tiff:ImageWidth": 360,
+        "dam:sha1": "98142cb9754cf124934470635852576847be21d8",
+        "dam:size": 28080
+      }
+    }
+  }
+}
