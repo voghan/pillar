@@ -1,7 +1,9 @@
 package com.voghan.pillar.core.models.cmp;
 
 import com.adobe.cq.export.json.ComponentExporter;
-import com.adobe.granite.asset.api.Asset;
+import com.day.cq.commons.Externalizer;
+import com.day.cq.dam.api.Asset;
+import com.day.cq.dam.api.DamConstants;
 import com.voghan.pillar.core.models.Image;
 import com.voghan.pillar.core.models.cfm.ImageCfm;
 import org.apache.commons.lang3.StringUtils;
@@ -9,6 +11,7 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.jetbrains.annotations.NotNull;
@@ -32,6 +35,9 @@ public class ImageCmp extends BaseModelCmp implements Image {
     @Self
     private SlingHttpServletRequest slingHttpServletRequest;
 
+    @OSGiService
+    private Externalizer externalizer;
+
     @ValueMapValue
     private String fragmentPath;
 
@@ -41,6 +47,10 @@ public class ImageCmp extends BaseModelCmp implements Image {
     private ImageCfm imageCfm;
 
     private Asset image;
+    private String src;
+    private String width;
+    private String height;
+    private String uuid;
 
     @PostConstruct
     protected void init() {
@@ -59,10 +69,19 @@ public class ImageCmp extends BaseModelCmp implements Image {
                 Resource r = slingHttpServletRequest.getResourceResolver().getResource(imageCfm.getFileReference());
                 if (r != null) {
                     image = r.adaptTo(Asset.class);
+                    if (image != null) {
+                        width = image.getMetadataValue(DamConstants.TIFF_IMAGEWIDTH);
+                        height = image.getMetadataValue(DamConstants.TIFF_IMAGELENGTH);
+                        uuid = image.getID();
+                        src = image.getPath();
+                        //TODO Externalize asset paths
+//                        if (externalizer != null) {
+//                            src = externalizer.relativeLink(request, image.getPath());
+//                        }
+                    }
                 }
             }
         }
-
     }
 
     @Override
@@ -96,7 +115,18 @@ public class ImageCmp extends BaseModelCmp implements Image {
     }
 
     public String getSrc() {
-        return image != null ? image.getPath() : null;
+        return src;
     }
 
+    public String getWidth() {
+        return width;
+    }
+
+    public String getHeight() {
+        return height;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
 }

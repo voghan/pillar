@@ -1,7 +1,8 @@
 package com.voghan.pillar.core.models.cmp;
 
 import com.adobe.cq.dam.cfm.ContentFragment;
-import com.adobe.granite.asset.api.Asset;
+import com.day.cq.dam.api.Asset;
+import com.day.cq.dam.api.DamConstants;
 import com.voghan.pillar.core.testcontext.AppAemContext;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
@@ -22,6 +23,7 @@ public class ImageCmpTest {
 
     private static final String DEMO_PAGE_PATH = "/pillar-core/model/cmp/imageCmps.json";
     private static final String DEMO_CFM_PATH = "/pillar-core/model/cfm/images.json";
+    private static final String DEMO_ASSETS_PATH = "/pillar-core/model/images/demo.json";
     public static final String SITE_PATH = "/content/page";
     public static final String DAM_PATH = "/content/dam/cfm";
     public static final String ASSET_PATH = "/content/dam/images";
@@ -35,7 +37,7 @@ public class ImageCmpTest {
     static void setupAll() {
         context.load().json(DEMO_PAGE_PATH, SITE_PATH);
         context.load().json(DEMO_CFM_PATH, DAM_PATH);
-        context.load().json(DEMO_CFM_PATH, ASSET_PATH);
+        context.load().json(DEMO_ASSETS_PATH, ASSET_PATH);
         context.addModelsForPackage("com.voghan.pillar.core.models.cfm");
         context.registerAdapter(Resource.class, ContentFragment.class, contentFragment);
         context.registerAdapter(Resource.class, Asset.class, asset);
@@ -90,12 +92,41 @@ public class ImageCmpTest {
     }
 
     @Test
-    void getSrc_expected() {
-        when(asset.getPath()).thenReturn("/content/image/path");
+    void getHeight_expected() {
+        when(asset.getMetadataValue(DamConstants.TIFF_IMAGELENGTH)).thenReturn("40");
+
         imageCmp = getComponent("image_default");
 
         assertNotNull(imageCmp);
-        assertEquals("/content/image/path", imageCmp.getSrc());
+        assertEquals("40", imageCmp.getHeight());
+    }
+
+    @Test
+    void getWidth_expected() {
+        when(asset.getMetadataValue(DamConstants.TIFF_IMAGEWIDTH)).thenReturn("60");
+
+        imageCmp = getComponent("image_default");
+
+        assertNotNull(imageCmp);
+        assertEquals("60", imageCmp.getWidth());
+    }
+
+    @Test
+    void getUuid_expected() {
+        when(asset.getID()).thenReturn("uuid-1234");
+        imageCmp = getComponent("image_default");
+
+        assertNotNull(imageCmp);
+        assertEquals("uuid-1234", imageCmp.getUuid());
+    }
+
+    @Test
+    void getSrc_expected() {
+        when(asset.getPath()).thenReturn("/content/dam/image/4d2245b9.png");
+        imageCmp = getComponent("image_default");
+
+        assertNotNull(imageCmp);
+        assertEquals("/content/dam/image/4d2245b9.png", imageCmp.getSrc());
     }
 
     @Test
@@ -136,15 +167,6 @@ public class ImageCmpTest {
 
         assertNotNull(imageCmp);
         assertEquals(true, imageCmp.isLazyEnabled());
-    }
-
-    @Test
-    void getSrc_whenVariation() {
-        when(asset.getPath()).thenReturn("/content/image/path");
-        imageCmp = getComponent("image_caption");
-
-        assertNotNull(imageCmp);
-        assertEquals("/content/image/path", imageCmp.getSrc());
     }
 
     @Test
@@ -193,6 +215,46 @@ public class ImageCmpTest {
 
         assertNotNull(imageCmp);
         assertNull(imageCmp.getSrc());
+    }
+
+    @Test
+    void getFileReference_whenMissing() {
+        imageCmp = getComponent("image_missing");
+
+        assertNotNull(imageCmp);
+        assertNull(imageCmp.getFileReference());
+    }
+
+    @Test
+    void getAltText_whenMissing() {
+        imageCmp = getComponent("image_missing");
+
+        assertNotNull(imageCmp);
+        assertEquals("", imageCmp.getAltText());
+    }
+
+    @Test
+    void getCaption_whenMissing() {
+        imageCmp = getComponent("image_missing");
+
+        assertNotNull(imageCmp);
+        assertEquals("", imageCmp.getCaption());
+    }
+
+    @Test
+    void isDecorative_whenMissing() {
+        imageCmp = getComponent("image_missing");
+
+        assertNotNull(imageCmp);
+        assertEquals(false, imageCmp.isDecorative());
+    }
+
+    @Test
+    void isLazyEnabled_whenMissing() {
+        imageCmp = getComponent("image_missing");
+
+        assertNotNull(imageCmp);
+        assertEquals(false, imageCmp.isLazyEnabled());
     }
 
     ImageCmp getComponent(String component) {

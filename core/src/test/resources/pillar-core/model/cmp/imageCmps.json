@@ -50,6 +50,14 @@
             "jcr:lastModified": "Mon Aug 10 2026 20:56:23 GMT-0500",
             "sling:resourceType": "pillar/components/image/v2/image",
             "fragmentPath": "/content/dam/cfm/image_empty"
+          },
+          "image_missing": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "brian",
+            "jcr:lastModifiedBy": "brian",
+            "jcr:created": "Mon Aug 10 2026 20:56:02 GMT-0500",
+            "jcr:lastModified": "Mon Aug 10 2026 20:56:23 GMT-0500",
+            "sling:resourceType": "pillar/components/image/v2/image"
           }
         }
       }
