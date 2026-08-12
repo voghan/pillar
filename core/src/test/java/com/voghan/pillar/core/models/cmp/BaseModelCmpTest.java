@@ -1,14 +1,14 @@
 package com.voghan.pillar.core.models.cmp;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import com.voghan.pillar.core.models.cfm.LinkCfm;
 import com.voghan.pillar.core.testcontext.AppAemContext;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @ExtendWith(AemContextExtension.class)
 public class BaseModelCmpTest {
@@ -34,10 +34,10 @@ public class BaseModelCmpTest {
   void overrides_default() {
     baseModelCmp = getComponent("/content/hero", "hero");
 
-    assertEquals(null, baseModelCmp.getId());
+    assertEquals("hero-998e137040", baseModelCmp.getId());
     assertEquals(null, baseModelCmp.getAppliedCssClasses());
     assertEquals(null, baseModelCmp.getData());
-    assertEquals(null, baseModelCmp.getCurrentPage());
+    assertNotNull(baseModelCmp.getCurrentPage());
   }
 
   HeroCardCmp getComponent(String path, String component) {

@@ -1,0 +1,66 @@
+{
+  "jcr:primaryType": "cq:Page",
+  "jcr:createdBy": "brian",
+  "jcr:created": "Mon Aug 10 2026 20:35:47 GMT-0500",
+  "jcr:content": {
+    "jcr:primaryType": "cq:PageContent",
+    "jcr:createdBy": "brian",
+    "jcr:title": "Image",
+    "cq:template": "/conf/pillar/settings/wcm/templates/page-content",
+    "jcr:created": "Mon Aug 10 2026 20:35:47 GMT-0500",
+    "cq:lastModified": "Mon Aug 10 2026 20:56:23 GMT-0500",
+    "sling:resourceType": "pillar/components/page/v1/page",
+    "cq:lastModifiedBy": "brian",
+    "root": {
+      "jcr:primaryType": "nt:unstructured",
+      "layout": "responsiveGrid",
+      "sling:resourceType": "pillar/components/container/v1/container",
+      "container": {
+        "jcr:primaryType": "nt:unstructured",
+        "layout": "responsiveGrid",
+        "sling:resourceType": "pillar/components/container/v1/container",
+        "container": {
+          "jcr:primaryType": "nt:unstructured",
+          "layout": "responsiveGrid",
+          "sling:resourceType": "pillar/components/container/v1/container",
+          "image_default": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "brian",
+            "jcr:lastModifiedBy": "brian",
+            "jcr:created": "Mon Aug 10 2026 20:55:31 GMT-0500",
+            "jcr:lastModified": "Mon Aug 10 2026 20:55:54 GMT-0500",
+            "sling:resourceType": "pillar/components/image/v2/image",
+            "fragmentPath": "/content/dam/cfm/image_default"
+          },
+          "image_caption": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "brian",
+            "jcr:lastModifiedBy": "brian",
+            "jcr:created": "Mon Aug 10 2026 20:56:02 GMT-0500",
+            "jcr:lastModified": "Mon Aug 10 2026 20:56:23 GMT-0500",
+            "sling:resourceType": "pillar/components/image/v2/image",
+            "fragmentPath": "/content/dam/cfm/image_caption",
+            "variationName": "en"
+          },
+          "image_empty": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "brian",
+            "jcr:lastModifiedBy": "brian",
+            "jcr:created": "Mon Aug 10 2026 20:56:02 GMT-0500",
+            "jcr:lastModified": "Mon Aug 10 2026 20:56:23 GMT-0500",
+            "sling:resourceType": "pillar/components/image/v2/image",
+            "fragmentPath": "/content/dam/cfm/image_empty"
+          },
+          "image_missing": {
+            "jcr:primaryType": "nt:unstructured",
+            "jcr:createdBy": "brian",
+            "jcr:lastModifiedBy": "brian",
+            "jcr:created": "Mon Aug 10 2026 20:56:02 GMT-0500",
+            "jcr:lastModified": "Mon Aug 10 2026 20:56:23 GMT-0500",
+            "sling:resourceType": "pillar/components/image/v2/image"
+          }
+        }
+      }
+    }
+  }
+}

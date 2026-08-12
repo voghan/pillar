@@ -114,7 +114,7 @@ public class AccordionCmpTest {
         accordionCmp = getComponent("accordion_null");
 
         assertNotNull(accordionCmp);
-        assertNull(accordionCmp.getId());
+        assertNotNull(accordionCmp.getId());
     }
 
     @Test

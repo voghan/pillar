@@ -1,0 +1,20 @@
+<div data-sly-use.image="com.voghan.pillar.core.models.cmp.ImageCmp"
+     data-cmp-is="image"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-test="${image.src}"
+     data-asset-id="${image.uuid}"
+     data-cmp-filereference="${image.fileReference}"
+     id="${image.id}"
+     data-cmp-data-layer="${image.data.json}"
+     data-cmp-hook-image="imageV3"
+     class="cmp-image${!wcmmode.disabled ? ' cq-dd-image' : ''}"
+     itemscope itemtype="http://schema.org/ImageObject">
+    <img src="${image.src}"
+         loading="${image.lazyEnabled ? 'lazy' : ''}"
+         class="cmp-image__image"
+         itemprop="contentUrl"
+         width="${image.width}" height="${image.height}"
+         alt="${image.decorative ? '' : image.altText}"/>
+    <span class="cmp-image__title" itemprop="caption" data-sly-test="${image.caption}">${image.caption}</span>
+</div>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !image.src, classAppend = 'cmp-image cq-dd-image'}"></sly>

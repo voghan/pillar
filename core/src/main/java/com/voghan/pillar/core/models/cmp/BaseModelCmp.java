@@ -1,45 +1,16 @@
 package com.voghan.pillar.core.models.cmp;
 
 import com.adobe.cq.wcm.core.components.models.Component;
-import com.adobe.cq.wcm.core.components.models.Page;
-import com.adobe.cq.wcm.core.components.models.datalayer.ComponentData;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.adobe.cq.wcm.core.components.util.AbstractComponentImpl;
+import com.day.cq.wcm.api.Page;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.ScriptVariable;
-import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
-import org.jetbrains.annotations.Nullable;
 
 @Model(adaptables = SlingHttpServletRequest.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class BaseModelCmp implements Component {
-
-  @ScriptVariable
-  private Page currentPage;
-
-  @ValueMapValue
-  private String id;
-
-  @Override
-  public @Nullable
-  String getId() {
-    return id;
-  }
-
-  @Override
-  public @Nullable
-  ComponentData getData() {
-    return Component.super.getData();
-  }
-
-  @Override
-  public @Nullable @JsonProperty("appliedCssClassNames")
-  String getAppliedCssClasses() {
-    return Component.super.getAppliedCssClasses();
-  }
-
-  protected Page getCurrentPage() {
-    return currentPage;
-  }
-
+public class BaseModelCmp extends AbstractComponentImpl implements Component {
+    @Override
+    protected Page getCurrentPage() {
+        return super.getCurrentPage();
+    }
 }
