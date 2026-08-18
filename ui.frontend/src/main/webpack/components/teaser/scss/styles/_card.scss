@@ -13,7 +13,6 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-/* WKND teaser - card.less*/
 
 $teaser-height: 400px;
 $teaser-img-height: $teaser-height;
@@ -96,12 +95,6 @@ $teaser-img-height: $teaser-height;
                 color: $teaser-dark-color;
                 background-color: $brand-primary;
                 border-color: $brand-primary;
-            }
-
-            .cmp-image__image {
-                -moz-transform: scale(1.05);
-                -webkit-transform: scale(1.05);
-                transform: scale(1.05);
             }
         }
     }
